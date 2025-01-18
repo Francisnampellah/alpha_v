@@ -1,0 +1,13 @@
+const registrationRequest = t.Object({
+    name: t.String({ minLength: 6 }),
+    email: t.String({ format: "email" }),
+    password: t.String({ minLength: 5 }),
+
+});
+
+
+const loginRequest = t.Object({
+    email: t.String({ format: "email" }),
+    password: t.String(),
+
+});

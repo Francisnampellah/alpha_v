@@ -1,0 +1,1 @@
+https://github.com/msalihaltun/elysia-jwt-example/blob/main/src/routes/posts/newPost.ts

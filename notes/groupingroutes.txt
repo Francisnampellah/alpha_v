@@ -1,0 +1,39 @@
+import { Elysia } from 'elysia';
+import { swagger } from '@elysiajs/swagger';
+
+new Elysia()
+    .use(swagger({
+        documentation: {
+            tags: [
+                { name: 'User', description: 'User related endpoints' },
+                { name: 'User/Auth', description: 'User authentication endpoints' },
+                { name: 'User/Profile', description: 'User profile endpoints' }
+            ]
+        }
+    }))
+    .group('/user', (app) => {
+        app.group('/auth', (auth) => 
+            auth.post('/sign-in', () => 'Sign in', {
+                detail: {
+                    tags: ['User/Auth']
+                }
+            })
+            .post('/sign-up', () => 'Sign up', {
+                detail: {
+                    tags: ['User/Auth']
+                }
+            })
+        )
+        .group('/profile', (profile) => 
+            profile.get('/', () => 'User profile', {
+                detail: {
+                    tags: ['User/Profile']
+                }
+            })
+        )
+    }, {
+        detail: {
+            tags: ['User']
+        }
+    })
+    .listen(3000);

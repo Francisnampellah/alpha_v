@@ -1,0 +1,55 @@
+https://elysiajs.com/essential/validation.html
+//Return file
+new Elysia()
+    .get('/json', () => {
+        return {
+            hello: 'Elysia',
+            image: Bun.file('public/cat.jpg')
+        }
+    })
+
+
+//Handle customization
+import { Elysia } from 'elysia'
+
+new Elysia()
+    .onParse(({ request, contentType }) => {
+        if (contentType === 'application/custom-type')
+            return request.text()
+    })
+
+
+
+//Receive Files (Form Data) 
+
+import { Elysia, t } from 'elysia'
+
+new Elysia()
+	.post('/body', ({ body }) => body, {
+
+
+
+
+
+		body: t.Object({
+			file: t.File(),
+			multipleFiles: t.Files()
+		})
+	})
+	.listen(3000)
+
+
+  //Get Headers
+
+ import { Elysia, t } from 'elysia'
+
+new Elysia()
+	.get('/headers', ({ headers }) => headers, {
+
+
+
+
+		headers: t.Object({
+			authorization: t.String()
+		})
+	})   

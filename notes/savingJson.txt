@@ -1,0 +1,34 @@
+
+Saving Json:
+
+https://www.prisma.io/docs/orm/prisma-client/special-fields-and-types/working-with-scalar-lists-arrays
+
+
+Writing:
+var json = [
+  { name: 'Bob the dog' },
+  { name: 'Claudine the cat' },
+] as Prisma.JsonArray
+
+const createUser = await prisma.user.create({
+  data: {
+    email: 'birgitte@prisma.io',
+    extendedPetsData: json,
+  },
+})
+
+
+//Complex Compare:
+{
+  "petName": "Claudine",
+  "petType": "House cat"
+}
+
+const getUsers = await prisma.user.findMany({
+  where: {
+    extendedPetsData: {
+      path: ['petName'],
+      equals: 'Claudine',
+    },
+  },
+})
