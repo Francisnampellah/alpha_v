@@ -12,7 +12,7 @@ We are an all-inclusive digital platform designed to assist farmers through thei
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/smartinno-website-v2backend.git
+git clone https://github.com/smart-Ino-Engineering/smartinno-website-v2backend.git
 
 # Install dependencies
 bun install
