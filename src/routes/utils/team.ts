@@ -1,5 +1,6 @@
 import Elysia, { t } from "elysia";
 import { prisma } from "~libs/prisma";
+import { isAuthenticated } from "~middlewares/isAuthenticated";
 
 
 // TeamMember Service
@@ -47,6 +48,7 @@ export const teamMember = (app: Elysia) =>
               },
             }
           )
+          .use(isAuthenticated)
           .post(
             "/",
             async ({ body }) => {

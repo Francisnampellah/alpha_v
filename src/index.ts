@@ -111,7 +111,7 @@ app
   })
   .group("/api/v1", (app) => app.use(auth))
   .group("/api/v1", (app) =>
-    app.use(isAuthenticated).use(project)
+    app.use(project)
   .use(event)
   .use(blog)
   .use(career)

@@ -1,5 +1,6 @@
 import Elysia, { t } from "elysia";
 import { prisma } from "~libs/prisma";
+import { isAuthenticated } from "~middlewares/isAuthenticated";
 
 // Contact Message Service
 export const contactMessage = (app: Elysia) =>
@@ -61,6 +62,7 @@ export const contactMessage = (app: Elysia) =>
               },
             }
           )
+          .use(isAuthenticated)
           .put(
             "/:id",
             async ({ params, body }) => {

@@ -1,5 +1,6 @@
 import Elysia, { t } from "elysia";
 import { prisma } from "~libs/prisma";
+import { isAuthenticated } from "~middlewares/isAuthenticated";
 
 // Job Application Service
 export const jobApplication = (app: Elysia) =>
@@ -83,6 +84,7 @@ export const jobApplication = (app: Elysia) =>
               },
             }
           )
+          .use(isAuthenticated)
           .put(
             "/:id",
             async ({ params, body }) => {

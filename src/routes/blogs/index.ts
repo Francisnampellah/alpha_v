@@ -1,5 +1,6 @@
 import Elysia, { t } from "elysia";
 import { prisma } from "~libs/prisma";
+import { isAuthenticated } from "~middlewares/isAuthenticated";
 
 // Blog Service
 export const blog = (app: Elysia) =>
@@ -45,6 +46,7 @@ export const blog = (app: Elysia) =>
               },
             }
           )
+          .use(isAuthenticated)
           .post(
             "/",
             async ({ body }) => {
@@ -66,7 +68,7 @@ export const blog = (app: Elysia) =>
             {
               body: t.Object({
                 title: t.String(),
-                content: t.String(),
+                // content: t.String(),
                 slug: t.String(),
                 authorId: t.String(),
                 imageUrl: t.Optional(t.String()),

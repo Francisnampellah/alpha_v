@@ -1,5 +1,6 @@
 import Elysia, { t } from "elysia";
 import { prisma } from "~libs/prisma";
+import { isAuthenticated } from "~middlewares/isAuthenticated";
 
 // Testimonial Service
 export const testimonial = (app: Elysia) =>
@@ -42,6 +43,7 @@ export const testimonial = (app: Elysia) =>
               },
             }
           )
+           .use(isAuthenticated)
           .post(
             "/",
             async ({ body }) => {
