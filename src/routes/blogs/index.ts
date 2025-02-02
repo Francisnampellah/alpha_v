@@ -56,9 +56,9 @@ export const blog = (app: Elysia) =>
                 where: { id: authorId },
               });
               
-              if (!author) {
-                return { Message: `Author with id ${authorId} not found` };
-              }
+              // if (!author) {
+              //   return { Message: `Author with id ${authorId} not found` };
+              // }
   
               return await prisma.blog.create({
                 data: body,

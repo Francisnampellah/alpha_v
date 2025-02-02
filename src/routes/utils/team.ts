@@ -75,7 +75,7 @@ export const teamMember = (app: Elysia) =>
                 email: t.String(),
                 socialLinks: t.Optional(t.Any()),
                 isActive: t.Optional(t.Boolean()),
-                order: t.Optional(t.Number()),
+                // order: t.Optional(t.Number()),
               }),
               detail: {
                 summary: "Create Team Member",
