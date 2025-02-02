@@ -1,4 +1,5 @@
 import Elysia, { t } from "elysia";
+import { sendEmail } from "~libs/email-service";
 import { prisma } from "~libs/prisma";
 import { isAuthenticated } from "~middlewares/isAuthenticated";
 
@@ -58,6 +59,8 @@ export const jobApplication = (app: Elysia) =>
               if (!career) {
                 return { Message: `Career with id ${careerId} not found` };
               }
+
+              sendEmail(body.email, "Application Received", `Thank you for applying for the ${career.title} position. Your application is received and will be reviewed by our team. We will get back to you soon.`);
   
               return await prisma.jobApplication.create({
                 data: body,

@@ -1,4 +1,5 @@
 import Elysia, { t } from "elysia";
+import { sendEmail } from "~libs/email-service";
 import { prisma } from "~libs/prisma";
 import { isAuthenticated } from "~middlewares/isAuthenticated";
 
@@ -59,6 +60,12 @@ export const blog = (app: Elysia) =>
               // if (!author) {
               //   return { Message: `Author with id ${authorId} not found` };
               // }
+
+              const subscriber = await prisma.newsletterSubscription.findMany({});
+
+              subscriber.forEach(async (sub) => {
+                sendEmail(sub.email, "New Blog Post", `A new blog post has been published. Check it out at https://www.smartinno.net/our-events`, body?.imageUrl);
+              });
   
               return await prisma.blog.create({
                 data: body,
@@ -79,6 +86,29 @@ export const blog = (app: Elysia) =>
               }),
               detail: {
                 summary: "Create Blog",
+              },
+            }
+          )
+          .delete(
+            "/:id",
+            async ({ params }) => {
+              const { id } = params;
+              const existingMember = await prisma.blog.findFirst({
+                where: { id },
+              });
+              
+              if (!existingMember) {
+                return { Message: `blog with id ${id} is not found` };
+              }
+
+  
+              return await prisma.blog.delete({
+                where: { id },
+              });
+            },
+            {
+              detail: {
+                summary: "Delete blog ",
               },
             }
           )
@@ -162,6 +192,29 @@ export const event = (app: Elysia) =>
               }),
               detail: {
                 summary: "Create Event",
+              },
+            }
+          )
+          .delete(
+            "/:id",
+            async ({ params }) => {
+              const { id } = params;
+              const existingMember = await prisma.event.findFirst({
+                where: { id },
+              });
+              
+              if (!existingMember) {
+                return { Message: `event with id ${id} is not found` };
+              }
+
+  
+              return await prisma.event.delete({
+                where: { id },
+              });
+            },
+            {
+              detail: {
+                summary: "Delete event ",
               },
             }
           )

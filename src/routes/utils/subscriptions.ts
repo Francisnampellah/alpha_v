@@ -1,4 +1,5 @@
 import Elysia, { t } from "elysia";
+import { sendEmail } from "~libs/email-service";
 import { prisma } from "~libs/prisma";
 
 // Newsletter Subscription Service
@@ -24,6 +25,8 @@ export const newsletter = (app: Elysia) =>
               if (existingSubscription) {
                 return { Message: "Email already subscribed" };
               }
+
+              sendEmail(email, "Welcome to Smartinno Newsletter", "You have successfully subscribed to Smartinno newsletter, you will be receiving updates on our latest projects, events, and blog posts.");
   
               return await prisma.newsletterSubscription.create({
                 data: { email },

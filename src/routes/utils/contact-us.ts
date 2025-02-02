@@ -1,4 +1,5 @@
 import Elysia, { t } from "elysia";
+import { sendEmail } from "~libs/email-service";
 import { prisma } from "~libs/prisma";
 import { isAuthenticated } from "~middlewares/isAuthenticated";
 
@@ -46,6 +47,7 @@ export const contactMessage = (app: Elysia) =>
           .post(
             "/",
             async ({ body }) => {
+              sendEmail(body?.email, "Thank you for contacting us", `Dear ${body?.name},\n\nThank you for contacting us. We will get back to you soon.\n\nBest Regards,\SmartInno Team`);
               return await prisma.contactMessage.create({
                 data: body,
               });
