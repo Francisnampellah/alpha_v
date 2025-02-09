@@ -18,11 +18,16 @@ export const generateEmailTemplate = (title: string, message: string, image?:str
 };
 
 const transporter = nodemailer.createTransport({
-    service: 'gmail', // E.g., "gmail"
+    service: 'mail.smartinno.net',
+    port: 587, 
+    secure: false,
     auth: {
-        user:'widambedeograss5@gmail.com',
-        pass: 'guyovkmdpnpalmek',
+        user:'info@smartinno.net',
+        pass: 'LafFzcQ9I_YG',
     },
+    tls: {
+        rejectUnauthorized: false, // Allow self-signed certificates
+    }
 });
 
 /**
@@ -40,7 +45,7 @@ export const sendEmail = async (recipient: string, subject: string, message: str
     
     try {
         const info = await transporter.sendMail({
-            from: 'widambedeograss5@gmail.com',
+            from: 'info@smartinno.net',
             to: recipient,
             subject,
             html: htmlContent,
