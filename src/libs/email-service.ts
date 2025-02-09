@@ -18,16 +18,13 @@ export const generateEmailTemplate = (title: string, message: string, image?:str
 };
 
 const transporter = nodemailer.createTransport({
-    service: 'mail.smartinno.net',
-    port: 587, 
-    secure: false,
+    host: "mail.smartinno.net",
+    port: 465,
+    secure: true,
     auth: {
         user:'info@smartinno.net',
         pass: 'LafFzcQ9I_YG',
     },
-    tls: {
-        rejectUnauthorized: false, // Allow self-signed certificates
-    }
 });
 
 /**
