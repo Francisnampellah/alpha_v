@@ -18,6 +18,3 @@ export const logger = createLogger({
   ]
 });
 
-// // Example usage
-// logger.info('This is an info message');
-// logger.error('This is an error message');
