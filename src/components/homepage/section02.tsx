@@ -163,17 +163,13 @@ export default function Section_02() {
               </div>
               <div className="self-start text-sm text-black">{slides[currentSlide].copyright}</div>
             </div> */}
-
             {/* Image Container */}
             <div className="relative flex overflow-auto rounded-lg h-full">
               {slides.map((slide, index) => (
               <TechCard key={index} image={slide.image} title={slide.title} description={slide.description}/>
               ))}
             </div>
-
-
             </div>
-
         </div>
       </div>
       <div className="mt-24 w-full pt-8 border-t border-gray-200 flex flex-wrap">
