@@ -58,10 +58,18 @@ export default function Section_02() {
           title: "Farm Technology",
           description: "Advanced machinery for modern agriculture",
           image:
-            "https://images.unsplash.com/photo-1726137570036-cc7e8b1b58c1?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxzZWFyY2h8NjR8fFRFQ0hOT0xPR1l8ZW58MHx8MHx8fDA%3D",
+            "https://images.unsplash.com/photo-1536412597336-ade7b523ecfc?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           position: "top-right",
           copyright: "©2025 NewTech",
-        }
+        },
+        {
+            title: "Farm Technology",
+            description: "Advanced machinery for modern agriculture",
+            image:
+              "https://images.unsplash.com/photo-1726137570036-cc7e8b1b58c1?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxzZWFyY2h8NjR8fFRFQ0hOT0xPR1l8ZW58MHx8MHx8fDA%3D",
+            position: "top-right",
+            copyright: "©2025 NewTech",
+          }
       ]
     
       const [currentSlide, setCurrentSlide] = useState(0)
@@ -157,7 +165,7 @@ export default function Section_02() {
             </div> */}
 
             {/* Image Container */}
-            <div className="relative overflow-auto rounded-lg h-full">
+            <div className="relative flex overflow-auto rounded-lg h-full">
               {slides.map((slide, index) => (
               <TechCard key={index} image={slide.image} title={slide.title} description={slide.description}/>
               ))}
