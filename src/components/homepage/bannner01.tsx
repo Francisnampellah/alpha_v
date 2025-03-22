@@ -2,6 +2,10 @@ import Image from "next/image"
 import { CurrentTime } from "@/components/current-time"
 import { CategoryPill } from "@/components/category-pill"
 import { UserCounter } from "@/components/user-counter"
+import React from 'react';
+
+// Define types for our logos
+// Define default icons to use if none provided
 
 export default function Banner_01() {
   return (

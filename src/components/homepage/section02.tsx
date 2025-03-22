@@ -1,8 +1,91 @@
+"use client"
 import {Accordion} from '@/components/accordions-item'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 import { Beaker, Eye, Sparkles } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import {LogoItem} from '@/components/logo'
+import TechCard from '../CardWIthText'
+
+
+
+const DefaultIcons = {
+  RotaShow: (
+    <svg className="h-8 w-8 text-gray-400" viewBox="0 0 24 24" fill="currentColor">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none" />
+      <circle cx="12" cy="12" r="4" fill="currentColor" />
+    </svg>
+  ),
+  Waves: (
+    <svg className="h-10 w-10 text-gray-400" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12,2 C6.48,2 2,6.48 2,12 C2,17.52 6.48,22 12,22 C17.52,22 22,17.52 22,12 C22,6.48 17.52,2 12,2 Z" 
+      stroke="currentColor" strokeWidth="1" fill="none" />
+      <path d="M8,12 C9,10 10,14 12,12 C14,10 15,14 16,12" stroke="currentColor" strokeWidth="1.5" fill="none" />
+    </svg>
+  ),
+  Travelers: (
+    <svg className="h-8 w-8 text-gray-400" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12,7 C14.21,7 16,8.79 16,11 C16,13.21 14.21,15 12,15 C9.79,15 8,13.21 8,11 C8,8.79 9.79,7 12,7 Z" fill="currentColor" />
+      <path d="M8,17 L16,17 L16,18 C16,19.1 15.1,20 14,20 L10,20 C8.9,20 8,19.1 8,18 L8,17 Z" fill="currentColor" />
+      <path d="M12,2 L12,5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  ),
+  Goldlines: (
+    <svg className="h-8 w-8 text-gray-400" viewBox="0 0 24 24" fill="currentColor">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none" />
+      <line x1="8" y1="8" x2="8" y2="16" stroke="currentColor" strokeWidth="2" />
+      <line x1="12" y1="8" x2="12" y2="16" stroke="currentColor" strokeWidth="2" />
+      <line x1="16" y1="8" x2="16" y2="16" stroke="currentColor" strokeWidth="2" />
+    </svg>
+  ),
+  Velocity: null // No icon for Velocity
+};
+
+// Default logos that match the image
+const defaultLogos = [
+  { name: 'RotaShow', icon: DefaultIcons.RotaShow },
+  { name: 'waves', icon: DefaultIcons.Waves },
+  { name: 'RotaShow', icon: DefaultIcons.RotaShow },
+  { name: 'travelers.', icon: DefaultIcons.Travelers },
+  { name: 'goldlines', icon: DefaultIcons.Goldlines },
+  { name: 'velocity', badgeText: '9' }
+];
+
+
 
 export default function Section_02() {
+    const slides = [
+        {
+          title: "Farm Technology",
+          description: "Advanced machinery for modern agriculture",
+          image:
+            "https://images.unsplash.com/photo-1726137570036-cc7e8b1b58c1?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxzZWFyY2h8NjR8fFRFQ0hOT0xPR1l8ZW58MHx8MHx8fDA%3D",
+          position: "top-right",
+          copyright: "©2025 NewTech",
+        }
+      ]
+    
+      const [currentSlide, setCurrentSlide] = useState(0)
+      const [isTransitioning, setIsTransitioning] = useState(false)
+    
+      useEffect(() => {
+        const interval = setInterval(() => {
+          // Start transition
+          setIsTransitioning(true)
+    
+          // Change slide after text fades out
+          setTimeout(() => {
+            setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
+          }, 500)
+    
+          // End transition after new slide is in place
+          setTimeout(() => {
+            setIsTransitioning(false)
+          }, 1000)
+        }, 5000) // Change slide every 5 seconds
+    
+        return () => clearInterval(interval)
+      }, [slides.length])
+
     return (
       <div className="mx-12 text-black px-4 sm:px-6 lg:px-8 py-12 font-sans">
         {/* Header Section */}
@@ -29,14 +112,14 @@ export default function Section_02() {
   
             {/* Problem Section */}
             <div className="space-y-2 mt-16 md:mt-28">
-      <Accordion icon={<Eye className="h-6 w-6" />} title="Problem" defaultOpen={true}>
+      <Accordion icon={<Eye className="h-6 w-6" />} title="Mission" defaultOpen={true}>
         <p className="text-gray-600">
           Our research has identified key challenges in modern agriculture, including soil degradation, inconsistent
           crop quality, and inefficient resource utilization.
         </p>
       </Accordion>
 
-      <Accordion icon={<Beaker className="h-6 w-6" />} title="Solution">
+      <Accordion icon={<Beaker className="h-6 w-6" />} title="Vision">
         <p className="text-gray-600 mb-4">
           We provide scientifically formulated soil amendments and premium seeds that are tailored to specific soil
           conditions and climate zones.
@@ -44,7 +127,7 @@ export default function Section_02() {
 
       </Accordion>
 
-      <Accordion icon={<Sparkles className="h-6 w-6" />} title="Technology">
+      <Accordion icon={<Sparkles className="h-6 w-6" />} title="Values">
         <p className="text-gray-600 mb-4">
           Leveraging cutting-edge agricultural technology to optimize farming operations and increase productivity.
         </p>
@@ -61,145 +144,43 @@ export default function Section_02() {
             </h1>
   
             {/* Farm Technology Images */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="relative">
-                <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-03-22%20at%2016.29.28-VgcSmbPkOXEBXHuOcz6QCKsShoBW0w.png"
-                  alt="Aerial view of farming machinery in field"
-                  className="rounded-lg w-full h-64 object-cover"
-                />
-                <div className="absolute top-4 right-4">
-                  <h3 className="text-xl font-bold">
-                    Farm
-                    <br />
-                    Technology
-                  </h3>
-                </div>
+            <div className="relative h-80">
+            {/* Text Overlay - Separate from images for independent transitions */}
+            {/* <div
+              className={`absolute inset-0 z-10 flex flex-col justify-between p-6 transition-opacity duration-500 ease-in-out ${isTransitioning ? "opacity-0" : "opacity-100"}`}
+            >
+              <div className="self-end">
+                <h3 className="text-xl font-bold">{slides[currentSlide].title}</h3>
+                <p className="text-sm mt-1 max-w-xs">{slides[currentSlide].description}</p>
               </div>
-              <div className="relative">
-                <img
-                  src="/placeholder.svg?height=300&width=400"
-                  alt="Green field with crop rows"
-                  className="rounded-lg w-full h-64 object-cover"
-                />
-                <div className="absolute bottom-4 left-4 text-sm text-black">
-                  ©2025
-                  <br />
-                  NewTech
-                </div>
-              </div>
+              <div className="self-start text-sm text-black">{slides[currentSlide].copyright}</div>
+            </div> */}
+
+            {/* Image Container */}
+            <div className="relative overflow-auto rounded-lg h-full">
+              {slides.map((slide, index) => (
+              <TechCard key={index} image={slide.image} title={slide.title} description={slide.description}/>
+              ))}
             </div>
-          </div>
-        </div>
-  
-        {/* Footer with Logos */}
-        <div className="mt-24 pt-8 border-t">
-          <div className="flex flex-wrap justify-between items-center gap-8">
-            <div className="flex items-center gap-2 text-black">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
-                />
-              </svg>
-              <span className="font-light">RotaShow</span>
+
+
             </div>
-            <div className="flex items-center gap-2 text-black">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                />
-              </svg>
-              <span className="font-light">waves</span>
-            </div>
-            <div className="flex items-center gap-2 text-black">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
-                />
-              </svg>
-              <span className="font-light">RotaShow</span>
-            </div>
-            <div className="flex items-center gap-2 text-black">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                />
-              </svg>
-              <span className="font-light">travelers.</span>
-            </div>
-            <div className="flex items-center gap-2 text-black">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                />
-              </svg>
-              <span className="font-light">goldlines</span>
-            </div>
-            <div className="flex items-center gap-2 text-black">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              <span className="font-light">velocity</span>
-            </div>
-          </div>
+
         </div>
       </div>
+      <div className="mt-24 w-full pt-8 border-t border-gray-200 flex flex-wrap">
+      <div className={`flex flex-row overflow-x-auto w-full items-center justify-between gap-8`}>
+          {defaultLogos.map((logo, index) => (
+            <LogoItem
+              key={`${logo.name}-${index}`}
+              icon={logo.icon}
+              name={logo.name}
+              badgeText={logo.badgeText}
+            />
+          ))}
+        </div>
+</div>
+    </div>
     )
   }
 
