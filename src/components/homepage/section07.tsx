@@ -14,21 +14,21 @@ export default function SectionCarousel() {
   // Tab content data
   const tabContent = {
     "agri-business": {
-      title: "Agri-Business Solutions",
+      title: "Call To Action",
       description: "Transforming agricultural operations with innovative business solutions.",
       image:
         "https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=3259&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       color: "#e6e338",
     },
     seeds: {
-      title: "Premium Seeds",
+      title: "SafariPro Demonistration",
       description: "High-quality seeds for maximum yield and sustainable farming.",
       image:
         "https://images.unsplash.com/photo-1620706857370-e1b9770e8bb1?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       color: "#4CAF50",
     },
     support: {
-      title: "Farmer Support",
+      title: "SMARTiNNO Team",
       description: "Comprehensive support systems for farmers at every stage of growth.",
       image:
         "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -112,7 +112,7 @@ export default function SectionCarousel() {
       <div className="flex flex-col md:flex-row md:items-center mb-8 md:mb-16 border-gray-700 border-b pb-6">
         <div className="w-16 text-lg text-gray-400 font-bold">05</div>
         <div className="flex-1">
-          <h2 className="text-xl text-white font-bold">@Etitud</h2>
+          <h2 className="text-xl text-white font-bold">SMARTiNNO Video</h2>
           <p className="text-sm text-gray-300">Just the board, the streets, & your trick.</p>
         </div>
         <button
