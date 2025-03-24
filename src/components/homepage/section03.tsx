@@ -1,13 +1,13 @@
 export default function Section03() {
     return (
-      <div className="max-w-7xl mx-auto bg-white font-sans">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="m-8 p-4 rounded-xl bg-white font-sans">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 ">
           {/* Left Column - Image and Stats */}
-          <div className="relative rounded-3xl overflow-hidden bg-slate-400">
+          <div className="relative w-[600px] h-[700px] rounded-3xl overflow-hidden bg-slate-400">
             <img
               src="https://images.unsplash.com/photo-1726137570713-2458b137684f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxzZWFyY2h8MTIwfHxURUNITk9MT0dZfGVufDB8fDB8fHww"
               alt="Tractor working in a field"
-              className="w-[600px] h-[350px] object-cover"
+              className=" object-cover"
             />
   
             {/* Top buttons */}

@@ -9,6 +9,7 @@ export default function Home() {
     <div className="">
       <Banner_01 />
       <Section_02 />
+      <Section03 />
 ?    </div>
   );
 }
