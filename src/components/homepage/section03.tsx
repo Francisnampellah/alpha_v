@@ -223,11 +223,12 @@ export default function Section03() {
             fadeState === "fade-in" ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-4"
           }`}
         >
-          <div className="aspect-[4/3] w-full">
+
+          <div className="">
             <img
               src={currentTab.image || "/placeholder.svg"}
               alt={currentTab.imageAlt}
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-96"
             />
           </div>
 
@@ -247,7 +248,7 @@ export default function Section03() {
           </div>
 
           {/* Stats box */}
-          <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm rounded-xl p-4 w-auto shadow-lg">
+          {/* <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm rounded-xl p-4 w-auto shadow-lg">
             <div className="flex items-center justify-between">
               <span className="text-5xl font-bold text-blue-900">
                 86<span className="text-2xl">%</span>
@@ -268,7 +269,7 @@ export default function Section03() {
               </div>
             </div>
             <p className="text-blue-800 font-medium mt-1">Increase in Yields</p>
-          </div>
+          </div> */}
         </div>
 
         {/* Right Column - Content */}
@@ -342,47 +343,6 @@ export default function Section03() {
           </div>
 
           {/* Bottom stats with animation */}
-          <div
-            className={`grid grid-cols-1 md:grid-cols-2 gap-4 transition-all duration-500 ${
-              fadeState === "fade-in" ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-4"
-            }`}
-          >
-            {currentTab.stats.map((stat, index) => (
-              <div
-                key={index}
-                className={`${stat.color} rounded-xl p-5 flex ${stat.chart ? "items-center justify-between" : "flex-col justify-between"} transition-all duration-300 shadow-lg backdrop-blur-sm border border-white/20`}
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                <div className="flex justify-between items-center w-full">
-                  <span className={`text-lg font-medium ${stat.textColor}`}>{stat.title}</span>
-                  <div className={`${stat.iconBg} rounded-full p-2`}>{stat.icon}</div>
-                </div>
-
-                {stat.chart ? (
-                  <div className="flex items-end h-16 space-x-1 mt-4">
-                    {[40, 70, 30, 90, 50, 80, 60, 100, 20, 75, 45, 65].map((height, i) => (
-                      <div
-                        key={i}
-                        className="w-2 rounded-t-sm transition-all duration-500"
-                        style={{
-                          height: `${height}%`,
-                          backgroundColor:
-                            i < 9 ? `var(--${stat.iconBg.replace("bg-", "")})` : "rgba(255, 255, 255, 0.3)",
-                          opacity: i < 9 ? 1 : 0.5,
-                          transitionDelay: `${i * 50}ms`,
-                        }}
-                      ></div>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="mt-4">
-                    <div className={`text-base ${stat.textColor}`}>up to</div>
-                    <div className={`text-5xl font-bold ${stat.textColor} mt-1`}>{stat.value}</div>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
