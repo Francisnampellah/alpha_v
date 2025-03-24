@@ -7,8 +7,8 @@ export default function Section_0() {
                 <div className="flex items-center mb-16 border-gray-200 border-b pb-6">
           <div className="w-16 text-lg text-gray-400 font-bold">05</div>
           <div className="flex-1">
-            <h2 className="text-xl font-bold">@Etitud</h2>
-            <p className="text-sm">Just the board, the streets, & your trick.</p>
+            <h2 className="text-xl text-black font-bold">@Etitud</h2>
+            <p className="text-sm text-black">Just the board, the streets, & your trick.</p>
           </div>
           <button className="bg-black text-white px-6 py-3 rounded-full">Cultivating Excellence</button>
         </div>
