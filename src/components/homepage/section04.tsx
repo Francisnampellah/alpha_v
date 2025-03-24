@@ -88,20 +88,6 @@ export default function Section_04() {
     },
   }
 
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.4 },
-    },
-    exit: {
-      y: -20,
-      opacity: 0,
-      transition: { duration: 0.3 },
-    },
-  }
-
   // Render different layouts based on project index
   const renderProjectContent = () => {
     switch (currentProject) {

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Banner_01 from "@/components/homepage/bannner01";
 import Section_02 from "@/components/homepage/section02";
 import Section03 from "@/components/homepage/section03";

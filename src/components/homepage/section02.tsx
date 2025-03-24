@@ -70,8 +70,8 @@ export default function Section_02() {
           }
       ]
     
-      const [currentSlide, setCurrentSlide] = useState(0)
-      const [isTransitioning, setIsTransitioning] = useState(false)
+      const [_currentSlide, setCurrentSlide] = useState(0)
+      const [_isTransitioning, setIsTransitioning] = useState(false)
     
       useEffect(() => {
         const interval = setInterval(() => {
@@ -146,7 +146,7 @@ export default function Section_02() {
           <div className="lg:col-span-8 space-y-8 md:space-y-12">
             {/* Headline */}
             <h1 className="text-3xl md:text-5xl font-bold leading-tight">
-              From seeds and fertilizers to advanced farming tech, we're here to support your journey in every step.
+              From seeds and fertilizers to advanced farming tech, were here to support your journey in every step.
             </h1>
   
             {/* Farm Technology Images */}

@@ -63,7 +63,7 @@ export default function Banner_01() {
                 </div>
                 <div className="max-w-full sm:max-w-md">
                   <p className="text-base sm:text-xl text-white">
-                    We're dedicated to providing farmers, businesses, and communities.
+                    Were dedicated to providing farmers, businesses, and communities.
                   </p>
                 </div>
               </div>
