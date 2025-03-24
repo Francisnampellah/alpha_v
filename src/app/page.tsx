@@ -7,6 +7,7 @@ import Section_04 from "@/components/homepage/section04";
 import Section_05 from "@/components/homepage/section05";
 import Section_06 from "@/components/homepage/section06";
 import Section_07 from "@/components/homepage/section07";
+import OurEvents from "@/components/homepage/section0Events";
 import Footer from "@/components/footer";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <Section_02 />
       <Section03 />
       <Section_04 />
+      <OurEvents />
       <Section_05 />
       <Section_06 />
       <Section_07 />

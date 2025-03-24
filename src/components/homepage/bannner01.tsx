@@ -3,6 +3,7 @@ import { CurrentTime } from "@/components/current-time"
 import { CategoryPill } from "@/components/category-pill"
 import { UserCounter } from "@/components/user-counter"
 import React from 'react';
+import CountingNumber from "../countIp";
 
 // Define types for our logos
 // Define default icons to use if none provided
@@ -59,9 +60,7 @@ export default function Banner_01() {
               {/* Middle section */}
               <div className="flex flex-col sm:flex-row items-end justify-between gap-4 sm:gap-0">
                 <div className="mx-4 sm:mx-8">
-                  <h1 className="text-5xl sm:text-8xl text-white">
-                    320<span className="text-yellow-300 text-4xl sm:text-6xl">k</span>
-                  </h1>
+                <CountingNumber targetNumber={320} suffix="k" />
                   <p className="text-lg sm:text-xl font-thin text-white">Satisfied Customers</p>
                 </div>
                 <div className="max-w-full sm:max-w-md">
