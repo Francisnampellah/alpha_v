@@ -1,7 +1,5 @@
 import Image from "next/image"
-import { CurrentTime } from "@/components/current-time"
 import { CategoryPill } from "@/components/category-pill"
-import { UserCounter } from "@/components/user-counter"
 import React from 'react';
 import CountingNumber from "../countIp";
 

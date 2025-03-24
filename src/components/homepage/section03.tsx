@@ -205,14 +205,14 @@ export default function Section03() {
   const currentTab = tabContent[activeTab]
 
   return (
-    <section className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600 via-blue-500 to-blue-700 font-sans rounded-3xl shadow-xl">
+    <section className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 bg-white font-sans rounded-3xl shadow-xl">
       <div className="flex items-center mb-12 border-b border-blue-400/30 pb-6">
-        <div className="w-16 h-16 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-lg font-bold text-white">
+        <div className="w-16 h-16 flex items-center justify-center rounded-full bg-blue-100 text-lg font-bold text-blue-700">
           02
         </div>
         <div className="ml-6">
-          <h2 className="text-2xl font-bold text-white">Our Technology</h2>
-          <p className="text-blue-100 mt-1">Innovative solutions for modern agriculture</p>
+          <h2 className="text-2xl font-bold text-blue-700">Our Technology</h2>
+          <p className="text-blue-600 mt-1">Innovative solutions for modern agriculture</p>
         </div>
       </div>
 
@@ -223,7 +223,6 @@ export default function Section03() {
             fadeState === "fade-in" ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-4"
           }`}
         >
-
           <div className="">
             <img
               src={currentTab.image || "/placeholder.svg"}
@@ -284,13 +283,13 @@ export default function Section03() {
           {/* Top navigation */}
           <div className="mb-8 relative">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-medium text-white">Explore our solutions</h3>
+              <h3 className="text-lg font-medium text-blue-700">Explore our solutions</h3>
               <button
                 onClick={togglePause}
-                className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
+                className="p-2 rounded-full bg-blue-100 hover:bg-blue-200 transition-colors"
                 aria-label={isPaused ? "Play slideshow" : "Pause slideshow"}
               >
-                {isPaused ? <Play className="h-4 w-4 text-white" /> : <Pause className="h-4 w-4 text-white" />}
+                {isPaused ? <Play className="h-4 w-4 text-blue-700" /> : <Pause className="h-4 w-4 text-blue-700" />}
               </button>
             </div>
 
@@ -302,8 +301,8 @@ export default function Section03() {
                     onClick={() => handleTabClick(item.id)}
                     className={`whitespace-nowrap transition-all duration-300 px-4 py-2 rounded-lg text-sm ${
                       activeTab === item.id
-                        ? `font-medium bg-white/20 backdrop-blur-sm text-white`
-                        : "text-blue-100 hover:text-white hover:bg-blue-500/50"
+                        ? `font-medium bg-blue-100 text-blue-700`
+                        : "text-blue-600 hover:text-blue-700 hover:bg-blue-50"
                     }`}
                   >
                     {item.label}
@@ -313,9 +312,9 @@ export default function Section03() {
             </nav>
 
             {/* Progress bar */}
-            <div className="w-full h-1 bg-blue-400/30 rounded-full overflow-hidden">
+            <div className="w-full h-1 bg-blue-100 rounded-full overflow-hidden">
               <div
-                className="h-full transition-all bg-white"
+                className="h-full transition-all bg-blue-500"
                 style={{
                   width: isPaused ? "30%" : "100%",
                   transition: isPaused ? "none" : `width ${ROTATION_INTERVAL}ms linear`,
@@ -330,7 +329,7 @@ export default function Section03() {
               fadeState === "fade-in" ? "opacity-100" : "opacity-0"
             }`}
           >
-            <h2 className="text-2xl md:text-3xl font-bold leading-tight mb-6 text-white">{currentTab.title}</h2>
+            <h2 className="text-2xl md:text-3xl font-bold leading-tight mb-6 text-blue-700">{currentTab.title}</h2>
 
             <div className="mt-6">
               <button className="bg-white text-blue-700 px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-blue-50 transition-colors shadow-lg font-medium">

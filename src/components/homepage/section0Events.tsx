@@ -172,23 +172,23 @@ export default function OurEvents() {
   const currentTab = tabContent[activeTab]
 
   return (
-    <section className="h-fit pb-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-emerald-600 via-green-500 to-teal-600 font-sans rounded-3xl shadow-xl flex flex-col">
+    <section className="h-fit pb-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white font-sans rounded-3xl shadow-xl flex flex-col">
       {/* Header Section - 10vh */}
-      <div className="h-[10vh] flex items-center border-b border-green-400/30">
-        <div className="w-14 h-14 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-lg font-bold text-white">
+      <div className="h-[10vh] flex items-center border-b border-gray-200">
+        <div className="w-14 h-14 flex items-center justify-center rounded-full bg-green-100 text-lg font-bold text-green-700">
           03
         </div>
         <div className="ml-4">
-          <h2 className="text-xl font-bold text-white">Our Events</h2>
-          <p className="text-green-100 text-sm">Connect, learn, and grow with industry leaders</p>
+          <h2 className="text-xl font-bold text-gray-800">Our Events</h2>
+          <p className="text-gray-600 text-sm">Connect, learn, and grow with industry leaders</p>
         </div>
         <div className="ml-auto">
           <button
             onClick={togglePause}
-            className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
+            className="p-2 rounded-full bg-green-100 hover:bg-green-200 transition-colors"
             aria-label={isPaused ? "Play slideshow" : "Pause slideshow"}
           >
-            {isPaused ? <Play className="h-4 w-4 text-white" /> : <Pause className="h-4 w-4 text-white" />}
+            {isPaused ? <Play className="h-4 w-4 text-green-700" /> : <Pause className="h-4 w-4 text-green-700" />}
           </button>
         </div>
       </div>
@@ -203,8 +203,8 @@ export default function OurEvents() {
                 onClick={() => handleTabClick(item.id)}
                 className={`whitespace-nowrap transition-all duration-300 px-5 py-2 rounded-lg text-sm ${
                   activeTab === item.id
-                    ? `font-medium bg-white text-green-700 shadow-md`
-                    : "text-white bg-white/10 hover:bg-white/20"
+                    ? `font-medium bg-green-600 text-white shadow-md`
+                    : "text-green-700 bg-green-100 hover:bg-green-200"
                 }`}
               >
                 {item.label}
@@ -214,9 +214,9 @@ export default function OurEvents() {
         </nav>
 
         {/* Progress bar */}
-        <div className="w-full h-1 bg-green-400/30 rounded-full overflow-hidden">
+        <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
           <div
-            className="h-full transition-all bg-white"
+            className="h-full transition-all bg-green-600"
             style={{
               width: isPaused ? "30%" : "100%",
               transition: isPaused ? "none" : `width ${ROTATION_INTERVAL}ms linear`,
@@ -229,7 +229,7 @@ export default function OurEvents() {
       <div className="flex flex-1 flex-col lg:flex-row gap-4">
         {/* Left Column - Featured Event Card */}
         <div
-          className={`lg:w-1/2 rounded-xl overflow-hidden  transition-all duration-500 ${
+          className={`lg:w-1/2 rounded-xl overflow-hidden shadow-lg transition-all duration-500 ${
             fadeState === "fade-in" ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-4"
           }`}
         >
@@ -281,10 +281,10 @@ export default function OurEvents() {
           {/* Upcoming Events - Limited to 2 events */}
           <div className="mb-3">
             <div className="flex items-center justify-between mb-2">
-              <h3 className="text-lg font-bold text-white">
+              <h3 className="text-lg font-bold text-gray-800">
                 Upcoming {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}
               </h3>
-              <a href="#" className="text-white flex items-center gap-1 hover:underline text-sm">
+              <a href="#" className="text-green-700 flex items-center gap-1 hover:underline text-sm">
                 View all <ArrowRight className="h-3 w-3" />
               </a>
             </div>
@@ -299,26 +299,26 @@ export default function OurEvents() {
               {currentTab.upcomingEvents.slice(0, 2).map((event, index) => (
                 <div
                   key={index}
-                  className="bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-all duration-300 border border-white/10"
+                  className="bg-gray-100 rounded-xl p-4 hover:bg-gray-200 transition-all duration-300 border border-gray-200"
                   style={{ transitionDelay: `${index * 100}ms`, maxHeight: "100%" }}
                 >
                   <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-bold text-white text-base line-clamp-1">{event.name}</h4>
-                    <span className="bg-white/20 rounded-full p-1.5 flex-shrink-0">
-                      <Calendar className="h-3 w-3 text-white" />
+                    <h4 className="font-bold text-gray-800 text-base line-clamp-1">{event.name}</h4>
+                    <span className="bg-green-100 rounded-full p-1.5 flex-shrink-0">
+                      <Calendar className="h-3 w-3 text-green-700" />
                     </span>
                   </div>
                   <div className="space-y-2 mb-2">
-                    <div className="flex items-center text-white/80 text-sm">
+                    <div className="flex items-center text-gray-600 text-sm">
                       <Clock className="h-3 w-3 mr-2 flex-shrink-0" />
                       <span className="line-clamp-1">{event.date}</span>
                     </div>
-                    <div className="flex items-center text-white/80 text-sm">
+                    <div className="flex items-center text-gray-600 text-sm">
                       <MapPin className="h-3 w-3 mr-2 flex-shrink-0" />
                       <span className="line-clamp-1">{event.location}</span>
                     </div>
                   </div>
-                  <button className="w-full mt-1 bg-white/10 hover:bg-white/20 text-white py-1.5 rounded-lg transition-colors text-sm">
+                  <button className="w-full mt-1 bg-green-600 hover:bg-green-700 text-white py-1.5 rounded-lg transition-colors text-sm">
                     Learn More
                   </button>
                 </div>
@@ -333,29 +333,29 @@ export default function OurEvents() {
             }`}
             style={{ maxHeight: "120px" }}
           >
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 flex flex-col justify-between border border-white/10">
+            <div className="bg-gray-100 rounded-xl p-3 flex flex-col justify-between border border-gray-200">
               <div className="flex justify-between items-center w-full">
-                <span className="text-sm font-medium text-white">Annual Events</span>
-                <div className="bg-emerald-500 rounded-full p-1.5">
+                <span className="text-sm font-medium text-gray-800">Annual Events</span>
+                <div className="bg-green-500 rounded-full p-1.5">
                   <Calendar className="h-3 w-3 text-white" />
                 </div>
               </div>
               <div className="mt-1">
-                <div className="text-2xl font-bold text-white">50+</div>
-                <div className="text-white/70 text-xs">Across 20 countries</div>
+                <div className="text-2xl font-bold text-gray-800">50+</div>
+                <div className="text-gray-600 text-xs">Across 20 countries</div>
               </div>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 flex flex-col justify-between border border-white/10">
+            <div className="bg-gray-100 rounded-xl p-3 flex flex-col justify-between border border-gray-200">
               <div className="flex justify-between items-center w-full">
-                <span className="text-sm font-medium text-white">Satisfaction</span>
-                <div className="bg-emerald-600 rounded-full p-1.5">
+                <span className="text-sm font-medium text-gray-800">Satisfaction</span>
+                <div className="bg-green-600 rounded-full p-1.5">
                   <Trophy className="h-3 w-3 text-white" />
                 </div>
               </div>
               <div className="mt-1">
-                <div className="text-2xl font-bold text-white">98%</div>
-                <div className="text-white/70 text-xs">Would recommend</div>
+                <div className="text-2xl font-bold text-gray-800">98%</div>
+                <div className="text-gray-600 text-xs">Would recommend</div>
               </div>
             </div>
           </div>

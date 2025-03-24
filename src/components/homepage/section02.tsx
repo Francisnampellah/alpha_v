@@ -1,10 +1,8 @@
 "use client"
 import {Accordion} from '@/components/accordions-item'
-import { ChevronDown, ChevronUp } from 'lucide-react'
 import { Beaker, Eye, Sparkles } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import {LogoItem} from '@/components/logo'
-import TechCard from '../CardWIthText'
 
 
 
@@ -164,9 +162,9 @@ export default function Section_02() {
               <div className="self-start text-sm text-black">{slides[currentSlide].copyright}</div>
             </div> */}
             {/* Image Container */}
-            <div className="relative flex overflow-auto rounded-lg h-full bg-gradient-to-br from-emerald-600 via-green-500 to-teal-600">
+            {/* <div className="relative flex overflow-auto rounded-lg h-full bg-gradient-to-br from-emerald-600 via-green-500 to-teal-600">
      
-            </div>
+            </div> */}
             </div>
         </div>
       </div>
