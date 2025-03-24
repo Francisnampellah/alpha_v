@@ -54,7 +54,7 @@ interface UrbanProjectCardProps {
   projectData?: ProjectData
 }
 
-export default function Project_02Card({ projectData }: UrbanProjectCardProps) {
+export default function Project_02Card() {
   // For demo purposes, using the passed project data
   const currentProjectData = sampleProjectData
 
