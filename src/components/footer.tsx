@@ -1,6 +1,64 @@
+"use client"
+
+import { useEffect, useRef } from "react"
 import Link from "next/link"
+import { MapPin } from "lucide-react"
 
 export default function Footer() {
+  const mapRef = useRef<{ current: HTMLDivElement | null; _leaflet?: any }>({ current: null })
+
+  useEffect(() => {
+    // Only run on client side
+    if (typeof window !== "undefined") {
+      // Dynamically import Leaflet to avoid SSR issues
+      import("leaflet").then((L) => {
+        // Make sure the map container exists and hasn't been initialized
+        if (mapRef.current && !mapRef.current._leaflet) {
+          // Load Leaflet CSS
+          if (!document.querySelector('link[href*="leaflet.css"]')) {
+            const link = document.createElement("link")
+            link.rel = "stylesheet"
+            link.href = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+            link.integrity = "sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+            link.crossOrigin = ""
+            document.head.appendChild(link)
+          }
+
+          // Example coordinates (replace with actual company location)
+          const companyLocation: [number, number] = [51.505, -0.09] // London coordinates as example
+
+          // Initialize map
+          const map = L.map(mapRef.current).setView(companyLocation, 13)
+
+          // Add OpenStreetMap tiles
+          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            maxZoom: 19,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          }).addTo(map)
+
+          // Add marker for company location
+          L.marker(companyLocation).addTo(map).bindPopup("SMARTiNNO ENG ltd.").openPopup()
+
+          // Store map instance to avoid re-initialization
+          mapRef.current._leaflet = map
+
+          // Ensure map renders correctly by triggering a resize after initialization
+          setTimeout(() => {
+            map.invalidateSize()
+          }, 100)
+        }
+      })
+    }
+
+    // Cleanup function
+    return () => {
+      if (mapRef.current && mapRef.current._leaflet) {
+        mapRef.current._leaflet.remove()
+        mapRef.current._leaflet = null
+      }
+    }
+  }, [])
+
   return (
     <footer className="w-full bg-white py-8 px-4 md:px-8 lg:px-12">
       {/* Top bar with social links and language selector */}
@@ -48,17 +106,30 @@ export default function Footer() {
 
       {/* Main footer content */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-        {/* Company info */}
+        {/* Company info with map */}
         <div>
           <div className="flex items-center mb-4">
             <div className="w-8 h-8 bg-black flex items-center justify-center mr-2">
               <div className="w-4 h-4 bg-white"></div>
             </div>
-            <span className="font-bold text-lg">Etitud</span>
+            <span className="font-bold text-lg">SMARTiNNO ENG ltd.</span>
           </div>
-          <p className="text-gray-700 max-w-xs">
+          <p className="text-gray-700 max-w-xs mb-4">
             We're dedicated to providing farmers, businesses, and communities with the best agricultural products.
           </p>
+
+          {/* Location info */}
+          <div className="flex items-center mb-3 text-gray-700">
+            <MapPin className="w-4 h-4 mr-2" />
+            <span className="text-sm">123 Agriculture Way, London, UK</span>
+          </div>
+
+          {/* Map container */}
+          <div
+            ref={mapRef}
+            className="w-full h-[150px] rounded-lg overflow-hidden border border-gray-200 shadow-sm"
+            aria-label="Company location map"
+          ></div>
         </div>
 
         {/* Three identical About columns */}

@@ -112,17 +112,17 @@ export default function Section_04() {
 
       case 1:
         return (
-            <Project01Card/>
+            <Project_02Card/>
         )
 
       case 2:
         return (
-            <Project01Card/>
+            <Project_03Card/>
         )
 
       case 3:
         return (
-            <Project01Card/>
+            <Project_04Card/>
         )
 
       default:

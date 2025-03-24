@@ -8,6 +8,7 @@ import Section_05 from "@/components/homepage/section05";
 import Section_06 from "@/components/homepage/section06";
 import Section_07 from "@/components/homepage/section07";
 import OurEvents from "@/components/homepage/section0Events";
+import OurTeam from "@/components/homepage/ourTeam";
 import Footer from "@/components/footer";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <OurEvents />
       <Section_05 />
       <Section_06 />
+      <OurTeam />
       <Section_07 />
    </div>
     <Footer />
