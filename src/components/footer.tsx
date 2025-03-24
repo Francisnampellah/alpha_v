@@ -5,7 +5,7 @@ import Link from "next/link"
 import { MapPin } from "lucide-react"
 
 export default function Footer() {
-  const mapRef = useRef<{ current: HTMLDivElement | null; _leaflet? }>({ current: null })
+  const mapRef = useRef<{ current: HTMLDivElement | null; _leaflet?: L.Map | null }>({ current: null })
 
   useEffect(() => {
     // Only run on client side
