@@ -100,10 +100,10 @@ export default function Section_02() {
         <div className="flex items-center mb-16 border-gray-200 border-b pb-6">
           <div className="w-16 text-lg text-gray-400 font-bold">01</div>
           <div className="flex-1">
-            <h2 className="text-xl font-bold">@Etitud</h2>
+            <h2 className="text-xl font-bold">About SMARTiNNO</h2>
             <p className="text-sm">Just the board, the streets, & your trick.</p>
           </div>
-          <button className="bg-black text-white px-6 py-3 rounded-full">Cultivating Excellence</button>
+          <button className="bg-black text-white px-6 py-3 rounded-full">Read More</button>
         </div>
   
         {/* Main Content */}
