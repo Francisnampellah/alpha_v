@@ -28,7 +28,6 @@ export default function Section_06() {
           </div>
 
           <blockquote className="space-y-6">
-            <span className="text-5xl text-gray-300">"</span>
             <h2 className="text-4xl font-semibold leading-tight text-gray-800">
               Since switching to their sustainable fertilizers, my crops have been healthier, and my yields have
               increased by 40%!

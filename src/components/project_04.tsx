@@ -50,9 +50,6 @@ const itemVariants = {
   },
 }
 
-interface UrbanProjectCardProps {
-  projectData?: ProjectData
-}
 
 export default function Project_04Card() {
   // For demo purposes, using the passed project data

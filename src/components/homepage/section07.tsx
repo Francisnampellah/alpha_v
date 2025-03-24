@@ -129,7 +129,6 @@ export default function SectionCarousel() {
             className="rounded-full w-16 h-16 flex items-center justify-center transition-colors duration-300"
             style={{ backgroundColor: tabContent[activeTab as keyof typeof tabContent].color }}
           >
-            <span className="text-black text-3xl font-serif">"</span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl text-white font-bold transition-all duration-300">
             {tabContent[activeTab as keyof typeof tabContent].title}
