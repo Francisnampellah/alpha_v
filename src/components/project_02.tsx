@@ -60,25 +60,61 @@ export default function Project_02Card() {
       variants={containerVariants}
       initial="hidden"
       animate="show"
-      className="h-full grid grid-cols-1 md:grid-cols-12 gap-5"
+      className="h-[calc(100%-80px)] overflow-y-auto"
     >
-      {/* Left sidebar */}
+      {/* Header Section */}
       <motion.div
         variants={itemVariants}
-        className="col-span-1 md:col-span-3 bg-white rounded-2xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col justify-between"
+        className="bg-white rounded-2xl p-6 mb-5 shadow-[0_8px_30px_rgb(0,0,0,0.04)]"
       >
-        <div>
+        <div className="flex items-center gap-5">
           <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 30 }}
-            className="w-16 h-16 md:w-20 md:h-20 bg-[#007AFF] rounded-full mb-6 flex items-center justify-center"
+            className="w-16 h-16 md:w-20 md:h-20 bg-[#007AFF] rounded-full flex items-center justify-center shrink-0"
           >
             <span className="text-white font-medium text-lg">Urban</span>
           </motion.div>
+          <div>
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-medium tracking-tight text-gray-900">
+              {currentProjectData.mainProduct}
+            </h2>
+            <p className="text-gray-500 text-sm md:text-base mt-1">{currentProjectData.workerInfo}</p>
+          </div>
+        </div>
+      </motion.div>
 
-          <p className="text-gray-900 font-medium text-sm md:text-base mb-4">Key Features</p>
+      {/* Masonry Grid Layout */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {/* Main Description Card - Spans 2 columns */}
+        <motion.div
+          variants={itemVariants}
+          className="bg-white rounded-2xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] md:col-span-2"
+          whileHover={{ y: -2 }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        >
+          <h3 className="text-gray-900 font-medium text-lg mb-3">Project Overview</h3>
+          <p className="text-gray-500 text-sm md:text-base leading-relaxed">{currentProjectData.description}</p>
+          
+          <div className="mt-4 flex items-center">
+            <div className="bg-blue-50 text-[#007AFF] px-3 py-1 rounded-full text-xs font-medium">
+              {currentProjectData.estTime.split("\n")[0]}
+            </div>
+            <div className="bg-blue-50 text-[#007AFF] px-3 py-1 rounded-full text-xs font-medium ml-2">
+              {currentProjectData.estTime.split("\n")[1]}
+            </div>
+          </div>
+        </motion.div>
 
-          <div className="space-y-3 md:space-y-4">
+        {/* Features Card */}
+        <motion.div
+          variants={itemVariants}
+          className="bg-white rounded-2xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)]"
+          whileHover={{ y: -2 }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        >
+          <h3 className="text-gray-900 font-medium text-lg mb-3">Key Features</h3>
+          <div className="space-y-3">
             {currentProjectData.leftSideText.map((text, index) => (
               <motion.div
                 key={index}
@@ -91,87 +127,10 @@ export default function Project_02Card() {
               </motion.div>
             ))}
           </div>
-        </div>
-
-        <motion.div
-          className="mt-6"
-          whileHover={{ y: -2 }}
-          transition={{ type: "spring", stiffness: 400, damping: 30 }}
-        >
-          <p className="text-gray-900 font-medium text-sm md:text-base mb-2">Est. Time</p>
-          <div className="mt-1">
-            {currentProjectData.estTime.split("\n").map((line, index) => (
-              <p key={index} className="text-gray-500 text-xs md:text-sm">
-                {line}
-              </p>
-            ))}
-          </div>
-        </motion.div>
-      </motion.div>
-
-      {/* Main content */}
-      <motion.div variants={itemVariants} className="col-span-1 md:col-span-9 grid grid-rows-5 gap-5">
-        {/* Top row - Main description */}
-        <motion.div
-          className="row-span-2 bg-white rounded-2xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)]"
-          whileHover={{ y: -2 }}
-          transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        >
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-medium tracking-tight text-gray-900 mb-4">
-            {currentProjectData.mainProduct}
-          </h2>
-          <p className="text-gray-500 text-sm md:text-base leading-relaxed mb-4">{currentProjectData.description}</p>
-          <p className="text-gray-400 text-xs md:text-sm">{currentProjectData.workerInfo}</p>
         </motion.div>
 
-        {/* Bottom rows - Image gallery */}
-        <div className="row-span-3 grid grid-cols-2 gap-5">
-          <motion.div
-            className="col-span-2 md:col-span-1 row-span-2 bg-gray-50 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)]"
-            whileHover={{ scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          >
-            <div className="relative w-full h-full">
-              <img
-                src="https://images.unsplash.com/photo-1742715852372-47f67923c3c1?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Vertical farming tower"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-            </div>
-          </motion.div>
 
-          <motion.div
-            className="bg-gray-50 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)]"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          >
-            <div className="relative w-full h-full">
-              <img
-                src="https://images.unsplash.com/photo-1742715852372-47f67923c3c1?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Urban farm solution 1"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="bg-gray-50 rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)]"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          >
-            <div className="relative w-full h-full">
-              <img
-                src="https://images.unsplash.com/photo-1742715852372-47f67923c3c1?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Urban farm solution 2"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
-            </div>
-          </motion.div>
-        </div>
-      </motion.div>
+      </div>
     </motion.div>
   )
 }

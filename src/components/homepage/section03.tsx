@@ -205,7 +205,7 @@ export default function Section03() {
   const currentTab = tabContent[activeTab]
 
   return (
-    <section className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 bg-white font-sans rounded-3xl shadow-xl">
+    <section className="max-w-7xl my-8 mx-auto px-4 py-16 sm:px-6 lg:px-8 bg-white font-sans rounded-3xl shadow-xl">
       <div className="flex items-center mb-12 border-b border-blue-400/30 pb-6">
         <div className="w-16 h-16 flex items-center justify-center rounded-full bg-blue-100 text-lg font-bold text-blue-700">
           02
@@ -246,29 +246,6 @@ export default function Section03() {
             <p className="text-blue-800 font-medium">{currentTab.imageDescription}</p>
           </div>
 
-          {/* Stats box */}
-          {/* <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm rounded-xl p-4 w-auto shadow-lg">
-            <div className="flex items-center justify-between">
-              <span className="text-5xl font-bold text-blue-900">
-                86<span className="text-2xl">%</span>
-              </span>
-              <div className={`${currentTab.stats[0].iconBg} rounded-full p-2 ml-4`}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 text-white"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </div>
-            </div>
-            <p className="text-blue-800 font-medium mt-1">Increase in Yields</p>
-          </div> */}
         </div>
 
         {/* Right Column - Content */}
