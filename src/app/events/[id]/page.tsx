@@ -283,35 +283,37 @@ function formatDate(dateString: string) {
 }
 
 // Generate metadata dynamically based on the event ID
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const event = events.find(e => e.id === params.id);
-  
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const resolvedParams = await params; // Await the params to resolve the promise
+  const event = events.find(e => e.id === resolvedParams.id);
+
   if (!event) {
     return {
       title: 'Event Not Found | SMARTiNNO',
       description: 'The requested event could not be found.'
     };
   }
-  
+
   return {
     title: `${event.title} | SMARTiNNO Events`,
     description: event.description,
   };
 }
 
-export default function EventPage({ params }: { params: { id: string } }) {
-  const event = events.find(e => e.id === params.id);
-  
+export default async function EventPage({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params; // Await the params to resolve the promise
+  const event = events.find(e => e.id === resolvedParams.id);
+
   // Handle case where event is not found
   if (!event) {
     notFound();
   }
-  
+
   // Define status badge color based on event status
   const statusColor = event.status === 'Upcoming' 
     ? 'bg-green-100 text-green-800' 
     : 'bg-gray-100 text-gray-800';
-  
+
   return (
     <>
       <div className="min-h-screen">
@@ -536,4 +538,4 @@ export default function EventPage({ params }: { params: { id: string } }) {
       <Footer />
     </>
   );
-} 
+}
