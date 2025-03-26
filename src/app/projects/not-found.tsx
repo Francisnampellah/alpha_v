@@ -10,7 +10,7 @@ export default function ProjectNotFound() {
       </div>
       <h1 className="text-4xl font-bold mb-4">Project Not Found</h1>
       <p className="text-gray-600 mb-8 text-center max-w-md">
-        We couldn't find the project you're looking for. It might have been moved or deleted.
+        We couldnt find the project youre looking for. It might have been moved or deleted.
       </p>
       <div className="flex flex-col sm:flex-row gap-4">
         <Link

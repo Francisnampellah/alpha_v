@@ -10,7 +10,7 @@ export default function EventNotFound() {
       </div>
       <h1 className="text-4xl font-bold mb-4">Event Not Found</h1>
       <p className="text-gray-600 mb-8 text-center max-w-md">
-        We couldn't find the event you're looking for. It might have ended or been removed.
+        We couldnt find the event youre looking for. It might have ended or been removed.
       </p>
       <div className="flex flex-col sm:flex-row gap-4">
         <Link

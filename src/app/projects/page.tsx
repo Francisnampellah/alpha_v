@@ -295,7 +295,7 @@ export default function ProjectsPage() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
-              Let's discuss how our innovative solutions can help transform your agricultural operations
+              Lets discuss how our innovative solutions can help transform your agricultural operations
             </p>
             <Link
               href="/contact"

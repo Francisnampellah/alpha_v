@@ -2,7 +2,6 @@ import Section_02 from "@/components/homepage/section02";
 import Section03 from "@/components/homepage/section03";
 import Section_04 from "@/components/homepage/section04";
 import Section_05 from "@/components/homepage/section05";
-import Section_06 from "@/components/homepage/section06";
 import Section_07 from "@/components/homepage/section07";
 import OurEvents from "@/components/homepage/section0Events";
 import OurTeam from "@/components/homepage/ourTeam";
