@@ -29,7 +29,7 @@ export default function Section_06() {
 
           <blockquote className="space-y-6">
             <h2 className="text-4xl font-semibold leading-tight text-gray-800">
-              SmartINNO's innovative solutions have transformed our operations, increasing efficiency and driving growth.
+              SmartINNOs innovative solutions have transformed our operations, increasing efficiency and driving growth.
             </h2>
 
             <div className="pt-4">
