@@ -4,7 +4,7 @@ import { Beaker, Eye, Sparkles } from 'lucide-react'
 import { useEffect, useState, useCallback } from 'react'
 import {LogoItem} from '@/components/logo'
 import { cn } from '@/lib/utils'
-
+import { useRouter } from 'next/navigation'
 // Improved SVG icons with consistent styling
 const DefaultIcons = {
   RotaShow: (
@@ -45,38 +45,37 @@ const DefaultIcons = {
 
 // Default logos with consistent naming and structure
 const defaultLogos = [
-  { name: 'RotaShow', icon: DefaultIcons.RotaShow },
-  { name: 'Waves', icon: DefaultIcons.Waves },
-  { name: 'RotaShow', icon: DefaultIcons.RotaShow },
-  { name: 'Travelers', icon: DefaultIcons.Travelers },
-  { name: 'Goldlines', icon: DefaultIcons.Goldlines },
-  { name: 'Velocity', icon: DefaultIcons.Velocity, badgeText: '9' }
+  { name: 'Custom Software', icon: DefaultIcons.RotaShow },
+  { name: 'FinTech', icon: DefaultIcons.Waves },
+  { name: 'ICT Services', icon: DefaultIcons.Travelers },
+  { name: 'Agribusiness', icon: DefaultIcons.Goldlines },
+  { name: 'E-Government', icon: DefaultIcons.Velocity }
 ];
 
 export default function Section_02() {
     const slides = [
         {
-          title: "Farm Technology",
-          description: "Advanced machinery for modern agriculture",
+          title: "Custom Software Solutions",
+          description: "Tailored software to meet specific business needs.",
           image:
-            "https://images.unsplash.com/photo-1536412597336-ade7b523ecfc?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1581091870627-3f9b5d0d0b3c?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           position: "top-right",
-          copyright: "©2025 NewTech",
+          copyright: "©2025 SmartINNO",
         },
         {
-            title: "Farm Technology",
-            description: "Advanced machinery for modern agriculture",
+            title: "FinTech Innovation",
+            description: "Advanced financial technology solutions for accessibility and security.",
             image:
-              "https://images.unsplash.com/photo-1726137570036-cc7e8b1b58c1?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxzZWFyY2h8NjR8fFRFQ0hOT0xPR1l8ZW58MHx8MHx8fDA%3D",
+              "https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             position: "top-right",
-            copyright: "©2025 NewTech",
+            copyright: "©2025 SmartINNO",
           }
       ]
     
       const [currentSlide, setCurrentSlide] = useState(0)
       const [isTransitioning, setIsTransitioning] = useState(false)
       const [isAutoPlaying, setIsAutoPlaying] = useState(true)
-    
+      const router = useRouter()
       // Optimized slide change with useCallback
       const goToSlide = useCallback((index: number) => {
         if (currentSlide === index) return;
@@ -115,6 +114,7 @@ export default function Section_02() {
             <button 
               className="bg-black hover:bg-gray-800 transition-colors text-white px-6 py-3 rounded-full text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
               aria-label="Read more about SMARTiNNO"
+              onClick={() => router.push('/about')}
             >
               Read More
             </button>
@@ -139,21 +139,19 @@ export default function Section_02() {
               <div className="space-y-4 mt-10">
                 <Accordion icon={<Eye className="h-5 w-5" />} title="Mission" defaultOpen={true}>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Our research has identified key challenges in modern agriculture, including soil degradation, inconsistent
-                    crop quality, and inefficient resource utilization.
+                    To empower organizations with intelligent, scalable, and cost-effective technology solutions that drive efficiency, productivity, and growth.
                   </p>
                 </Accordion>
   
                 <Accordion icon={<Beaker className="h-5 w-5" />} title="Vision">
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    We provide scientifically formulated soil amendments and premium seeds that are tailored to specific soil
-                    conditions and climate zones.
+                    To be the leading technology solutions provider in Africa, driving digital transformation and business automation for a smarter and more connected future.
                   </p>
                 </Accordion>
   
                 <Accordion icon={<Sparkles className="h-5 w-5" />} title="Values">
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    Leveraging cutting-edge agricultural technology to optimize farming operations and increase productivity.
+                    Innovation, Integrity, Customer Focus, Excellence, and Collaboration are the core principles guiding our approach to delivering impactful solutions.
                   </p>
                 </Accordion>
               </div>
@@ -163,7 +161,7 @@ export default function Section_02() {
             <div className="lg:col-span-8 space-y-8">
               {/* Headline with improved typography */}
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-gray-900 animate-in slide-in-from-right duration-700">
-                From seeds and fertilizers to advanced farming tech, we're here to support your journey in every step.
+                From custom software to advanced FinTech solutions, we empower businesses to thrive in a digital world.
               </h1>
   
               {/* Image Slider - Enhanced with better accessibility and controls */}

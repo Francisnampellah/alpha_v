@@ -14,7 +14,7 @@ export default function Section_04() {
   const projects = [
     {
       id: 1,
-      title: "Our Product",
+      title: "SafariPro",
       sectionNumber: "01",
       mainProduct: "Premium SEEDZ",
       description: "High-yield, disease-resistant seeds designed for maximum productivity and climate adaptability.",
@@ -26,7 +26,7 @@ export default function Section_04() {
     },
     {
       id: 2,
-      title: "Green Initiative",
+      title: "SaccosPro",
       sectionNumber: "02",
       mainProduct: "EcoFarm Systems",
       description:
@@ -39,7 +39,7 @@ export default function Section_04() {
     },
     {
       id: 3,
-      title: "Urban Farming",
+      title: "AssetPro",
       sectionNumber: "03",
       mainProduct: "VerticalGrow",
       description:
@@ -52,7 +52,7 @@ export default function Section_04() {
     },
     {
       id: 4,
-      title: "AI Analytics",
+      title: "ConnectPro",
       sectionNumber: "04",
       mainProduct: "CropIntelligence",
       description:
@@ -148,7 +148,7 @@ export default function Section_04() {
         </div>
 
         {/* Project content - Takes remaining space */}
-        <div className="h-[calc(100%-80px)] overflow-y-auto">
+        <div className="h-[calc(100%-80px)] overflow-y-hidden">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentProject}

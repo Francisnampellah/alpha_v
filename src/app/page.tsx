@@ -19,7 +19,6 @@ export default function Home() {
       <Section_04 />
       <OurEvents />
       <Section_05 />
-      <Section_06 />
       <OurTeam />
       <Section_07 />
    </div>

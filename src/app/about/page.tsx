@@ -47,70 +47,39 @@ export default function AboutPage() {
     },
   ]
 
-  // Company values
+  // Updated company values
   const values = [
-    {
-      title: "Innovation",
-      description: "We constantly push the boundaries of what's possible in software development and digital solutions.",
-      icon: "💡",
-    },
-    {
-      title: "Quality",
-      description: "Our solutions are engineered with meticulous attention to detail and adherence to industry best practices.",
-      icon: "✨",
-    },
-    {
-      title: "Collaboration",
-      description: "We work closely with clients, industry experts, and technology partners to create comprehensive solutions.",
-      icon: "🤝",
-    },
-    {
-      title: "Impact",
-      description: "We measure our success by the tangible business value and digital transformation we deliver to our clients.",
-      icon: "🚀",
-    },
+    { title: "Innovation", description: "We embrace cutting-edge technology to deliver future-ready solutions.", icon: "💡" },
+    { title: "Integrity", description: "We uphold the highest standards of professionalism and ethics in our work.", icon: "⚖️" },
+    { title: "Customer Focus", description: "Our solutions are designed to meet the unique needs of our clients.", icon: "🎯" },
+    { title: "Excellence", description: "We strive for top-quality service delivery in every project.", icon: "🏆" },
+    { title: "Collaboration", description: "We foster strong partnerships to achieve shared success.", icon: "🤝" },
   ]
 
-  // Company milestones
+  // Updated milestones
   const milestones = [
-    {
-      year: "2015",
-      title: "Company Founded",
-      description:
-        "SMARTiNNO was established with a mission to revolutionize business operations through innovative software solutions.",
-    },
-    {
-      year: "2017",
-      title: "First Enterprise Client",
-      description: "Launched our flagship enterprise management platform, improving operational efficiency by 40% for early adopters.",
-    },
-    {
-      year: "2019",
-      title: "Technology Partnership",
-      description:
-        "Formed strategic partnership with leading cloud providers to develop next-generation business applications.",
-    },
-    {
-      year: "2021",
-      title: "International Expansion",
-      description:
-        "Expanded operations to three new countries, bringing our software solutions to diverse business environments.",
-    },
-    {
-      year: "2023",
-      title: "Innovation Award",
-      description:
-        "Recognized with the Global Tech Innovation Award for our cutting-edge AI-powered business analytics platform.",
-    },
+    { year: "2015", title: "Company Founded", description: "SMARTiNNO was established in Dar es Salaam, Tanzania, with a mission to revolutionize businesses through innovative IT solutions." },
+    { year: "2018", title: "First Major Project", description: "Launched AssetPro, a robust asset management system for businesses." },
+    { year: "2020", title: "FinTech Innovation", description: "Developed digital payment and e-wallet systems, enhancing financial accessibility and security." },
+    { year: "2022", title: "Agribusiness Solutions", description: "Introduced smart solutions for farm management and supply chain optimization in the agriculture sector." },
+    { year: "2023", title: "E-Government Solutions", description: "Digitized government processes to improve transparency and citizen services." },
   ]
 
-  // Statistics
+  // Updated statistics
   const stats = [
-    { value: "200+", label: "Completed Projects" },
-    { value: "12", label: "Countries Served" },
-    { value: "85%", label: "Efficiency Increase" },
-    { value: "50+", label: "Team Members" },
+    { value: "300+", label: "Completed Projects" },
+    { value: "15+", label: "Industries Served" },
+    { value: "10+", label: "Years of Experience" },
+    { value: "100+", label: "Team Members" },
   ]
+
+  // Updated contact details
+  const contactDetails = {
+    address: "MA 2 Seabreeze Complex, Kilongawima Road, Mbezi Beach-Kinondoni, Dar es Salaam, Tanzania",
+    phone: "+255-762-111-129",
+    email: "info@smartinno.net",
+    website: "https://www.smartinno.net",
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -187,6 +156,9 @@ export default function AboutPage() {
                 Our commitment to combining cutting-edge technology with deep industry expertise remains at the
                 heart of everything we do. We believe that intelligent software, thoughtfully applied, can help solve some
                 of the most complex challenges facing modern businesses.
+              </p>
+              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                SmartINNO is a dynamic and forward-thinking technology solutions provider specializing in software development, artificial intelligence, and system integration. Based in Dar es Salaam, Tanzania, we are committed to revolutionizing businesses through automation, seamless digital transformation, and innovative IT solutions tailored to various industries.
               </p>
             </motion.div>
 
@@ -483,13 +455,7 @@ export default function AboutPage() {
                   <MapPin className="w-6 h-6 text-blue-400 mt-1" />
                   <div>
                     <h3 className="font-bold mb-1">Visit Us</h3>
-                    <p className="text-gray-300">
-                      123 Innovation Street
-                      <br />
-                      Smartville, SV 12345
-                      <br />
-                      United States
-                    </p>
+                    <p className="text-gray-300">{contactDetails.address}</p>
                   </div>
                 </div>
 
@@ -497,8 +463,7 @@ export default function AboutPage() {
                   <Mail className="w-6 h-6 text-blue-400 mt-1" />
                   <div>
                     <h3 className="font-bold mb-1">Email Us</h3>
-                    <p className="text-gray-300">info@smartinno.com</p>
-                    <p className="text-gray-300">support@smartinno.com</p>
+                    <p className="text-gray-300">{contactDetails.email}</p>
                   </div>
                 </div>
 
@@ -506,8 +471,7 @@ export default function AboutPage() {
                   <Phone className="w-6 h-6 text-blue-400 mt-1" />
                   <div>
                     <h3 className="font-bold mb-1">Call Us</h3>
-                    <p className="text-gray-300">+1 (555) 123-4567</p>
-                    <p className="text-gray-300">+1 (555) 987-6543</p>
+                    <p className="text-gray-300">{contactDetails.phone}</p>
                   </div>
                 </div>
 
