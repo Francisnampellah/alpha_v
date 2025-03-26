@@ -205,7 +205,7 @@ export default function Section03() {
   const currentTab = tabContent[activeTab as keyof typeof tabContent]
 
   return (
-    <section className="w-full py-12 bg-gradient-to-b from-blue-600 via-blue-500 to-blue-400">
+    <section className="w-full py-12 bg-gradient-to-b from-blue-900 via-blue-800 to-blue-700">
       {/* Section Title */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <div className="flex items-center border-l-4 border-blue-300 pl-4">
@@ -253,7 +253,7 @@ export default function Section03() {
       {/* Content Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`transition-opacity duration-500 ${fadeState === "fade-in" ? "opacity-100" : "opacity-0"}`}>
-          <div className="bg-blue-600/50 rounded-xl overflow-hidden border border-blue-500/50">
+          <div className="bg-blue-800/50 rounded-xl overflow-hidden border border-blue-700/50">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
               {/* Image Column - Now on the left for desktop */}
               <div className="lg:col-span-7 relative">
@@ -265,7 +265,7 @@ export default function Section03() {
                   />
                 </div>
 
-                <div className="absolute bottom-4 left-4 bg-blue-700/80 backdrop-blur-sm text-white px-3 py-1.5 text-sm rounded-md border border-blue-500/50">
+                <div className="absolute bottom-4 left-4 bg-blue-900/80 backdrop-blur-sm text-white px-3 py-1.5 text-sm rounded-md border border-blue-700/50">
                   <p className="font-medium">{currentTab.imageDescription}</p>
                 </div>
               </div>
@@ -289,7 +289,7 @@ export default function Section03() {
                     {currentTab.stats.map((stat, index) => (
                       <div
                         key={index}
-                        className="py-3 px-4 bg-blue-700/50 rounded-lg border border-blue-500/50 text-white flex items-center"
+                        className="py-3 px-4 bg-blue-900/50 rounded-lg border border-blue-700/50 text-white flex items-center"
                       >
                         <div className={`${stat.iconBg} p-2 rounded-md mr-3 shadow-lg`}>{stat.icon}</div>
                         <div>
