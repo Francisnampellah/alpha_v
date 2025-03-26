@@ -97,7 +97,7 @@ type Screen = "projects" | "details" | "community"
 
 export default function MobileAppLayout() {
   const [activeScreen, setActiveScreen] = useState<Screen>("projects")
-  const [_activeTab, setActiveTab] = useState("home")
+  const [activeTab, setActiveTab] = useState("home")
 
   // For demo purposes, using the passed project data
   const currentProjectData = sampleProjectData
@@ -115,6 +115,8 @@ export default function MobileAppLayout() {
     if (tab === "alerts") setActiveScreen("community")
     setActiveTab(tab)
   }
+
+  console.log(activeTab)
 
   return (
     <div className="max-w-6xl mx-auto p-4">

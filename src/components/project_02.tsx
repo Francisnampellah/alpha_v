@@ -95,7 +95,7 @@ type Screen = "workouts" | "details" | "achievements"
 
 export default function FitnessAppLayout() {
   const [activeScreen, setActiveScreen] = useState<Screen>("workouts")
-  const [_activeTab, setActiveTab] = useState("home")
+  const [activeTab, setActiveTab] = useState("home")
 
   // For demo purposes, using the passed workout data
   const currentWorkoutData = workoutData
@@ -113,6 +113,9 @@ export default function FitnessAppLayout() {
     if (tab === "stats") setActiveScreen("achievements")
     setActiveTab(tab)
   }
+
+  console.log(activeTab)
+
 
   return (
     <div className="max-w-6xl mx-auto p-4">

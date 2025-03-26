@@ -150,7 +150,7 @@ type Screen = "portfolio" | "details" | "transactions"
 
 export default function AssetManagementApp() {
   const [activeScreen, setActiveScreen] = useState<Screen>("portfolio")
-  const [_activeTab, setActiveTab] = useState("home")
+  const [activeTab, setActiveTab] = useState("home")
 
   const handleAssetClick = () => {
     setActiveScreen("details")
@@ -165,6 +165,8 @@ export default function AssetManagementApp() {
     if (tab === "history") setActiveScreen("transactions")
     setActiveTab(tab)
   }
+  console.log(activeTab)
+
 
   return (
     <div className="max-w-6xl mx-auto p-4">

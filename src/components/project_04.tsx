@@ -27,6 +27,7 @@ export default function MacWebpageDisplay() {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
+  
 
   return (
     <div className="max-w-6xl mx-auto p-4 overflow-hidden">
