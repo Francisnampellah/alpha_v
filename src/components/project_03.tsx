@@ -150,7 +150,7 @@ type Screen = "portfolio" | "details" | "transactions"
 
 export default function AssetManagementApp() {
   const [activeScreen, setActiveScreen] = useState<Screen>("portfolio")
-  const [activeTab, setActiveTab] = useState("home")
+  const [_activeTab, setActiveTab] = useState("home")
 
   const handleAssetClick = () => {
     setActiveScreen("details")

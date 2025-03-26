@@ -95,7 +95,7 @@ type Screen = "workouts" | "details" | "achievements"
 
 export default function FitnessAppLayout() {
   const [activeScreen, setActiveScreen] = useState<Screen>("workouts")
-  const [activeTab, setActiveTab] = useState("home")
+  const [_activeTab, setActiveTab] = useState("home")
 
   // For demo purposes, using the passed workout data
   const currentWorkoutData = workoutData
@@ -149,7 +149,7 @@ export default function FitnessAppLayout() {
               >
                 {/* Today's Stats */}
                 <div className="p-2 bg-green-50 m-2 rounded-lg">
-                  <h3 className="text-[10px] font-semibold mb-1 text-green-800">Today's Progress</h3>
+                  <h3 className="text-[10px] font-semibold mb-1 text-green-800">Todays Progress</h3>
                   <div className="flex justify-between text-[8px]">
                     <div className="flex flex-col items-center">
                       <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center mb-1">

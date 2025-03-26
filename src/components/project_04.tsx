@@ -253,7 +253,7 @@ export default function MacWebpageDisplay() {
                     <div className="text-center mb-12">
                       <h2 className="text-3xl font-bold mb-4">What Our Customers Say</h2>
                       <p className="text-gray-600 max-w-2xl mx-auto">
-                        Don't just take our word for it. Here's what people are saying about our platform.
+                        Dont just take our word for it. Heres what people are saying about our platform.
                       </p>
                     </div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -281,7 +281,7 @@ export default function MacWebpageDisplay() {
                               <Star key={i} size={16} className="fill-yellow-400 text-yellow-400" />
                             ))}
                           </div>
-                          <p className="text-gray-700 mb-6 italic">"{testimonial.quote}"</p>
+                          <p className="text-gray-700 mb-6 italic">{testimonial.quote}</p>
                           <div className="flex items-center gap-3">
                             <div className="w-10 h-10 bg-gray-200 rounded-full"></div>
                             <div>
@@ -409,12 +409,12 @@ export default function MacWebpageDisplay() {
       <div className="mt-8 flex justify-center">
         <div className="bg-white bg-opacity-20 backdrop-blur-md rounded-2xl p-2 shadow-lg border border-white border-opacity-30 flex gap-3">
           {[
-            <Home className="text-blue-500" />,
-            <Mail className="text-green-500" />,
-            <Calendar className="text-red-500" />,
-            <Image className="text-purple-500" />,
-            <Music className="text-pink-500" />,
-            <Settings className="text-gray-500" />,
+            <Home key="home" className="text-blue-500" />,
+            <Mail key="mail" className="text-green-500" />,
+            <Calendar key="calendar" className="text-red-500" />,
+            <Image key="image" className="text-purple-500" />,
+            <Music key="music" className="text-pink-500" />,
+            <Settings key="setting" className="text-gray-500" />,
           ].map((icon, index) => (
             <motion.div
               key={index}
