@@ -18,6 +18,7 @@ import {
   PlusCircle,
   MinusCircle,
 } from "lucide-react"
+import Navigation from "@/components/navigation/Navigation"
 
 export default function ServicesPage() {
   const [scrolled, setScrolled] = useState(false)
@@ -36,100 +37,100 @@ export default function ServicesPage() {
   // Services data
   const services = [
     {
-      id: "smart-irrigation",
-      title: "Smart Irrigation Systems",
-      description: "Water-efficient irrigation solutions powered by IoT sensors and weather data integration.",
-      icon: <Droplets className="w-10 h-10 text-blue-500" />,
-      category: "water",
+      id: "web-development",
+      title: "Web Development",
+      description: "Modern web applications built with cutting-edge technologies and responsive design principles.",
+      icon: <Cpu className="w-10 h-10 text-blue-500" />,
+      category: "development",
       features: [
-        "Real-time soil moisture monitoring",
-        "Weather-adaptive watering schedules",
-        "Mobile app control and notifications",
-        "Water usage analytics and reporting",
-        "Integration with existing irrigation infrastructure",
+        "Responsive front-end development",
+        "Scalable back-end architecture",
+        "API integration and development",
+        "Performance optimization",
+        "SEO-friendly implementation",
       ],
       image:
-        "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=2564&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
-      id: "soil-monitoring",
-      title: "Soil Health Monitoring",
-      description: "Comprehensive soil analysis systems for optimal crop health and yield improvement.",
-      icon: <Leaf className="w-10 h-10 text-green-500" />,
-      category: "soil",
+      id: "mobile-development",
+      title: "Mobile App Development",
+      description: "Native and cross-platform mobile applications for iOS and Android that deliver exceptional user experiences.",
+      icon: <Smartphone className="w-10 h-10 text-green-500" />,
+      category: "development",
       features: [
-        "Nutrient level tracking and analysis",
-        "pH and composition monitoring",
-        "Automated soil sampling technology",
-        "Fertilization recommendation engine",
-        "Historical data comparison and trends",
+        "Native iOS and Android development",
+        "Cross-platform solutions",
+        "Offline functionality",
+        "Push notification integration",
+        "App store optimization",
       ],
       image:
-        "https://images.unsplash.com/photo-1621149545341-7562da785e80?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
-      id: "iot-solutions",
-      title: "Agricultural IoT Solutions",
-      description: "Connected sensor networks and devices for comprehensive farm monitoring and automation.",
-      icon: <Cpu className="w-10 h-10 text-purple-500" />,
-      category: "technology",
+      id: "cloud-solutions",
+      title: "Cloud Solutions",
+      description: "Scalable cloud infrastructure and deployment strategies for optimal performance and reliability.",
+      icon: <Droplets className="w-10 h-10 text-purple-500" />,
+      category: "infrastructure",
       features: [
-        "Wireless sensor networks deployment",
-        "Equipment monitoring and maintenance alerts",
-        "Environmental condition tracking",
-        "Livestock health and location monitoring",
-        "Secure data transmission and storage",
+        "Cloud architecture design",
+        "Migration to cloud platforms",
+        "Serverless implementation",
+        "Microservices development",
+        "Continuous deployment pipelines",
       ],
       image:
-        "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       id: "data-analytics",
-      title: "Agricultural Data Analytics",
-      description: "Advanced data processing and visualization tools for actionable farming insights.",
+      title: "Data Analytics & BI",
+      description: "Transform your raw data into actionable insights with custom analytics solutions and dashboards.",
       icon: <BarChart3 className="w-10 h-10 text-amber-500" />,
       category: "data",
       features: [
-        "Predictive yield modeling",
-        "Resource optimization algorithms",
-        "Pest and disease risk assessment",
-        "Custom reporting dashboards",
-        "Machine learning crop recommendations",
+        "Custom dashboard development",
+        "Data visualization",
+        "Predictive analytics models",
+        "Business intelligence solutions",
+        "Data integration services",
       ],
       image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
-      id: "precision-farming",
-      title: "Precision Farming Systems",
-      description: "GPS-guided equipment and variable rate technology for optimized field operations.",
+      id: "ai-solutions",
+      title: "AI & Machine Learning",
+      description: "Cutting-edge AI and ML solutions to automate processes and extract insights from your data.",
       icon: <LineChart className="w-10 h-10 text-red-500" />,
       category: "technology",
       features: [
-        "GPS field mapping and analysis",
-        "Variable rate application technology",
-        "Automated equipment guidance",
-        "Drone-based field assessment",
-        "Yield mapping and analysis",
+        "Machine learning models",
+        "Natural language processing",
+        "Computer vision implementation",
+        "AI-powered automation",
+        "Predictive modeling",
       ],
       image:
-        "https://images.unsplash.com/photo-1562408590-e32931084e23?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
-      id: "mobile-solutions",
-      title: "Mobile Farm Management",
-      description: "Mobile applications for on-the-go farm monitoring, management, and decision-making.",
-      icon: <Smartphone className="w-10 h-10 text-blue-500" />,
-      category: "technology",
+      id: "devops-services",
+      title: "DevOps Services",
+      description: "Streamline your development lifecycle with CI/CD pipelines and infrastructure as code.",
+      icon: <Zap className="w-10 h-10 text-blue-500" />,
+      category: "infrastructure",
       features: [
-        "Real-time farm data access",
-        "Task management and assignment",
-        "Inventory and resource tracking",
-        "Offline functionality for remote areas",
-        "Integration with other farm systems",
+        "CI/CD pipeline setup",
+        "Infrastructure as code",
+        "Automated testing implementation",
+        "Container orchestration",
+        "Performance monitoring",
       ],
       image:
-        "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
   ]
 
@@ -137,62 +138,62 @@ export default function ServicesPage() {
   const processSteps = [
     {
       number: "01",
-      title: "Assessment & Analysis",
+      title: "Discovery & Requirements",
       description:
-        "We begin by thoroughly assessing your current agricultural operations, challenges, and goals to identify the most impactful opportunities for improvement.",
+        "We begin by understanding your business objectives, technical requirements, and end-user needs to define a clear project roadmap.",
     },
     {
       number: "02",
-      title: "Solution Design",
+      title: "Solution Architecture",
       description:
-        "Our team designs a customized solution that integrates the right technologies and approaches to address your specific needs and objectives.",
+        "Our team designs a tailored architecture that leverages the right technologies and approaches to address your specific requirements.",
     },
     {
       number: "03",
-      title: "Implementation",
+      title: "Development",
       description:
-        "We handle the complete deployment of your solution, including hardware installation, software setup, and integration with existing systems.",
+        "We implement your solution following agile methodologies, with regular iterations and feedback loops to ensure alignment with expectations.",
     },
     {
       number: "04",
-      title: "Training & Support",
+      title: "Testing & Deployment",
       description:
-        "We provide comprehensive training for your team and ongoing technical support to ensure you get the maximum benefit from your new systems.",
+        "We conduct comprehensive testing and handle deployment to ensure a smooth transition to production with minimal disruption.",
     },
     {
       number: "05",
-      title: "Monitoring & Optimization",
+      title: "Support & Enhancement",
       description:
-        "We continuously monitor system performance and make data-driven adjustments to optimize results and adapt to changing conditions.",
+        "We provide ongoing support and continuous improvement to keep your solution running optimally and evolving with your business needs.",
     },
   ]
 
   // FAQ items
   const faqItems = [
     {
-      question: "How long does it typically take to implement your solutions?",
+      question: "How long does it typically take to complete a software development project?",
       answer:
-        "Implementation timelines vary based on the complexity and scale of the project. Simple systems like basic soil monitoring can be operational within 2-4 weeks, while comprehensive farm-wide solutions may take 2-3 months. During our initial consultation, we'll provide a detailed timeline specific to your project.",
+        "Project timelines vary based on complexity and scope. Simple web applications might be completed in 6-8 weeks, while complex enterprise solutions can take 6 months or more. During our initial consultation, we'll provide a detailed timeline specific to your project needs and priorities.",
     },
     {
-      question: "Do your systems work in areas with limited internet connectivity?",
+      question: "What development methodologies do you follow?",
       answer:
-        "Yes, we design our solutions with rural and remote areas in mind. Many of our systems use low-power, long-range communication protocols that don't rely on continuous internet connectivity. Our mobile applications also feature offline functionality, syncing data when connectivity is available.",
+        "We primarily follow Agile development methodologies, with an emphasis on Scrum or Kanban depending on the project requirements. This approach allows for regular feedback, incremental delivery, and the flexibility to adapt to changing requirements throughout the development process.",
     },
     {
-      question: "How do you ensure the security of farm data?",
+      question: "How do you ensure the security of our data and applications?",
       answer:
-        "Data security is a top priority. We implement end-to-end encryption for all data transmission, secure cloud storage with regular backups, and role-based access controls. All our systems comply with industry standards for agricultural data privacy and security. You maintain ownership of your data at all times.",
+        "Security is built into every stage of our development process. We implement industry best practices including encryption for data at rest and in transit, secure authentication systems, regular security audits, penetration testing, and adherence to OWASP guidelines. We also provide comprehensive documentation on all security measures implemented.",
     },
     {
-      question: "Can your solutions integrate with our existing farm equipment?",
+      question: "Can you work with our existing systems and technology stack?",
       answer:
-        "Absolutely. Our systems are designed to be compatible with most major agricultural equipment brands and can often be retrofitted to work with older machinery. During the assessment phase, we'll evaluate your existing equipment and recommend the most efficient integration approach.",
+        "Absolutely. We have expertise across a wide range of technologies and frameworks. Our team can integrate with your existing systems, extend current functionality, or build new components that work seamlessly with your technology stack. During the discovery phase, we'll assess your current architecture to determine the best approach.",
     },
     {
-      question: "What kind of ROI can we expect from implementing your solutions?",
+      question: "What kind of support do you provide after the project launch?",
       answer:
-        "ROI varies by solution and farm conditions, but our clients typically see returns within 1-2 growing seasons. For example, our irrigation systems have reduced water usage by up to 40% while increasing yields by 15-20%. During our consultation, we'll provide case studies relevant to your specific situation and projected ROI calculations.",
+        "We offer flexible support options tailored to your needs, including dedicated maintenance plans, 24/7 critical issue response, regular updates and security patches, performance monitoring, and continuous improvement services. Our goal is to ensure your software remains secure, stable, and aligned with your evolving business requirements.",
     },
   ]
 
@@ -211,39 +212,7 @@ export default function ServicesPage() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-4"}`}
       >
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between px-6 sm:px-8 gap-4 sm:gap-0">
-          <div className="flex items-center gap-2">
-            <div className="grid grid-cols-2 grid-rows-2 gap-1">
-              {[...Array(4)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="h-2 w-2 rounded-sm bg-black"
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3, delay: i * 0.1 }}
-                />
-              ))}
-            </div>
-            <span className="font-semibold text-black">SMARTiNNO</span>
-          </div>
-
-          <nav className="flex flex-wrap gap-4 sm:gap-8" aria-label="Main navigation">
-            <Link href="/" className="text-gray-700 hover:text-black transition-colors relative group">
-              Home
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link href="/about" className="text-gray-700 hover:text-black transition-colors relative group">
-              About
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link href="/projects" className="text-gray-700 hover:text-black transition-colors relative group">
-              Projects
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link href="/services" className="text-black font-semibold transition-colors relative">
-              Services
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-black"></span>
-            </Link>
-          </nav>
+          <Navigation />
         </div>
       </header>
 
@@ -251,8 +220,8 @@ export default function ServicesPage() {
       <div className="relative pt-16 sm:pt-0">
         <div className="relative mx-auto my-0 overflow-hidden h-[60vh]">
           <Image
-            src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Agricultural technology services"
+            src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Software development services"
             fill
             priority
             sizes="100vw"
@@ -268,12 +237,11 @@ export default function ServicesPage() {
               className="max-w-4xl mb-12"
             >
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
-                Agricultural Technology <br className="hidden md:block" />
+                Software Development <br className="hidden md:block" />
                 Services
               </h1>
               <p className="text-xl text-white/90 max-w-2xl leading-relaxed">
-                Innovative solutions designed to optimize your farming operations, increase yields, and promote
-                sustainability
+                Innovative solutions designed to transform your business, streamline operations, and create exceptional digital experiences
               </p>
             </motion.div>
           </div>
@@ -292,8 +260,8 @@ export default function ServicesPage() {
           >
             <h2 className="text-3xl font-bold mb-4">Our Services</h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              We offer a comprehensive suite of agricultural technology solutions designed to address the unique
-              challenges of modern farming
+              We offer a comprehensive suite of software development solutions designed to address the unique
+              challenges of modern businesses
             </p>
           </motion.div>
 
@@ -314,20 +282,20 @@ export default function ServicesPage() {
               All Services
             </button>
             <button
-              onClick={() => setActiveTab("water")}
+              onClick={() => setActiveTab("development")}
               className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
-                activeTab === "water" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                activeTab === "development" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
-              Water Management
+              Development
             </button>
             <button
-              onClick={() => setActiveTab("soil")}
+              onClick={() => setActiveTab("infrastructure")}
               className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
-                activeTab === "soil" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                activeTab === "infrastructure" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
-              Soil Health
+              Infrastructure
             </button>
             <button
               onClick={() => setActiveTab("technology")}
@@ -427,8 +395,8 @@ export default function ServicesPage() {
                 <span className="absolute -bottom-2 left-0 w-1/3 h-1 bg-blue-500"></span>
               </h2>
               <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                Our agricultural technology solutions are designed with farmers in mind, combining cutting-edge
-                innovation with practical, field-tested approaches that deliver real results.
+                Our software development solutions are designed with your business in mind, combining cutting-edge
+                technology with practical, battle-tested approaches that deliver tangible results.
               </p>
 
               <div className="space-y-6">
@@ -437,10 +405,9 @@ export default function ServicesPage() {
                     <Zap className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg mb-2">Increased Efficiency</h3>
+                    <h3 className="font-bold text-lg mb-2">Enhanced Efficiency</h3>
                     <p className="text-gray-700">
-                      Our solutions automate routine tasks and optimize resource usage, allowing you to accomplish more
-                      with less time and effort.
+                      Our solutions automate repetitive tasks and streamline workflows, allowing your team to focus on high-value activities and innovation.
                     </p>
                   </div>
                 </div>
@@ -450,10 +417,9 @@ export default function ServicesPage() {
                     <Leaf className="w-6 h-6 text-green-600" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg mb-2">Environmental Sustainability</h3>
+                    <h3 className="font-bold text-lg mb-2">Sustainable Architecture</h3>
                     <p className="text-gray-700">
-                      Reduce your environmental footprint with precision technologies that minimize waste and promote
-                      sustainable farming practices.
+                      We build solutions with longevity in mind, using clean code practices and modular design to ensure your software can evolve with your business.
                     </p>
                   </div>
                 </div>
@@ -463,10 +429,9 @@ export default function ServicesPage() {
                     <BarChart3 className="w-6 h-6 text-amber-600" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg mb-2">Data-Driven Decisions</h3>
+                    <h3 className="font-bold text-lg mb-2">Data-Driven Insights</h3>
                     <p className="text-gray-700">
-                      Make informed choices based on real-time data and analytics, reducing guesswork and improving
-                      outcomes.
+                      Turn your data into a strategic asset with analytics capabilities built into your solutions, enabling smarter decision-making.
                     </p>
                   </div>
                 </div>
@@ -478,8 +443,7 @@ export default function ServicesPage() {
                   <div>
                     <h3 className="font-bold text-lg mb-2">Scalable Solutions</h3>
                     <p className="text-gray-700">
-                      Our modular approach allows you to start with what you need now and expand as your operation
-                      grows.
+                      Our architectures are designed to grow with your business, supporting increased users, data, and functionality without compromising performance.
                     </p>
                   </div>
                 </div>
@@ -494,8 +458,8 @@ export default function ServicesPage() {
               viewport={{ once: true }}
             >
               <Image
-                src="https://images.unsplash.com/photo-1601026909629-bad5e1148817?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Agricultural technology benefits"
+                src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Software development benefits"
                 fill
                 className="object-cover"
               />
@@ -516,8 +480,8 @@ export default function ServicesPage() {
           >
             <h2 className="text-3xl font-bold mb-4">Our Process</h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              We follow a structured approach to ensure successful implementation and maximum value from your
-              agricultural technology investment
+              We follow a structured approach to ensure successful delivery and maximum value from your
+              software development investment
             </p>
           </motion.div>
 
@@ -575,7 +539,7 @@ export default function ServicesPage() {
           >
             <h2 className="text-3xl font-bold mb-4">Success Stories</h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              See how our agricultural technology solutions have helped real farms achieve remarkable results
+              See how our software development solutions have helped real businesses achieve remarkable results
             </p>
           </motion.div>
 
@@ -589,8 +553,8 @@ export default function ServicesPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="relative h-64 lg:h-auto">
                 <Image
-                  src="https://images.unsplash.com/photo-1589923188900-85dae523342b?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Case study farm"
+                  src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Case study tech company"
                   fill
                   className="object-cover"
                 />
@@ -599,31 +563,30 @@ export default function ServicesPage() {
                 <div className="inline-block px-3 py-1 rounded-full bg-blue-900 text-blue-300 text-sm font-medium mb-4">
                   Case Study
                 </div>
-                <h3 className="text-2xl font-bold mb-4">Riverdale Farms: 40% Water Reduction</h3>
+                <h3 className="text-2xl font-bold mb-4">TechNova: 300% Productivity Increase</h3>
                 <p className="text-gray-300 mb-6">
-                  Riverdale Farms, a 500-acre operation in the Midwest, was facing increasing water costs and
-                  restrictions. By implementing our Smart Irrigation System, they achieved:
+                  TechNova, a growing fintech startup, was struggling with manual processes and legacy systems. By implementing our custom software solution, they achieved:
                 </p>
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-400 mt-0.5" />
-                    <span>40% reduction in water usage across all fields</span>
+                    <span>300% increase in team productivity</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-400 mt-0.5" />
-                    <span>22% increase in crop yield due to optimized watering</span>
+                    <span>65% reduction in operational costs</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-400 mt-0.5" />
-                    <span>$45,000 annual savings in water and labor costs</span>
+                    <span>90% faster customer onboarding</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-green-400 mt-0.5" />
-                    <span>ROI achieved within the first growing season</span>
+                    <span>ROI achieved within just 6 months</span>
                   </li>
                 </ul>
                 <Link
-                  href="/case-studies/riverdale-farms"
+                  href="/case-studies/technova"
                   className="inline-flex items-center text-blue-400 font-medium hover:text-blue-300 transition-colors group"
                 >
                   <span>Read Full Case Study</span>
@@ -657,7 +620,7 @@ export default function ServicesPage() {
           >
             <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              Find answers to common questions about our agricultural technology services
+              Find answers to common questions about our software development services
             </p>
           </motion.div>
 
@@ -704,10 +667,10 @@ export default function ServicesPage() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Agricultural Operations?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Business With Technology?</h2>
             <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
               Contact us today to schedule a consultation and discover how our services can help you achieve your
-              farming goals
+              digital transformation goals
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -742,7 +705,7 @@ export default function ServicesPage() {
                 <span className="font-semibold text-white">SMARTiNNO</span>
               </div>
               <p className="text-gray-400 mb-6">
-                Innovative solutions for smart urban development and sustainable infrastructure projects.
+                Innovative software development solutions for businesses seeking digital transformation and technology excellence.
               </p>
               <div className="flex gap-4">
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -785,17 +748,17 @@ export default function ServicesPage() {
               <ul className="space-y-3">
                 <li>
                   <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Smart Irrigation
+                    Web Development
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Soil Monitoring
+                    Mobile Development
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    IoT Solutions
+                    Cloud Solutions
                   </a>
                 </li>
                 <li>
@@ -805,7 +768,7 @@ export default function ServicesPage() {
                 </li>
                 <li>
                   <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Precision Farming
+                    AI & Machine Learning
                   </a>
                 </li>
               </ul>

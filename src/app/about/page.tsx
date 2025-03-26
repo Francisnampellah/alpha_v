@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowRight, ChevronRight, MapPin, Mail, Phone, Clock } from "lucide-react"
+import Navigation from "@/components/navigation/Navigation"
 
 export default function AboutPage() {
   const [scrolled, setScrolled] = useState(false)
@@ -23,19 +24,19 @@ export default function AboutPage() {
     {
       name: "Dr. Sarah Johnson",
       role: "Founder & CEO",
-      bio: "With over 15 years of experience in agricultural technology, Dr. Johnson leads our vision for sustainable farming solutions.",
+      bio: "With over 15 years of experience in software development, Dr. Johnson leads our vision for innovative software solutions.",
       image: "/placeholder.svg?height=400&width=400",
     },
     {
       name: "Michael Chen",
       role: "CTO",
-      bio: "Michael brings expertise in IoT systems and data analytics, driving our technical innovation and product development.",
+      bio: "Michael brings expertise in software architecture and development, driving our technical innovation and product development.",
       image: "/placeholder.svg?height=400&width=400",
     },
     {
       name: "Elena Rodriguez",
       role: "Head of Research",
-      bio: "Elena's background in environmental science helps shape our approach to sustainable agricultural practices.",
+      bio: "Elena's background in computer science helps shape our approach to developing innovative software solutions.",
       image: "/placeholder.svg?height=400&width=400",
     },
     {
@@ -50,23 +51,23 @@ export default function AboutPage() {
   const values = [
     {
       title: "Innovation",
-      description: "We constantly push the boundaries of what's possible in agricultural technology.",
+      description: "We constantly push the boundaries of what's possible in software development and digital solutions.",
       icon: "💡",
     },
     {
-      title: "Sustainability",
-      description: "Our solutions are designed with environmental responsibility at their core.",
-      icon: "🌱",
+      title: "Quality",
+      description: "Our solutions are engineered with meticulous attention to detail and adherence to industry best practices.",
+      icon: "✨",
     },
     {
       title: "Collaboration",
-      description: "We work closely with farmers, researchers, and industry partners to create holistic solutions.",
+      description: "We work closely with clients, industry experts, and technology partners to create comprehensive solutions.",
       icon: "🤝",
     },
     {
       title: "Impact",
-      description: "We measure our success by the positive change we create in agricultural communities.",
-      icon: "✨",
+      description: "We measure our success by the tangible business value and digital transformation we deliver to our clients.",
+      icon: "🚀",
     },
   ]
 
@@ -76,39 +77,39 @@ export default function AboutPage() {
       year: "2015",
       title: "Company Founded",
       description:
-        "SMARTiNNO was established with a mission to revolutionize agricultural practices through technology.",
+        "SMARTiNNO was established with a mission to revolutionize business operations through innovative software solutions.",
     },
     {
       year: "2017",
-      title: "First Major Project",
-      description: "Launched our flagship smart irrigation system, reducing water usage by 40% for early adopters.",
+      title: "First Enterprise Client",
+      description: "Launched our flagship enterprise management platform, improving operational efficiency by 40% for early adopters.",
     },
     {
       year: "2019",
-      title: "Research Partnership",
+      title: "Technology Partnership",
       description:
-        "Formed strategic partnership with Agricultural Research Institute to develop next-gen farming solutions.",
+        "Formed strategic partnership with leading cloud providers to develop next-generation business applications.",
     },
     {
       year: "2021",
       title: "International Expansion",
       description:
-        "Expanded operations to three new countries, bringing our solutions to diverse agricultural environments.",
+        "Expanded operations to three new countries, bringing our software solutions to diverse business environments.",
     },
     {
       year: "2023",
-      title: "Sustainability Award",
+      title: "Innovation Award",
       description:
-        "Recognized with the Global AgTech Sustainability Award for our innovative water conservation systems.",
+        "Recognized with the Global Tech Innovation Award for our cutting-edge AI-powered business analytics platform.",
     },
   ]
 
   // Statistics
   const stats = [
-    { value: "40+", label: "Completed Projects" },
+    { value: "200+", label: "Completed Projects" },
     { value: "12", label: "Countries Served" },
-    { value: "85%", label: "Water Savings" },
-    { value: "30+", label: "Team Members" },
+    { value: "85%", label: "Efficiency Increase" },
+    { value: "50+", label: "Team Members" },
   ]
 
   return (
@@ -119,38 +120,9 @@ export default function AboutPage() {
       >
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between px-6 sm:px-8 gap-4 sm:gap-0">
           <div className="flex items-center gap-2">
-            <div className="grid grid-cols-2 grid-rows-2 gap-1">
-              {[...Array(4)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="h-2 w-2 rounded-sm bg-black"
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3, delay: i * 0.1 }}
-                />
-              ))}
-            </div>
-            <span className="font-semibold text-black">SMARTiNNO</span>
           </div>
 
-          <nav className="flex flex-wrap gap-4 sm:gap-8" aria-label="Main navigation">
-            <Link href="/" className="text-gray-700 hover:text-black transition-colors relative group">
-              Home
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link href="/about" className="text-black font-semibold transition-colors relative">
-              About
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-black"></span>
-            </Link>
-            <Link href="/projects" className="text-gray-700 hover:text-black transition-colors relative group">
-              Projects
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link href="/services" className="text-gray-700 hover:text-black transition-colors relative group">
-              Services
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-          </nav>
+          <Navigation />
         </div>
       </header>
 
@@ -158,8 +130,8 @@ export default function AboutPage() {
       <div className="relative pt-16 sm:pt-0">
         <div className="relative mx-auto my-0 overflow-hidden h-[60vh]">
           <Image
-            src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Agricultural technology and innovation"
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Software development and innovation"
             fill
             priority
             sizes="100vw"
@@ -175,11 +147,11 @@ export default function AboutPage() {
               className="max-w-4xl mb-12"
             >
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
-                Transforming Agriculture <br className="hidden md:block" />
-                Through Innovation
+                Transforming Business <br className="hidden md:block" />
+                Through Technology
               </h1>
               <p className="text-xl text-white/90 max-w-2xl leading-relaxed">
-                We're on a mission to create sustainable, technology-driven solutions for the future of farming
+                We're on a mission to create innovative software solutions that drive business growth and digital excellence
               </p>
             </motion.div>
           </div>
@@ -201,21 +173,20 @@ export default function AboutPage() {
                 <span className="absolute -bottom-2 left-0 w-1/3 h-1 bg-blue-500"></span>
               </h2>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                Founded in 2015, SMARTiNNO began with a simple yet powerful vision: to revolutionize agricultural
-                practices through innovative technology. Our founder, Dr. Sarah Johnson, recognized that traditional
-                farming methods were facing unprecedented challenges from climate change, resource scarcity, and growing
-                global food demands.
+                Founded in 2015, SMARTiNNO began with a simple yet powerful vision: to revolutionize business operations
+                through innovative software solutions. Our founder, Dr. Sarah Johnson, recognized that traditional
+                business processes were facing unprecedented challenges in a rapidly evolving digital landscape.
               </p>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                What started as a small team of passionate engineers and agricultural experts has grown into a global
-                company at the forefront of agricultural innovation. Today, we work with farmers, governments, and
-                organizations across the world to implement sustainable, data-driven solutions that increase yields,
-                conserve resources, and promote environmental stewardship.
+                What started as a small team of passionate engineers and technology experts has grown into a global
+                company at the forefront of digital innovation. Today, we work with businesses, enterprises, and
+                organizations across the world to implement robust, scalable solutions that streamline operations,
+                enhance user experiences, and drive digital transformation.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Our commitment to combining cutting-edge technology with deep agricultural expertise remains at the
-                heart of everything we do. We believe that smart technology, thoughtfully applied, can help solve some
-                of the most pressing challenges facing modern agriculture.
+                Our commitment to combining cutting-edge technology with deep industry expertise remains at the
+                heart of everything we do. We believe that intelligent software, thoughtfully applied, can help solve some
+                of the most complex challenges facing modern businesses.
               </p>
             </motion.div>
 
@@ -227,8 +198,8 @@ export default function AboutPage() {
               viewport={{ once: true }}
             >
               <Image
-                src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="SMARTiNNO team working on agricultural solutions"
+                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2684&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="SMARTiNNO team collaborating on software solutions"
                 fill
                 className="object-cover"
               />
@@ -249,7 +220,7 @@ export default function AboutPage() {
           >
             <h2 className="text-3xl font-bold mb-4">Our Core Values</h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              These principles guide our approach to developing agricultural technology solutions
+              These principles guide our approach to developing innovative software solutions
             </p>
           </motion.div>
 
@@ -304,7 +275,7 @@ export default function AboutPage() {
           >
             <h2 className="text-3xl font-bold mb-4">Meet Our Team</h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              Our diverse team of experts brings together knowledge from agriculture, technology, and sustainability
+              Our diverse team of experts brings together knowledge from software development, technology, and sustainability
             </p>
           </motion.div>
 
@@ -419,7 +390,7 @@ export default function AboutPage() {
           >
             <h2 className="text-3xl font-bold mb-4">What Our Clients Say</h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              Hear from the farmers and organizations who have implemented our solutions
+              Hear from the businesses and organizations who have implemented our solutions
             </p>
           </motion.div>
 
@@ -433,15 +404,14 @@ export default function AboutPage() {
             >
               <div className="text-5xl text-gray-200 absolute top-4 left-4">"</div>
               <p className="text-gray-700 mb-6 relative z-10">
-                SMARTiNNO's irrigation system has completely transformed our water management. We've reduced usage by
-                42% while improving crop yields. Their team was professional and knowledgeable throughout
+                SMARTiNNO's software platform has completely transformed our business operations. We've seen a 42% increase in efficiency and a 30% reduction in costs. Their team was professional and knowledgeable throughout
                 implementation.
               </p>
               <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full bg-gray-300 mr-4"></div>
                 <div>
                   <div className="font-bold">Robert Martinez</div>
-                  <div className="text-sm text-gray-600">Sunnyvale Farms</div>
+                  <div className="text-sm text-gray-600">Sunnyvale Enterprises</div>
                 </div>
               </div>
             </motion.div>
@@ -455,8 +425,8 @@ export default function AboutPage() {
             >
               <div className="text-5xl text-gray-200 absolute top-4 left-4">"</div>
               <p className="text-gray-700 mb-6 relative z-10">
-                The soil monitoring system has given us insights we never had before. We can now make data-driven
-                decisions about fertilization and crop rotation. The ROI has been remarkable in just the first season.
+                The data analytics platform has given us insights we never had before. We can now make data-driven
+                decisions about business strategy and resource allocation. The ROI has been remarkable in just the first season.
               </p>
               <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full bg-gray-300 mr-4"></div>
@@ -476,7 +446,7 @@ export default function AboutPage() {
             >
               <div className="text-5xl text-gray-200 absolute top-4 left-4">"</div>
               <p className="text-gray-700 mb-6 relative z-10">
-                Working with SMARTiNNO on our regional agricultural development project has been a game-changer. Their
+                Working with SMARTiNNO on our regional business development project has been a game-changer. Their
                 solutions are not only technologically advanced but also practical and adaptable to our local
                 conditions.
               </p>
@@ -484,7 +454,7 @@ export default function AboutPage() {
                 <div className="w-12 h-12 rounded-full bg-gray-300 mr-4"></div>
                 <div>
                   <div className="font-bold">Dr. Aisha Mbeki</div>
-                  <div className="text-sm text-gray-600">Regional Agricultural Authority</div>
+                  <div className="text-sm text-gray-600">Regional Business Authority</div>
                 </div>
               </div>
             </motion.div>
@@ -635,7 +605,7 @@ export default function AboutPage() {
           >
             <h2 className="text-3xl font-bold mb-4">Our Partners</h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              We collaborate with leading organizations to advance agricultural innovation
+              We collaborate with leading organizations to advance digital innovation
             </p>
           </motion.div>
 
@@ -667,9 +637,9 @@ export default function AboutPage() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Agricultural Operations?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Business Operations?</h2>
             <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
-              Let's work together to create sustainable, technology-driven solutions for your specific needs
+              Let's work together to create innovative software solutions for your specific needs
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -704,7 +674,7 @@ export default function AboutPage() {
                 <span className="font-semibold text-white">SMARTiNNO</span>
               </div>
               <p className="text-gray-400 mb-6">
-                Innovative solutions for smart urban development and sustainable infrastructure projects.
+                Innovative software development solutions for businesses seeking digital transformation and technology excellence.
               </p>
               <div className="flex gap-4">
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -747,27 +717,27 @@ export default function AboutPage() {
               <ul className="space-y-3">
                 <li>
                   <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Urban Planning
+                    Web Development
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Smart Infrastructure
+                    Mobile Development
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Sustainability Consulting
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    IoT Implementation
+                    Cloud Solutions
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-gray-400 hover:text-white transition-colors">
                     Data Analytics
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                    AI & Machine Learning
                   </a>
                 </li>
               </ul>

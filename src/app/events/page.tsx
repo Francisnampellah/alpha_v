@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Footer from '@/components/footer';
 import { CategoryPill } from '@/components/category-pill';
+import Navigation from '@/components/navigation/Navigation';
 
 export const metadata: Metadata = {
   title: 'Events | SMARTiNNO',
@@ -91,33 +92,8 @@ export default function EventsPage() {
     <>
       <div className="min-h-screen">
         {/* Header */}
-        <header className="flex flex-col sm:flex-row items-center justify-between px-6 sm:px-12 py-4 gap-4 sm:gap-0">
-          <div className="flex items-center gap-2">
-            <div className="grid grid-cols-2 grid-rows-2 gap-1">
-              {[...Array(4)].map((_, i) => (
-                <div key={i} className="h-2 w-2 rounded-sm bg-black"></div>
-              ))}
-            </div>
-            <span className="font-semibold text-black">SMARTiNNO</span>
-          </div>
-          
-          <nav className="flex flex-wrap gap-4 sm:gap-8" aria-label="Main navigation">
-            <Link href="/" className="text-gray-700 hover:text-black transition-colors">
-              Home
-            </Link>
-            <Link href="/about" className="text-gray-700 hover:text-black transition-colors">
-              About
-            </Link>
-            <Link href="/projects" className="text-gray-700 hover:text-black transition-colors">
-              Projects
-            </Link>
-            <Link href="/events" className="text-black font-semibold transition-colors">
-              Events
-            </Link>
-            <Link href="/services" className="text-gray-700 hover:text-black transition-colors">
-              Services
-            </Link>
-          </nav>
+        <header className="flex flex-col sm:flex-row items-center justify-between px-6 sm:px-12 py-4 gap-4 sm:gap-0">          
+          <Navigation />
         </header>
 
         {/* Hero Banner */}

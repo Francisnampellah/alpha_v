@@ -22,7 +22,7 @@ const teamMembers: TeamMember[] = [
     id: 1,
     name: "Sarah Johnson",
     role: "Chief Executive Officer",
-    bio: "With over 15 years of experience in agricultural innovation, Sarah leads our company vision and strategy.",
+    bio: "With over 15 years of experience in software innovation, Sarah leads our company vision and strategic direction.",
     imageUrl: "/placeholder.svg?height=400&width=400",
     socialLinks: {
       twitter: "https://twitter.com/sarahjohnson",
@@ -34,7 +34,7 @@ const teamMembers: TeamMember[] = [
     id: 2,
     name: "Michael Chen",
     role: "Chief Technology Officer",
-    bio: "Michael oversees all technical aspects of our solutions, bringing 12 years of experience in AgTech.",
+    bio: "Michael oversees all technical aspects of our solutions, bringing 12 years of experience in software architecture and cloud systems.",
     imageUrl: "/placeholder.svg?height=400&width=400",
     socialLinks: {
       twitter: "https://twitter.com/michaelchen",
@@ -45,8 +45,8 @@ const teamMembers: TeamMember[] = [
   {
     id: 3,
     name: "Elena Rodriguez",
-    role: "Head of Research",
-    bio: "Elena leads our research initiatives, focusing on sustainable agricultural practices and innovation.",
+    role: "Head of Product Development",
+    bio: "Elena leads our product initiatives, focusing on user experience design and innovative software solutions.",
     imageUrl: "/placeholder.svg?height=400&width=400",
     socialLinks: {
       linkedin: "https://linkedin.com/in/elenarodriguez",
@@ -56,8 +56,8 @@ const teamMembers: TeamMember[] = [
   {
     id: 4,
     name: "David Okafor",
-    role: "Operations Director",
-    bio: "David ensures smooth day-to-day operations and oversees our global supply chain management.",
+    role: "DevOps Director",
+    bio: "David ensures smooth deployment pipelines and oversees our cloud infrastructure and operational excellence.",
     imageUrl: "/placeholder.svg?height=400&width=400",
     socialLinks: {
       linkedin: "https://linkedin.com/in/davidokafor",
@@ -68,7 +68,7 @@ const teamMembers: TeamMember[] = [
     id: 5,
     name: "Priya Patel",
     role: "Marketing Director",
-    bio: "Priya develops our marketing strategies and builds strong relationships with our global partners.",
+    bio: "Priya develops our marketing strategies and builds strong relationships with clients and technology partners.",
     imageUrl: "/placeholder.svg?height=400&width=400",
     socialLinks: {
       twitter: "https://twitter.com/priyapatel",
@@ -79,8 +79,8 @@ const teamMembers: TeamMember[] = [
   {
     id: 6,
     name: "Thomas Weber",
-    role: "Agricultural Specialist",
-    bio: "Thomas brings deep expertise in sustainable farming practices and agricultural technology integration.",
+    role: "AI Solutions Specialist",
+    bio: "Thomas brings deep expertise in machine learning, data science, and AI-powered software solutions.",
     imageUrl: "/placeholder.svg?height=400&width=400",
     socialLinks: {
       linkedin: "https://linkedin.com/in/thomasweber",
@@ -152,8 +152,8 @@ export default function OurTeam() {
         <div className="text-center mb-12">
           <h2 className="text-3xl text-black md:text-4xl font-bold mb-4">SMARTiNNO Team</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Meet the dedicated professionals behind SMARTiNNO ENG. Our diverse team combines expertise in agriculture,
-            technology, and sustainable practices to deliver innovative solutions.
+            Meet the dedicated professionals behind SMARTiNNO. Our diverse team combines expertise in software development,
+            cloud technologies, and digital transformation to deliver innovative solutions.
           </p>
         </div>
 
@@ -166,8 +166,8 @@ export default function OurTeam() {
         <div className="mt-16 text-center">
           <h3 className="text-xl font-semibold mb-4">Join Our Team</h3>
           <p className="text-gray-600 max-w-2xl mx-auto mb-6">
-            Were always looking for talented individuals who are passionate about agricultural innovation and
-            sustainability. Check out our current openings and become part of our mission.
+            We're always looking for talented individuals who are passionate about software innovation and
+            digital transformation. Check out our current openings and become part of our mission.
           </p>
           <Link
             href="/careers"

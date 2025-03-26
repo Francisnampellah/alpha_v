@@ -5,7 +5,8 @@ import Link from "next/link"
 import { MapPin } from "lucide-react"
 
 export default function Footer() {
-  const mapRef = useRef<{ current: HTMLDivElement | null; _leaflet?: L.Map | null }>({ current: null })
+  const mapRef = useRef<HTMLDivElement>(null)
+  const mapInstanceRef = useRef<L.Map | null>(null)
 
   useEffect(() => {
     // Only run on client side
@@ -13,7 +14,7 @@ export default function Footer() {
       // Dynamically import Leaflet to avoid SSR issues
       import("leaflet").then((L) => {
         // Make sure the map container exists and hasn't been initialized
-        if (mapRef.current && !mapRef.current._leaflet) {
+        if (mapRef.current && !mapInstanceRef.current) {
           // Load Leaflet CSS
           if (!document.querySelector('link[href*="leaflet.css"]')) {
             const link = document.createElement("link")
@@ -40,7 +41,7 @@ export default function Footer() {
           L.marker(companyLocation).addTo(map).bindPopup("SMARTiNNO ENG ltd.").openPopup()
 
           // Store map instance to avoid re-initialization
-          mapRef.current._leaflet = map
+          mapInstanceRef.current = map
 
           // Ensure map renders correctly by triggering a resize after initialization
           setTimeout(() => {
@@ -52,9 +53,9 @@ export default function Footer() {
 
     // Cleanup function
     return () => {
-      if (mapRef.current && mapRef.current._leaflet) {
-        mapRef.current._leaflet.remove()
-        mapRef.current._leaflet = null
+      if (mapInstanceRef.current) {
+        mapInstanceRef.current.remove()
+        mapInstanceRef.current = null
       }
     }
   }, [])
@@ -62,8 +63,8 @@ export default function Footer() {
   return (
     <footer className="w-full bg-white py-8 px-4 md:px-8 lg:px-12">
       {/* Top bar with social links and language selector */}
-      <div className="flex justify-between items-center mb-12">
-        <div className="flex items-center gap-2">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0 mb-8 sm:mb-12">
+        <div className="flex flex-wrap items-center gap-2">
           <Link href="#" className="text-sm font-medium hover:underline flex items-center">
             Twitter <span className="mx-2">{">"}</span>
           </Link>
@@ -75,8 +76,8 @@ export default function Footer() {
           </Link>
         </div>
 
-        <div className="flex items-center">
-          <div className="flex gap-4 mr-6">
+        <div className="flex flex-wrap items-center gap-2">
+          <div className="flex gap-4 mr-0 sm:mr-6 mb-2 sm:mb-0">
             <Link href="#" className="text-sm font-medium">
               En
             </Link>
@@ -105,7 +106,7 @@ export default function Footer() {
       </div>
 
       {/* Main footer content */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
         {/* Company info with map */}
         <div>
           <div className="flex items-center mb-4">
@@ -127,14 +128,14 @@ export default function Footer() {
           {/* Map container */}
           <div
             ref={mapRef}
-            className="w-full h-[150px] rounded-lg overflow-hidden border border-gray-200 shadow-sm"
+            className="w-full h-[150px] sm:h-[180px] rounded-lg overflow-hidden border border-gray-200 shadow-sm"
             aria-label="Company location map"
           ></div>
         </div>
 
-        {/* Three identical About columns */}
+        {/* Three columns that stack on mobile */}
         {[1, 2, 3].map((i) => (
-          <div key={i}>
+          <div key={i} className={i > 1 ? "hidden sm:block lg:block" : ""}>
             <h3 className="font-bold text-lg mb-4">About</h3>
             <ul className="space-y-3">
               <li>
@@ -163,9 +164,9 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar with copyright and legal links */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center pt-6 border-t border-gray-200">
-        <div className="text-gray-400 text-sm mb-4 md:mb-0">2025@etitud.com</div>
-        <div className="flex gap-8">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center pt-6 border-t border-gray-200">
+        <div className="text-gray-400 text-sm mb-4 sm:mb-0">2025@etitud.com</div>
+        <div className="flex gap-4 sm:gap-8">
           <Link href="#" className="text-gray-400 text-sm hover:underline">
             Privacy Policy
           </Link>

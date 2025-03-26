@@ -6,6 +6,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { Filter, Search, ArrowRight, ChevronDown } from "lucide-react"
 import Footer from "@/components/footer"
+import Navigation from "@/components/navigation/Navigation"
 
 // Note: We'll create our own CategoryPill component inline to match the styling
 const CategoryPill = ({ label }: { label: string }) => {
@@ -109,39 +110,7 @@ export default function ProjectsPage() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-4"}`}
       >
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between px-6 sm:px-8 gap-4 sm:gap-0">
-          <div className="flex items-center gap-2">
-            <div className="grid grid-cols-2 grid-rows-2 gap-1">
-              {[...Array(4)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="h-2 w-2 rounded-sm bg-black"
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3, delay: i * 0.1 }}
-                />
-              ))}
-            </div>
-            <span className="font-semibold text-black">SMARTiNNO</span>
-          </div>
-
-          <nav className="flex flex-wrap gap-4 sm:gap-8" aria-label="Main navigation">
-            <Link href="/" className="text-gray-700 hover:text-black transition-colors relative group">
-              Home
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link href="/about" className="text-gray-700 hover:text-black transition-colors relative group">
-              About
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link href="/projects" className="text-black font-semibold transition-colors relative">
-              Projects
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-black"></span>
-            </Link>
-            <Link href="/services" className="text-gray-700 hover:text-black transition-colors relative group">
-              Services
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-          </nav>
+          <Navigation />
         </div>
       </header>
 

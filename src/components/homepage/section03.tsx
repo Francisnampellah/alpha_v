@@ -1,13 +1,13 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { BarChart2, Play, Grid, Pause, Leaf, Cpu, Sprout } from "lucide-react"
+import { BarChart2, Play, Grid, Pause, Leaf, Cpu, Sprout, ArrowRight } from "lucide-react"
 
 export default function Section03() {
-  const [activeTab, setActiveTab] = useState("farm-tech")
+  const [activeTab, setActiveTab] = useState<string>("farm-tech")
   const [isPaused, setIsPaused] = useState(false)
   const [fadeState, setFadeState] = useState("fade-in")
-  const intervalRef = useRef(null)
+  const intervalRef = useRef<NodeJS.Timeout | null>(null)
   const ROTATION_INTERVAL = 5000 // 5 seconds per tab
 
   // Tab content data with images
@@ -124,7 +124,7 @@ export default function Section03() {
   ]
 
   // Function to change tab with animation
-  const changeTab = (tabId) => {
+  const changeTab = (tabId: string) => {
     // Start fade out animation
     setFadeState("fade-out")
 
@@ -136,7 +136,7 @@ export default function Section03() {
   }
 
   // Handle tab click
-  const handleTabClick = (tabId) => {
+  const handleTabClick = (tabId: string) => {
     changeTab(tabId)
     // Reset the timer when user manually changes tab
     if (intervalRef.current) {
@@ -202,123 +202,124 @@ export default function Section03() {
   }, [activeTab])
 
   // Get current tab content
-  const currentTab = tabContent[activeTab]
+  const currentTab = tabContent[activeTab as keyof typeof tabContent]
 
   return (
-    <section className="max-w-7xl my-8 mx-auto px-4 py-16 sm:px-6 lg:px-8 bg-white font-sans rounded-3xl shadow-xl">
-      <div className="flex items-center mb-12 border-b border-blue-400/30 pb-6">
-        <div className="w-16 h-16 flex items-center justify-center rounded-full bg-blue-100 text-lg font-bold text-blue-700">
-          02
-        </div>
-        <div className="ml-6">
-          <h2 className="text-2xl font-bold text-blue-700">Our Technology</h2>
-          <p className="text-blue-600 mt-1">Innovative solutions for modern agriculture</p>
+    <section className="w-full py-10 bg-gradient-to-b from-blue-500 via-blue-600 to-blue-700">
+      {/* Section Title */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
+        <div className="flex items-center">
+
+          <div>
+            <h2 className="text-2xl font-bold text-white">Our Technology</h2>
+            <p className="text-blue-200 text-sm mt-1">Innovative solutions for modern agriculture</p>
+          </div>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-        {/* Left Column - Image and Stats with animation */}
-        <div
-          className={`relative rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 ${
-            fadeState === "fade-in" ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-4"
-          }`}
-        >
-          <div className="">
-            <img
-              src={currentTab.image || "/placeholder.svg"}
-              alt={currentTab.imageAlt}
-              className="object-cover w-full h-96"
-            />
-          </div>
-
-          {/* Top buttons */}
-          <div className="absolute top-6 right-6 flex flex-wrap gap-2">
-            <span className="bg-white/90 backdrop-blur-sm text-blue-800 px-4 py-2 rounded-full text-sm font-medium shadow-md">
-              Agri-Business
-            </span>
-            <span className="bg-white/90 backdrop-blur-sm text-blue-800 px-4 py-2 rounded-full text-sm font-medium shadow-md">
-              Support
-            </span>
-          </div>
-
-          {/* Image description */}
-          <div className="absolute bottom-24 left-6 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 shadow-md">
-            <p className="text-blue-800 font-medium">{currentTab.imageDescription}</p>
-          </div>
-
-        </div>
-
-        {/* Right Column - Content */}
-        <div
-          className="flex flex-col justify-between"
+      {/* Tab Navigation */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
+        <div 
+          className="flex flex-wrap border-b border-blue-400/30" 
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => {
             setIsPaused(false)
             startRotation()
           }}
         >
-          {/* Top navigation */}
-          <div className="mb-8 relative">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-medium text-blue-700">Explore our solutions</h3>
-              <button
-                onClick={togglePause}
-                className="p-2 rounded-full bg-blue-100 hover:bg-blue-200 transition-colors"
-                aria-label={isPaused ? "Play slideshow" : "Pause slideshow"}
-              >
-                {isPaused ? <Play className="h-4 w-4 text-blue-700" /> : <Pause className="h-4 w-4 text-blue-700" />}
-              </button>
-            </div>
-
-            <nav className="flex items-center mb-2">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-2 w-full">
-                {navItems.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => handleTabClick(item.id)}
-                    className={`whitespace-nowrap transition-all duration-300 px-4 py-2 rounded-lg text-sm ${
-                      activeTab === item.id
-                        ? `font-medium bg-blue-100 text-blue-700`
-                        : "text-blue-600 hover:text-blue-700 hover:bg-blue-50"
-                    }`}
-                  >
-                    {item.label}
-                  </button>
-                ))}
-              </div>
-            </nav>
-
-            {/* Progress bar */}
-            <div className="w-full h-1 bg-blue-100 rounded-full overflow-hidden">
-              <div
-                className="h-full transition-all bg-blue-500"
-                style={{
-                  width: isPaused ? "30%" : "100%",
-                  transition: isPaused ? "none" : `width ${ROTATION_INTERVAL}ms linear`,
-                }}
-              ></div>
-            </div>
-          </div>
-
-          {/* Main content with animation */}
-          <div
-            className={`flex-grow flex flex-col justify-center mb-8 transition-opacity duration-500 ${
-              fadeState === "fade-in" ? "opacity-100" : "opacity-0"
-            }`}
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => handleTabClick(item.id)}
+              className={`relative py-2 px-6 text-sm transition-all duration-300 ${
+                activeTab === item.id
+                  ? "text-white font-medium"
+                  : "text-blue-100 hover:text-white"
+              }`}
+            >
+              {item.label}
+              {activeTab === item.id && (
+                <span className="absolute bottom-0 left-0 w-full h-1 bg-blue-300"></span>
+              )}
+            </button>
+          ))}
+          <button
+            onClick={togglePause}
+            className="ml-auto p-2 rounded-full transition-colors text-blue-100 hover:text-white"
+            aria-label={isPaused ? "Play slideshow" : "Pause slideshow"}
           >
-            <h2 className="text-2xl md:text-3xl font-bold leading-tight mb-6 text-blue-700">{currentTab.title}</h2>
+            {isPaused ? <Play className="h-4 w-4" /> : <Pause className="h-4 w-4" />}
+          </button>
+        </div>
+      </div>
 
-            <div className="mt-6">
-              <button className="bg-white text-blue-700 px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-blue-50 transition-colors shadow-lg font-medium">
-                Get Started
-                <span className="bg-blue-100 rounded-md p-1">
-                  <Grid className="h-5 w-5 text-blue-700" />
+      {/* Content Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div 
+          className={`grid grid-cols-1 lg:grid-cols-12 gap-6 items-center transition-opacity duration-500 ${
+            fadeState === "fade-in" ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          {/* Content Column */}
+          <div className="lg:col-span-5 lg:pr-4">
+            <div className="space-y-3">
+              <h3 className="text-2xl font-bold text-white leading-tight">
+                {currentTab.title}
+              </h3>
+              
+              <div className="flex flex-wrap gap-2 my-3">
+                <span className="inline-flex items-center px-3 py-0.5 border border-blue-400/30 text-xs font-medium text-white bg-blue-500/30 rounded-full">
+                  Agri-Business
                 </span>
-              </button>
+                <span className="inline-flex items-center px-3 py-0.5 border border-blue-400/30 text-xs font-medium text-white bg-blue-500/30 rounded-full">
+                  Support
+                </span>
+              </div>
+              
+              <a href="#" className="inline-flex items-center text-blue-100 text-sm font-medium hover:text-white transition-colors group">
+                Learn more 
+                <ArrowRight className="ml-1 h-3 w-3 transition-transform group-hover:translate-x-1" />
+              </a>
             </div>
           </div>
-
-          {/* Bottom stats with animation */}
+          
+          {/* Image Column */}
+          <div className="lg:col-span-7 relative">
+            <div className="aspect-video overflow-hidden max-h-[250px]">
+              <img
+                src={currentTab.image}
+                alt={currentTab.imageAlt}
+                className="object-cover w-full h-full"
+              />
+            </div>
+            
+            <div className="absolute bottom-4 left-4 bg-gradient-to-r from-blue-700 to-blue-600 text-white px-3 py-1 text-sm">
+              <p className="font-medium">{currentTab.imageDescription}</p>
+            </div>
+            
+            {/* Stats */}
+            <div className="grid grid-cols-2 gap-3 mt-3">
+              {currentTab.stats.map((stat, index) => (
+                <div 
+                  key={index}
+                  className="py-2 px-3 bg-gradient-to-br from-blue-600 to-blue-700 text-white flex items-center"
+                >
+                  <div className="bg-blue-500/50 p-1.5 rounded-md mr-2">
+                    {stat.icon}
+                  </div>
+                  <div>
+                    <p className="text-xs font-medium">{stat.title}</p>
+                    {stat.value && <p className="text-base font-bold">{stat.value}</p>}
+                    {stat.chart && (
+                      <div className="w-12 h-2 bg-blue-500/20 rounded-full overflow-hidden mt-1">
+                        <div className="h-full bg-blue-200 w-4/5"></div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
