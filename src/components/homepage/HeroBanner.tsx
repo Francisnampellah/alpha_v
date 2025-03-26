@@ -106,7 +106,7 @@ export default function HeroBanner() {
                 className="max-w-full sm:max-w-md"
               >
                 <p className="text-sm sm:text-base md:text-xl text-white">
-                  We're dedicated to providing farmers, businesses, and communities with innovative solutions.
+                  Were dedicated to providing farmers, businesses, and communities with innovative solutions.
                 </p>
               </motion.div>
             </div>

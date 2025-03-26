@@ -116,7 +116,7 @@ export default function Footer() {
             <span className="font-bold text-lg">SMARTiNNO ENG ltd.</span>
           </div>
           <p className="text-gray-700 max-w-xs mb-4">
-            We're dedicated to providing farmers, businesses, and communities with the best agricultural products.
+            Were dedicated to providing farmers, businesses, and communities with the best agricultural products.
           </p>
 
           {/* Location info */}

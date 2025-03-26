@@ -66,13 +66,7 @@ const teamMembers = [
 ]
 
 // Define types for the project data
-interface ProjectData {
-  mainProduct: string
-  description: string
-  leftSideText: string[]
-  estTime: string
-  workerInfo: string
-}
+
 
 // Animation variants
 const containerVariants = {
@@ -103,7 +97,7 @@ type Screen = "projects" | "details" | "community"
 
 export default function MobileAppLayout() {
   const [activeScreen, setActiveScreen] = useState<Screen>("projects")
-  const [activeTab, setActiveTab] = useState("home")
+  const [_activeTab, setActiveTab] = useState("home")
 
   // For demo purposes, using the passed project data
   const currentProjectData = sampleProjectData

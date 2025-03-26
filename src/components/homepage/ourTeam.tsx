@@ -166,7 +166,7 @@ export default function OurTeam() {
         <div className="mt-16 text-center">
           <h3 className="text-xl font-semibold mb-4">Join Our Team</h3>
           <p className="text-gray-600 max-w-2xl mx-auto mb-6">
-            We're always looking for talented individuals who are passionate about software innovation and
+            Were always looking for talented individuals who are passionate about software innovation and
             digital transformation. Check out our current openings and become part of our mission.
           </p>
           <Link
