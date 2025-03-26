@@ -29,13 +29,12 @@ export default function Section_06() {
 
           <blockquote className="space-y-6">
             <h2 className="text-4xl font-semibold leading-tight text-gray-800">
-              Since switching to their sustainable fertilizers, my crops have been healthier, and my yields have
-              increased by 40%!
+              SmartINNO's innovative solutions have transformed our operations, increasing efficiency and driving growth.
             </h2>
 
             <div className="pt-4">
-              <p className="text-xl font-medium text-gray-800">Jon Snow</p>
-              <p className="text-gray-500">King of the light</p>
+              <p className="text-xl font-medium text-gray-800">Jane Doe</p>
+              <p className="text-gray-500">CEO, AgriTech Solutions</p>
             </div>
           </blockquote>
         </div>

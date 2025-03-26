@@ -45,30 +45,30 @@ const DefaultIcons = {
 
 // Default logos with consistent naming and structure
 const defaultLogos = [
-  { name: 'Custom Software', icon: DefaultIcons.RotaShow },
-  { name: 'FinTech', icon: DefaultIcons.Waves },
-  { name: 'ICT Services', icon: DefaultIcons.Travelers },
-  { name: 'Agribusiness', icon: DefaultIcons.Goldlines },
-  { name: 'E-Government', icon: DefaultIcons.Velocity }
+  { name: 'Tech Conference', icon: DefaultIcons.RotaShow },
+  { name: 'FinTech Summit', icon: DefaultIcons.Waves },
+  { name: 'AI Innovations', icon: DefaultIcons.Travelers },
+  { name: 'Cloud Solutions', icon: DefaultIcons.Goldlines },
+  { name: 'Cybersecurity', icon: DefaultIcons.Velocity }
 ];
 
 export default function Section_02() {
     const slides = [
         {
-          title: "Custom Software Solutions",
-          description: "Tailored software to meet specific business needs.",
+          title: "Tech Conference 2023",
+          description: "Exploring the latest trends in AI and software development.",
           image:
-            "https://images.unsplash.com/photo-1581091870627-3f9b5d0d0b3c?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
           position: "top-right",
-          copyright: "©2025 SmartINNO",
+          copyright: "©2023 SmartINNO",
         },
         {
-            title: "FinTech Innovation",
-            description: "Advanced financial technology solutions for accessibility and security.",
+            title: "FinTech Summit",
+            description: "Innovations in financial technology and digital payments.",
             image:
-              "https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+              "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             position: "top-right",
-            copyright: "©2025 SmartINNO",
+            copyright: "©2023 SmartINNO",
           }
       ]
     
@@ -161,7 +161,7 @@ export default function Section_02() {
             <div className="lg:col-span-8 space-y-8">
               {/* Headline with improved typography */}
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-gray-900 animate-in slide-in-from-right duration-700">
-                From custom software to advanced FinTech solutions, we empower businesses to thrive in a digital world.
+                Join us at the forefront of technology innovation and transformation.
               </h1>
   
               {/* Image Slider - Enhanced with better accessibility and controls */}

@@ -23,17 +23,17 @@ export default function Section03() {
           title: "Yield",
           icon: <BarChart2 className="h-5 w-5" />,
           chart: true,
-          color: "bg-blue-100/70",
-          iconBg: "bg-blue-500",
-          textColor: "text-blue-900",
+          color: "bg-emerald-100/70",
+          iconBg: "bg-emerald-500",
+          textColor: "text-emerald-900",
         },
         {
           title: "Productivity",
           value: "250%",
           icon: <Sprout className="h-5 w-5 text-white" />,
-          color: "bg-blue-200/70",
-          iconBg: "bg-blue-600",
-          textColor: "text-blue-900",
+          color: "bg-emerald-200/70",
+          iconBg: "bg-emerald-600",
+          textColor: "text-emerald-900",
         },
       ],
     },
@@ -49,17 +49,17 @@ export default function Section03() {
           title: "Growth",
           icon: <BarChart2 className="h-5 w-5" />,
           chart: true,
-          color: "bg-green-100/70",
-          iconBg: "bg-green-500",
-          textColor: "text-green-900",
+          color: "bg-emerald-100/70",
+          iconBg: "bg-emerald-500",
+          textColor: "text-emerald-900",
         },
         {
           title: "Efficiency",
           value: "300%",
           icon: <Cpu className="h-5 w-5 text-white" />,
-          color: "bg-green-200/70",
-          iconBg: "bg-green-600",
-          textColor: "text-green-900",
+          color: "bg-emerald-200/70",
+          iconBg: "bg-emerald-600",
+          textColor: "text-emerald-900",
         },
       ],
     },
@@ -74,17 +74,17 @@ export default function Section03() {
           title: "Reduction",
           icon: <BarChart2 className="h-5 w-5" />,
           chart: true,
-          color: "bg-teal-100/70",
-          iconBg: "bg-teal-500",
-          textColor: "text-teal-900",
+          color: "bg-emerald-100/70",
+          iconBg: "bg-emerald-500",
+          textColor: "text-emerald-900",
         },
         {
           title: "Sustainability",
           value: "180%",
           icon: <Leaf className="h-5 w-5 text-white" />,
-          color: "bg-teal-200/70",
-          iconBg: "bg-teal-600",
-          textColor: "text-teal-900",
+          color: "bg-emerald-200/70",
+          iconBg: "bg-emerald-600",
+          textColor: "text-emerald-900",
         },
       ],
     },
@@ -99,17 +99,17 @@ export default function Section03() {
           title: "Innovation",
           icon: <BarChart2 className="h-5 w-5" />,
           chart: true,
-          color: "bg-purple-100/70",
-          iconBg: "bg-purple-500",
-          textColor: "text-purple-900",
+          color: "bg-emerald-100/70",
+          iconBg: "bg-emerald-500",
+          textColor: "text-emerald-900",
         },
         {
           title: "Progress",
           value: "420%",
           icon: <Grid className="h-5 w-5 text-white" />,
-          color: "bg-purple-200/70",
-          iconBg: "bg-purple-600",
-          textColor: "text-purple-900",
+          color: "bg-emerald-200/70",
+          iconBg: "bg-emerald-600",
+          textColor: "text-emerald-900",
         },
       ],
     },
@@ -205,47 +205,44 @@ export default function Section03() {
   const currentTab = tabContent[activeTab as keyof typeof tabContent]
 
   return (
-    <section className="w-full py-10 bg-gradient-to-b from-blue-500 via-blue-600 to-blue-700">
+    <section className="w-full py-12 bg-gradient-to-b from-blue-600 via-blue-500 to-blue-400">
       {/* Section Title */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
-        <div className="flex items-center">
-
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <div className="flex items-center border-l-4 border-blue-300 pl-4">
           <div>
-            <h2 className="text-2xl font-bold text-white">Our Technology</h2>
-            <p className="text-blue-200 text-sm mt-1">Innovative solutions for modern agriculture</p>
+            <h2 className="text-3xl font-bold text-white">Our Services</h2>
+            <p className="text-slate-300 text-sm mt-1">Innovative solutions tailored to your needs.</p>
           </div>
         </div>
       </div>
 
       {/* Tab Navigation */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
-        <div 
-          className="flex flex-wrap border-b border-blue-400/30" 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          className="flex flex-wrap border-b border-blue-400/30 mb-8"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => {
             setIsPaused(false)
             startRotation()
           }}
         >
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => handleTabClick(item.id)}
-              className={`relative py-2 px-6 text-sm transition-all duration-300 ${
-                activeTab === item.id
-                  ? "text-white font-medium"
-                  : "text-blue-100 hover:text-white"
-              }`}
-            >
-              {item.label}
-              {activeTab === item.id && (
-                <span className="absolute bottom-0 left-0 w-full h-1 bg-blue-300"></span>
-              )}
-            </button>
-          ))}
+          <div className="flex overflow-x-auto scrollbar-hide">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => handleTabClick(item.id)}
+                className={`relative py-3 px-6 text-sm font-medium transition-all duration-300 ${
+                  activeTab === item.id ? "text-white" : "text-blue-100 hover:text-white"
+                }`}
+              >
+                {item.label}
+                {activeTab === item.id && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-300"></span>}
+              </button>
+            ))}
+          </div>
           <button
             onClick={togglePause}
-            className="ml-auto p-2 rounded-full transition-colors text-blue-100 hover:text-white"
+            className="ml-auto p-2 rounded-full transition-colors text-blue-100 hover:text-white bg-blue-600/50"
             aria-label={isPaused ? "Play slideshow" : "Pause slideshow"}
           >
             {isPaused ? <Play className="h-4 w-4" /> : <Pause className="h-4 w-4" />}
@@ -255,69 +252,68 @@ export default function Section03() {
 
       {/* Content Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div 
-          className={`grid grid-cols-1 lg:grid-cols-12 gap-6 items-center transition-opacity duration-500 ${
-            fadeState === "fade-in" ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          {/* Content Column */}
-          <div className="lg:col-span-5 lg:pr-4">
-            <div className="space-y-3">
-              <h3 className="text-2xl font-bold text-white leading-tight">
-                {currentTab.title}
-              </h3>
-              
-              <div className="flex flex-wrap gap-2 my-3">
-                <span className="inline-flex items-center px-3 py-0.5 border border-blue-400/30 text-xs font-medium text-white bg-blue-500/30 rounded-full">
-                  Agri-Business
-                </span>
-                <span className="inline-flex items-center px-3 py-0.5 border border-blue-400/30 text-xs font-medium text-white bg-blue-500/30 rounded-full">
-                  Support
-                </span>
-              </div>
-              
-              <a href="#" className="inline-flex items-center text-blue-100 text-sm font-medium hover:text-white transition-colors group">
-                Learn more 
-                <ArrowRight className="ml-1 h-3 w-3 transition-transform group-hover:translate-x-1" />
-              </a>
-            </div>
-          </div>
-          
-          {/* Image Column */}
-          <div className="lg:col-span-7 relative">
-            <div className="aspect-video overflow-hidden max-h-[250px]">
-              <img
-                src={currentTab.image}
-                alt={currentTab.imageAlt}
-                className="object-cover w-full h-full"
-              />
-            </div>
-            
-            <div className="absolute bottom-4 left-4 bg-gradient-to-r from-blue-700 to-blue-600 text-white px-3 py-1 text-sm">
-              <p className="font-medium">{currentTab.imageDescription}</p>
-            </div>
-            
-            {/* Stats */}
-            <div className="grid grid-cols-2 gap-3 mt-3">
-              {currentTab.stats.map((stat, index) => (
-                <div 
-                  key={index}
-                  className="py-2 px-3 bg-gradient-to-br from-blue-600 to-blue-700 text-white flex items-center"
-                >
-                  <div className="bg-blue-500/50 p-1.5 rounded-md mr-2">
-                    {stat.icon}
-                  </div>
-                  <div>
-                    <p className="text-xs font-medium">{stat.title}</p>
-                    {stat.value && <p className="text-base font-bold">{stat.value}</p>}
-                    {stat.chart && (
-                      <div className="w-12 h-2 bg-blue-500/20 rounded-full overflow-hidden mt-1">
-                        <div className="h-full bg-blue-200 w-4/5"></div>
-                      </div>
-                    )}
-                  </div>
+        <div className={`transition-opacity duration-500 ${fadeState === "fade-in" ? "opacity-100" : "opacity-0"}`}>
+          <div className="bg-blue-600/50 rounded-xl overflow-hidden border border-blue-500/50">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+              {/* Image Column - Now on the left for desktop */}
+              <div className="lg:col-span-7 relative">
+                <div className="aspect-video overflow-hidden lg:h-full">
+                  <img
+                    src={currentTab.image || "/placeholder.svg"}
+                    alt={currentTab.imageAlt}
+                    className="object-cover w-full h-full transition-transform duration-700 hover:scale-105"
+                  />
                 </div>
-              ))}
+
+                <div className="absolute bottom-4 left-4 bg-blue-700/80 backdrop-blur-sm text-white px-3 py-1.5 text-sm rounded-md border border-blue-500/50">
+                  <p className="font-medium">{currentTab.imageDescription}</p>
+                </div>
+              </div>
+
+              {/* Content Column - Now on the right for desktop */}
+              <div className="lg:col-span-5 p-6">
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-bold text-white leading-tight">{currentTab.title}</h3>
+
+                  <div className="flex flex-wrap gap-2 my-3">
+                    <span className="inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-500/30 rounded-full border border-blue-400/30">
+                      Agri-Business
+                    </span>
+                    <span className="inline-flex items-center px-3 py-1 text-xs font-medium text-white bg-blue-500/30 rounded-full border border-blue-400/30">
+                      Support
+                    </span>
+                  </div>
+
+                  {/* Stats */}
+                  <div className="grid grid-cols-2 gap-3 my-4">
+                    {currentTab.stats.map((stat, index) => (
+                      <div
+                        key={index}
+                        className="py-3 px-4 bg-blue-700/50 rounded-lg border border-blue-500/50 text-white flex items-center"
+                      >
+                        <div className={`${stat.iconBg} p-2 rounded-md mr-3 shadow-lg`}>{stat.icon}</div>
+                        <div>
+                          <p className="text-xs font-medium text-blue-100">{stat.title}</p>
+                          {stat.value && <p className="text-base font-bold text-white">{stat.value}</p>}
+                          {stat.chart && (
+                            <div className="w-16 h-2 bg-blue-600/50 rounded-full overflow-hidden mt-1">
+                              <div className="h-full bg-blue-200 w-4/5"></div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <a
+                    href="#"
+                    className="inline-flex items-center text-blue-100 text-sm font-medium hover:text-white transition-colors group mt-2"
+                  >
+                    Learn more
+                    <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

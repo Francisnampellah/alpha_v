@@ -5,7 +5,7 @@ import Image from "next/image"
 import { Play, Plus, Settings, Pause } from "lucide-react"
 
 export default function SectionCarousel() {
-  const [activeTab, setActiveTab] = useState("agri-business")
+  const [activeTab, setActiveTab] = useState("custom-software")
   const [isPaused, setIsPaused] = useState(false)
   const [fadeState, setFadeState] = useState("fade-in")
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
@@ -13,34 +13,33 @@ export default function SectionCarousel() {
 
   // Tab content data
   const tabContent = {
-    "agri-business": {
-      title: "Call To Action",
-      description: "Transforming agricultural operations with innovative business solutions.",
+    "custom-software": {
+      title: "Custom Software Solutions",
+      description: "Bespoke software tailored to meet the unique needs of businesses, ensuring efficiency and scalability.",
       image:
-        "https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=3259&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      color: "#e6e338",
-    },
-    seeds: {
-      title: "SafariPro Demonistration",
-      description: "High-quality seeds for maximum yield and sustainable farming.",
-      image:
-        "https://images.unsplash.com/photo-1620706857370-e1b9770e8bb1?q=80&w=2064&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1526666923127-b2970f64b422?q=80&w=3272&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       color: "#4CAF50",
     },
-    support: {
-      title: "SMARTiNNO Team",
-      description: "Comprehensive support systems for farmers at every stage of growth.",
+    fintech: {
+      title: "FinTech Innovation",
+      description: "Advanced financial technology solutions enhancing accessibility, security, and efficiency.",
       image:
-        "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       color: "#2196F3",
+    },
+    agribusiness: {
+      title: "Agribusiness Enhancement",
+      description: "Smart solutions for farm management, supply chain optimization, and market access.",
+      image:
+        "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2765&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      color: "#e6e338",
     },
   }
 
-  // Navigation items
   const navItems = [
-    { id: "agri-business", label: "Agri-Business" },
-    { id: "seeds", label: "Seeds" },
-    { id: "support", label: "Support" },
+    { id: "custom-software", label: "Custom Software" },
+    { id: "fintech", label: "FinTech" },
+    { id: "agribusiness", label: "Agribusiness" },
   ]
 
   // Function to change tab with animation
@@ -112,14 +111,14 @@ export default function SectionCarousel() {
       <div className="flex flex-col md:flex-row md:items-center mb-8 md:mb-16 border-gray-700 border-b pb-6">
         <div className="w-16 text-lg text-gray-400 font-bold">05</div>
         <div className="flex-1">
-          <h2 className="text-xl text-white font-bold">SMARTiNNO Video</h2>
-          <p className="text-sm text-gray-300">Just the board, the streets, & your trick.</p>
+          <h2 className="text-xl text-white font-bold">SmartINNO Services</h2>
+          <p className="text-sm text-gray-300">Driving innovation through technology.</p>
         </div>
         <button
           className="mt-4 md:mt-0 bg-[#e6e338] text-black px-6 py-3 rounded-full hover:bg-[#d6d328] transition-colors"
           style={{ backgroundColor: tabContent[activeTab as keyof typeof tabContent].color }}
         >
-          Cultivating Excellence
+          Learn More
         </button>
       </div>
 
