@@ -120,7 +120,7 @@ export default function AboutPage() {
                 Through Technology
               </h1>
               <p className="text-xl text-white/90 max-w-2xl leading-relaxed">
-                We're on a mission to create innovative software solutions that drive business growth and digital excellence
+                We&apos;re on a mission to create innovative software solutions that drive business growth and digital excellence
               </p>
             </motion.div>
           </div>
@@ -374,9 +374,9 @@ export default function AboutPage() {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <div className="text-5xl text-gray-200 absolute top-4 left-4">"</div>
+              <div className="text-5xl text-gray-200 absolute top-4 left-4"></div>
               <p className="text-gray-700 mb-6 relative z-10">
-                SMARTiNNO's software platform has completely transformed our business operations. We've seen a 42% increase in efficiency and a 30% reduction in costs. Their team was professional and knowledgeable throughout
+                SMARTiNNOs software platform has completely transformed our business operations. Weve seen a 42% increase in efficiency and a 30% reduction in costs. Their team was professional and knowledgeable throughout
                 implementation.
               </p>
               <div className="flex items-center">
@@ -395,7 +395,7 @@ export default function AboutPage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="text-5xl text-gray-200 absolute top-4 left-4">"</div>
+              <div className="text-5xl text-gray-200 absolute top-4 left-4"></div>
               <p className="text-gray-700 mb-6 relative z-10">
                 The data analytics platform has given us insights we never had before. We can now make data-driven
                 decisions about business strategy and resource allocation. The ROI has been remarkable in just the first season.
@@ -416,7 +416,7 @@ export default function AboutPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="text-5xl text-gray-200 absolute top-4 left-4">"</div>
+              <div className="text-5xl text-gray-200 absolute top-4 left-4"></div>
               <p className="text-gray-700 mb-6 relative z-10">
                 Working with SMARTiNNO on our regional business development project has been a game-changer. Their
                 solutions are not only technologically advanced but also practical and adaptable to our local
@@ -603,7 +603,7 @@ export default function AboutPage() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Business Operations?</h2>
             <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
-              Let's work together to create innovative software solutions for your specific needs
+              Lets work together to create innovative software solutions for your specific needs
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
