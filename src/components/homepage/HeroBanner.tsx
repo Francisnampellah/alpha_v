@@ -68,14 +68,28 @@ export default function WelcomeHeroBanner() {
     <div className="relative h-screen w-full overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="https://images.pexels.com/photos/17483874/pexels-photo-17483874/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-was-inspired-by-neural-networks-used-in-deep-learning-it-was-created-by-novoto-studio-as-part-of-the-visualising-ai-pr.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          alt="Modern engineering and technology workspace"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
+        {/* Mobile Background Image */}
+        <div className="block sm:hidden w-full h-full">
+          <Image
+            src="https://images.unsplash.com/photo-1592576712964-43b32e031cae?q=80&w=3133&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Modern engineering and technology workspace"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
+        {/* Desktop Background Image */}
+        <div className="hidden sm:block w-full h-full">
+          <Image
+            src="https://images.pexels.com/photos/17483874/pexels-photo-17483874/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-was-inspired-by-neural-networks-used-in-deep-learning-it-was-created-by-novoto-studio-as-part-of-the-visualising-ai-pr.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt="Modern engineering and technology workspace"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b sm:bg-gradient-to-r from-[#0a0f36]/90 via-[#0a0f36]/80 sm:via-[#0a0f36]/70 to-[#0a0f36]/70 sm:to-transparent"></div>
       </div>
 
