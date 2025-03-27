@@ -19,6 +19,8 @@ import {
   MinusCircle,
 } from "lucide-react"
 import Navigation from "@/components/navigation/Navigation"
+import Footer from "@/components/footer"
+import SectionContainer from "@/components/SectionContainer"
 
 export default function ServicesPage() {
   const [scrolled, setScrolled] = useState(false)
@@ -206,19 +208,11 @@ export default function ServicesPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-4"}`}
-      >
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between px-6 sm:px-8 gap-4 sm:gap-0">
-          <Navigation />
-        </div>
-      </header>
-
-      {/* Hero Section */}
-      <div className="relative pt-16 sm:pt-0">
-        <div className="relative mx-auto my-0 overflow-hidden h-[60vh]">
+    <div className="min-h-screen bg-gray-50 font-sans">
+      {/* Hero Section - Shorter for inner pages */}
+      <div className="relative h-[70vh]">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Software development services"
@@ -227,439 +221,232 @@ export default function ServicesPage() {
             sizes="100vw"
             className="object-cover"
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0f36]/90 via-[#0a0f36]/70 to-transparent"></div>
+        </div>
 
-          {/* Overlay content */}
-          <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-12 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+        {/* Navigation */}
+        <Navigation variant="transparent" showCTA={true} ctaText="Contact Us" ctaLink="/contact" />
+
+        {/* Hero Content */}
+        <div className="relative z-10 h-[calc(70vh-80px)] flex flex-col justify-center px-6 md:px-12 lg:px-24">
+          <div className="max-w-3xl">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="max-w-4xl mb-12"
+              className="flex items-center gap-2 mb-4"
             >
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
-                Software Development <br className="hidden md:block" />
-                Services
-              </h1>
-              <p className="text-xl text-white/90 max-w-2xl leading-relaxed">
-                Innovative solutions designed to transform your business, streamline operations, and create exceptional digital experiences
-              </p>
+              <div className="w-2 h-2 rounded-full bg-blue-400"></div>
+              <p className="text-sm text-blue-400 font-medium">OUR SERVICES</p>
             </motion.div>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+            >
+              Software Development Services
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl"
+            >
+              Innovative solutions designed to transform your business, streamline operations, and create exceptional digital experiences
+            </motion.p>
           </div>
         </div>
       </div>
 
-      {/* Services Overview */}
-      <div className="px-6 sm:px-8 py-20 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
+      {/* Services Category Tabs */}
+      <SectionContainer
+        sectionNumber="01"
+        title="Our Services"
+        subtitle="Comprehensive solutions tailored to your needs"
+      >
+        <div className="mb-10 flex flex-wrap gap-2">
+          <button
+            onClick={() => setActiveTab("all")}
+            className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
+              activeTab === "all" ? "bg-black text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+            }`}
           >
-            <h2 className="text-3xl font-bold mb-4">Our Services</h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              We offer a comprehensive suite of software development solutions designed to address the unique
-              challenges of modern businesses
-            </p>
-          </motion.div>
-
-          {/* Service Category Tabs */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="flex flex-wrap justify-center gap-4 mb-12"
+            All Services
+          </button>
+          <button
+            onClick={() => setActiveTab("development")}
+            className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
+              activeTab === "development" ? "bg-black text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+            }`}
           >
-            <button
-              onClick={() => setActiveTab("all")}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
-                activeTab === "all" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-              }`}
-            >
-              All Services
-            </button>
-            <button
-              onClick={() => setActiveTab("development")}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
-                activeTab === "development" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-              }`}
-            >
-              Development
-            </button>
-            <button
-              onClick={() => setActiveTab("infrastructure")}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
-                activeTab === "infrastructure" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-              }`}
-            >
-              Infrastructure
-            </button>
-            <button
-              onClick={() => setActiveTab("technology")}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
-                activeTab === "technology" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-              }`}
-            >
-              Technology
-            </button>
-            <button
-              onClick={() => setActiveTab("data")}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
-                activeTab === "data" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-              }`}
-            >
-              Data Analytics
-            </button>
-          </motion.div>
+            Development
+          </button>
+          <button
+            onClick={() => setActiveTab("infrastructure")}
+            className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
+              activeTab === "infrastructure" ? "bg-black text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+            }`}
+          >
+            Infrastructure
+          </button>
+          <button
+            onClick={() => setActiveTab("data")}
+            className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
+              activeTab === "data" ? "bg-black text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+            }`}
+          >
+            Data
+          </button>
+          <button
+            onClick={() => setActiveTab("technology")}
+            className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
+              activeTab === "technology" ? "bg-black text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+            }`}
+          >
+            Technology
+          </button>
+        </div>
 
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredServices.map((service, idx) => (
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredServices.map((service, idx) => (
+            <motion.div
+              key={service.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 h-full group"
+            >
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-6">
+                  <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full mb-2">
+                    {service.category.charAt(0).toUpperCase() + service.category.slice(1)}
+                  </span>
+                  <h3 className="text-xl font-bold text-white">{service.title}</h3>
+                </div>
+              </div>
+              <div className="p-6">
+                <p className="text-gray-700 mb-4">{service.description}</p>
+                <h4 className="font-medium mb-3">Key Features</h4>
+                <ul className="space-y-2">
+                  {service.features.map((feature, featureIdx) => (
+                    <li key={featureIdx} className="flex items-start gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href={`/services/${service.id}`}
+                  className="mt-6 inline-flex items-center gap-1 text-blue-600 hover:text-blue-800 font-medium group"
+                >
+                  <span>Learn more</span>
+                  <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </SectionContainer>
+
+      {/* Our Process Section */}
+      <SectionContainer
+        sectionNumber="02"
+        title="Our Process"
+        subtitle="How we deliver exceptional solutions"
+        bgColor="gray"
+      >
+        <div className="relative">
+          {/* Timeline line */}
+          <div className="absolute left-[15px] md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 transform md:translate-x-px"></div>
+
+          {/* Timeline events */}
+          <div className="space-y-12">
+            {processSteps.map((step, idx) => (
               <motion.div
-                key={service.id}
-                className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 flex flex-col h-full"
+                key={step.number}
+                className={`relative flex flex-col md:flex-row gap-8 ${idx % 2 === 0 ? "md:flex-row-reverse" : ""}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="relative h-48 overflow-hidden">
-                  <Image src={service.image || "/placeholder.svg"} alt={service.title} fill className="object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 p-6">
-                    <h3 className="text-xl font-bold text-white">{service.title}</h3>
+                {/* Timeline dot */}
+                <div className="absolute left-[15px] md:left-1/2 top-0 w-5 h-5 rounded-full bg-blue-600 border-4 border-white shadow-sm transform -translate-x-2 md:-translate-x-2.5"></div>
+
+                {/* Content */}
+                <div className={`md:w-1/2 ${idx % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"} pl-12 md:pl-0`}>
+                  <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <div className="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-3">
+                      Step {step.number}
+                    </div>
+                    <h3 className="text-xl font-bold mb-2">{step.title}</h3>
+                    <p className="text-gray-700">{step.description}</p>
                   </div>
                 </div>
-                <div className="p-6 flex-grow">
-                  <div className="mb-4">{service.icon}</div>
-                  <p className="text-gray-700 mb-6">{service.description}</p>
-                  <h4 className="font-semibold mb-3">Key Features:</h4>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, fidx) => (
-                      <li key={fidx} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="p-6 pt-0">
-                  <Link
-                    href={`/services/${service.id}`}
-                    className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors group"
-                  >
-                    <span>Learn More</span>
-                    <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </Link>
-                </div>
+
+                {/* Empty space for alignment */}
+                <div className="hidden md:block md:w-1/2"></div>
               </motion.div>
             ))}
           </div>
-
-          {/* Empty state if no services match filter */}
-          {filteredServices.length === 0 && (
-            <motion.div
-              className="text-center py-16"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              <h3 className="text-2xl font-bold text-gray-700 mb-2">No services found</h3>
-              <p className="text-gray-500 mb-6">Try selecting a different category</p>
-              <button
-                onClick={() => setActiveTab("all")}
-                className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                View All Services
-              </button>
-            </motion.div>
-          )}
         </div>
-      </div>
-
-      {/* Benefits Section */}
-      <div className="px-6 sm:px-8 py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl font-bold mb-6 relative inline-block">
-                Why Choose Our Services
-                <span className="absolute -bottom-2 left-0 w-1/3 h-1 bg-blue-500"></span>
-              </h2>
-              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                Our software development solutions are designed with your business in mind, combining cutting-edge
-                technology with practical, battle-tested approaches that deliver tangible results.
-              </p>
-
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="bg-blue-100 p-3 rounded-lg">
-                    <Zap className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg mb-2">Enhanced Efficiency</h3>
-                    <p className="text-gray-700">
-                      Our solutions automate repetitive tasks and streamline workflows, allowing your team to focus on high-value activities and innovation.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-green-100 p-3 rounded-lg">
-                    <Leaf className="w-6 h-6 text-green-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg mb-2">Sustainable Architecture</h3>
-                    <p className="text-gray-700">
-                      We build solutions with longevity in mind, using clean code practices and modular design to ensure your software can evolve with your business.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-amber-100 p-3 rounded-lg">
-                    <BarChart3 className="w-6 h-6 text-amber-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg mb-2">Data-Driven Insights</h3>
-                    <p className="text-gray-700">
-                      Turn your data into a strategic asset with analytics capabilities built into your solutions, enabling smarter decision-making.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-purple-100 p-3 rounded-lg">
-                    <Cpu className="w-6 h-6 text-purple-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg mb-2">Scalable Solutions</h3>
-                    <p className="text-gray-700">
-                      Our architectures are designed to grow with your business, supporting increased users, data, and functionality without compromising performance.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <Image
-                src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Software development benefits"
-                fill
-                className="object-cover"
-              />
-            </motion.div>
-          </div>
-        </div>
-      </div>
-
-      {/* Our Process Section */}
-      <div className="px-6 sm:px-8 py-20 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl font-bold mb-4">Our Process</h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              We follow a structured approach to ensure successful delivery and maximum value from your
-              software development investment
-            </p>
-          </motion.div>
-
-          <div className="relative">
-            {/* Process line */}
-            <div className="absolute left-[39px] md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 transform md:-translate-x-px hidden sm:block"></div>
-
-            {/* Process steps */}
-            <div className="space-y-12 sm:space-y-20">
-              {processSteps.map((step, idx) => (
-                <motion.div
-                  key={step.number}
-                  className={`relative flex flex-col sm:flex-row gap-8 ${idx % 2 === 0 ? "sm:flex-row-reverse" : ""}`}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  {/* Step number */}
-                  <div className="absolute left-0 sm:left-1/2 top-0 w-20 h-20 rounded-full bg-blue-600 text-white flex items-center justify-center text-2xl font-bold transform -translate-x-1/2 z-10 hidden sm:flex">
-                    {step.number}
-                  </div>
-
-                  {/* Mobile step number */}
-                  <div className="w-20 h-20 rounded-full bg-blue-600 text-white flex items-center justify-center text-2xl font-bold sm:hidden flex-shrink-0">
-                    {step.number}
-                  </div>
-
-                  {/* Content */}
-                  <div className={`sm:w-1/2 ${idx % 2 === 0 ? "sm:pr-16 sm:text-right" : "sm:pl-16"}`}>
-                    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                      <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                      <p className="text-gray-700">{step.description}</p>
-                    </div>
-                  </div>
-
-                  {/* Empty space for alignment */}
-                  <div className="hidden sm:block sm:w-1/2"></div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Case Study Section */}
-      <div className="px-6 sm:px-8 py-20 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl font-bold mb-4">Success Stories</h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              See how our software development solutions have helped real businesses achieve remarkable results
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="bg-gray-800 rounded-2xl overflow-hidden"
-          >
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-              <div className="relative h-64 lg:h-auto">
-                <Image
-                  src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Case study tech company"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-8 lg:p-12">
-                <div className="inline-block px-3 py-1 rounded-full bg-blue-900 text-blue-300 text-sm font-medium mb-4">
-                  Case Study
-                </div>
-                <h3 className="text-2xl font-bold mb-4">TechNova: 300% Productivity Increase</h3>
-                <p className="text-gray-300 mb-6">
-                  TechNova, a growing fintech startup, was struggling with manual processes and legacy systems. By implementing our custom software solution, they achieved:
-                </p>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-green-400 mt-0.5" />
-                    <span>300% increase in team productivity</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-green-400 mt-0.5" />
-                    <span>65% reduction in operational costs</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-green-400 mt-0.5" />
-                    <span>90% faster customer onboarding</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-green-400 mt-0.5" />
-                    <span>ROI achieved within just 6 months</span>
-                  </li>
-                </ul>
-                <Link
-                  href="/case-studies/technova"
-                  className="inline-flex items-center text-blue-400 font-medium hover:text-blue-300 transition-colors group"
-                >
-                  <span>Read Full Case Study</span>
-                  <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
-              </div>
-            </div>
-          </motion.div>
-
-          <div className="mt-8 text-center">
-            <Link
-              href="/case-studies"
-              className="inline-flex items-center gap-2 text-blue-400 font-medium hover:text-blue-300 transition-colors"
-            >
-              <span>View All Case Studies</span>
-              <ChevronRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </div>
+      </SectionContainer>
 
       {/* FAQ Section */}
-      <div className="px-6 sm:px-8 py-20 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              Find answers to common questions about our software development services
-            </p>
-          </motion.div>
-
+      <SectionContainer
+        sectionNumber="03"
+        title="Frequently Asked Questions"
+        subtitle="Common questions about our services"
+      >
+        <div className="max-w-3xl mx-auto">
           <div className="space-y-4">
             {faqItems.map((item, idx) => (
               <motion.div
                 key={idx}
-                className="border border-gray-200 rounded-xl overflow-hidden"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 viewport={{ once: true }}
+                className="border border-gray-200 rounded-lg overflow-hidden"
               >
                 <button
-                  className="flex items-center justify-between w-full p-6 text-left"
                   onClick={() => toggleAccordion(idx)}
+                  className="flex justify-between items-center w-full p-4 text-left bg-white hover:bg-gray-50 transition-colors"
                 >
-                  <h3 className="font-semibold text-lg">{item.question}</h3>
+                  <span className="font-medium">{item.question}</span>
                   {activeAccordion === idx ? (
-                    <MinusCircle className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                    <MinusCircle className="w-5 h-5 text-gray-500 flex-shrink-0" />
                   ) : (
                     <PlusCircle className="w-5 h-5 text-gray-500 flex-shrink-0" />
                   )}
                 </button>
                 <div
-                  className={`px-6 overflow-hidden transition-all duration-300 ${
-                    activeAccordion === idx ? "max-h-96 pb-6" : "max-h-0"
-                  }`}
+                  className={`overflow-hidden transition-all duration-300 ${activeAccordion === idx ? "max-h-96" : "max-h-0"}`}
                 >
-                  <p className="text-gray-700">{item.answer}</p>
+                  <div className="p-4 pt-0 bg-white border-t border-gray-100">
+                    <p className="text-gray-700">{item.answer}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
-      </div>
+      </SectionContainer>
 
       {/* CTA Section */}
-      <div className="px-6 sm:px-8 py-20 bg-blue-600 text-white">
+      <div className="px-4 sm:px-6 lg:px-12 py-16 bg-blue-600 text-white">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -667,24 +454,23 @@ export default function ServicesPage() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Business With Technology?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Business?</h2>
             <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
-              Contact us today to schedule a consultation and discover how our services can help you achieve your
-              digital transformation goals
+              Let's discuss how our software development services can help you achieve your goals
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
                 className="bg-white text-blue-600 hover:bg-blue-50 font-medium px-8 py-3 rounded-lg transition-colors inline-flex items-center justify-center gap-2 group"
               >
-                <span>Schedule a Consultation</span>
+                <span>Contact Us</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
               <Link
-                href="/services/pricing"
+                href="/process"
                 className="bg-blue-700 hover:bg-blue-800 text-white font-medium px-8 py-3 rounded-lg transition-colors inline-flex items-center justify-center gap-2"
               >
-                <span>View Pricing</span>
+                <span>Learn About Our Process</span>
               </Link>
             </div>
           </motion.div>
@@ -692,161 +478,7 @@ export default function ServicesPage() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-            <div>
-              <div className="flex items-center gap-2 mb-6">
-                <div className="grid grid-cols-2 grid-rows-2 gap-1">
-                  {[...Array(4)].map((_, i) => (
-                    <div key={i} className="h-2 w-2 rounded-sm bg-white"></div>
-                  ))}
-                </div>
-                <span className="font-semibold text-white">SMARTiNNO</span>
-              </div>
-              <p className="text-gray-400 mb-6">
-                Innovative software development solutions for businesses seeking digital transformation and technology excellence.
-              </p>
-              <div className="flex gap-4">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      fillRule="evenodd"
-                      d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
-                  </svg>
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      fillRule="evenodd"
-                      d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      fillRule="evenodd"
-                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-lg mb-4">Services</h3>
-              <ul className="space-y-3">
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Web Development
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Mobile Development
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Cloud Solutions
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Data Analytics
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    AI & Machine Learning
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-lg mb-4">Company</h3>
-              <ul className="space-y-3">
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Our Team
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Careers
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    News & Press
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
-              <address className="not-italic text-gray-400">
-                <p className="mb-3">123 Innovation Street</p>
-                <p className="mb-3">Smartville, SV 12345</p>
-                <p className="mb-3">Email: info@smartinno.com</p>
-                <p>Phone: +1 (555) 123-4567</p>
-              </address>
-              <div className="mt-6">
-                <h4 className="font-medium mb-2">Subscribe to our newsletter</h4>
-                <div className="flex gap-2">
-                  <input
-                    type="email"
-                    placeholder="Your email"
-                    className="bg-gray-800 text-white px-4 py-2 rounded-lg text-sm flex-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  />
-                  <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm transition-colors">
-                    Subscribe
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800 mt-12 pt-8 text-sm text-gray-400">
-            <div className="flex flex-col sm:flex-row justify-between items-center">
-              <p>© 2024 SMARTiNNO. All rights reserved.</p>
-              <div className="flex gap-6 mt-4 sm:mt-0">
-                <a href="#" className="hover:text-white transition-colors">
-                  Privacy Policy
-                </a>
-                <a href="#" className="hover:text-white transition-colors">
-                  Terms of Service
-                </a>
-                <a href="#" className="hover:text-white transition-colors">
-                  Cookie Policy
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

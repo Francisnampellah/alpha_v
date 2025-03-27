@@ -1,9 +1,13 @@
-import { Metadata } from 'next';
+"use client"
+
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { motion } from 'framer-motion';
+import { ArrowLeft, ArrowRight, Calendar, MapPin, Clock, User, ChevronRight } from 'lucide-react';
+import Navigation from '@/components/navigation/Navigation';
 import Footer from '@/components/footer';
-import { CategoryPill } from '@/components/category-pill';
+import SectionContainer from '@/components/SectionContainer';
 
 // Mock event data - in a real app this would be fetched from a database or API
 const events = [
@@ -136,142 +140,8 @@ const events = [
       'https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?q=80&w=2274&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       'https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     ]
-  },
-  {
-    id: 'precision-farming-seminar',
-    title: 'Precision Farming Seminar',
-    description: 'In-depth discussion on precision farming techniques and technologies',
-    image: 'https://images.unsplash.com/photo-1591696331111-ef9586a5b17a?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    categories: ['Seminar', 'Education', 'Technology'],
-    date: '2024-06-15',
-    location: 'Edinburgh, UK',
-    status: 'Upcoming',
-    fullDescription: `
-      The Precision Farming Seminar is an educational event focusing on the latest advancements in precision agriculture technology and practices.
-      
-      This seminar will bring together experts in the field to discuss how precision farming technologies can optimize crop production, reduce inputs, and improve sustainability.
-      
-      Topics covered:
-      - GPS guidance systems and variable rate technology
-      - Remote sensing and satellite imagery for crop monitoring
-      - Data management and analytics for farm decision-making
-      - Economic benefits and implementation strategies
-      - Future trends in precision agriculture
-    `,
-    venue: 'Edinburgh International Conference Centre',
-    address: 'The Exchange, 150 Morrison St, Edinburgh EH3 8EE',
-    organizer: 'Scottish Agricultural Technology Association',
-    speakers: [
-      { name: 'Dr. Andrew Fraser', role: 'Precision Agriculture Researcher' },
-      { name: 'Emma Wilson', role: 'Agricultural Technology Consultant' },
-      { name: 'Ian Campbell', role: 'Precision Farming Practitioner' }
-    ],
-    schedule: [
-      { time: '09:30 AM', activity: 'Welcome and Introduction' },
-      { time: '10:00 AM', activity: 'Keynote: The State of Precision Agriculture' },
-      { time: '11:00 AM', activity: 'Presentation: Satellite and Drone Technology in Farming' },
-      { time: '12:00 PM', activity: 'Lunch Break' },
-      { time: '01:00 PM', activity: 'Case Studies: Successful Precision Farming Implementation' },
-      { time: '02:30 PM', activity: 'Panel Discussion: ROI of Precision Agriculture' },
-      { time: '03:30 PM', activity: 'Networking and Conclusion' }
-    ],
-    gallery: [
-      'https://images.unsplash.com/photo-1591696331111-ef9586a5b17a?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1621361365424-06f0e1eb5c49?q=80&w=2748&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1599707367072-cd6ada2bc375?q=80&w=2669&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-    ]
-  },
-  {
-    id: 'agri-innovation-hackathon',
-    title: 'Agricultural Innovation Hackathon',
-    description: 'Two-day competition to develop innovative solutions for agricultural challenges',
-    image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    categories: ['Hackathon', 'Competition', 'Innovation'],
-    date: '2024-07-08',
-    location: 'Cambridge, UK',
-    status: 'Upcoming',
-    fullDescription: `
-      The Agricultural Innovation Hackathon is an intensive two-day event that brings together developers, designers, engineers, and agricultural experts to develop innovative solutions to pressing agricultural challenges.
-      
-      Teams will compete to create prototypes that address specific problems in modern agriculture, with a focus on sustainability, efficiency, and technological innovation.
-      
-      Event highlights:
-      - Collaboration with industry experts and mentors
-      - Access to datasets and APIs for agricultural applications
-      - Opportunities to pitch to potential investors
-      - Prizes for winning solutions
-      - Networking with industry leaders and innovators
-    `,
-    venue: 'Cambridge Science Park',
-    address: 'Milton Road, Cambridge CB4 0FZ',
-    organizer: 'AgriTech East Innovation Hub',
-    speakers: [
-      { name: 'Dr. Katherine Lee', role: 'Agricultural Innovation Director' },
-      { name: 'Mark Johnson', role: 'Technology Entrepreneur' },
-      { name: 'Olivia Taylor', role: 'Sustainable Agriculture Specialist' }
-    ],
-    schedule: [
-      { time: 'Day 1 - 09:00 AM', activity: 'Registration and Team Formation' },
-      { time: 'Day 1 - 10:00 AM', activity: 'Challenge Presentations' },
-      { time: 'Day 1 - 11:00 AM', activity: 'Hacking Begins' },
-      { time: 'Day 1 - 07:00 PM', activity: 'Day 1 Check-in and Networking Dinner' },
-      { time: 'Day 2 - 09:00 AM', activity: 'Hacking Continues' },
-      { time: 'Day 2 - 03:00 PM', activity: 'Final Submissions' },
-      { time: 'Day 2 - 04:00 PM', activity: 'Presentations and Judging' },
-      { time: 'Day 2 - 06:00 PM', activity: 'Awards Ceremony' }
-    ],
-    gallery: [
-      'https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-    ]
-  },
-  {
-    id: 'livestock-management-conference',
-    title: 'Livestock Management Conference',
-    description: 'Conference focused on modern livestock management practices and technologies',
-    image: 'https://images.unsplash.com/photo-1605605859948-89a8f8960f5f?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    categories: ['Conference', 'Livestock', 'Management'],
-    date: '2024-09-22',
-    location: 'York, UK',
-    status: 'Upcoming',
-    fullDescription: `
-      The Livestock Management Conference is a specialized event focusing on modern approaches to livestock management, welfare, and technology solutions for the livestock industry.
-      
-      This conference will gather livestock farmers, veterinarians, researchers, and technology providers to discuss best practices and innovations in livestock management.
-      
-      Key topics:
-      - Animal health monitoring and management technologies
-      - Sustainable livestock production systems
-      - Precision livestock farming approaches
-      - Animal welfare best practices
-      - Data management for livestock operations
-    `,
-    venue: 'York Racecourse Conference Centre',
-    address: 'York Racecourse, York YO23 1EX',
-    organizer: 'National Livestock Association',
-    speakers: [
-      { name: 'Dr. Richard Brown', role: 'Livestock Management Expert' },
-      { name: 'Jennifer Adams', role: 'Veterinary Research Scientist' },
-      { name: 'Paul Thompson', role: 'Precision Livestock Farming Specialist' }
-    ],
-    schedule: [
-      { time: '08:30 AM', activity: 'Registration' },
-      { time: '09:30 AM', activity: 'Opening Address' },
-      { time: '10:00 AM', activity: 'Keynote: The Future of Livestock Management' },
-      { time: '11:30 AM', activity: 'Panel: Technology in Livestock Farming' },
-      { time: '01:00 PM', activity: 'Lunch' },
-      { time: '02:00 PM', activity: 'Parallel Sessions by Species' },
-      { time: '04:00 PM', activity: 'Technology Showcase' },
-      { time: '05:30 PM', activity: 'Closing Remarks and Networking Reception' }
-    ],
-    gallery: [
-      'https://images.unsplash.com/photo-1605605859948-89a8f8960f5f?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1594756202469-9ff9799b2e4e?q=80&w=2535&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1516467508483-a7212febe31a?q=80&w=2552&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-    ]
   }
-];
+]
 
 // Format date to more readable format
 function formatDate(dateString: string) {
@@ -282,260 +152,402 @@ function formatDate(dateString: string) {
   });
 }
 
-// Generate metadata dynamically based on the event ID
-export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
-  const resolvedParams = await params; // Await the params to resolve the promise
-  const event = events.find(e => e.id === resolvedParams.id);
+// CategoryPill component
+const CategoryPill = ({ label }: { label: string }) => {
+  return (
+    <motion.span
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+      className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-medium rounded-full"
+    >
+      {label}
+    </motion.span>
+  );
+};
 
+export default function EventPage({ params }: { params: { id: string } }) {
+  const [scrolled, setScrolled] = useState(false);
+  
+  // Get the event data by ID parameter
+  const event = events.find(e => e.id === params.id);
+  
+  // If event not found
   if (!event) {
-    return {
-      title: 'Event Not Found | SMARTiNNO',
-      description: 'The requested event could not be found.'
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold mb-4">Event not found</h2>
+          <p className="text-gray-600 mb-6">The event you are looking for does not exist or has been removed.</p>
+          <Link 
+            href="/events" 
+            className="inline-flex items-center gap-2 bg-black text-white px-5 py-2.5 rounded-lg hover:bg-gray-800 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span>Back to Events</span>
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
     };
-  }
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-  return {
-    title: `${event.title} | SMARTiNNO Events`,
-    description: event.description,
-  };
-}
+  // Get similar events
+  const similarEvents = events
+    .filter(e => e.id !== event.id && e.categories.some(c => event.categories.includes(c)))
+    .slice(0, 3);
 
-export default async function EventPage({ params }: { params: Promise<{ id: string }> }) {
-  const resolvedParams = await params; // Await the params to resolve the promise
-  const event = events.find(e => e.id === resolvedParams.id);
-
-  // Handle case where event is not found
-  if (!event) {
-    notFound();
-  }
-
-  // Define status badge color based on event status
+  // Define status color
   const statusColor = event.status === 'Upcoming' 
     ? 'bg-green-100 text-green-800' 
     : 'bg-gray-100 text-gray-800';
 
   return (
-    <>
-      <div className="min-h-screen">
-        {/* Header */}
-        <header className="flex flex-col sm:flex-row items-center justify-between px-6 sm:px-12 py-4 gap-4 sm:gap-0">
-          <div className="flex items-center gap-2">
-            <div className="grid grid-cols-2 grid-rows-2 gap-1">
-              {[...Array(4)].map((_, i) => (
-                <div key={i} className="h-2 w-2 rounded-sm bg-black"></div>
-              ))}
-            </div>
-            <span className="font-semibold text-black">SMARTiNNO</span>
-          </div>
-          
-          <nav className="flex flex-wrap gap-4 sm:gap-8" aria-label="Main navigation">
-            <Link href="/" className="text-gray-700 hover:text-black transition-colors">
-              Home
-            </Link>
-            <Link href="/about" className="text-gray-700 hover:text-black transition-colors">
-              About
-            </Link>
-            <Link href="/projects" className="text-gray-700 hover:text-black transition-colors">
-              Projects
-            </Link>
-            <Link href="/events" className="text-black font-semibold transition-colors">
-              Events
-            </Link>
-            <Link href="/services" className="text-gray-700 hover:text-black transition-colors">
-              Services
-            </Link>
-          </nav>
-        </header>
-
-        {/* Event Hero */}
-        <div className="relative mx-4 sm:mx-8 my-4 overflow-hidden rounded-3xl bg-gray-200 h-[500px]">
+    <div className="min-h-screen bg-gray-50 font-sans">
+      {/* Hero Section - Shorter for inner pages */}
+      <div className="relative h-[70vh]">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
           <Image
             src={event.image}
             alt={event.title}
             fill
             priority
-            sizes="(max-width: 768px) 100vw, 100vw"
-            className={`object-cover ${event.status === 'Past' ? 'grayscale' : ''}`}
+            sizes="100vw"
+            className="object-cover"
           />
-          
-          {/* Overlay content */}
-          <div className="absolute inset-0 flex flex-col justify-between p-4 sm:p-8 bg-gradient-to-t from-black/70 via-black/30 to-transparent">
-            <div className="flex flex-wrap gap-2 w-full sm:w-96">
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0f36]/90 via-[#0a0f36]/70 to-transparent"></div>
+        </div>
+
+        {/* Navigation */}
+        <Navigation variant="transparent" showCTA={true} ctaText="Contact Us" ctaLink="/contact" />
+
+        {/* Hero Content */}
+        <div className="relative z-10 h-[calc(70vh-80px)] flex flex-col justify-center px-6 md:px-12 lg:px-24">
+          <div className="max-w-3xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex flex-wrap gap-2 mb-4"
+            >
               {event.categories.map((category, idx) => (
                 <CategoryPill key={idx} label={category} />
               ))}
-            </div>
-            
-            <div>
-              <div className="flex items-center gap-3 mb-2">
-                <span className={`px-3 py-1 rounded-full text-xs font-medium ${statusColor}`}>
-                  {event.status}
-                </span>
-                <Link 
-                  href="/events" 
-                  className="text-white hover:underline flex items-center gap-1"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M19 12H5M12 19l-7-7 7-7"/>
-                  </svg>
-                  Back to Events
-                </Link>
-              </div>
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-2">
-                {event.title}
-              </h1>
-              <p className="text-xl text-white max-w-xl">
-                {event.description}
-              </p>
-            </div>
-          </div>
-        </div>
+            </motion.div>
 
-        {/* Event Content */}
-        <div className="px-4 sm:px-8 py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {/* Left column - Description */}
-            <div className="lg:col-span-2">
-              <div className="mb-12">
-                <h2 className="text-3xl font-bold mb-6">About This Event</h2>
-                <div className="prose max-w-none">
-                  {event.fullDescription.split('\n').map((paragraph, idx) => (
-                    <p key={idx} className="mb-4 text-gray-700 leading-relaxed">
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
-              </div>
-              
-              {/* Schedule */}
-              <div className="mb-12">
-                <h2 className="text-2xl font-bold mb-6">Event Schedule</h2>
-                <div className="space-y-4">
-                  {event.schedule.map((item, idx) => (
-                    <div key={idx} className="flex border-b border-gray-200 pb-4">
-                      <div className="w-1/3 text-gray-600 font-medium">{item.time}</div>
-                      <div className="w-2/3">{item.activity}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              
-              {/* Speakers */}
-              <div className="mb-12">
-                <h2 className="text-2xl font-bold mb-6">Speakers</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {event.speakers.map((speaker, idx) => (
-                    <div key={idx} className="bg-gray-50 p-4 rounded-lg">
-                      <div className="font-bold">{speaker.name}</div>
-                      <div className="text-sm text-gray-600">{speaker.role}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              
-              {/* Gallery */}
-              <div className="mb-12">
-                <h2 className="text-2xl font-bold mb-6">Gallery</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {event.gallery.map((image, idx) => (
-                    <div key={idx} className="aspect-square relative rounded-lg overflow-hidden">
-                      <Image
-                        src={image}
-                        alt={`${event.title} gallery image ${idx + 1}`}
-                        fill
-                        className="object-cover hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
+            <div className="flex items-center gap-3 mb-6">
+              <span className={`px-4 py-1.5 rounded-full text-xs font-medium ${statusColor}`}>
+                {event.status}
+              </span>
+              <Link 
+                href="/events" 
+                className="text-white hover:text-gray-200 flex items-center gap-1.5 group"
+              >
+                <ArrowLeft className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" />
+                <span className="text-sm font-medium">Back to Events</span>
+              </Link>
             </div>
-            
-            {/* Right column - Event Details */}
-            <div>
-              <div className="bg-gray-50 rounded-xl p-6 sticky top-8">
-                <h2 className="text-xl font-bold mb-6">Event Details</h2>
-                
-                <div className="space-y-6">
-                  <div>
-                    <div className="text-sm text-gray-500 mb-1">Date</div>
-                    <div className="text-gray-900 font-medium">{formatDate(event.date)}</div>
-                  </div>
-                  
-                  <div>
-                    <div className="text-sm text-gray-500 mb-1">Location</div>
-                    <div className="text-gray-900 font-medium">{event.location}</div>
-                  </div>
-                  
-                  <div>
-                    <div className="text-sm text-gray-500 mb-1">Venue</div>
-                    <div className="text-gray-900 font-medium">{event.venue}</div>
-                    <div className="text-gray-700 text-sm mt-1">{event.address}</div>
-                  </div>
-                  
-                  <div>
-                    <div className="text-sm text-gray-500 mb-1">Organizer</div>
-                    <div className="text-gray-900 font-medium">{event.organizer}</div>
-                  </div>
-                </div>
-                
-                <div className="mt-8">
-                  {event.status === 'Upcoming' ? (
-                    <Link
-                      href="#"
-                      className="w-full bg-black hover:bg-gray-800 text-white rounded-lg px-6 py-3 flex items-center justify-center gap-2 transition-colors"
-                    >
-                      <span>Register for Event</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                      </svg>
-                    </Link>
-                  ) : (
-                    <Link
-                      href="#"
-                      className="w-full bg-gray-200 text-gray-700 rounded-lg px-6 py-3 flex items-center justify-center gap-2"
-                    >
-                      <span>Event Completed</span>
-                    </Link>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Related Events */}
-          <div className="mt-16 max-w-7xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8">Related Events</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {events
-                .filter(e => e.id !== event.id && e.categories.some(c => event.categories.includes(c)))
-                .slice(0, 3)
-                .map(relatedEvent => (
-                  <Link 
-                    key={relatedEvent.id} 
-                    href={`/events/${relatedEvent.id}`}
-                    className="group bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
-                  >
-                    <div className="relative h-48 w-full overflow-hidden">
-                      <Image
-                        src={relatedEvent.image}
-                        alt={relatedEvent.title}
-                        fill
-                        className={`object-cover group-hover:scale-105 transition-transform duration-500 ${relatedEvent.status === 'Past' ? 'grayscale' : ''}`}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                      <div className="absolute bottom-0 left-0 p-4 w-full">
-                        <h3 className="text-lg font-bold text-white">{relatedEvent.title}</h3>
-                        <p className="text-xs text-white/80 mt-1">{formatDate(relatedEvent.date)}</p>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-            </div>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+            >
+              {event.title}
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl"
+            >
+              {event.description}
+            </motion.p>
           </div>
         </div>
       </div>
+
+      {/* Event Overview */}
+      <SectionContainer
+        sectionNumber="01"
+        title="Event Details"
+        subtitle="Everything you need to know about this event"
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          {/* Event Description - Left Column */}
+          <div className="lg:col-span-2">
+            <div className="prose max-w-none mb-8">
+              {event.fullDescription.split('\n').map((paragraph, idx) => (
+                paragraph.trim() && (
+                  <motion.p 
+                    key={idx} 
+                    className="mb-6 text-gray-700 leading-relaxed text-lg"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: idx * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    {paragraph}
+                  </motion.p>
+                )
+              ))}
+            </div>
+          </div>
+
+          {/* Event Info - Right Column */}
+          <div>
+            <motion.div 
+              className="bg-white p-6 rounded-xl shadow-sm border border-gray-100"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-xl font-bold mb-6 pb-4 border-b border-gray-100">Event Information</h3>
+              
+              <div className="space-y-5">
+                <div className="flex gap-3">
+                  <Calendar className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                  <div>
+                    <div className="font-medium">Date</div>
+                    <div className="text-gray-700">{formatDate(event.date)}</div>
+                  </div>
+                </div>
+                
+                <div className="flex gap-3">
+                  <MapPin className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                  <div>
+                    <div className="font-medium">Location</div>
+                    <div className="text-gray-700">{event.venue}</div>
+                    <div className="text-gray-500 text-sm">{event.address}</div>
+                  </div>
+                </div>
+                
+                <div className="flex gap-3">
+                  <User className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                  <div>
+                    <div className="font-medium">Organizer</div>
+                    <div className="text-gray-700">{event.organizer}</div>
+                  </div>
+                </div>
+                
+                {event.status === 'Upcoming' && (
+                  <Link
+                    href="#"
+                    className="mt-4 w-full bg-black hover:bg-gray-800 text-white rounded-lg px-5 py-3 flex items-center justify-center gap-2 transition-colors duration-300 font-medium"
+                  >
+                    <span>Register for Event</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                )}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </SectionContainer>
+
+      {/* Event Schedule */}
+      <SectionContainer
+        sectionNumber="02"
+        title="Event Schedule"
+        subtitle="Plan your day with our detailed agenda"
+        bgColor="gray"
+      >
+        <div className="max-w-3xl mx-auto">
+          <ul className="relative border-l border-gray-300 ml-3 space-y-8">
+            {event.schedule.map((item, idx) => (
+              <motion.li 
+                key={idx} 
+                className="ml-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-gray-50">
+                  <Clock className="w-3 h-3 text-blue-800" />
+                </span>
+                <div className="bg-white p-5 rounded-lg shadow border border-gray-100">
+                  <time className="mb-1 text-sm font-normal leading-none text-gray-500">{item.time}</time>
+                  <h3 className="font-medium text-gray-900">{item.activity}</h3>
+                </div>
+              </motion.li>
+            ))}
+          </ul>
+        </div>
+      </SectionContainer>
+
+      {/* Speakers */}
+      {event.speakers && event.speakers.length > 0 && (
+        <SectionContainer
+          sectionNumber="03"
+          title="Speakers"
+          subtitle="Meet our expert speakers"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {event.speakers.map((speaker, idx) => (
+              <motion.div 
+                key={idx}
+                className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="p-6 text-center">
+                  <div className="w-20 h-20 rounded-full bg-gray-200 mx-auto mb-4 overflow-hidden relative">
+                    <div className="absolute inset-0 flex items-center justify-center text-gray-500 font-bold text-xl">
+                      {speaker.name.charAt(0)}
+                    </div>
+                  </div>
+                  <h3 className="font-bold text-lg">{speaker.name}</h3>
+                  <p className="text-gray-600">{speaker.role}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </SectionContainer>
+      )}
+
+      {/* Gallery */}
+      {event.gallery && event.gallery.length > 0 && (
+        <SectionContainer
+          sectionNumber="04"
+          title="Event Gallery"
+          subtitle="Visual highlights from the event"
+          bgColor="gray"
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {event.gallery.map((image, idx) => (
+              <motion.div 
+                key={idx} 
+                className="aspect-square relative rounded-xl overflow-hidden shadow-md group"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Image
+                  src={image}
+                  alt={`${event.title} gallery image ${idx + 1}`}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </SectionContainer>
+      )}
+
+      {/* Similar Events */}
+      {similarEvents.length > 0 && (
+        <SectionContainer
+          sectionNumber="05"
+          title="Related Events"
+          subtitle="You might also be interested in these events"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {similarEvents.map((similarEvent, idx) => (
+              <motion.div
+                key={similarEvent.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Link 
+                  href={`/events/${similarEvent.id}`}
+                  className="group bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 h-full flex flex-col"
+                >
+                  <div className="relative h-48 w-full overflow-hidden">
+                    <Image
+                      src={similarEvent.image}
+                      alt={similarEvent.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div className="absolute top-4 right-4">
+                      <span className={`bg-${similarEvent.status === 'Upcoming' ? 'green' : 'gray'}-100 text-${similarEvent.status === 'Upcoming' ? 'green' : 'gray'}-800 text-xs font-medium px-2.5 py-1 rounded-full`}>
+                        {similarEvent.status}
+                      </span>
+                    </div>
+                    <div className="absolute bottom-0 left-0 p-4 w-full">
+                      <div className="flex flex-wrap gap-2 mb-2">
+                        {similarEvent.categories.slice(0, 2).map((category, catIdx) => (
+                          <span 
+                            key={catIdx} 
+                            className="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-medium rounded-full"
+                          >
+                            {category}
+                          </span>
+                        ))}
+                      </div>
+                      <h3 className="text-lg font-bold text-white">{similarEvent.title}</h3>
+                    </div>
+                  </div>
+                  
+                  <div className="p-4 flex-grow">
+                    <div className="flex items-center gap-2 text-sm text-gray-700 mb-2">
+                      <Calendar className="w-4 h-4 text-gray-500" />
+                      <span>{formatDate(similarEvent.date)}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-gray-700">
+                      <MapPin className="w-4 h-4 text-gray-500" />
+                      <span>{similarEvent.location}</span>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </SectionContainer>
+      )}
+
+      {/* CTA Section */}
+      <div className="px-4 sm:px-6 lg:px-12 py-16 bg-blue-600 text-white">
+        <div className="max-w-7xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Don't Miss Our Future Events</h2>
+            <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
+              Stay updated with our latest agricultural technology events and innovations
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+              <input
+                type="email"
+                placeholder="Your email address"
+                className="px-4 py-3 rounded-lg text-gray-900 w-full focus:outline-none focus:ring-2 focus:ring-blue-900"
+              />
+              <button
+                type="button"
+                className="bg-white text-blue-600 hover:bg-blue-50 font-medium px-6 py-3 rounded-lg transition-colors inline-flex items-center justify-center gap-2 whitespace-nowrap"
+              >
+                <span>Subscribe</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Footer */}
       <Footer />
-    </>
+    </div>
   );
 }

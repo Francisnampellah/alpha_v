@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { ArrowRight, ChevronDown } from "lucide-react"
+import Navigation from "@/components/navigation/Navigation"
 
 // Create our own CountingNumber component
 const CountingNumber = ({ targetNumber, suffix = "" }: { targetNumber: number; suffix?: string }) => {
@@ -68,7 +69,7 @@ export default function WelcomeHeroBanner() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="https://images.pexels.com/photos/17483874/pexels-photo-17483874/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-was-inspired-by-neural-networks-used-in-deep-learning-it-was-created-by-novoto-studio-as-part-of-the-visualising-ai-pr.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           alt="Modern engineering and technology workspace"
           fill
           priority
@@ -78,45 +79,8 @@ export default function WelcomeHeroBanner() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#0a0f36]/90 via-[#0a0f36]/70 to-transparent"></div>
       </div>
 
-      {/* Navigation Bar */}
-      <div className="relative z-10 px-6 py-4 flex justify-between items-center">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex items-center gap-3"
-        >
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500">
-            <CompanyLogo className="h-2 w-2" />
-          </div>
-          <div>
-            <h1 className="text-2xl font-bold text-white">SMARTINNO</h1>
-            <p className="text-xs text-blue-300">ENGINEERING LIMITED</p>
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="hidden md:flex items-center gap-6"
-        >
-          {["Home", "Services", "Industries", "About", "Contact"].map((item, index) => (
-            <a key={item} href={`#${item.toLowerCase()}`} className="text-white hover:text-blue-300 transition-colors">
-              {item}
-            </a>
-          ))}
-        </motion.div>
-
-        <motion.button
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-4 py-2 text-sm transition-colors"
-        >
-          Get Started
-        </motion.button>
-      </div>
+      {/* Navigation */}
+      <Navigation variant="homepage" showCTA={true} ctaText="Get Started" />
 
       {/* Hero Content */}
       <div className="relative z-10 h-[calc(100vh-80px)] flex flex-col justify-center px-6 md:px-12 lg:px-24">
@@ -140,16 +104,15 @@ export default function WelcomeHeroBanner() {
             Empowering Businesses Through Innovation & Technology
           </motion.h2>
 
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl"
           >
-            A dynamic, multidisciplinary engineering firm specializing in agile software development, artificial intelligence, 
-            and pioneering system integration solutions across multiple sectors.
+            A dynamic, multidisciplinary engineering firm specializing in agile software development
           </motion.p>
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
