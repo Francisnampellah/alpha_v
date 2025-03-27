@@ -8,6 +8,7 @@ import { motion } from "framer-motion"
 import Navigation from "@/components/navigation/Navigation"
 import Footer from "@/components/footer"
 import SectionContainer from "@/components/SectionContainer"
+import { useParams } from 'next/navigation';
 
 // For demo purposes - in a real app, this would be fetched from a database or API
 const sampleProject = {
@@ -79,9 +80,9 @@ const CategoryPill = ({ label }: { label: string }) => {
   )
 }
 
-export default function ProjectDetail({ params }: { params: { id: string } }) {
+export default function ProjectDetail() {
   const [scrolled, setScrolled] = useState(false)
-  console.log(params);
+  const params = useParams();
   console.log(scrolled);
   // In a real app, you would fetch the project data based on the ID
   // For now, we'll use sample data
