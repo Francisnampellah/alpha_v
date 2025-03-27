@@ -1,17 +1,17 @@
 
 // Team member type definition
-type TeamMember = {
-  id: number
-  name: string
-  role: string
-  bio: string
-  imageUrl: string
-  socialLinks: {
-    twitter?: string
-    linkedin?: string
-    email?: string
-  }
-}
+// type TeamMember = {
+//   id: number
+//   name: string
+//   role: string
+//   bio: string
+//   imageUrl: string
+//   socialLinks: {
+//     twitter?: string
+//     linkedin?: string
+//     email?: string
+//   }
+// }
 
 // Sample team data - replace with your actual team members
 // const teamMembers: TeamMember[] = [
