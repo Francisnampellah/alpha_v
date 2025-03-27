@@ -166,14 +166,15 @@ const CategoryPill = ({ label }: { label: string }) => {
   );
 };
 
-// Define the type for the params object
-type EventPageParams = {
+// Define proper page props according to Next.js App Router conventions
+type EventPageProps = {
   params: {
     id: string;
   };
+  searchParams: Record<string, string | string[] | undefined>;
 };
 
-export default function EventPage({ params }: EventPageParams) {
+export default function EventPage({ params }: EventPageProps) {
   // Hooks need to be at the top level, before any conditional logic
   const [scrolled, setScrolled] = useState(false);
   
