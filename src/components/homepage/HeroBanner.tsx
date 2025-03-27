@@ -106,7 +106,7 @@ export default function WelcomeHeroBanner() {
             className="flex items-center gap-2 mb-4"
           >
             <div className="w-2 h-2 rounded-full bg-blue-400"></div>
-            <p className="text-sm text-blue-400 font-medium">WELCOME TO SMARTINNO ENGINEERING</p>
+            <p className="text-sm text-blue-400 font-medium tracking-wider">WELCOME TO SMARTINNO ENGINEERING</p>
           </motion.div>
 
           <motion.h2
@@ -123,7 +123,7 @@ export default function WelcomeHeroBanner() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-base sm:text-lg md:text-xl text-white sm:text-gray-300 mb-6 sm:mb-8 max-w-2xl font-medium"
+            className="text-base sm:text-lg md:text-xl text-sky-100 sm:text-gray-300 mb-6 sm:mb-8 max-w-2xl font-medium"
           >
             A dynamic, multidisciplinary engineering firm specializing in agile software development
           </motion.p>
@@ -137,7 +137,7 @@ export default function WelcomeHeroBanner() {
               <span className="mr-2">Explore Our Services</span>
               <ArrowRight size={16} />
             </button>
-            <button className="bg-white/10 hover:bg-white/20 text-white border border-white/30 rounded-full px-5 sm:px-6 py-2.5 sm:py-3 font-medium transition-colors">
+            <button className="bg-indigo-900/30 hover:bg-indigo-900/50 text-sky-100 border border-sky-200/30 rounded-full px-5 sm:px-6 py-2.5 sm:py-3 font-medium transition-colors">
               Learn About SmartInno
             </button>
           </motion.div>
@@ -151,15 +151,15 @@ export default function WelcomeHeroBanner() {
           >
             <div>
               <CountingNumber targetNumber={7} suffix="+" />
-              <p className="text-xs sm:text-sm text-white sm:text-gray-300 font-medium">Industries Served</p>
+              <p className="text-xs sm:text-sm text-blue-100 sm:text-gray-300 font-medium">Industries Served</p>
             </div>
             <div>
               <CountingNumber targetNumber={100} suffix="+" />
-              <p className="text-xs sm:text-sm text-white sm:text-gray-300 font-medium">Projects Delivered</p>
+              <p className="text-xs sm:text-sm text-cyan-100 sm:text-gray-300 font-medium">Projects Delivered</p>
             </div>
             <div>
               <CountingNumber targetNumber={2} />
-              <p className="text-xs sm:text-sm text-white sm:text-gray-300 font-medium">Global Offices</p>
+              <p className="text-xs sm:text-sm text-indigo-100 sm:text-gray-300 font-medium">Global Offices</p>
             </div>
           </motion.div>
         </div>
