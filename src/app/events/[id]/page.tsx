@@ -8,6 +8,7 @@ import { ArrowLeft, ArrowRight, Calendar, MapPin, Clock, User } from 'lucide-rea
 import Navigation from '@/components/navigation/Navigation';
 import Footer from '@/components/footer';
 import SectionContainer from '@/components/SectionContainer';
+import { useParams } from 'next/navigation';
 
 // Mock event data - in a real app this would be fetched from a database or API
 const events = [
@@ -167,14 +168,12 @@ const CategoryPill = ({ label }: { label: string }) => {
 };
 
 // Define proper page props according to Next.js App Router conventions
-type EventPageProps = {
-  params: {
-    id: string;
-  };
-  searchParams: Record<string, string | string[] | undefined>;
-};
 
-export default function EventPage({ params }: EventPageProps) {
+export default function EventPage() {
+  // Get the params using the useParams hook
+  const params = useParams();
+  const eventId = params.id as string;
+  
   // Hooks need to be at the top level, before any conditional logic
   const [scrolled, setScrolled] = useState(false);
   
@@ -188,7 +187,7 @@ export default function EventPage({ params }: EventPageProps) {
   }, []);
 
   // Get the event data by ID parameter
-  const event = events.find(e => e.id === params.id);
+  const event = events.find(e => e.id === eventId);
   
   // If event not found
   if (!event) {
