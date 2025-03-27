@@ -113,7 +113,7 @@ export default function WelcomeHeroBanner() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight"
           >
             Empowering Businesses Through Innovation & Technology
           </motion.h2>
@@ -123,7 +123,7 @@ export default function WelcomeHeroBanner() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl"
+            className="text-base sm:text-lg md:text-xl text-white sm:text-gray-300 mb-6 sm:mb-8 max-w-2xl font-medium"
           >
             A dynamic, multidisciplinary engineering firm specializing in agile software development
           </motion.p>
@@ -131,13 +131,13 @@ export default function WelcomeHeroBanner() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4"
           >
-            <button className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-6 py-3 font-medium flex items-center justify-center transition-colors">
+            <button className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-5 sm:px-6 py-2.5 sm:py-3 font-medium flex items-center justify-center transition-colors shadow-md">
               <span className="mr-2">Explore Our Services</span>
               <ArrowRight size={16} />
             </button>
-            <button className="bg-transparent hover:bg-white/10 text-white border border-white/30 rounded-full px-6 py-3 font-medium transition-colors">
+            <button className="bg-white/10 hover:bg-white/20 text-white border border-white/30 rounded-full px-5 sm:px-6 py-2.5 sm:py-3 font-medium transition-colors">
               Learn About SmartInno
             </button>
           </motion.div>
@@ -147,19 +147,19 @@ export default function WelcomeHeroBanner() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="mt-12 grid grid-cols-3 gap-8 max-w-lg"
+            className="mt-8 sm:mt-12 grid grid-cols-3 gap-4 sm:gap-8 max-w-lg"
           >
             <div>
               <CountingNumber targetNumber={7} suffix="+" />
-              <p className="text-sm text-gray-300">Industries Served</p>
+              <p className="text-xs sm:text-sm text-white sm:text-gray-300 font-medium">Industries Served</p>
             </div>
             <div>
               <CountingNumber targetNumber={100} suffix="+" />
-              <p className="text-sm text-gray-300">Projects Delivered</p>
+              <p className="text-xs sm:text-sm text-white sm:text-gray-300 font-medium">Projects Delivered</p>
             </div>
             <div>
               <CountingNumber targetNumber={2} />
-              <p className="text-sm text-gray-300">Global Offices</p>
+              <p className="text-xs sm:text-sm text-white sm:text-gray-300 font-medium">Global Offices</p>
             </div>
           </motion.div>
         </div>
