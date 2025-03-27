@@ -87,7 +87,6 @@ export default function Navigation({
     { href: "/services", label: "Services", isActive: activeLink === "/services" },
     { href: "/projects", label: "Projects", isActive: activeLink === "/projects" },
     { href: "/events", label: "Events", isActive: activeLink === "/events" },
-    { href: "/products", label: "Products", isActive: activeLink === "/products" },
   ]
 
   // Determine header styles based on variant and scroll state

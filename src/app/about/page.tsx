@@ -4,12 +4,13 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ArrowRight, ChevronRight, MapPin, Mail, Phone, Clock } from "lucide-react"
+import { ArrowRight, MapPin, Mail, Phone, Clock } from "lucide-react"
 import Navigation from "@/components/navigation/Navigation"
 import Footer from "@/components/footer"
 import SectionContainer from "@/components/SectionContainer"
 
-// Company Logo component
+// Company Logo component - Removing unused component or commenting out for future use
+/* 
 const CompanyLogo = ({ className = "h-2 w-2" }: { className?: string }) => (
   <div className="grid grid-cols-2 grid-rows-2 gap-1">
     {[...Array(4)].map((_, i) => (
@@ -23,8 +24,10 @@ const CompanyLogo = ({ className = "h-2 w-2" }: { className?: string }) => (
     ))}
   </div>
 )
+*/
 
-// Create our own CountingNumber component
+// Create our own CountingNumber component - Removing unused component or commenting out for future use
+/*
 const CountingNumber = ({ targetNumber, suffix = "" }: { targetNumber: number; suffix?: string }) => {
   const [count, setCount] = useState(0)
 
@@ -57,10 +60,14 @@ const CountingNumber = ({ targetNumber, suffix = "" }: { targetNumber: number; s
     </div>
   )
 }
+*/
 
 export default function AboutPage() {
-  const [scrolled, setScrolled] = useState(false)
-
+  // Removing unused scrolled state or changing to use it in the future
+  // const [scrolled, setScrolled] = useState(false)
+  
+  // If the scrolled state is needed elsewhere in the future, keep the effect but use it properly
+  /*
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
@@ -69,6 +76,7 @@ export default function AboutPage() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+  */
 
   // Team members data
   const teamMembers = [
@@ -87,7 +95,7 @@ export default function AboutPage() {
     {
       name: "Elena Rodriguez",
       role: "Head of Research",
-      bio: "Elena's background in computer science helps shape our approach to developing innovative software solutions.",
+      bio: "Elena&apos;s background in computer science helps shape our approach to developing innovative software solutions.",
       image: "/placeholder.svg?height=400&width=400",
     },
     {
@@ -180,7 +188,7 @@ export default function AboutPage() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl"
             >
-              We're on a mission to create innovative software solutions that drive business growth and digital excellence
+              We&apos;re on a mission to create innovative software solutions that drive business growth and digital excellence
             </motion.p>
 
             {/* Stats Section in a row instead of grid */}
@@ -488,7 +496,7 @@ export default function AboutPage() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Business Operations?</h2>
             <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
-              Let's work together to create innovative software solutions for your specific needs
+              Let&apos;s work together to create innovative software solutions for your specific needs
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
