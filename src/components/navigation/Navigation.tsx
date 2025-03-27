@@ -101,7 +101,7 @@ export default function Navigation({
       textColor = "text-black"
     } else {
       headerStyle = variant === "homepage" 
-        ? "bg-transparent sm:bg-transparent bg-[#0a0f36]/80 backdrop-blur-sm py-4" 
+        ? "bg-transparent sm:bg-white bg-[#0a0f36]/80 backdrop-blur-sm py-4" 
         : "bg-gradient-to-b from-black/50 to-transparent py-4"
       // logoColor = "bg-white"
       textColor = "text-white"
