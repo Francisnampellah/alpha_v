@@ -1,6 +1,3 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Twitter, Linkedin, Mail } from "lucide-react"
 
 // Team member type definition
 type TeamMember = {

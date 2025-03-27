@@ -167,6 +167,18 @@ const CategoryPill = ({ label }: { label: string }) => {
 };
 
 export default function EventPage({ params }: { params: { id: string } }) {
+  // Hooks need to be at the top level, before any conditional logic
+  const [scrolled, setScrolled] = useState(false);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   // Get the event data by ID parameter
   const event = events.find(e => e.id === params.id);
   
@@ -189,16 +201,7 @@ export default function EventPage({ params }: { params: { id: string } }) {
     );
   }
 
-  const [scrolled, setScrolled] = useState(false);
-  console.log(scrolled)
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  console.log(scrolled);
 
   // Get similar events
   const similarEvents = events
