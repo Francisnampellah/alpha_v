@@ -17,133 +17,133 @@ type TeamMember = {
 }
 
 // Sample team data - replace with your actual team members
-const teamMembers: TeamMember[] = [
-  {
-    id: 1,
-    name: "Sarah Johnson",
-    role: "Chief Executive Officer",
-    bio: "With over 15 years of experience in software innovation, Sarah leads our company vision and strategic direction.",
-    imageUrl: "/placeholder.svg?height=400&width=400",
-    socialLinks: {
-      twitter: "https://twitter.com/sarahjohnson",
-      linkedin: "https://linkedin.com/in/sarahjohnson",
-      email: "sarah@smartinno.com",
-    },
-  },
-  {
-    id: 2,
-    name: "Michael Chen",
-    role: "Chief Technology Officer",
-    bio: "Michael oversees all technical aspects of our solutions, bringing 12 years of experience in software architecture and cloud systems.",
-    imageUrl: "/placeholder.svg?height=400&width=400",
-    socialLinks: {
-      twitter: "https://twitter.com/michaelchen",
-      linkedin: "https://linkedin.com/in/michaelchen",
-      email: "michael@smartinno.com",
-    },
-  },
-  {
-    id: 3,
-    name: "Elena Rodriguez",
-    role: "Head of Product Development",
-    bio: "Elena leads our product initiatives, focusing on user experience design and innovative software solutions.",
-    imageUrl: "/placeholder.svg?height=400&width=400",
-    socialLinks: {
-      linkedin: "https://linkedin.com/in/elenarodriguez",
-      email: "elena@smartinno.com",
-    },
-  },
-  {
-    id: 4,
-    name: "David Okafor",
-    role: "DevOps Director",
-    bio: "David ensures smooth deployment pipelines and oversees our cloud infrastructure and operational excellence.",
-    imageUrl: "/placeholder.svg?height=400&width=400",
-    socialLinks: {
-      linkedin: "https://linkedin.com/in/davidokafor",
-      email: "david@smartinno.com",
-    },
-  },
-  {
-    id: 5,
-    name: "Priya Patel",
-    role: "Marketing Director",
-    bio: "Priya develops our marketing strategies and builds strong relationships with clients and technology partners.",
-    imageUrl: "/placeholder.svg?height=400&width=400",
-    socialLinks: {
-      twitter: "https://twitter.com/priyapatel",
-      linkedin: "https://linkedin.com/in/priyapatel",
-      email: "priya@smartinno.com",
-    },
-  },
-  {
-    id: 6,
-    name: "Thomas Weber",
-    role: "AI Solutions Specialist",
-    bio: "Thomas brings deep expertise in machine learning, data science, and AI-powered software solutions.",
-    imageUrl: "/placeholder.svg?height=400&width=400",
-    socialLinks: {
-      linkedin: "https://linkedin.com/in/thomasweber",
-      email: "thomas@smartinno.com",
-    },
-  },
-]
+// const teamMembers: TeamMember[] = [
+//   {
+//     id: 1,
+//     name: "Sarah Johnson",
+//     role: "Chief Executive Officer",
+//     bio: "With over 15 years of experience in software innovation, Sarah leads our company vision and strategic direction.",
+//     imageUrl: "/placeholder.svg?height=400&width=400",
+//     socialLinks: {
+//       twitter: "https://twitter.com/sarahjohnson",
+//       linkedin: "https://linkedin.com/in/sarahjohnson",
+//       email: "sarah@smartinno.com",
+//     },
+//   },
+//   {
+//     id: 2,
+//     name: "Michael Chen",
+//     role: "Chief Technology Officer",
+//     bio: "Michael oversees all technical aspects of our solutions, bringing 12 years of experience in software architecture and cloud systems.",
+//     imageUrl: "/placeholder.svg?height=400&width=400",
+//     socialLinks: {
+//       twitter: "https://twitter.com/michaelchen",
+//       linkedin: "https://linkedin.com/in/michaelchen",
+//       email: "michael@smartinno.com",
+//     },
+//   },
+//   {
+//     id: 3,
+//     name: "Elena Rodriguez",
+//     role: "Head of Product Development",
+//     bio: "Elena leads our product initiatives, focusing on user experience design and innovative software solutions.",
+//     imageUrl: "/placeholder.svg?height=400&width=400",
+//     socialLinks: {
+//       linkedin: "https://linkedin.com/in/elenarodriguez",
+//       email: "elena@smartinno.com",
+//     },
+//   },
+//   {
+//     id: 4,
+//     name: "David Okafor",
+//     role: "DevOps Director",
+//     bio: "David ensures smooth deployment pipelines and oversees our cloud infrastructure and operational excellence.",
+//     imageUrl: "/placeholder.svg?height=400&width=400",
+//     socialLinks: {
+//       linkedin: "https://linkedin.com/in/davidokafor",
+//       email: "david@smartinno.com",
+//     },
+//   },
+//   {
+//     id: 5,
+//     name: "Priya Patel",
+//     role: "Marketing Director",
+//     bio: "Priya develops our marketing strategies and builds strong relationships with clients and technology partners.",
+//     imageUrl: "/placeholder.svg?height=400&width=400",
+//     socialLinks: {
+//       twitter: "https://twitter.com/priyapatel",
+//       linkedin: "https://linkedin.com/in/priyapatel",
+//       email: "priya@smartinno.com",
+//     },
+//   },
+//   {
+//     id: 6,
+//     name: "Thomas Weber",
+//     role: "AI Solutions Specialist",
+//     bio: "Thomas brings deep expertise in machine learning, data science, and AI-powered software solutions.",
+//     imageUrl: "/placeholder.svg?height=400&width=400",
+//     socialLinks: {
+//       linkedin: "https://linkedin.com/in/thomasweber",
+//       email: "thomas@smartinno.com",
+//     },
+//   },
+// ]
 
 // Update the TeamMemberCard component to use circular profile images
-function TeamMemberCard({ member }: { member: TeamMember }) {
-  return (
-    <div className="group flex flex-col items-center text-center rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-300 p-6">
-      <div className="relative h-40 w-40 rounded-full overflow-hidden bg-gray-100 mb-6 border-2 border-gray-200">
-        <Image
-          src={member.imageUrl || "/placeholder.svg"}
-          alt={`Photo of ${member.name}`}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-110"
-          sizes="(max-width: 768px) 160px, 160px"
-        />
-      </div>
-      <div className="flex-1">
-        <h3 className="text-xl font-bold">{member.name}</h3>
-        <p className="text-sm text-gray-500 mb-3">{member.role}</p>
-        <p className="text-sm text-gray-700 mb-4">{member.bio}</p>
+// function TeamMemberCard({ member }: { member: TeamMember }) {
+//   return (
+//     <div className="group flex flex-col items-center text-center rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-300 p-6">
+//       <div className="relative h-40 w-40 rounded-full overflow-hidden bg-gray-100 mb-6 border-2 border-gray-200">
+//         <Image
+//           src={member.imageUrl || "/placeholder.svg"}
+//           alt={`Photo of ${member.name}`}
+//           fill
+//           className="object-cover transition-transform duration-500 group-hover:scale-110"
+//           sizes="(max-width: 768px) 160px, 160px"
+//         />
+//       </div>
+//       <div className="flex-1">
+//         <h3 className="text-xl font-bold">{member.name}</h3>
+//         <p className="text-sm text-gray-500 mb-3">{member.role}</p>
+//         <p className="text-sm text-gray-700 mb-4">{member.bio}</p>
 
-        <div className="flex justify-center space-x-4">
-          {member.socialLinks.twitter && (
-            <Link
-              href={member.socialLinks.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-black transition-colors"
-              aria-label={`${member.name}'s Twitter`}
-            >
-              <Twitter size={18} />
-            </Link>
-          )}
-          {member.socialLinks.linkedin && (
-            <Link
-              href={member.socialLinks.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-black transition-colors"
-              aria-label={`${member.name}'s LinkedIn`}
-            >
-              <Linkedin size={18} />
-            </Link>
-          )}
-          {member.socialLinks.email && (
-            <Link
-              href={`mailto:${member.socialLinks.email}`}
-              className="text-gray-500 hover:text-black transition-colors"
-              aria-label={`Email ${member.name}`}
-            >
-              <Mail size={18} />
-            </Link>
-          )}
-        </div>
-      </div>
-    </div>
-  )
-}
+//         <div className="flex justify-center space-x-4">
+//           {member.socialLinks.twitter && (
+//             <Link
+//               href={member.socialLinks.twitter}
+//               target="_blank"
+//               rel="noopener noreferrer"
+//               className="text-gray-500 hover:text-black transition-colors"
+//               aria-label={`${member.name}'s Twitter`}
+//             >
+//               <Twitter size={18} />
+//             </Link>
+//           )}
+//           {member.socialLinks.linkedin && (
+//             <Link
+//               href={member.socialLinks.linkedin}
+//               target="_blank"
+//               rel="noopener noreferrer"
+//               className="text-gray-500 hover:text-black transition-colors"
+//               aria-label={`${member.name}'s LinkedIn`}
+//             >
+//               <Linkedin size={18} />
+//             </Link>
+//           )}
+//           {member.socialLinks.email && (
+//             <Link
+//               href={`mailto:${member.socialLinks.email}`}
+//               className="text-gray-500 hover:text-black transition-colors"
+//               aria-label={`Email ${member.name}`}
+//             >
+//               <Mail size={18} />
+//             </Link>
+//           )}
+//         </div>
+//       </div>
+//     </div>
+//   )
+// }
 
 export default function OurTeam() {
   return (
@@ -185,7 +185,7 @@ export default function OurTeam() {
           <h3 className="font-semibold text-lg">Dr. James Wilson</h3>
           <p className="text-blue-500 text-sm mb-3">Chief Research Officer</p>
           <p className="text-sm text-gray-600">
-            James leads our R&D team, developing innovative solutions for tomorrow's challenges.
+            James leads our R&D team, developing innovative solutions for tomorrow&apos;s challenges.
           </p>
         </div>
       </div>
@@ -196,7 +196,7 @@ export default function OurTeam() {
         <div className="md:w-2/3">
           <h3 className="text-2xl font-bold mb-4">Join Our Growing Team</h3>
           <p className="text-gray-300 mb-6">
-            We're always looking for talented individuals who share our passion for excellence and innovation in
+            We&apos;re always looking for talented individuals who share our passion for excellence and innovation in
             chemical supply solutions.
           </p>
           <button className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-6 py-3 font-medium transition-colors">

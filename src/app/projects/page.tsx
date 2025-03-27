@@ -83,6 +83,7 @@ export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState("all")
   const [filteredProjects, setFilteredProjects] = useState(projects)
   const [searchQuery, setSearchQuery] = useState("")
+  console.log(scrolled)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -382,7 +383,7 @@ export default function ProjectsPage() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Have a Project in Mind?</h2>
             <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
-              Let's discuss how we can bring your agricultural innovation to life
+              Let&apos;s discuss how we can bring your agricultural innovation to life
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

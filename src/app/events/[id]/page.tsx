@@ -4,10 +4,11 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Calendar, MapPin, Clock, User, ChevronRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Calendar, MapPin, Clock, User } from 'lucide-react';
 import Navigation from '@/components/navigation/Navigation';
 import Footer from '@/components/footer';
 import SectionContainer from '@/components/SectionContainer';
+import { console } from 'inspector';
 
 // Mock event data - in a real app this would be fetched from a database or API
 const events = [
@@ -167,8 +168,6 @@ const CategoryPill = ({ label }: { label: string }) => {
 };
 
 export default function EventPage({ params }: { params: { id: string } }) {
-  const [scrolled, setScrolled] = useState(false);
-  
   // Get the event data by ID parameter
   const event = events.find(e => e.id === params.id);
   
@@ -191,6 +190,9 @@ export default function EventPage({ params }: { params: { id: string } }) {
     );
   }
 
+  const [scrolled, setScrolled] = useState(false);
+  console.log(scrolled)
+  
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -524,7 +526,7 @@ export default function EventPage({ params }: { params: { id: string } }) {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Don't Miss Our Future Events</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Don&apos;t Miss Our Future Events</h2>
             <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
               Stay updated with our latest agricultural technology events and innovations
             </p>

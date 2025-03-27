@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowLeft, ArrowRight, ChevronRight, Info, MapPin, Calendar, Clock, Tag } from 'lucide-react'
+import { ArrowLeft, ArrowRight, ChevronRight } from 'lucide-react'
 import { motion } from "framer-motion"
 import Navigation from "@/components/navigation/Navigation"
 import Footer from "@/components/footer"
@@ -81,7 +81,8 @@ const CategoryPill = ({ label }: { label: string }) => {
 
 export default function ProjectDetail({ params }: { params: { id: string } }) {
   const [scrolled, setScrolled] = useState(false)
-  
+  console.log(params);
+  console.log(scrolled);
   // In a real app, you would fetch the project data based on the ID
   // For now, we'll use sample data
   const project = sampleProject

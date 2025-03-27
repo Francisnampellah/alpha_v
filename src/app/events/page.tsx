@@ -99,6 +99,7 @@ function formatDate(dateString: string) {
 export default function EventsPage() {
   const [scrolled, setScrolled] = useState(false);
   const [activeFilter, setActiveFilter] = useState('all');
+  console.log(scrolled);
 
   useEffect(() => {
     const handleScroll = () => {

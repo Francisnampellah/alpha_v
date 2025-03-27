@@ -11,7 +11,6 @@ import {
   Zap,
   BarChart3,
   Droplets,
-  Leaf,
   Cpu,
   LineChart,
   Smartphone,
@@ -26,6 +25,7 @@ export default function ServicesPage() {
   const [scrolled, setScrolled] = useState(false)
   const [activeTab, setActiveTab] = useState("all")
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null)
+  console.log(scrolled)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -456,7 +456,7 @@ export default function ServicesPage() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Business?</h2>
             <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
-              Let's discuss how our software development services can help you achieve your goals
+              Let&apos;s discuss how our software development services can help you achieve your goals
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

@@ -91,25 +91,25 @@ export default function Navigation({
 
   // Determine header styles based on variant and scroll state
   let headerStyle = ""
-  let logoColor = ""
+  // let logoColor = ""
   let textColor = "text-black"
 
   if (variant === "transparent" || variant === "homepage") {
     if (scrolled) {
       headerStyle = "bg-white/90 backdrop-blur-md shadow-sm py-3"
-      logoColor = "bg-black"
+      // logoColor = "bg-black"
       textColor = "text-black"
     } else {
       headerStyle = variant === "homepage" 
         ? "bg-transparent py-4" 
         : "bg-gradient-to-b from-black/50 to-transparent py-4"
-      logoColor = "bg-white"
+      // logoColor = "bg-white"
       textColor = "text-white"
     }
   } else {
     // Solid variant
     headerStyle = "bg-white shadow-sm py-3"
-    logoColor = "bg-black"
+    // logoColor = "bg-black"
     textColor = "text-black"
   }
 
