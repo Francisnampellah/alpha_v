@@ -169,11 +169,10 @@ const CategoryPill = ({ label }: { label: string }) => {
 interface EventPageProps {
   params: {
     id: string;
-  };
-  searchParams: Record<string, string | string[] | undefined>;
+  }
 }
 
-export default function EventPage({ params, searchParams }: EventPageProps) {
+export default function EventPage({ params }: EventPageProps) {
   // Hooks need to be at the top level, before any conditional logic
   const [scrolled, setScrolled] = useState(false);
   
