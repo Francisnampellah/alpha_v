@@ -83,6 +83,9 @@ const CategoryPill = ({ label }: { label: string }) => {
 export default function ProjectDetail() {
   const [scrolled, setScrolled] = useState(false)
   const params = useParams();
+  const projectId = params.id as string;
+
+  console.log(projectId);
   console.log(scrolled);
   // In a real app, you would fetch the project data based on the ID
   // For now, we'll use sample data
