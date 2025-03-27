@@ -283,7 +283,6 @@ export default function Section_02() {
                 <LogoItem
                   icon={logo.icon}
                   name={logo.name}
-                  badgeText={logo.badgeText}
                 />
               </div>
             ))}
