@@ -14,11 +14,10 @@ export default function Section_05() {
     return () => clearInterval(interval);
   }, []);
 
-  const text = "Partner In Agricultural Innovation";
+  const text = "Innovating the Future of Technology";
   
   return (
     <>
-
     <div className="w-full py-8 my-16 overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div
@@ -47,7 +46,7 @@ export default function Section_05() {
                 transition: { duration: 2, repeat: Infinity }
               }}
             >
-              ✤
+              ✦
             </motion.span>
             <motion.h1 
               className="text-4xl md:text-6xl font-bold text-black whitespace-nowrap"
@@ -61,12 +60,11 @@ export default function Section_05() {
                 transition: { duration: 2, repeat: Infinity }
               }}
             >
-              ✤
+              ✦
             </motion.span>
           </div>
         </motion.div>
       </div>
-      
     </div>
     </>
   );

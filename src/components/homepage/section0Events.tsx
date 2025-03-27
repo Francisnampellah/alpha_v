@@ -16,9 +16,9 @@ export default function OurEvents() {
         </div>
 
         <h2 className="text-3xl md:text-4xl font-bold mb-8 max-w-md">
-          Industry Insights,
+          Tech Innovations,
           <br />
-          Valuable Connections
+          Meaningful Connections
         </h2>
 
         <div className="h-px bg-gray-700 mb-8"></div>
@@ -29,9 +29,9 @@ export default function OurEvents() {
               <p className="text-gray-400 mb-1">01.</p>
               <div className="bg-blue-500/20 text-blue-400 text-xs font-medium px-2 py-1 rounded">MAY 15</div>
             </div>
-            <h3 className="font-semibold text-lg mb-4">ChemTech Summit</h3>
+            <h3 className="font-semibold text-lg mb-4">AI & Robotics Summit</h3>
             <p className="text-sm text-gray-300">
-              Join industry leaders to explore the latest innovations in chemical technology.
+              Explore the latest advancements in artificial intelligence and robotics with industry leaders.
             </p>
           </div>
 
@@ -40,9 +40,9 @@ export default function OurEvents() {
               <p className="text-gray-400 mb-1">02.</p>
               <div className="bg-blue-500/20 text-blue-400 text-xs font-medium px-2 py-1 rounded">JUN 22</div>
             </div>
-            <h3 className="font-semibold text-lg mb-4">Sustainability Forum</h3>
+            <h3 className="font-semibold text-lg mb-4">Sustainability in Tech</h3>
             <p className="text-sm text-gray-300">
-              Discover sustainable practices and eco-friendly solutions for the chemical industry.
+              Learn about sustainable practices and eco-friendly solutions in the tech industry.
             </p>
           </div>
 
@@ -51,9 +51,9 @@ export default function OurEvents() {
               <p className="text-gray-400 mb-1">03.</p>
               <div className="bg-blue-500/20 text-blue-400 text-xs font-medium px-2 py-1 rounded">JUL 10</div>
             </div>
-            <h3 className="font-semibold text-lg mb-4">Product Showcase</h3>
+            <h3 className="font-semibold text-lg mb-4">Tech Product Showcase</h3>
             <p className="text-sm text-gray-300">
-              Experience our latest chemical solutions with live demonstrations and expert insights.
+              Experience cutting-edge technologies with live demonstrations and expert insights.
             </p>
           </div>
 
@@ -62,9 +62,9 @@ export default function OurEvents() {
               <p className="text-gray-400 mb-1">04.</p>
               <div className="bg-blue-500/20 text-blue-400 text-xs font-medium px-2 py-1 rounded">AUG 05</div>
             </div>
-            <h3 className="font-semibold text-lg mb-4">Industry Workshop</h3>
+            <h3 className="font-semibold text-lg mb-4">Innovation Workshop</h3>
             <p className="text-sm text-gray-300">
-              Hands-on training sessions on optimizing chemical processes for maximum efficiency.
+              Hands-on sessions to explore innovative solutions and optimize tech processes.
             </p>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function OurEvents() {
               <div className="w-8 h-8 rounded-full bg-gray-500 border-2 border-[#1a2150]"></div>
             </div>
             <p className="text-sm">
-              Join <span className="font-semibold">500+ Industry Professionals</span> at our events
+              Join <span className="font-semibold">500+ Tech Professionals</span> at our events
             </p>
           </div>
           <button
@@ -108,7 +108,7 @@ export default function OurEvents() {
           <div className="flex-1">
             <div className="h-px bg-gray-300 mb-8"></div>
             <p className="text-gray-600 max-w-md">
-              Our events bring together industry experts, innovative technologies, and forward-thinking professionals to
+              Our events bring together tech experts, innovative technologies, and forward-thinking professionals to
               create valuable learning and networking opportunities.
             </p>
           </div>
@@ -118,7 +118,7 @@ export default function OurEvents() {
           <div className="bg-[#0a0f36] text-white p-6 rounded-xl">
             <h3 className="font-semibold text-lg mb-4">Expert Speakers</h3>
             <p className="text-sm text-gray-300 mb-8">
-              Learn from industry leaders and renowned experts sharing cutting-edge insights.
+              Learn from tech leaders and renowned experts sharing cutting-edge insights.
             </p>
             <div className="h-24 bg-gradient-to-r from-blue-900 to-transparent rounded-lg"></div>
           </div>
@@ -160,7 +160,7 @@ export default function OurEvents() {
           >
             <div className="w-full h-full bg-gradient-to-r from-black/50 to-transparent p-6 flex flex-col justify-end">
               <h3 className="text-white font-semibold text-lg">Previous Conference</h3>
-              <p className="text-white/80 text-sm">ChemTech Summit 2023 with over 300 attendees</p>
+              <p className="text-white/80 text-sm">AI & Robotics Summit 2023 with over 300 attendees</p>
             </div>
           </div>
 
@@ -173,7 +173,7 @@ export default function OurEvents() {
           >
             <div className="w-full h-full bg-gradient-to-r from-black/50 to-transparent p-6 flex flex-col justify-end">
               <h3 className="text-white font-semibold text-lg">Workshop Sessions</h3>
-              <p className="text-white/80 text-sm">Interactive learning experiences led by industry experts</p>
+              <p className="text-white/80 text-sm">Interactive learning experiences led by tech experts</p>
             </div>
           </div>
         </div>

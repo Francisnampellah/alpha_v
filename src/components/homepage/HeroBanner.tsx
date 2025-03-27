@@ -68,8 +68,8 @@ export default function WelcomeHeroBanner() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1526666923127-b2970f64b422?q=80&w=3272&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Chemical laboratory with modern equipment"
+          src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Modern engineering and technology workspace"
           fill
           priority
           sizes="100vw"
@@ -90,8 +90,8 @@ export default function WelcomeHeroBanner() {
             <CompanyLogo className="h-2 w-2" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-white">SYNTHRIX</h1>
-            <p className="text-xs text-blue-300">CHEMICAL SOLUTIONS</p>
+            <h1 className="text-2xl font-bold text-white">SMARTINNO</h1>
+            <p className="text-xs text-blue-300">ENGINEERING LIMITED</p>
           </div>
         </motion.div>
 
@@ -101,7 +101,7 @@ export default function WelcomeHeroBanner() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="hidden md:flex items-center gap-6"
         >
-          {["Home", "Products", "Solutions", "About", "Contact"].map((item, index) => (
+          {["Home", "Services", "Industries", "About", "Contact"].map((item, index) => (
             <a key={item} href={`#${item.toLowerCase()}`} className="text-white hover:text-blue-300 transition-colors">
               {item}
             </a>
@@ -128,7 +128,7 @@ export default function WelcomeHeroBanner() {
             className="flex items-center gap-2 mb-4"
           >
             <div className="w-2 h-2 rounded-full bg-blue-400"></div>
-            <p className="text-sm text-blue-400 font-medium">WELCOME TO SYNTHRIX</p>
+            <p className="text-sm text-blue-400 font-medium">WELCOME TO SMARTINNO ENGINEERING</p>
           </motion.div>
 
           <motion.h2
@@ -137,7 +137,7 @@ export default function WelcomeHeroBanner() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
           >
-            Innovative Chemical Solutions for a Changing World
+            Empowering Businesses Through Innovation & Technology
           </motion.h2>
 
           <motion.p
@@ -146,8 +146,8 @@ export default function WelcomeHeroBanner() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl"
           >
-            Discover our comprehensive range of high-quality chemical products and tailored solutions designed to meet
-            the evolving needs of industries worldwide.
+            A dynamic, multidisciplinary engineering firm specializing in agile software development, artificial intelligence, 
+            and pioneering system integration solutions across multiple sectors.
           </motion.p>
 
           <motion.div
@@ -157,11 +157,11 @@ export default function WelcomeHeroBanner() {
             className="flex flex-col sm:flex-row gap-4"
           >
             <button className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-6 py-3 font-medium flex items-center justify-center transition-colors">
-              <span className="mr-2">Explore Our Products</span>
+              <span className="mr-2">Explore Our Services</span>
               <ArrowRight size={16} />
             </button>
             <button className="bg-transparent hover:bg-white/10 text-white border border-white/30 rounded-full px-6 py-3 font-medium transition-colors">
-              Learn About Synthrix
+              Learn About SmartInno
             </button>
           </motion.div>
 
@@ -173,22 +173,16 @@ export default function WelcomeHeroBanner() {
             className="mt-12 grid grid-cols-3 gap-8 max-w-lg"
           >
             <div>
-              <p className="text-3xl font-bold text-white">
-                18<span className="text-blue-400">+</span>
-              </p>
-              <p className="text-sm text-gray-300">Years Experience</p>
+              <CountingNumber targetNumber={7} suffix="+" />
+              <p className="text-sm text-gray-300">Industries Served</p>
             </div>
             <div>
-              <p className="text-3xl font-bold text-white">
-                5K<span className="text-blue-400">+</span>
-              </p>
-              <p className="text-sm text-gray-300">Global Clients</p>
+              <CountingNumber targetNumber={100} suffix="+" />
+              <p className="text-sm text-gray-300">Projects Delivered</p>
             </div>
             <div>
-              <p className="text-3xl font-bold text-white">
-                99<span className="text-blue-400">.8%</span>
-              </p>
-              <p className="text-sm text-gray-300">Delivery Rate</p>
+              <CountingNumber targetNumber={2} />
+              <p className="text-sm text-gray-300">Global Offices</p>
             </div>
           </motion.div>
         </div>

@@ -122,7 +122,7 @@ export default function Section_04() {
       <div className="flex items-center p-6 md:p-8 border-gray-200 border-b">
         <div className="w-16 text-lg text-gray-400 font-bold">04</div>
         <div className="flex-1">
-          <h2 className="text-xl text-black font-bold">Our Projects</h2>
+          <h2 className="text-xl text-black font-bold">Our Products</h2>
           <p className="text-sm text-black">Just the board, the streets, & your trick.</p>
         </div>
       </div>
