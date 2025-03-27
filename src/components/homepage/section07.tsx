@@ -2,10 +2,10 @@
 
 import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
-import { Play, Plus, Settings, Pause } from "lucide-react"
+import { ArrowRight, Play, Pause } from "lucide-react"
 
-export default function SectionCarousel() {
-  const [activeTab, setActiveTab] = useState("custom-software")
+export default function ChemicalSolutionsCarousel() {
+  const [activeTab, setActiveTab] = useState("industrial")
   const [isPaused, setIsPaused] = useState(false)
   const [fadeState, setFadeState] = useState("fade-in")
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
@@ -13,33 +13,38 @@ export default function SectionCarousel() {
 
   // Tab content data
   const tabContent = {
-    "custom-software": {
-      title: "Custom Software Solutions",
-      description: "Bespoke software tailored to meet the unique needs of businesses, ensuring efficiency and scalability.",
-      image:
-        "https://images.unsplash.com/photo-1526666923127-b2970f64b422?q=80&w=3272&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      color: "#4CAF50",
+    industrial: {
+      title: "Industrial Solutions",
+      description:
+        "High-performance chemicals designed for manufacturing processes, ensuring efficiency and consistency.",
+      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=3270&auto=format&fit=crop",
+      color: "#3B82F6", // blue-500
     },
-    fintech: {
-      title: "FinTech Innovation",
-      description: "Advanced financial technology solutions enhancing accessibility, security, and efficiency.",
-      image:
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      color: "#2196F3",
+    pharmaceutical: {
+      title: "Pharmaceutical Grade",
+      description: "Ultra-pure chemical compounds meeting strict quality standards for pharmaceutical applications.",
+      image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=3270&auto=format&fit=crop",
+      color: "#10B981", // emerald-500
     },
-    agribusiness: {
-      title: "Agribusiness Enhancement",
-      description: "Smart solutions for farm management, supply chain optimization, and market access.",
-      image:
-        "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2765&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      color: "#e6e338",
+    agricultural: {
+      title: "Agricultural Products",
+      description: "Specialized formulations for crop protection, soil enhancement, and agricultural productivity.",
+      image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2765&auto=format&fit=crop",
+      color: "#F59E0B", // amber-500
+    },
+    research: {
+      title: "Research & Development",
+      description: "Precision chemicals for laboratory research, testing, and scientific innovation.",
+      image: "https://images.unsplash.com/photo-1581093057217-5186ecbb9f99?q=80&w=3270&auto=format&fit=crop",
+      color: "#8B5CF6", // violet-500
     },
   }
 
   const navItems = [
-    { id: "custom-software", label: "Custom Software" },
-    { id: "fintech", label: "FinTech" },
-    { id: "agribusiness", label: "Agribusiness" },
+    { id: "industrial", label: "Industrial" },
+    { id: "pharmaceutical", label: "Pharmaceutical" },
+    { id: "agricultural", label: "Agricultural" },
+    { id: "research", label: "Research" },
   ]
 
   // Function to change tab with animation
@@ -103,111 +108,186 @@ export default function SectionCarousel() {
   }, [isPaused])
 
   return (
-    <div
-      className="px-4 md:px-16 py-8 bg-black"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
-      <div className="flex flex-col md:flex-row md:items-center mb-8 md:mb-16 border-gray-700 border-b pb-6">
-        <div className="w-16 text-lg text-gray-400 font-bold">05</div>
-        <div className="flex-1">
-          <h2 className="text-xl text-white font-bold">SmartINNO Services</h2>
-          <p className="text-sm text-gray-300">Driving innovation through technology.</p>
-        </div>
-        <button
-          className="mt-4 md:mt-0 bg-[#e6e338] text-black px-6 py-3 rounded-full hover:bg-[#d6d328] transition-colors"
-          style={{ backgroundColor: tabContent[activeTab as keyof typeof tabContent].color }}
-        >
-          Learn More
-        </button>
-      </div>
-
-      <div className="flex justify-between items-center mb-6">
-        <div className="flex items-center gap-4">
-          <div
-            className="rounded-full w-16 h-16 flex items-center justify-center transition-colors duration-300"
-            style={{ backgroundColor: tabContent[activeTab as keyof typeof tabContent].color }}
-          >
-          </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl text-white font-bold transition-all duration-300">
-            {tabContent[activeTab as keyof typeof tabContent].title}
-          </h2>
+    <div className="flex flex-col w-full">
+      {/* Top Section - Chemical Solutions */}
+      <div
+        className="bg-[#0a0f36] text-white p-8 md:p-12"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        <div className="flex items-center gap-2 mb-2">
+          <div className="w-2 h-2 rounded-full bg-blue-400"></div>
+          <p className="text-sm text-blue-400 font-medium">4 CHEMICAL CATEGORIES</p>
         </div>
 
-        <div className="flex items-center">
-          <button
-            onClick={togglePause}
-            className="p-2 rounded-full hover:bg-gray-800 text-gray-300 transition-colors"
-            aria-label={isPaused ? "Play slideshow" : "Pause slideshow"}
-          >
-            {isPaused ? <Play className="h-5 w-5" /> : <Pause className="h-5 w-5" />}
-          </button>
-          <button className="ml-1 p-2 rounded-full hover:bg-gray-800 text-gray-300 transition-colors">
-            <Plus className="h-5 w-5" />
-          </button>
-        </div>
-      </div>
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 max-w-md">
+          Specialized Solutions,
+          <br />
+          Superior Performance
+        </h2>
 
-      {/* Progress bar */}
-      <div className="w-full h-1 bg-gray-800 mb-6 rounded-full overflow-hidden">
-        <div
-          className={`h-full transition-all duration-300 ${isPaused ? "pause-animation" : ""}`}
-          style={{
-            backgroundColor: tabContent[activeTab as keyof typeof tabContent].color,
-            animation: isPaused ? "none" : `progressAnimation ${ROTATION_INTERVAL}ms linear infinite`,
-            animationPlayState: isPaused ? "paused" : "running",
-          }}
-        ></div>
-      </div>
+        <div className="h-px bg-gray-700 mb-8"></div>
 
-      <div className="relative rounded-2xl overflow-hidden">
-        <div className="absolute top-4 left-4 z-10 flex flex-wrap gap-2">
+        {/* Tabs Navigation */}
+        <div className="flex flex-wrap gap-3 mb-6">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => handleTabClick(item.id)}
-              className={`px-4 py-2 rounded-full backdrop-blur-sm text-white border transition-all duration-300 ${
-                activeTab === item.id ? "border-white bg-black/70" : "border-white/20 bg-black/50 hover:bg-black/60"
+              className={`px-5 py-2.5 rounded-full transition-all duration-300 text-sm font-medium ${
+                activeTab === item.id ? "bg-white text-[#0a0f36]" : "bg-[#1a2150] text-white hover:bg-[#232a5c]"
               }`}
             >
               {item.label}
             </button>
           ))}
+
+          <div className="ml-auto flex items-center">
+            <button
+              onClick={togglePause}
+              className="p-2 rounded-full hover:bg-[#1a2150] text-white transition-colors"
+              aria-label={isPaused ? "Play slideshow" : "Pause slideshow"}
+            >
+              {isPaused ? <Play className="h-5 w-5" /> : <Pause className="h-5 w-5" />}
+            </button>
+          </div>
         </div>
 
-        <div className="absolute bottom-4 right-4 z-10 flex items-center gap-4">
-          <span className="text-white text-sm">©2025 NewTech</span>
-          <button
-            className="rounded-full h-12 w-12 flex items-center justify-center transition-colors duration-300"
-            style={{ backgroundColor: tabContent[activeTab as keyof typeof tabContent].color }}
-          >
-            <Settings className="h-6 w-6 text-black" />
-          </button>
-        </div>
-
-        <div className="absolute inset-0 flex items-center justify-center z-10">
-          <button className="rounded-full h-16 w-16 bg-white/30 backdrop-blur-sm hover:bg-white/40 flex items-center justify-center transition-all duration-300">
-            <Play className="h-8 w-8 text-white" fill="white" />
-          </button>
-        </div>
-
-        <div className={`transition-opacity duration-500 ${fadeState === "fade-in" ? "opacity-100" : "opacity-0"}`}>
-          <p className="absolute bottom-16 left-8 z-10 text-white text-xl md:text-2xl font-medium max-w-md bg-black/50 backdrop-blur-sm p-4 rounded-lg">
-            {tabContent[activeTab as keyof typeof tabContent].description}
-          </p>
-
-          <Image
-            src={tabContent[activeTab as keyof typeof tabContent].image || "/placeholder.svg"}
-            alt="Agricultural scene"
-            width={1200}
-            height={600}
-            className="w-full h-[300px] md:h-[500px] object-cover transition-transform duration-700"
+        {/* Progress bar */}
+        <div className="w-full h-1 bg-[#1a2150] mb-6 rounded-full overflow-hidden">
+          <div
+            className={`h-full transition-all duration-300`}
             style={{
-              transform: fadeState === "fade-in" ? "scale(1)" : "scale(1.05)",
+              backgroundColor: tabContent[activeTab as keyof typeof tabContent].color,
+              animation: isPaused ? "none" : `progressAnimation ${ROTATION_INTERVAL}ms linear infinite`,
+              animationPlayState: isPaused ? "paused" : "running",
+              width: isPaused ? "100%" : "100%",
             }}
-          />
+          ></div>
+        </div>
+
+        {/* Content Area */}
+        <div className="relative rounded-xl overflow-hidden">
+          <div className={`transition-opacity duration-500 ${fadeState === "fade-in" ? "opacity-100" : "opacity-0"}`}>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="flex flex-col justify-between">
+                <div>
+                  <h3
+                    className="text-2xl font-bold mb-4"
+                    style={{ color: tabContent[activeTab as keyof typeof tabContent].color }}
+                  >
+                    {tabContent[activeTab as keyof typeof tabContent].title}
+                  </h3>
+                  <p className="text-gray-300 text-lg mb-8">
+                    {tabContent[activeTab as keyof typeof tabContent].description}
+                  </p>
+                </div>
+
+                <button
+                  className="self-start rounded-full px-6 py-3 flex items-center transition-colors text-black font-medium"
+                  style={{ backgroundColor: tabContent[activeTab as keyof typeof tabContent].color }}
+                >
+                  <span className="mr-2">Explore Solutions</span>
+                  <ArrowRight size={16} />
+                </button>
+              </div>
+
+              <div className="rounded-xl overflow-hidden h-[300px]">
+                <Image
+                  src={tabContent[activeTab as keyof typeof tabContent].image || "/placeholder.svg"}
+                  alt={tabContent[activeTab as keyof typeof tabContent].title}
+                  width={600}
+                  height={400}
+                  className="w-full h-full object-cover transition-transform duration-700"
+                  style={{
+                    transform: fadeState === "fade-in" ? "scale(1)" : "scale(1.05)",
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="bg-[#1a2150] rounded-xl p-4 mt-8 flex justify-between items-center">
+          <div className="flex items-center gap-2">
+            <div className="flex -space-x-2">
+              <div className="w-8 h-8 rounded-full bg-gray-300 border-2 border-[#1a2150]"></div>
+              <div className="w-8 h-8 rounded-full bg-gray-400 border-2 border-[#1a2150]"></div>
+              <div className="w-8 h-8 rounded-full bg-gray-500 border-2 border-[#1a2150]"></div>
+            </div>
+            <p className="text-sm">
+              Trusted by <span className="font-semibold">Industry Leaders</span> worldwide
+            </p>
+          </div>
+          <button className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-4 py-2 flex items-center transition-colors">
+            <span className="mr-2">View All Products</span>
+            <ArrowRight size={16} />
+          </button>
         </div>
       </div>
+
+      {/* Bottom Section - Benefits */}
+      {/* <div className="bg-gray-100 p-8 md:p-12">
+        <div className="flex items-center gap-2 mb-2">
+          <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+          <p className="text-sm text-blue-500 font-medium">BENEFITS YOU'LL GAIN</p>
+        </div>
+
+        <div className="flex flex-col md:flex-row gap-8 md:gap-16">
+          <h2 className="text-3xl md:text-4xl font-bold max-w-xs">
+            Unlock
+            <br />
+            Exclusive
+            <br />
+            Advantages
+          </h2>
+
+          <div className="flex-1">
+            <div className="h-px bg-gray-300 mb-8"></div>
+            <p className="text-gray-600 max-w-md">
+              Our specialized chemical solutions deliver exceptional performance, consistency, and value across multiple
+              industries, backed by our commitment to quality and innovation.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+          <div className="bg-[#0a0f36] text-white p-6 rounded-xl">
+            <h3 className="font-semibold text-lg mb-4">Superior Quality</h3>
+            <p className="text-sm text-gray-300 mb-8">
+              Rigorously tested formulations that meet or exceed industry standards.
+            </p>
+            <div className="h-24 bg-gradient-to-r from-blue-900 to-transparent rounded-lg"></div>
+          </div>
+
+          <div className="bg-gray-200 p-6 rounded-xl">
+            <h3 className="font-semibold text-lg mb-4">Technical Support</h3>
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-6 h-6 rounded-full bg-gray-300 flex items-center justify-center">
+                <svg className="w-4 h-4 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path
+                    d="M9,3 L15,3 L15,9 L19,18 C19.5,19.5 18.5,21 17,21 L7,21 C5.5,21 4.5,19.5 5,18 L9,9 L9,3 Z"
+                    strokeWidth="1.5"
+                  />
+                  <line x1="9" y1="3" x2="15" y2="3" strokeWidth="1.5" />
+                </svg>
+              </div>
+            </div>
+            <p className="text-sm text-gray-600">
+              Expert guidance from our team of chemical specialists for optimal results.
+            </p>
+          </div>
+
+          <div className="bg-[#0a0f36] text-white p-6 rounded-xl">
+            <h3 className="font-semibold text-lg mb-4">Custom Formulations</h3>
+            <p className="text-sm text-gray-300 mb-8">
+              Tailored solutions designed to meet your specific requirements.
+            </p>
+            <div className="h-24 bg-gradient-to-r from-blue-900 to-transparent rounded-lg"></div>
+          </div>
+        </div>
+      </div> */}
     </div>
   )
 }

@@ -147,48 +147,112 @@ function TeamMemberCard({ member }: { member: TeamMember }) {
 
 export default function OurTeam() {
   return (
-    <section className="py-16 px-4 md:px-8 lg:px-12 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl text-black md:text-4xl font-bold mb-4">SMARTiNNO Team</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Meet the dedicated professionals behind SMARTiNNO. Our diverse team combines expertise in software development,
-            cloud technologies, and digital transformation to deliver innovative solutions.
-          </p>
-        </div>
+    <div className="bg-white p-8 md:p-12">
+    <div className="flex items-center gap-2 mb-2">
+      <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+      <p className="text-sm text-blue-500 font-medium">OUR LEADERSHIP</p>
+    </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {teamMembers.map((member) => (
-            <TeamMemberCard key={member.id} member={member} />
-          ))}
-        </div>
+    <h2 className="text-3xl md:text-4xl font-bold mb-8">Meet The Team</h2>
 
-        <div className="mt-16 text-center">
-          <h3 className="text-xl font-semibold mb-4">Join Our Team</h3>
-          <p className="text-gray-600 max-w-2xl mx-auto mb-6">
-            Were always looking for talented individuals who are passionate about software innovation and
-            digital transformation. Check out our current openings and become part of our mission.
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="bg-gray-100 rounded-xl overflow-hidden">
+        <div className="h-64 bg-gray-200"></div>
+        <div className="p-6">
+          <h3 className="font-semibold text-lg">Dr. Sarah Chen</h3>
+          <p className="text-blue-500 text-sm mb-3">Chief Executive Officer</p>
+          <p className="text-sm text-gray-600">
+            With over 20 years of experience in chemical engineering and business leadership, Sarah drives our
+            strategic vision.
           </p>
-          <Link
-            href="/careers"
-            className="inline-flex items-center bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-colors"
-          >
-            View Open Positions
-            <span className="ml-2 bg-yellow-300 rounded-full w-6 h-6 flex items-center justify-center">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M6 12H18M18 12L12 6M18 12L12 18"
-                  stroke="black"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </span>
-          </Link>
         </div>
       </div>
-    </section>
+
+      <div className="bg-gray-100 rounded-xl overflow-hidden">
+        <div className="h-64 bg-gray-200"></div>
+        <div className="p-6">
+          <h3 className="font-semibold text-lg">Michael Rodriguez</h3>
+          <p className="text-blue-500 text-sm mb-3">Chief Operations Officer</p>
+          <p className="text-sm text-gray-600">
+            Michael ensures our global supply chain operates with maximum efficiency and reliability.
+          </p>
+        </div>
+      </div>
+
+      <div className="bg-gray-100 rounded-xl overflow-hidden">
+        <div className="h-64 bg-gray-200"></div>
+        <div className="p-6">
+          <h3 className="font-semibold text-lg">Dr. James Wilson</h3>
+          <p className="text-blue-500 text-sm mb-3">Chief Research Officer</p>
+          <p className="text-sm text-gray-600">
+            James leads our R&D team, developing innovative solutions for tomorrow's challenges.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div className="mt-12 bg-[#0a0f36] text-white p-8 rounded-xl">
+      <div className="flex flex-col md:flex-row items-center">
+        <div className="md:w-2/3">
+          <h3 className="text-2xl font-bold mb-4">Join Our Growing Team</h3>
+          <p className="text-gray-300 mb-6">
+            We're always looking for talented individuals who share our passion for excellence and innovation in
+            chemical supply solutions.
+          </p>
+          <button className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-6 py-3 font-medium transition-colors">
+            View Career Opportunities
+          </button>
+        </div>
+        <div className="md:w-1/3 flex justify-center mt-8 md:mt-0">
+          <div className="w-24 h-24 rounded-full bg-[#1a2150] flex items-center justify-center">
+            <span className="text-4xl">👥</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    // <section className="py-16 px-4 md:px-8 lg:px-12 bg-gray-50">
+    //   <div className="max-w-7xl mx-auto">
+    //     <div className="text-center mb-12">
+    //       <h2 className="text-3xl text-black md:text-4xl font-bold mb-4">SMARTiNNO Team</h2>
+    //       <p className="text-gray-600 max-w-2xl mx-auto">
+    //         Meet the dedicated professionals behind SMARTiNNO. Our diverse team combines expertise in software development,
+    //         cloud technologies, and digital transformation to deliver innovative solutions.
+    //       </p>
+    //     </div>
+
+    //     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    //       {teamMembers.map((member) => (
+    //         <TeamMemberCard key={member.id} member={member} />
+    //       ))}
+    //     </div>
+
+    //     <div className="mt-16 text-center">
+    //       <h3 className="text-xl font-semibold mb-4">Join Our Team</h3>
+    //       <p className="text-gray-600 max-w-2xl mx-auto mb-6">
+    //         Were always looking for talented individuals who are passionate about software innovation and
+    //         digital transformation. Check out our current openings and become part of our mission.
+    //       </p>
+    //       <Link
+    //         href="/careers"
+    //         className="inline-flex items-center bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-colors"
+    //       >
+    //         View Open Positions
+    //         <span className="ml-2 bg-yellow-300 rounded-full w-6 h-6 flex items-center justify-center">
+    //           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    //             <path
+    //               d="M6 12H18M18 12L12 6M18 12L12 18"
+    //               stroke="black"
+    //               strokeWidth="2"
+    //               strokeLinecap="round"
+    //               strokeLinejoin="round"
+    //             />
+    //           </svg>
+    //         </span>
+    //       </Link>
+    //     </div>
+    //   </div>
+    // </section>
   )
 }
 
