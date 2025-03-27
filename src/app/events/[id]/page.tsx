@@ -8,7 +8,6 @@ import { ArrowLeft, ArrowRight, Calendar, MapPin, Clock, User } from 'lucide-rea
 import Navigation from '@/components/navigation/Navigation';
 import Footer from '@/components/footer';
 import SectionContainer from '@/components/SectionContainer';
-import { console } from 'inspector';
 
 // Mock event data - in a real app this would be fetched from a database or API
 const events = [
@@ -192,7 +191,6 @@ export default function EventPage({ params }: { params: { id: string } }) {
 
   const [scrolled, setScrolled] = useState(false);
   console.log(scrolled)
-  
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
