@@ -200,36 +200,40 @@ export default function OurEvents() {
   const currentTab = tabContent[activeTab]
 
   return (
-    <section className="py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white font-sans">
-      {/* Header Section - Reduced padding */}
-      <div className="flex items-center border-b border-gray-200 pb-4 mb-4">
-        <div className="w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center bg-green-100 text-sm sm:text-base font-bold text-green-700">
+    <section className="py-4 sm:py-6 md:py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white font-sans">
+      {/* Header Section - Responsive spacing */}
+      <div className="flex items-center border-b border-gray-200 pb-3 sm:pb-4 mb-3 sm:mb-4">
+        <div className="w-8 h-8 sm:w-10 md:w-12 sm:h-10 md:h-12 flex items-center justify-center bg-green-100 text-xs sm:text-sm md:text-base font-bold text-green-700 rounded-md">
           03
         </div>
-        <div className="ml-3 sm:ml-4">
-          <h2 className="text-base sm:text-xl font-bold text-gray-900">Our Events</h2>
-          <p className="text-gray-600 text-xs sm:text-sm">Connect, learn, and grow</p>
+        <div className="ml-2 sm:ml-3 md:ml-4">
+          <h2 className="text-sm sm:text-base md:text-xl font-bold text-gray-900">Our Events</h2>
+          <p className="text-xs md:text-sm text-gray-600">Connect, learn, and grow</p>
         </div>
         <div className="ml-auto">
           <button
             onClick={togglePause}
-            className="p-2 bg-green-100 hover:bg-green-200 transition-colors"
+            className="p-1.5 sm:p-2 bg-green-100 hover:bg-green-200 transition-colors rounded-md"
             aria-label={isPaused ? "Play slideshow" : "Pause slideshow"}
           >
-            {isPaused ? <Play className="h-4 w-4 text-green-700" /> : <Pause className="h-4 w-4 text-green-700" />}
+            {isPaused ? (
+              <Play className="h-3 w-3 sm:h-4 sm:w-4 text-green-700" />
+            ) : (
+              <Pause className="h-3 w-3 sm:h-4 sm:w-4 text-green-700" />
+            )}
           </button>
         </div>
       </div>
 
-      {/* Navigation Tabs */}
-      <div className="mb-4">
-        <nav className="mb-2 overflow-x-auto pb-1 -mx-4 px-4 flex">
-          <div className="flex gap-2 w-full min-w-max border-b border-gray-200">
+      {/* Navigation Tabs - Improved mobile experience */}
+      <div className="mb-3 sm:mb-4">
+        <nav className="mb-2 overflow-x-auto scrollbar-hide -mx-4 px-4 flex">
+          <div className="flex gap-1 sm:gap-2 w-full min-w-max border-b border-gray-200">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleTabClick(item.id)}
-                className={`whitespace-nowrap transition-all duration-300 px-4 py-2 text-xs ${
+                className={`whitespace-nowrap transition-all duration-300 px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 text-xs ${
                   activeTab === item.id
                     ? `font-medium text-green-700 border-b-2 border-green-700`
                     : "text-gray-600 hover:text-green-700"
@@ -253,27 +257,29 @@ export default function OurEvents() {
         </div>
       </div>
 
-      {/* Main Content Area - Reduced vertical spacing */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
+      {/* Main Content Area - Responsive grid layout */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-6">
         {/* Left Column - Featured Event */}
-        <div className={`lg:col-span-7 transition-all duration-500 ${
-          fadeState === "fade-in" ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-4"
-        }`}>
-          {/* Image - Reduced aspect ratio */}
-          <div className="relative w-full aspect-[16/9] mb-4">
+        <div
+          className={`md:col-span-1 lg:col-span-7 transition-all duration-500 ${
+            fadeState === "fade-in" ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-4"
+          }`}
+        >
+          {/* Image - Responsive aspect ratio */}
+          <div className="relative w-full aspect-[16/9] mb-3 sm:mb-4">
             <img
               src={currentTab.image || "/placeholder.svg"}
               alt={currentTab.imageAlt}
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full rounded-lg"
               loading="lazy"
               width={800}
               height={450}
             />
           </div>
-          
-          {/* Event info - Reduced spacing */}
-          <div className="space-y-3">
-            <div className="flex flex-wrap gap-3 text-xs text-gray-600">
+
+          {/* Event info - Responsive spacing and typography */}
+          <div className="space-y-2 sm:space-y-3">
+            <div className="flex flex-wrap gap-2 sm:gap-3 text-xs text-gray-600">
               <span className="flex items-center gap-1">
                 <MapPin className="h-3 w-3 text-green-700" />
                 {currentTab.location}
@@ -287,11 +293,11 @@ export default function OurEvents() {
                 {currentTab.attendees}
               </span>
             </div>
-            
-            <h2 className="text-xl font-bold text-gray-900">{currentTab.title}</h2>
-            <p className="text-sm text-gray-600">{currentTab.description}</p>
-            
-            <button className="inline-flex items-center gap-1 text-green-700 border-b-2 border-green-700 pb-1 text-sm font-medium transition-colors hover:text-green-800">
+
+            <h2 className="text-base sm:text-lg md:text-xl font-bold text-gray-900">{currentTab.title}</h2>
+            <p className="text-xs sm:text-sm md:text-base text-gray-600">{currentTab.description}</p>
+
+            <button className="inline-flex items-center gap-1 text-green-700 border-b-2 border-green-700 pb-0.5 text-xs sm:text-sm font-medium transition-colors hover:text-green-800">
               Register Now
               <ArrowRight className="h-3 w-3" />
             </button>
@@ -299,11 +305,11 @@ export default function OurEvents() {
         </div>
 
         {/* Right Column - Upcoming Events and Stats */}
-        <div className="lg:col-span-5">
-          {/* Upcoming Events - Condensed */}
+        <div className="md:col-span-1 lg:col-span-5 mt-4 md:mt-0">
+          {/* Upcoming Events - Responsive layout */}
           <div className="mb-4">
-            <div className="flex items-center justify-between border-b border-gray-200 pb-2 mb-3">
-              <h3 className="text-base font-bold text-gray-900">
+            <div className="flex items-center justify-between border-b border-gray-200 pb-2 mb-2 sm:mb-3">
+              <h3 className="text-sm sm:text-base font-bold text-gray-900">
                 Upcoming {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}
               </h3>
               <a href="#" className="text-green-700 flex items-center gap-1 hover:text-green-800 text-xs">
@@ -312,31 +318,31 @@ export default function OurEvents() {
             </div>
 
             <div
-              className={`space-y-4 transition-all duration-500 ${
+              className={`space-y-3 sm:space-y-4 transition-all duration-500 ${
                 fadeState === "fade-in" ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-4"
               }`}
             >
               {currentTab.upcomingEvents.map((event: EventInfo, index: number) => (
                 <div
                   key={index}
-                  className="transition-all duration-300 pb-3 border-b border-gray-100"
+                  className="transition-all duration-300 pb-2 sm:pb-3 border-b border-gray-100"
                   style={{ transitionDelay: `${index * 100}ms` }}
                 >
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className="text-sm font-bold text-gray-800">{event.name}</h4>
+                  <div className="flex justify-between items-start mb-1 sm:mb-2">
+                    <h4 className="text-xs sm:text-sm font-bold text-gray-800">{event.name}</h4>
                   </div>
-                  <div className="flex items-center justify-between mb-2">
+                  <div className="flex flex-col xs:flex-row xs:items-center xs:justify-between gap-1 xs:gap-0 mb-1 sm:mb-2">
                     <div className="flex items-center text-gray-600 text-xs">
-                      <Clock className="h-3 w-3 mr-1 text-green-700" />
+                      <Clock className="h-3 w-3 mr-1 text-green-700 flex-shrink-0" />
                       <span>{event.date}</span>
                     </div>
                     <div className="flex items-center text-gray-600 text-xs">
-                      <MapPin className="h-3 w-3 mr-1 text-green-700" />
-                      <span>{event.location}</span>
+                      <MapPin className="h-3 w-3 mr-1 text-green-700 flex-shrink-0" />
+                      <span className="truncate">{event.location}</span>
                     </div>
                   </div>
-                  <a 
-                    href="#" 
+                  <a
+                    href="#"
                     className="text-green-700 text-xs flex items-center transition-colors hover:text-green-800 ml-auto w-max"
                   >
                     Learn More <ArrowRight className="h-3 w-3 ml-1" />
@@ -346,30 +352,30 @@ export default function OurEvents() {
             </div>
           </div>
 
-          {/* Stats Section - Compact */}
+          {/* Stats Section - Responsive grid */}
           <div
             className={`transition-all duration-500 ${
               fadeState === "fade-in" ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-4"
             }`}
           >
-            <div className="border-t border-gray-200 pt-4">
-              <h3 className="text-base font-bold text-gray-900 mb-3">Event Statistics</h3>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-1">
+            <div className="border-t border-gray-200 pt-3 sm:pt-4">
+              <h3 className="text-sm sm:text-base font-bold text-gray-900 mb-2 sm:mb-3">Event Statistics</h3>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                <div className="space-y-0.5 sm:space-y-1">
                   <div className="flex items-center gap-1">
-                    <Calendar className="h-4 w-4 text-green-700" />
+                    <Calendar className="h-3 w-3 sm:h-4 sm:w-4 text-green-700" />
                     <span className="text-xs font-medium text-gray-700">Annual Events</span>
                   </div>
-                  <div className="text-2xl font-bold text-gray-900">50+</div>
+                  <div className="text-xl sm:text-2xl font-bold text-gray-900">50+</div>
                   <div className="text-gray-600 text-xs">Across 20 countries</div>
                 </div>
 
-                <div className="space-y-1">
+                <div className="space-y-0.5 sm:space-y-1">
                   <div className="flex items-center gap-1">
-                    <Trophy className="h-4 w-4 text-green-700" />
+                    <Trophy className="h-3 w-3 sm:h-4 sm:w-4 text-green-700" />
                     <span className="text-xs font-medium text-gray-700">Satisfaction</span>
                   </div>
-                  <div className="text-2xl font-bold text-gray-900">98%</div>
+                  <div className="text-xl sm:text-2xl font-bold text-gray-900">98%</div>
                   <div className="text-gray-600 text-xs">Would recommend</div>
                 </div>
               </div>
@@ -380,3 +386,4 @@ export default function OurEvents() {
     </section>
   )
 }
+
