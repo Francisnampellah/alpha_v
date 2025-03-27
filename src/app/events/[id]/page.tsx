@@ -166,8 +166,14 @@ const CategoryPill = ({ label }: { label: string }) => {
   );
 };
 
+// Define the type for the params object
+type EventPageParams = {
+  params: {
+    id: string;
+  };
+};
 
-export default function EventPage({ params }: any) {
+export default function EventPage({ params }: EventPageParams) {
   // Hooks need to be at the top level, before any conditional logic
   const [scrolled, setScrolled] = useState(false);
   
