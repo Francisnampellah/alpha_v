@@ -19,7 +19,7 @@ export default function TechnologyPage() {
   const [scrolled, setScrolled] = useState(false)
   const [activeTab, setActiveTab] = useState("all")
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null)
-
+    console.log(scrolled)
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)

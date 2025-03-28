@@ -11,7 +11,7 @@ import SectionContainer from "@/components/SectionContainer"
 
 export default function PrivacyPage() {
   const [scrolled, setScrolled] = useState(false)
-
+  console.log(scrolled)
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)

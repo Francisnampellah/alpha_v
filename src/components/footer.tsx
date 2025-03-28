@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react"
 import Link from "next/link"
 import { MapPin } from "lucide-react"
-import SectionHeader from "@/components/SectionHeader"
 
 export default function Footer() {
   const mapRef = useRef<HTMLDivElement>(null)
@@ -112,7 +111,7 @@ export default function Footer() {
         <div>
 
           <p className="text-gray-300 max-w-xs mb-4">
-            We're dedicated to providing innovative software solutions to transform businesses through cutting-edge technology.
+            We&apos;re dedicated to providing innovative software solutions to transform businesses through cutting-edge technology.
           </p>
 
           {/* Location info */}

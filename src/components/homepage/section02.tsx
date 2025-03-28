@@ -5,7 +5,6 @@ import { useEffect, useState, useCallback } from 'react'
 import {LogoItem} from '@/components/logo'
 import { cn } from '@/lib/utils'
 import { useRouter } from 'next/navigation'
-import SectionHeader from "@/components/SectionHeader"
 
 // Improved SVG icons with consistent styling
 const DefaultIcons = {
@@ -55,7 +54,6 @@ const defaultLogos = [
 ];
 
 export default function Section02() {
-  const router = useRouter()
 
   const slides = [
     {

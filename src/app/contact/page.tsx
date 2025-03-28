@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaHome } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -79,7 +79,7 @@ export default function ContactPage() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl"
             >
-              Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+              Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
             </motion.p>
           </div>
         </div>
@@ -256,7 +256,7 @@ export default function ContactPage() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
             <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
-              Let's discuss how we can help bring your ideas to life
+              Let&apos;s discuss how we can help bring your ideas to life
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
