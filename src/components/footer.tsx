@@ -123,7 +123,7 @@ export default function Footer() {
           {/* Map container */}
           <div
             ref={mapRef}
-            className="w-full h-[150px] sm:h-[180px] rounded-lg overflow-hidden border border-gray-700 shadow-sm"
+            className="w-full h-[150px] sm:h-[180px] rounded-lg overflow-hidden border border-gray-700 shadow-sm z-0"
             aria-label="Company location map"
           ></div>
         </div>

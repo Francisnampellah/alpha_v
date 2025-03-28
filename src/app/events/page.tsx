@@ -146,7 +146,7 @@ export default function EventsPage() {
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#2353aa]/90 via-[#2353aa]/70 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/60 to-black/80"></div>
         </div>
 
         {/* Navigation */}

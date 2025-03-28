@@ -12,7 +12,7 @@ export default function OurEvents() {
       <div className="bg-[#2353aa] text-white p-8 md:p-12">
         <div className="flex items-center gap-2 mb-2">
           <div className="w-2 h-2 rounded-full bg-blue-400"></div>
-          <p className="text-sm text-blue-400 font-medium">4 UPCOMING EVENTS</p>
+          <p className="text-sm text-blue-200 font-medium">4 UPCOMING EVENTS</p>
         </div>
 
         <h2 className="text-3xl md:text-4xl font-bold mb-8 max-w-md">
@@ -27,7 +27,7 @@ export default function OurEvents() {
           <div className="bg-[#1a4382] p-6 rounded-xl">
             <div className="flex justify-between items-start mb-4">
               <p className="text-gray-400 mb-1">01.</p>
-              <div className="bg-blue-500/20 text-blue-400 text-xs font-medium px-2 py-1 rounded">MAY 15</div>
+              <div className="bg-blue-500/20 text-blue-200 text-xs font-medium px-2 py-1 rounded">MAY 15</div>
             </div>
             <h3 className="font-semibold text-lg mb-4">AI & Robotics Summit</h3>
             <p className="text-sm text-gray-300">
@@ -38,7 +38,7 @@ export default function OurEvents() {
           <div className="bg-[#1a4382] p-6 rounded-xl">
             <div className="flex justify-between items-start mb-4">
               <p className="text-gray-400 mb-1">02.</p>
-              <div className="bg-blue-500/20 text-blue-400 text-xs font-medium px-2 py-1 rounded">JUN 22</div>
+              <div className="bg-blue-500/20 text-blue-200 text-xs font-medium px-2 py-1 rounded">JUN 22</div>
             </div>
             <h3 className="font-semibold text-lg mb-4">Sustainability in Tech</h3>
             <p className="text-sm text-gray-300">
@@ -49,7 +49,7 @@ export default function OurEvents() {
           <div className="bg-[#1a4382] p-6 rounded-xl">
             <div className="flex justify-between items-start mb-4">
               <p className="text-gray-400 mb-1">03.</p>
-              <div className="bg-blue-500/20 text-blue-400 text-xs font-medium px-2 py-1 rounded">JUL 10</div>
+              <div className="bg-blue-500/20 text-blue-200 text-xs font-medium px-2 py-1 rounded">JUL 10</div>
             </div>
             <h3 className="font-semibold text-lg mb-4">Tech Product Showcase</h3>
             <p className="text-sm text-gray-300">
@@ -60,7 +60,7 @@ export default function OurEvents() {
           <div className="bg-[#1a4382] p-6 rounded-xl">
             <div className="flex justify-between items-start mb-4">
               <p className="text-gray-400 mb-1">04.</p>
-              <div className="bg-blue-500/20 text-blue-400 text-xs font-medium px-2 py-1 rounded">AUG 05</div>
+              <div className="bg-blue-500/20 text-blue-200 text-xs font-medium px-2 py-1 rounded">AUG 05</div>
             </div>
             <h3 className="font-semibold text-lg mb-4">Innovation Workshop</h3>
             <p className="text-sm text-gray-300">
@@ -208,7 +208,7 @@ export default function OurEvents() {
             </div>
             <div className="md:w-1/3 flex justify-center mt-8 md:mt-0">
               <div className="w-24 h-24 rounded-full bg-[#1a4382] flex items-center justify-center">
-                <Calendar className="w-12 h-12 text-blue-400" />
+                <Calendar className="w-12 h-12 text-blue-200" />
               </div>
             </div>
           </div>

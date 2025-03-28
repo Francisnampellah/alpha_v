@@ -18,25 +18,25 @@ export default function ChemicalSolutionsCarousel() {
       description:
         "Advanced IoT solutions and automation systems for modern manufacturing processes, ensuring efficiency and real-time monitoring.",
       image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=3270&auto=format&fit=crop",
-      color: "#3B82F6", // blue-500
+      color: "#ffffff", // blue-500
     },
     pharmaceutical: {
       title: "Digital Healthcare",
       description: "Innovative healthcare solutions including telemedicine platforms, patient monitoring systems, and medical data analytics.",
       image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=3270&auto=format&fit=crop",
-      color: "#10B981", // emerald-500
+      color: "#ffffff", // emerald-500
     },
     agricultural: {
       title: "Smart Agriculture",
       description: "AI-powered farming solutions with precision agriculture, crop monitoring, and automated irrigation systems.",
       image: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=3270&auto=format&fit=crop",
-      color: "#F59E0B", // amber-500
+      color: "#ffffff", // amber-500
     },
     research: {
       title: "R&D Innovation",
       description: "Cutting-edge research tools and platforms for scientific discovery, data analysis, and technological advancement.",
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=3270&auto=format&fit=crop",
-      color: "#8B5CF6", // violet-500
+      color: "#ffffff", // violet-500
     },
   }
 
