@@ -300,7 +300,7 @@ export default function Navigation({
 
         {/* Mobile Navigation */}
         <div 
-          className={`md:hidden transition-all duration-500 ease-in-out overflow-hidden bg-white shadow-lg ${
+          className={`md:hidden z-50 transition-all duration-500 ease-in-out overflow-hidden bg-white shadow-lg ${
             mobileMenuOpen ? "max-h-screen opacity-100 py-4" : "max-h-0 opacity-0"
           }`}
         >
