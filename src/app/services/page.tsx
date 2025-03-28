@@ -221,7 +221,7 @@ export default function ServicesPage() {
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0f36]/90 via-[#0a0f36]/70 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#2353aa]/90 via-[#2353aa]/70 to-transparent"></div>
         </div>
 
         {/* Navigation */}

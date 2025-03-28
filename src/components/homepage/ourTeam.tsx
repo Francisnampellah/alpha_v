@@ -192,7 +192,7 @@ export default function OurTeam() {
       </div>
     </div>
 
-    <div className="mt-12 bg-[#0a0f36] text-white p-8 rounded-xl">
+    <div className="mt-12 bg-[#2353aa] text-white p-8 rounded-xl">
       <div className="flex flex-col md:flex-row items-center">
         <div className="md:w-2/3">
           <h3 className="text-2xl font-bold mb-4">Join Our Growing Team</h3>
@@ -208,7 +208,7 @@ export default function OurTeam() {
           </button>
         </div>
         <div className="md:w-1/3 flex justify-center mt-8 md:mt-0">
-          <div className="w-24 h-24 rounded-full bg-[#1a2150] flex items-center justify-center">
+          <div className="w-24 h-24 rounded-full bg-[#1a4382] flex items-center justify-center">
             <span className="text-4xl">👥</span>
           </div>
         </div>

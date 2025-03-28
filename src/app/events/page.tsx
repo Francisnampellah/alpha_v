@@ -146,7 +146,7 @@ export default function EventsPage() {
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0f36]/90 via-[#0a0f36]/70 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#2353aa]/90 via-[#2353aa]/70 to-transparent"></div>
         </div>
 
         {/* Navigation */}
@@ -190,7 +190,7 @@ export default function EventsPage() {
       </div>
 
       {/* Banner Section */}
-      <div className="bg-[#0a0f36] text-white py-16">
+      <div className="bg-[#2353aa] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <motion.div
@@ -212,9 +212,9 @@ export default function EventsPage() {
               </p>
               <div className="flex items-center gap-4">
                 <div className="flex -space-x-2">
-                  <div className="w-10 h-10 rounded-full bg-gray-300 border-2 border-[#0a0f36]"></div>
-                  <div className="w-10 h-10 rounded-full bg-gray-400 border-2 border-[#0a0f36]"></div>
-                  <div className="w-10 h-10 rounded-full bg-gray-500 border-2 border-[#0a0f36]"></div>
+                  <div className="w-10 h-10 rounded-full bg-gray-300 border-2 border-[#2353aa]"></div>
+                  <div className="w-10 h-10 rounded-full bg-gray-400 border-2 border-[#2353aa]"></div>
+                  <div className="w-10 h-10 rounded-full bg-gray-500 border-2 border-[#2353aa]"></div>
                 </div>
                 <p className="text-sm">
                   Join <span className="font-semibold">500+ Tech Professionals</span> at our events
