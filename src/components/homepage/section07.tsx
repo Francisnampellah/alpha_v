@@ -14,37 +14,37 @@ export default function ChemicalSolutionsCarousel() {
   // Tab content data
   const tabContent = {
     industrial: {
-      title: "Industrial Solutions",
+      title: "Smart Manufacturing",
       description:
-        "High-performance chemicals designed for manufacturing processes, ensuring efficiency and consistency.",
-      image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=3270&auto=format&fit=crop",
+        "Advanced IoT solutions and automation systems for modern manufacturing processes, ensuring efficiency and real-time monitoring.",
+      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=3270&auto=format&fit=crop",
       color: "#3B82F6", // blue-500
     },
     pharmaceutical: {
-      title: "Pharmaceutical Grade",
-      description: "Ultra-pure chemical compounds meeting strict quality standards for pharmaceutical applications.",
-      image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=3270&auto=format&fit=crop",
+      title: "Digital Healthcare",
+      description: "Innovative healthcare solutions including telemedicine platforms, patient monitoring systems, and medical data analytics.",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=3270&auto=format&fit=crop",
       color: "#10B981", // emerald-500
     },
     agricultural: {
-      title: "Agricultural Products",
-      description: "Specialized formulations for crop protection, soil enhancement, and agricultural productivity.",
-      image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2765&auto=format&fit=crop",
+      title: "Smart Agriculture",
+      description: "AI-powered farming solutions with precision agriculture, crop monitoring, and automated irrigation systems.",
+      image: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=3270&auto=format&fit=crop",
       color: "#F59E0B", // amber-500
     },
     research: {
-      title: "Research & Development",
-      description: "Precision chemicals for laboratory research, testing, and scientific innovation.",
-      image: "https://images.unsplash.com/photo-1581093057217-5186ecbb9f99?q=80&w=3270&auto=format&fit=crop",
+      title: "R&D Innovation",
+      description: "Cutting-edge research tools and platforms for scientific discovery, data analysis, and technological advancement.",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=3270&auto=format&fit=crop",
       color: "#8B5CF6", // violet-500
     },
   }
 
   const navItems = [
-    { id: "industrial", label: "Industrial" },
-    { id: "pharmaceutical", label: "Pharmaceutical" },
-    { id: "agricultural", label: "Agricultural" },
-    { id: "research", label: "Research" },
+    { id: "industrial", label: "Manufacturing" },
+    { id: "pharmaceutical", label: "Healthcare" },
+    { id: "agricultural", label: "Agriculture" },
+    { id: "research", label: "R&D" },
   ]
 
   // Function to change tab with animation
@@ -117,13 +117,13 @@ export default function ChemicalSolutionsCarousel() {
       >
         <div className="flex items-center gap-2 mb-2">
           <div className="w-2 h-2 rounded-full bg-blue-400"></div>
-          <p className="text-sm text-blue-400 font-medium">4 CHEMICAL CATEGORIES</p>
+          <p className="text-sm text-blue-400 font-medium">4 INNOVATION AREAS</p>
         </div>
 
         <h2 className="text-3xl md:text-4xl font-bold mb-8 max-w-md">
-          Specialized Solutions,
+          Smart Solutions,
           <br />
-          Superior Performance
+          Digital Future
         </h2>
 
         <div className="h-px bg-gray-700 mb-8"></div>
@@ -217,11 +217,11 @@ export default function ChemicalSolutionsCarousel() {
               <div className="w-8 h-8 rounded-full bg-gray-500 border-2 border-[#1a2150]"></div>
             </div>
             <p className="text-sm">
-              Trusted by <span className="font-semibold">Industry Leaders</span> worldwide
+              Trusted by <span className="font-semibold">Tech Innovators</span> worldwide
             </p>
           </div>
           <button className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-4 py-2 flex items-center transition-colors">
-            <span className="mr-2">View All Products</span>
+            <span className="mr-2">View All Solutions</span>
             <ArrowRight size={16} />
           </button>
         </div>
