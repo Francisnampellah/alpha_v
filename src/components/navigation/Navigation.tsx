@@ -1,15 +1,21 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 
-type NavLinkProps = {
+type DropdownItem = {
   href: string
+  label: string
+}
+
+type NavLinkProps = {
+  href?: string
   label: string
   isActive?: boolean
   textColor?: string
+  dropdownItems?: DropdownItem[]
 }
 
 type NavigationProps = {
@@ -20,6 +26,8 @@ type NavigationProps = {
 }
 
 const NavLink = ({ href, label, isActive = false, textColor = "text-black" }: NavLinkProps) => {
+  if (!href) return null;
+  
   const textClass = isActive
     ? `${textColor} font-semibold`
     : textColor === "text-white"
@@ -43,6 +51,66 @@ const NavLink = ({ href, label, isActive = false, textColor = "text-black" }: Na
     </Link>
   );
 };
+
+const DropdownNavLink = ({ label, dropdownItems, textColor = "text-black" }: Omit<NavLinkProps, 'href' | 'isActive'>) => {
+  const [isOpen, setIsOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+  const textClass = textColor === "text-white" ? "text-gray-200 hover:text-white" : "text-gray-700 hover:text-black"
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
+
+  return (
+    <div className="relative group" ref={dropdownRef}>
+      <button
+        className={`${textClass} transition-colors flex items-center gap-1`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {label}
+        <svg 
+          className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} 
+          fill="none" 
+          viewBox="0 0 24 24" 
+          stroke="currentColor"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50"
+          >
+            {dropdownItems?.map((item) => (
+              <Link
+                key={`dropdown-${item.href}`}
+                href={item.href}
+                className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  )
+}
 
 const CompanyLogo = ({ className = "h-2 w-2", useDark = false }: { className?: string, useDark?: boolean }) => (
   <div className="flex items-center gap-3">
@@ -85,7 +153,7 @@ const CompanyLogo = ({ className = "h-2 w-2", useDark = false }: { className?: s
       <span className={`absolute inset-0 text-xl font-light tracking-wider ${useDark ? "text-black" : "text-white blur-[1px]"} `}>
         SMARTiNNO
       </span>
-      <span className={`absolute inset-0 text-xl  tracking-wider ${useDark ? "text-black " : "text-white blur-[2px] "} `}>
+      <span className={`absolute inset-0 text-xl  tracking-wider ${useDark ? "text-black " : "text-white blur-[2px]"} `}>
         SMARTiNNO
       </span>
     </div>
@@ -118,9 +186,15 @@ export default function Navigation({
   const navLinks: NavLinkProps[] = [
     { href: "/", label: "Home", isActive: activeLink === "/" },
     { href: "/about", label: "About", isActive: activeLink === "/about" },
-    { href: "/services", label: "Services", isActive: activeLink === "/services" },
-    { href: "/projects", label: "Projects", isActive: activeLink === "/projects" },
-    { href: "/events", label: "Events", isActive: activeLink === "/events" },
+    { 
+      label: "Solutions",
+      dropdownItems: [
+        { href: "/services", label: "Services" },
+        { href: "/projects", label: "Projects" },
+        { href: "/events", label: "Events" },
+        { href: "/technology", label: "Technology" }
+      ]
+    },
     { href: "/career", label: "Career", isActive: activeLink === "/career" },
     { href: "/privacy", label: "Privacy", isActive: activeLink === "/privacy" },
   ]
@@ -185,13 +259,22 @@ export default function Navigation({
             {/* Desktop Navigation */}
             <nav className="hidden md:flex gap-8" aria-label="Main navigation">
               {navLinks.map((link) => (
-                <NavLink 
-                  key={link.href}
-                  href={link.href} 
-                  label={link.label}
-                  isActive={link.isActive}
-                  textColor={textColor}
-                />
+                link.dropdownItems ? (
+                  <DropdownNavLink 
+                    key={`nav-${link.label}`}
+                    label={link.label}
+                    dropdownItems={link.dropdownItems}
+                    textColor={textColor}
+                  />
+                ) : (
+                  <NavLink 
+                    key={`nav-${link.href}`}
+                    href={link.href} 
+                    label={link.label}
+                    isActive={link.isActive}
+                    textColor={textColor}
+                  />
+                )
               ))}
             </nav>
 
@@ -223,13 +306,31 @@ export default function Navigation({
         >
           <nav className="flex flex-col space-y-2 px-6" aria-label="Mobile navigation">
             {navLinks.map((link) => (
-              <div key={link.href} onClick={() => setMobileMenuOpen(false)} className="py-3 border-b border-gray-100 last:border-b-0">
-                <NavLink 
-                  href={link.href} 
-                  label={link.label}
-                  isActive={link.isActive}
-                  textColor="text-gray-800"
-                />
+              <div key={`mobile-${link.label}`} className="py-3 border-b border-gray-100 last:border-b-0">
+                {link.dropdownItems ? (
+                  <div>
+                    <div className="font-medium text-gray-800 mb-2">{link.label}</div>
+                    <div className="pl-4 space-y-2">
+                      {link.dropdownItems.map((item) => (
+                        <Link
+                          key={`mobile-dropdown-${item.href}`}
+                          href={item.href}
+                          className="block text-gray-600 hover:text-gray-900"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <NavLink 
+                    href={link.href} 
+                    label={link.label}
+                    isActive={link.isActive}
+                    textColor="text-gray-800"
+                  />
+                )}
               </div>
             ))}
             {showCTA && (

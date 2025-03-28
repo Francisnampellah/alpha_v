@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Section_05() {
   const [isVisible, setIsVisible] = useState(true);
@@ -64,6 +65,14 @@ export default function Section_05() {
             </motion.span>
           </div>
         </motion.div>
+        <div className="flex justify-center mt-8">
+          <Link 
+            href="/technology"
+            className="bg-black hover:bg-gray-800 text-white px-8 py-3 rounded-full text-sm font-medium transition-colors duration-300"
+          >
+            Explore Our Technology
+          </Link>
+        </div>
       </div>
     </div>
     </>

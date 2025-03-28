@@ -13,133 +13,261 @@ import { useParams } from 'next/navigation';
 // Mock event data - in a real app this would be fetched from a database or API
 const events = [
   {
-    id: 'agritech-expo-2023',
-    title: 'AgriTech Expo 2023',
-    description: 'Showcasing the latest agricultural technologies and innovations',
-    image: 'https://images.unsplash.com/photo-1531058020387-3be344556be6?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    categories: ['Exhibition', 'Innovation', 'Networking'],
+    id: 'ai-robotics-summit',
+    title: 'AI & Robotics Summit',
+    description: 'Explore the latest advancements in artificial intelligence and robotics with industry leaders.',
+    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2670&auto=format&fit=crop',
+    categories: ['Conference', 'AI', 'Robotics'],
+    date: '2024-05-15',
+    location: 'London, UK',
+    status: 'Upcoming',
+    fullDescription: `
+      The AI & Robotics Summit brings together leading experts in artificial intelligence and robotics to explore the latest technological breakthroughs and their real-world applications.
+      
+      This premier conference features keynote presentations, panel discussions, and interactive workshops focused on the future of AI and robotics technology.
+      
+      Key highlights include:
+      - Cutting-edge AI developments and applications
+      - Robotics innovation showcase
+      - Industry expert networking
+      - Future technology trends
+    `,
+    venue: 'London Convention Centre',
+    address: '1 Convention Way, London SW1A 1AA',
+    organizer: 'Tech Innovation Association',
+    speakers: [
+      { name: 'Dr. Sarah Chen', role: 'AI Research Director' },
+      { name: 'Michael Roberts', role: 'Robotics Engineer' },
+      { name: 'Lisa Thompson', role: 'Tech Innovation Lead' }
+    ],
+    schedule: [
+      { time: '09:00 AM', activity: 'Registration and Welcome Coffee' },
+      { time: '10:00 AM', activity: 'Opening Ceremony' },
+      { time: '11:00 AM', activity: 'Keynote: Future of AI' },
+      { time: '12:30 PM', activity: 'Lunch Break' },
+      { time: '02:00 PM', activity: 'Panel: Robotics Innovation' },
+      { time: '04:00 PM', activity: 'Networking Session' },
+      { time: '06:00 PM', activity: 'Closing Reception' }
+    ],
+    gallery: [
+      'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2670&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2670&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2670&auto=format&fit=crop'
+    ]
+  },
+  {
+    id: 'sustainability-tech',
+    title: 'Sustainability in Tech',
+    description: 'Learn about sustainable practices and eco-friendly solutions in the tech industry.',
+    image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=2670&auto=format&fit=crop',
+    categories: ['Conference', 'Sustainability', 'Innovation'],
+    date: '2024-06-22',
+    location: 'Manchester, UK',
+    status: 'Upcoming',
+    fullDescription: `
+      The Sustainability in Tech conference focuses on eco-friendly solutions and sustainable practices in the technology sector.
+      
+      Join industry leaders and environmental experts as they share insights on creating a more sustainable future through technology.
+      
+      Key topics include:
+      - Green computing initiatives
+      - Sustainable data centers
+      - Eco-friendly product design
+      - Carbon footprint reduction
+    `,
+    venue: 'Manchester Conference Centre',
+    address: '123 Tech Street, Manchester M1 1AA',
+    organizer: 'Sustainable Tech Alliance',
+    speakers: [
+      { name: 'Dr. James Wilson', role: 'Environmental Tech Specialist' },
+      { name: 'Emma Green', role: 'Sustainability Director' },
+      { name: 'David Brown', role: 'Green Computing Expert' }
+    ],
+    schedule: [
+      { time: '09:30 AM', activity: 'Registration' },
+      { time: '10:00 AM', activity: 'Welcome Address' },
+      { time: '11:00 AM', activity: 'Keynote: Sustainable Tech Future' },
+      { time: '12:30 PM', activity: 'Lunch' },
+      { time: '02:00 PM', activity: 'Workshop: Green Computing' },
+      { time: '04:00 PM', activity: 'Panel Discussion' },
+      { time: '06:00 PM', activity: 'Networking Reception' }
+    ],
+    gallery: [
+      'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=2670&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=2670&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=2670&auto=format&fit=crop'
+    ]
+  },
+  {
+    id: 'tech-product-showcase',
+    title: 'Tech Product Showcase',
+    description: 'Experience cutting-edge technologies with live demonstrations and expert insights.',
+    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2670&auto=format&fit=crop',
+    categories: ['Showcase', 'Technology', 'Innovation'],
+    date: '2024-07-10',
+    location: 'Bristol, UK',
+    status: 'Upcoming',
+    fullDescription: `
+      The Tech Product Showcase is an interactive event featuring the latest technological innovations and product demonstrations.
+      
+      Experience firsthand the future of technology through live demos, hands-on workshops, and expert-led sessions.
+      
+      Event highlights:
+      - Live product demonstrations
+      - Interactive workshops
+      - Expert Q&A sessions
+      - Networking opportunities
+    `,
+    venue: 'Bristol Innovation Hub',
+    address: '456 Innovation Way, Bristol BS1 1AA',
+    organizer: 'Tech Innovation Network',
+    speakers: [
+      { name: 'Alex Turner', role: 'Product Innovation Lead' },
+      { name: 'Sophie Chen', role: 'Tech Evangelist' },
+      { name: 'Mark Thompson', role: 'Product Development Director' }
+    ],
+    schedule: [
+      { time: '10:00 AM', activity: 'Doors Open' },
+      { time: '11:00 AM', activity: 'Welcome Presentation' },
+      { time: '12:00 PM', activity: 'Product Demonstrations' },
+      { time: '01:30 PM', activity: 'Lunch Break' },
+      { time: '02:30 PM', activity: 'Interactive Workshops' },
+      { time: '04:30 PM', activity: 'Expert Panel' },
+      { time: '06:00 PM', activity: 'Closing Reception' }
+    ],
+    gallery: [
+      'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2670&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2670&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2670&auto=format&fit=crop'
+    ]
+  },
+  {
+    id: 'innovation-workshop',
+    title: 'Innovation Workshop',
+    description: 'Hands-on sessions to explore innovative solutions and optimize tech processes.',
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2670&auto=format&fit=crop',
+    categories: ['Workshop', 'Innovation', 'Training'],
+    date: '2024-08-05',
+    location: 'Edinburgh, UK',
+    status: 'Upcoming',
+    fullDescription: `
+      The Innovation Workshop provides hands-on experience with cutting-edge technologies and innovative solutions.
+      
+      Join us for interactive sessions designed to enhance your technical skills and knowledge.
+      
+      Workshop features:
+      - Practical training sessions
+      - Expert guidance
+      - Real-world applications
+      - Collaborative learning
+    `,
+    venue: 'Edinburgh Tech Hub',
+    address: '789 Innovation Lane, Edinburgh EH1 1AA',
+    organizer: 'Tech Training Institute',
+    speakers: [
+      { name: 'Dr. Rachel Smith', role: 'Innovation Specialist' },
+      { name: 'Tom Wilson', role: 'Technical Trainer' },
+      { name: 'Sarah Johnson', role: 'Workshop Leader' }
+    ],
+    schedule: [
+      { time: '09:00 AM', activity: 'Registration' },
+      { time: '09:30 AM', activity: 'Introduction' },
+      { time: '10:00 AM', activity: 'Morning Workshop' },
+      { time: '12:00 PM', activity: 'Lunch' },
+      { time: '01:00 PM', activity: 'Afternoon Session' },
+      { time: '03:00 PM', activity: 'Practical Exercises' },
+      { time: '05:00 PM', activity: 'Wrap-up' }
+    ],
+    gallery: [
+      'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2670&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2670&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2670&auto=format&fit=crop'
+    ]
+  },
+  {
+    id: 'ai-robotics-summit-2023',
+    title: 'AI & Robotics Summit 2023',
+    description: 'Previous conference showcasing the latest in AI and robotics technology.',
+    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=3270&auto=format&fit=crop',
+    categories: ['Conference', 'AI', 'Robotics'],
     date: '2023-11-15',
     location: 'London, UK',
     status: 'Past',
     fullDescription: `
-      AgriTech Expo 2023 was the premier agricultural technology exhibition in the UK, showcasing cutting-edge innovations that are transforming modern farming and agriculture.
+      The 2023 AI & Robotics Summit was a landmark event that brought together industry leaders and innovators.
       
-      The event brought together industry leaders, innovators, farmers, and technology enthusiasts to explore the latest advances in agricultural technology, from precision farming equipment to IoT devices, AI solutions, and sustainable farming practices.
+      This past conference showcased groundbreaking developments in artificial intelligence and robotics.
       
-      Key highlights included:
-      - Live demonstrations of autonomous farming equipment
-      - Panel discussions on the future of agricultural technology
-      - Networking opportunities with industry leaders
-      - Showcases of emerging technologies and startups
+      Event highlights:
+      - Keynote presentations
+      - Technology demonstrations
+      - Industry networking
+      - Expert panels
     `,
-    venue: 'ExCeL London Exhibition Centre',
-    address: 'Royal Victoria Dock, London E16 1XL',
-    organizer: 'UK Agricultural Technology Association',
+    venue: 'London Convention Centre',
+    address: '1 Convention Way, London SW1A 1AA',
+    organizer: 'Tech Innovation Association',
     speakers: [
-      { name: 'Dr. Emily Chen', role: 'Agricultural Innovation Specialist' },
-      { name: 'Michael Williams', role: 'CEO, FarmTech Solutions' },
-      { name: 'Sarah Johnson', role: 'Director of Research, Agricultural Institute' }
+      { name: 'Dr. Emily Chen', role: 'AI Research Director' },
+      { name: 'Michael Roberts', role: 'Robotics Engineer' },
+      { name: 'Lisa Thompson', role: 'Tech Innovation Lead' }
     ],
     schedule: [
-      { time: '09:00 AM', activity: 'Registration and Welcome Coffee' },
-      { time: '10:00 AM', activity: 'Opening Ceremony and Keynote Speech' },
-      { time: '11:30 AM', activity: 'Technology Exhibition Opens' },
-      { time: '01:00 PM', activity: 'Lunch Break' },
-      { time: '02:00 PM', activity: 'Panel Discussion: Future of Farming' },
-      { time: '04:00 PM', activity: 'Live Demonstrations' },
-      { time: '06:00 PM', activity: 'Networking Reception' }
+      { time: '09:00 AM', activity: 'Registration' },
+      { time: '10:00 AM', activity: 'Opening Ceremony' },
+      { time: '11:00 AM', activity: 'Keynote Presentations' },
+      { time: '12:30 PM', activity: 'Lunch Break' },
+      { time: '02:00 PM', activity: 'Panel Discussions' },
+      { time: '04:00 PM', activity: 'Networking Session' },
+      { time: '06:00 PM', activity: 'Closing Reception' }
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1588446780664-3b93b1e59593?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1651175821883-282a896de5b2?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1657665028934-a154a01fa100?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+      'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=3270&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=3270&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=3270&auto=format&fit=crop'
     ]
   },
   {
-    id: 'farm-tech-summit',
-    title: 'Farm Tech Summit',
-    description: 'Annual gathering of farming technology experts and innovators',
-    image: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    categories: ['Conference', 'Workshop', 'Networking'],
-    date: '2024-02-20',
+    id: 'tech-workshop-2023',
+    title: 'Tech Workshop 2023',
+    description: 'Interactive learning experiences led by tech experts and industry leaders.',
+    image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=3269&auto=format&fit=crop',
+    categories: ['Workshop', 'Technology', 'Training'],
+    date: '2023-12-10',
     location: 'Manchester, UK',
     status: 'Past',
     fullDescription: `
-      The Farm Tech Summit was a major gathering of agricultural technology experts, innovators, researchers, and industry leaders focused on the future of farming technology.
+      The 2023 Tech Workshop was an interactive learning experience that brought together tech experts and industry leaders.
       
-      This annual conference featured keynote speeches, panel discussions, workshops, and demonstrations centered around cutting-edge technologies that are reshaping the agricultural landscape.
+      This past event focused on practical training and knowledge sharing in technology.
       
-      Key themes included:
-      - Precision agriculture and data-driven farming
-      - AI and machine learning applications in agriculture
-      - Sustainable farming practices powered by technology
-      - The future of food production and security
+      Workshop features:
+      - Expert-led sessions
+      - Hands-on training
+      - Industry insights
+      - Networking opportunities
     `,
-    venue: 'Manchester Central Convention Complex',
-    address: 'Windmill St, Manchester M2 3GX',
-    organizer: 'UK Farm Technology Association',
+    venue: 'Manchester Conference Centre',
+    address: '123 Tech Street, Manchester M1 1AA',
+    organizer: 'Tech Training Institute',
     speakers: [
-      { name: 'Professor James Wilson', role: 'Agricultural Technology Researcher' },
-      { name: 'Rebecca Thompson', role: 'Founder, AgriData Solutions' },
-      { name: 'David Mitchell', role: 'Director of Innovation, National Farming Association' }
+      { name: 'Dr. James Wilson', role: 'Technical Director' },
+      { name: 'Emma Green', role: 'Training Lead' },
+      { name: 'David Brown', role: 'Workshop Instructor' }
     ],
     schedule: [
-      { time: '08:30 AM', activity: 'Registration' },
-      { time: '09:30 AM', activity: 'Welcome Address' },
-      { time: '10:00 AM', activity: 'Keynote: The Future of Agricultural Technology' },
-      { time: '11:30 AM', activity: 'Panel: Data-Driven Farming' },
-      { time: '01:00 PM', activity: 'Lunch and Networking' },
-      { time: '02:00 PM', activity: 'Parallel Workshops' },
-      { time: '04:30 PM', activity: 'Closing Remarks and Discussion' }
+      { time: '09:30 AM', activity: 'Registration' },
+      { time: '10:00 AM', activity: 'Welcome Address' },
+      { time: '11:00 AM', activity: 'Training Sessions' },
+      { time: '12:30 PM', activity: 'Lunch Break' },
+      { time: '02:00 PM', activity: 'Practical Workshops' },
+      { time: '04:00 PM', activity: 'Expert Q&A' },
+      { time: '05:30 PM', activity: 'Closing Session' }
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-    ]
-  },
-  {
-    id: 'soil-health-workshop',
-    title: 'Soil Health Workshop',
-    description: 'Practical workshop on maintaining and improving soil health',
-    image: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    categories: ['Workshop', 'Training', 'Education'],
-    date: '2024-05-10',
-    location: 'Bristol, UK',
-    status: 'Upcoming',
-    fullDescription: `
-      The Soil Health Workshop is a hands-on educational event designed for farmers, agronomists, and anyone interested in improving soil health and fertility.
-      
-      This practical workshop will cover various aspects of soil management, from testing and analysis to organic matter management, cover cropping, and sustainable soil practices.
-      
-      What to expect:
-      - Expert-led demonstrations of soil testing techniques
-      - Practical sessions on interpreting soil test results
-      - Strategies for building soil organic matter
-      - Sustainable approaches to managing soil fertility
-      - Networking with soil health experts and fellow practitioners
-    `,
-    venue: 'University of Bristol School of Agricultural Sciences',
-    address: 'Woodland Road, Bristol BS8 1UG',
-    organizer: 'Sustainable Farming Initiative',
-    speakers: [
-      { name: 'Dr. Robert Anderson', role: 'Soil Scientist' },
-      { name: 'Lisa Hayes', role: 'Regenerative Farming Specialist' },
-      { name: 'Thomas Greene', role: 'Agricultural Extension Officer' }
-    ],
-    schedule: [
-      { time: '09:00 AM', activity: 'Registration and Introduction' },
-      { time: '09:30 AM', activity: 'Presentation: Fundamentals of Soil Health' },
-      { time: '10:30 AM', activity: 'Hands-on Workshop: Soil Testing Methods' },
-      { time: '12:00 PM', activity: 'Lunch Break' },
-      { time: '01:00 PM', activity: 'Field Demonstration: Cover Crops and Soil Structure' },
-      { time: '03:00 PM', activity: 'Discussion: Implementing Soil Health Practices' },
-      { time: '04:00 PM', activity: 'Q&A and Conclusion' }
-    ],
-    gallery: [
-      'https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?q=80&w=2274&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+      'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=3269&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=3269&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=3269&auto=format&fit=crop'
     ]
   }
 ]

@@ -30,23 +30,23 @@ export default function MacWebpageDisplay() {
   
 
   return (
-    <div className="max-w-6xl mx-auto p-4 overflow-hidden">
-      <div className="flex flex-col items-center gap-8">
+    <div className="max-w-6xl mx-auto p-2 sm:p-4 overflow-hidden">
+      <div className="flex flex-col items-center gap-4 sm:gap-8">
         {/* Mac Screen */}
-        <div className="relative">
+        <div className="relative w-full">
           {/* Mac Frame */}
-          <div className="bg-[#e0e0e0] rounded-[20px] p-4 shadow-xl max-w-[900px] w-full">
+          <div className="bg-[#e0e0e0] rounded-[20px] p-2 sm:p-4 shadow-xl max-w-[900px] w-full">
             {/* Screen Bezel */}
-            <div className="bg-[#1a1a1a] rounded-[10px] p-3 shadow-inner">
+            <div className="bg-[#1a1a1a] rounded-[10px] p-2 sm:p-3 shadow-inner">
               {/* Menu Bar */}
               <div className="bg-[#f5f5f7] h-6 flex items-center px-2 rounded-t-md">
-                <div className="flex gap-1.5 items-center mr-4">
-                  <div className="w-3 h-3 rounded-full bg-[#ff5f57]"></div>
-                  <div className="w-3 h-3 rounded-full bg-[#febc2e]"></div>
-                  <div className="w-3 h-3 rounded-full bg-[#28c840]"></div>
+                <div className="flex gap-1.5 items-center mr-2 sm:mr-4">
+                  <div className="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-[#ff5f57]"></div>
+                  <div className="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-[#febc2e]"></div>
+                  <div className="w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full bg-[#28c840]"></div>
                 </div>
                 <div className="flex-1 flex justify-center">
-                  <div className="flex items-center text-[10px] text-gray-600 gap-4">
+                  <div className="flex items-center text-[8px] sm:text-[10px] text-gray-600 gap-2 sm:gap-4">
                     <span>Finder</span>
                     <span>File</span>
                     <span>Edit</span>
@@ -56,7 +56,7 @@ export default function MacWebpageDisplay() {
                     <span>Help</span>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 text-[10px] text-gray-600">
+                <div className="flex items-center gap-2 sm:gap-3 text-[8px] sm:text-[10px] text-gray-600">
                   <span>100%</span>
                   <span>Mon 9:41 AM</span>
                 </div>
@@ -64,34 +64,34 @@ export default function MacWebpageDisplay() {
 
               {/* Browser Chrome */}
               <div className="bg-[#f5f5f7] border-b border-gray-300">
-                <div className="flex items-center h-8 px-3 gap-3">
-                  <div className="flex gap-2">
-                    <ChevronLeft size={14} className="text-gray-400" />
-                    <ChevronRight size={14} className="text-gray-400" />
+                <div className="flex items-center h-8 px-2 sm:px-3 gap-2 sm:gap-3">
+                  <div className="flex gap-1 sm:gap-2">
+                    <ChevronLeft size={12} className="text-gray-400" />
+                    <ChevronRight size={12} className="text-gray-400" />
                   </div>
                   <div className="flex-1 flex items-center bg-[#e9e9e9] rounded-md h-5 px-2">
                     <div className="flex items-center gap-1.5 w-full">
                       <Search size={10} className="text-gray-500" />
-                      <span className="text-[10px] text-gray-500 truncate">https://innovate.design</span>
+                      <span className="text-[8px] sm:text-[10px] text-gray-500 truncate">https://innovate.design</span>
                     </div>
                   </div>
-                  <div className="flex gap-2">
-                    <RefreshCw size={14} className="text-gray-500" />
-                    <Star size={14} className="text-gray-500" />
-                    <Plus size={14} className="text-gray-500" />
+                  <div className="flex gap-1 sm:gap-2">
+                    <RefreshCw size={12} className="text-gray-500" />
+                    <Star size={12} className="text-gray-500" />
+                    <Plus size={12} className="text-gray-500" />
                   </div>
                 </div>
-                <div className="flex px-3 text-[10px]">
-                  <div className="px-3 py-1 border-b-2 border-blue-500 text-blue-500">Home</div>
-                  <div className="px-3 py-1 text-gray-500">Features</div>
-                  <div className="px-3 py-1 text-gray-500">Pricing</div>
-                  <div className="px-3 py-1 text-gray-500">About</div>
-                  <div className="px-3 py-1 text-gray-500">Contact</div>
+                <div className="flex px-2 sm:px-3 text-[8px] sm:text-[10px] overflow-x-auto">
+                  <div className="px-2 sm:px-3 py-1 border-b-2 border-blue-500 text-blue-500 whitespace-nowrap">Home</div>
+                  <div className="px-2 sm:px-3 py-1 text-gray-500 whitespace-nowrap">Features</div>
+                  <div className="px-2 sm:px-3 py-1 text-gray-500 whitespace-nowrap">Pricing</div>
+                  <div className="px-2 sm:px-3 py-1 text-gray-500 whitespace-nowrap">About</div>
+                  <div className="px-2 sm:px-3 py-1 text-gray-500 whitespace-nowrap">Contact</div>
                 </div>
               </div>
 
               {/* Webpage Content */}
-              <div className="bg-white h-[500px] overflow-y-auto">
+              <div className="bg-white h-[400px] sm:h-[500px] overflow-y-auto">
                 {/* Mobile Menu Overlay */}
                 {isMenuOpen && (
                   <div className="absolute inset-0 bg-black bg-opacity-50 z-50 lg:hidden">
@@ -118,12 +118,12 @@ export default function MacWebpageDisplay() {
 
                 {/* Header */}
                 <header className="bg-white border-b border-gray-100 sticky top-0 z-10">
-                  <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+                  <div className="container mx-auto px-2 sm:px-4 py-2 sm:py-3 flex justify-between items-center">
                     <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 bg-blue-600 rounded-md flex items-center justify-center">
-                        <span className="text-white font-bold text-lg">I</span>
+                      <div className="w-6 sm:w-8 h-6 sm:h-8 bg-blue-600 rounded-md flex items-center justify-center">
+                        <span className="text-white font-bold text-base sm:text-lg">I</span>
                       </div>
-                      <span className="font-bold text-lg">Innovate</span>
+                      <span className="font-bold text-base sm:text-lg">Innovate</span>
                     </div>
                     <div className="hidden lg:flex items-center gap-6">
                       <a href="#" className="text-sm font-medium">
@@ -152,22 +152,22 @@ export default function MacWebpageDisplay() {
                 </header>
 
                 {/* Hero Section */}
-                <section className="py-12 px-4 bg-gradient-to-r from-blue-50 to-indigo-50">
+                <section className="py-8 sm:py-12 px-2 sm:px-4 bg-gradient-to-r from-blue-50 to-indigo-50">
                   <div className="container mx-auto max-w-6xl">
-                    <div className="flex flex-col lg:flex-row items-center gap-8">
-                      <div className="lg:w-1/2 space-y-4">
-                        <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                    <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-8">
+                      <div className="lg:w-1/2 space-y-3 sm:space-y-4">
+                        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                           Design and build your next big idea
                         </h1>
-                        <p className="text-lg text-gray-600">
+                        <p className="text-base sm:text-lg text-gray-600">
                           Our platform provides all the tools you need to bring your vision to life, from concept to
                           launch.
                         </p>
-                        <div className="flex gap-4 pt-4">
-                          <button className="bg-blue-600 text-white px-6 py-3 rounded-md font-medium">
+                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
+                          <button className="bg-blue-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md font-medium">
                             Start Free Trial
                           </button>
-                          <button className="border border-gray-300 px-6 py-3 rounded-md font-medium text-gray-700">
+                          <button className="border border-gray-300 px-4 sm:px-6 py-2 sm:py-3 rounded-md font-medium text-gray-700">
                             Learn More
                           </button>
                         </div>
@@ -188,15 +188,15 @@ export default function MacWebpageDisplay() {
                 </section>
 
                 {/* Features Section */}
-                <section className="py-16 px-4">
+                <section className="py-8 sm:py-16 px-2 sm:px-4">
                   <div className="container mx-auto max-w-6xl">
-                    <div className="text-center mb-12">
-                      <h2 className="text-3xl font-bold mb-4">Powerful Features</h2>
-                      <p className="text-gray-600 max-w-2xl mx-auto">
+                    <div className="text-center mb-8 sm:mb-12">
+                      <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Powerful Features</h2>
+                      <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
                         Everything you need to create, manage, and scale your projects efficiently.
                       </p>
                     </div>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
                       {[
                         {
                           icon: <Home className="text-blue-600" />,
@@ -249,15 +249,15 @@ export default function MacWebpageDisplay() {
                 </section>
 
                 {/* Testimonials */}
-                <section className="py-16 px-4 bg-gray-50">
+                <section className="py-8 sm:py-16 px-2 sm:px-4 bg-gray-50">
                   <div className="container mx-auto max-w-6xl">
-                    <div className="text-center mb-12">
-                      <h2 className="text-3xl font-bold mb-4">What Our Customers Say</h2>
-                      <p className="text-gray-600 max-w-2xl mx-auto">
+                    <div className="text-center mb-8 sm:mb-12">
+                      <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">What Our Customers Say</h2>
+                      <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
                         Dont just take our word for it. Heres what people are saying about our platform.
                       </p>
                     </div>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
                       {[
                         {
                           quote: "This platform has completely transformed how our team collaborates on projects.",
@@ -297,17 +297,17 @@ export default function MacWebpageDisplay() {
                 </section>
 
                 {/* CTA Section */}
-                <section className="py-16 px-4 bg-blue-600 text-white">
+                <section className="py-8 sm:py-16 px-2 sm:px-4 bg-blue-600 text-white">
                   <div className="container mx-auto max-w-6xl">
-                    <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-                      <div className="lg:w-2/3">
-                        <h2 className="text-3xl font-bold mb-4">Ready to get started?</h2>
-                        <p className="text-blue-100">
+                    <div className="flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-8">
+                      <div className="lg:w-2/3 text-center lg:text-left">
+                        <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Ready to get started?</h2>
+                        <p className="text-blue-100 text-sm sm:text-base">
                           Join thousands of teams that use our platform to build amazing products.
                         </p>
                       </div>
                       <div>
-                        <button className="bg-white text-blue-600 px-6 py-3 rounded-md font-medium">
+                        <button className="bg-white text-blue-600 px-4 sm:px-6 py-2 sm:py-3 rounded-md font-medium">
                           Start Your Free Trial
                         </button>
                       </div>
@@ -316,9 +316,9 @@ export default function MacWebpageDisplay() {
                 </section>
 
                 {/* Footer */}
-                <footer className="py-12 px-4 bg-gray-900 text-white">
+                <footer className="py-8 sm:py-12 px-2 sm:px-4 bg-gray-900 text-white">
                   <div className="container mx-auto max-w-6xl">
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 mb-6 sm:mb-8">
                       <div>
                         <div className="flex items-center gap-2 mb-4">
                           <div className="w-8 h-8 bg-blue-600 rounded-md flex items-center justify-center">
@@ -361,9 +361,9 @@ export default function MacWebpageDisplay() {
                         </ul>
                       </div>
                     </div>
-                    <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
-                      <p className="text-sm text-gray-500">© 2023 Innovate, Inc. All rights reserved.</p>
-                      <div className="flex gap-4 text-sm text-gray-500">
+                    <div className="pt-6 sm:pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4">
+                      <p className="text-xs sm:text-sm text-gray-500">© 2023 Innovate, Inc. All rights reserved.</p>
+                      <div className="flex gap-3 sm:gap-4 text-xs sm:text-sm text-gray-500">
                         <a href="#">Privacy Policy</a>
                         <a href="#">Terms of Service</a>
                         <a href="#">Cookie Policy</a>
@@ -375,26 +375,26 @@ export default function MacWebpageDisplay() {
             </div>
 
             {/* Mac Stand */}
-            <div className="h-4 bg-gradient-to-b from-[#e0e0e0] to-[#c0c0c0] rounded-b-lg mx-auto w-1/3"></div>
+            <div className="h-3 sm:h-4 bg-gradient-to-b from-[#e0e0e0] to-[#c0c0c0] rounded-b-lg mx-auto w-1/3"></div>
             <div className="h-1 bg-[#a0a0a0] rounded-b-lg mx-auto w-2/5"></div>
           </div>
 
           {/* Reflection */}
-          <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-4/5 h-4 bg-black opacity-10 blur-md rounded-full"></div>
+          <div className="absolute -bottom-6 sm:-bottom-8 left-1/2 transform -translate-x-1/2 w-4/5 h-3 sm:h-4 bg-black opacity-10 blur-md rounded-full"></div>
         </div>
 
         {/* Description Note */}
-        <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 max-w-2xl">
-          <h2 className="text-xl font-medium mb-3">Mac Screen Display</h2>
-          <p className="text-gray-700">
+        <div className="bg-gray-50 p-4 sm:p-6 rounded-lg border border-gray-200 max-w-2xl">
+          <h2 className="text-lg sm:text-xl font-medium mb-2 sm:mb-3">Mac Screen Display</h2>
+          <p className="text-sm sm:text-base text-gray-700">
             This mockup shows a modern website displayed on a Mac screen. The design includes realistic Mac UI elements
             such as the menu bar, window controls (red, yellow, green buttons), and browser chrome. The webpage itself
             features a responsive design with a navigation header, hero section, features grid, testimonials, and
             footer.
           </p>
-          <div className="mt-4 pt-4 border-t border-gray-200">
+          <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-gray-200">
             <h3 className="font-medium mb-2">Design Specifications:</h3>
-            <ul className="list-disc pl-5 space-y-1 text-gray-700">
+            <ul className="list-disc pl-5 space-y-1 text-sm sm:text-base text-gray-700">
               <li>Screen dimensions: 900px width (responsive)</li>
               <li>16:9 aspect ratio for the display area</li>
               <li>Includes Mac-style bezel and stand</li>
@@ -407,8 +407,8 @@ export default function MacWebpageDisplay() {
       </div>
 
       {/* Mac Dock (Optional) */}
-      <div className="mt-8 flex justify-center">
-        <div className="bg-white bg-opacity-20 backdrop-blur-md rounded-2xl p-2 shadow-lg border border-white border-opacity-30 flex gap-3">
+      <div className="mt-4 sm:mt-8 flex justify-center">
+        <div className="bg-white bg-opacity-20 backdrop-blur-md rounded-2xl p-2 shadow-lg border border-white border-opacity-30 flex gap-2 sm:gap-3">
           {[
             <Home key="home" className="text-blue-500" />,
             <Mail key="mail" className="text-green-500" />,
@@ -420,7 +420,7 @@ export default function MacWebpageDisplay() {
             <motion.div
               key={index}
               whileHover={{ y: -5 }}
-              className="w-10 h-10 bg-gradient-to-b from-gray-200 to-gray-300 rounded-lg flex items-center justify-center shadow-sm"
+              className="w-8 sm:w-10 h-8 sm:h-10 bg-gradient-to-b from-gray-200 to-gray-300 rounded-lg flex items-center justify-center shadow-sm"
             >
               {icon}
             </motion.div>
