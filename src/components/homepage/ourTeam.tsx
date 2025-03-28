@@ -1,5 +1,6 @@
 "use client"
 import { useRouter } from "next/navigation"
+import Image from "next/image"
 
 // Team member type definition
 // type TeamMember = {
@@ -149,72 +150,99 @@ export default function OurTeam() {
 
   return (
     <div className="bg-white p-8 md:p-12">
-    <div className="flex items-center gap-2 mb-2">
-      <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-      <p className="text-sm text-blue-500 font-medium">OUR LEADERSHIP</p>
-    </div>
+      <div className="flex items-center gap-2 mb-2">
+        <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+        <p className="text-sm text-blue-500 font-medium">OUR LEADERSHIP</p>
+      </div>
 
-    <h2 className="text-3xl md:text-4xl font-bold mb-8">Meet The Team</h2>
+      <h2 className="text-3xl md:text-4xl font-bold mb-8">Meet The Team</h2>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div className="bg-gray-100 rounded-xl overflow-hidden">
-        <div className="h-64 bg-gray-200"></div>
-        <div className="p-6">
-          <h3 className="font-semibold text-lg">Dr. Sarah Chen</h3>
-          <p className="text-blue-500 text-sm mb-3">Chief Executive Officer</p>
-          <p className="text-sm text-gray-600">
-            With over 20 years of experience in chemical engineering and business leadership, Sarah drives our
-            strategic vision.
-          </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="bg-gray-100 rounded-xl overflow-hidden">
+          <div className="h-64 relative">
+            <Image
+              src="https://sdmntpreastus2.oaiusercontent.com/files/00000000-dfac-51f6-8554-3322f9437b49/raw?se=2025-03-28T15%3A39%3A55Z&sp=r&sv=2024-08-04&sr=b&scid=7044f8ab-f5f4-526c-931b-a09b9d874c69&skoid=3f3a9132-9530-48ef-96b7-fee5a811733f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-03-28T08%3A25%3A45Z&ske=2025-03-29T08%3A25%3A45Z&sks=b&skv=2024-08-04&sig=XCmLAyiA5V5XABSO1rx9H5l6YuInlUTezphAbClRdZ4%3D"
+              alt="Dr. Sarah Chen"
+              fill
+              className="object-cover object-[50%_20%]"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority
+            />
+          </div>
+          <div className="p-6">
+            <h3 className="font-semibold text-lg">Dr. Sarah Chen</h3>
+            <p className="text-blue-500 text-sm mb-3">Chief Executive Officer</p>
+            <p className="text-sm text-gray-600">
+              With over 20 years of experience in chemical engineering and business leadership, Sarah drives our
+              strategic vision.
+            </p>
+          </div>
+        </div>
+
+        <div className="bg-gray-100 rounded-xl overflow-hidden">
+          <div className="h-64 relative">
+            <Image
+             src="https://sdmntpreastus2.oaiusercontent.com/files/00000000-dfac-51f6-8554-3322f9437b49/raw?se=2025-03-28T15%3A39%3A55Z&sp=r&sv=2024-08-04&sr=b&scid=7044f8ab-f5f4-526c-931b-a09b9d874c69&skoid=3f3a9132-9530-48ef-96b7-fee5a811733f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-03-28T08%3A25%3A45Z&ske=2025-03-29T08%3A25%3A45Z&sks=b&skv=2024-08-04&sig=XCmLAyiA5V5XABSO1rx9H5l6YuInlUTezphAbClRdZ4%3D"
+             alt="Dr. Sarah Chen"
+             fill
+             className="object-cover object-[50%_20%]"
+             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority
+            />
+          </div>
+          <div className="p-6">
+            <h3 className="font-semibold text-lg">Michael Rodriguez</h3>
+            <p className="text-blue-500 text-sm mb-3">Chief Operations Officer</p>
+            <p className="text-sm text-gray-600">
+              Michael ensures our global supply chain operates with maximum efficiency and reliability.
+            </p>
+          </div>
+        </div>
+
+        <div className="bg-gray-100 rounded-xl overflow-hidden">
+          <div className="h-64 relative">
+            <Image
+             src="https://sdmntpreastus2.oaiusercontent.com/files/00000000-dfac-51f6-8554-3322f9437b49/raw?se=2025-03-28T15%3A39%3A55Z&sp=r&sv=2024-08-04&sr=b&scid=7044f8ab-f5f4-526c-931b-a09b9d874c69&skoid=3f3a9132-9530-48ef-96b7-fee5a811733f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-03-28T08%3A25%3A45Z&ske=2025-03-29T08%3A25%3A45Z&sks=b&skv=2024-08-04&sig=XCmLAyiA5V5XABSO1rx9H5l6YuInlUTezphAbClRdZ4%3D"
+             alt="Dr. Sarah Chen"
+             fill
+             className="object-cover object-[50%_20%]"
+             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority
+            />
+          </div>
+          <div className="p-6">
+            <h3 className="font-semibold text-lg">Dr. James Wilson</h3>
+            <p className="text-blue-500 text-sm mb-3">Chief Research Officer</p>
+            <p className="text-sm text-gray-600">
+              James leads our R&D team, developing innovative solutions for tomorrow&apos;s challenges.
+            </p>
+          </div>
         </div>
       </div>
 
-      <div className="bg-gray-100 rounded-xl overflow-hidden">
-        <div className="h-64 bg-gray-200"></div>
-        <div className="p-6">
-          <h3 className="font-semibold text-lg">Michael Rodriguez</h3>
-          <p className="text-blue-500 text-sm mb-3">Chief Operations Officer</p>
-          <p className="text-sm text-gray-600">
-            Michael ensures our global supply chain operates with maximum efficiency and reliability.
-          </p>
-        </div>
-      </div>
-
-      <div className="bg-gray-100 rounded-xl overflow-hidden">
-        <div className="h-64 bg-gray-200"></div>
-        <div className="p-6">
-          <h3 className="font-semibold text-lg">Dr. James Wilson</h3>
-          <p className="text-blue-500 text-sm mb-3">Chief Research Officer</p>
-          <p className="text-sm text-gray-600">
-            James leads our R&D team, developing innovative solutions for tomorrow&apos;s challenges.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div className="mt-12 bg-[#0a0f36] text-white p-8 rounded-xl">
-      <div className="flex flex-col md:flex-row items-center">
-        <div className="md:w-2/3">
-          <h3 className="text-2xl font-bold mb-4">Join Our Growing Team</h3>
-          <p className="text-gray-300 mb-6">
-            We&apos;re always looking for talented individuals who share our passion for excellence and innovation in
-            chemical supply solutions.
-          </p>
-          <button 
-            onClick={() => router.push('/career')}
-            className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-6 py-3 font-medium transition-colors"
-          >
-            View Career Opportunities
-          </button>
-        </div>
-        <div className="md:w-1/3 flex justify-center mt-8 md:mt-0">
-          <div className="w-24 h-24 rounded-full bg-[#1a2150] flex items-center justify-center">
-            <span className="text-4xl">👥</span>
+      <div className="mt-12 bg-[#2353aa] text-white p-8 rounded-xl">
+        <div className="flex flex-col md:flex-row items-center">
+          <div className="md:w-2/3">
+            <h3 className="text-2xl font-bold mb-4">Join Our Growing Team</h3>
+            <p className="text-gray-300 mb-6">
+              We&apos;re always looking for talented individuals who share our passion for excellence and innovation in
+              chemical supply solutions.
+            </p>
+            <button 
+              onClick={() => router.push('/career')}
+              className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-6 py-3 font-medium transition-colors"
+            >
+              View Career Opportunities
+            </button>
+          </div>
+          <div className="md:w-1/3 flex justify-center mt-8 md:mt-0">
+            <div className="w-24 h-24 rounded-full bg-[#1a4382] flex items-center justify-center">
+              <span className="text-4xl">👥</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
     // <section className="py-16 px-4 md:px-8 lg:px-12 bg-gray-50">
     //   <div className="max-w-7xl mx-auto">
     //     <div className="text-center mb-12">

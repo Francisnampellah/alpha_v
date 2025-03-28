@@ -80,7 +80,7 @@ export default function WelcomeHeroBanner() {
             className="object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b sm:bg-gradient-to-r from-[#0a0f36]/90 via-[#0a0f36]/80 sm:via-[#0a0f36]/70 to-[#0a0f36]/70 sm:to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/60 to-black/40"></div>
       </div>
 
       {/* Navigation */}

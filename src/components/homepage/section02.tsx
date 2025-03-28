@@ -107,7 +107,7 @@ export default function Section02() {
 
         <div className="flex items-center gap-2 mb-2">
           <div className="w-2 h-2 rounded-full bg-blue-400"></div>
-          <p className="text-sm text-blue-400 font-medium"> ABOUT SMARTiNNO</p>
+          <p className="text-sm text-blue-500 font-medium"> ABOUT SMARTiNNO</p>
         </div>
 
         <h2 className="text-3xl md:text-4xl font-bold mb-8 max-w-md">

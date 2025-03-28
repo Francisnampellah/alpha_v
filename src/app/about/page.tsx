@@ -153,7 +153,7 @@ export default function AboutPage() {
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0f36]/90 via-[#0a0f36]/70 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/60 to-black/80"></div>
         </div>
 
         {/* Navigation */}
@@ -362,7 +362,7 @@ export default function AboutPage() {
       </SectionContainer>
 
       {/* Contact Section */}
-      <div className="px-4 sm:px-6 lg:px-12 py-12 sm:py-16 bg-[#0a0f36] text-white">
+      <div className="px-4 sm:px-6 lg:px-12 py-12 sm:py-16 bg-[#2353aa] text-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
             <motion.div

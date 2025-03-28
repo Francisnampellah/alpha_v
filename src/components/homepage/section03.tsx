@@ -53,7 +53,7 @@ export default function OurTechnology() {
   return (
     <div className="flex flex-col w-full">
       {/* Top Section - Process Steps */}
-      <div className="bg-[#0a0f36] text-white p-8 md:p-12">
+      <div className="bg-[#2353aa] text-white p-8 md:p-12">
         <div className="flex items-center gap-2 mb-2">
           <div className="w-2 h-2 rounded-full bg-blue-400"></div>
           <p className="text-sm text-blue-400 font-medium">OUR TECHNOLOGIES</p>
@@ -68,37 +68,37 @@ export default function OurTechnology() {
         <div className="h-px bg-gray-700 mb-8"></div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="bg-[#1a2150] p-6 rounded-xl">
+          <div className="bg-[#1a4382] p-6 rounded-xl">
             <p className="text-gray-400 mb-1">01.</p>
             <h3 className="font-semibold text-lg mb-4">AI-Powered Insights</h3>
             <p className="text-sm text-gray-300">Leverage artificial intelligence to make smarter, data-driven decisions.</p>
           </div>
 
-          <div className="bg-[#1a2150] p-6 rounded-xl">
+          <div className="bg-[#1a4382] p-6 rounded-xl">
             <p className="text-gray-400 mb-1">02.</p>
             <h3 className="font-semibold text-lg mb-4">IoT Connectivity</h3>
             <p className="text-sm text-gray-300">Integrate devices seamlessly for real-time monitoring and control.</p>
           </div>
 
-          <div className="bg-[#1a2150] p-6 rounded-xl">
+          <div className="bg-[#1a4382] p-6 rounded-xl">
             <p className="text-gray-400 mb-1">03.</p>
             <h3 className="font-semibold text-lg mb-4">Cloud-Based Solutions</h3>
             <p className="text-sm text-gray-300">Access your data securely from anywhere, anytime.</p>
           </div>
 
-          <div className="bg-[#1a2150] p-6 rounded-xl">
+          <div className="bg-[#1a4382] p-6 rounded-xl">
             <p className="text-gray-400 mb-1">04.</p>
             <h3 className="font-semibold text-lg mb-4">Sustainability Focus</h3>
             <p className="text-sm text-gray-300">Adopt eco-friendly practices to reduce your environmental impact.</p>
           </div>
         </div>
 
-        <div className="bg-[#1a2150] rounded-xl p-4 mt-6 flex justify-between items-center">
+        <div className="bg-[#1a4382] rounded-xl p-4 mt-6 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <div className="flex -space-x-2">
-              <div className="w-8 h-8 rounded-full bg-gray-300 border-2 border-[#1a2150]"></div>
-              <div className="w-8 h-8 rounded-full bg-gray-400 border-2 border-[#1a2150]"></div>
-              <div className="w-8 h-8 rounded-full bg-gray-500 border-2 border-[#1a2150]"></div>
+              <div className="w-8 h-8 rounded-full bg-gray-300 border-2 border-[#1a4382]"></div>
+              <div className="w-8 h-8 rounded-full bg-gray-400 border-2 border-[#1a4382]"></div>
+              <div className="w-8 h-8 rounded-full bg-gray-500 border-2 border-[#1a4382]"></div>
             </div>
             <p className="text-sm">
               Align with Businesses that <span className="font-semibold">Choose Quality</span>
@@ -136,7 +136,7 @@ export default function OurTechnology() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
-          <div className="bg-[#0a0f36] text-white p-6 rounded-xl">
+          <div className="bg-[#2353aa] text-white p-6 rounded-xl">
             <h3 className="font-semibold text-lg mb-4">Enhanced Productivity</h3>
             <p className="text-sm text-gray-300 mb-4">
               Streamline operations with AI-driven automation and real-time analytics, reducing manual tasks by up to 60%.
@@ -146,8 +146,8 @@ export default function OurTechnology() {
                 <BarChart data={productivityData}>
                   <defs>
                     <linearGradient id="productivityGradient" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#4f46e5" stopOpacity={0.8}/>
-                      <stop offset="95%" stopColor="#4f46e5" stopOpacity={0.4}/>
+                      <stop offset="5%" stopColor="#10B981" stopOpacity={0.8}/>
+                      <stop offset="95%" stopColor="#10B981" stopOpacity={0.4}/>
                     </linearGradient>
                   </defs>
                   <CartesianGrid strokeDasharray="3 3" stroke="#ffffff20" />
@@ -180,7 +180,7 @@ export default function OurTechnology() {
           <div className="overflow-hidden rounded-xl bg-white shadow-lg">
             <div className="relative h-48">
               <Image
-                src="/images/iot-monitoring.jpg"
+                src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=2947&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Smartinno IoT Dashboard"
                 fill
                 className="object-cover"
@@ -202,8 +202,8 @@ export default function OurTechnology() {
                 <BarChart data={energyData}>
                   <defs>
                     <linearGradient id="energyGradient" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#4f46e5" stopOpacity={0.8}/>
-                      <stop offset="95%" stopColor="#4f46e5" stopOpacity={0.4}/>
+                      <stop offset="5%" stopColor="#F59E0B" stopOpacity={0.8}/>
+                      <stop offset="95%" stopColor="#F59E0B" stopOpacity={0.4}/>
                     </linearGradient>
                   </defs>
                   <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
@@ -240,8 +240,8 @@ export default function OurTechnology() {
             <h3 className="font-semibold text-lg mb-4">Smart Analytics</h3>
             <div className="relative h-48 mb-4">
               <Image
-                src="/images/analytics-dashboard.jpg"
-                alt="Smart Analytics Dashboard"
+                src="https://images.unsplash.com/photo-1545063328-c8e3faffa16f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGRhc2hib2FyZHxlbnwwfHwwfHx8MA%3D%3D"
+                alt="https://images.unsplash.com/photo-1545063328-c8e3faffa16f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGRhc2hib2FyZHxlbnwwfHwwfHx8MA%3D%3D"
                 fill
                 className="object-cover rounded-lg"
                 priority
@@ -252,11 +252,11 @@ export default function OurTechnology() {
             </p>
           </div>
 
-          <div className="bg-[#0a0f36] text-white p-6 rounded-xl">
+          <div className="bg-[#2353aa] text-white p-6 rounded-xl">
             <h3 className="font-semibold text-lg mb-4">24/7 Expert Support</h3>
             <div className="relative h-48 mb-4">
               <Image
-                src="/images/support-team.jpg"
+                src="https://media.istockphoto.com/id/1970475008/photo/close-up-headset-with-employee-man-hand-type-work-on-keyboard-laptop-at-desk-for-advise-or.jpg?s=1024x1024&w=is&k=20&c=ZpGoQvYpyVQPrKdDo4uxUwRI2w_KGfgk5kuF3MjXQaE="
                 alt="Expert Support Team"
                 fill
                 className="object-cover rounded-lg"
