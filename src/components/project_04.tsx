@@ -355,7 +355,7 @@ export default function MacWebpageDisplay() {
                         <ul className="space-y-2 text-sm text-gray-400">
                           <li>About</li>
                           <li>Blog</li>
-                          <li>Careers</li>
+                          <li><a href="/career">Careers</a></li>
                           <li>Press</li>
                           <li>Contact</li>
                         </ul>

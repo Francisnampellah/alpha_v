@@ -1,3 +1,5 @@
+"use client"
+import { useRouter } from "next/navigation"
 
 // Team member type definition
 // type TeamMember = {
@@ -143,6 +145,8 @@
 // }
 
 export default function OurTeam() {
+  const router = useRouter()
+
   return (
     <div className="bg-white p-8 md:p-12">
     <div className="flex items-center gap-2 mb-2">
@@ -196,7 +200,10 @@ export default function OurTeam() {
             We&apos;re always looking for talented individuals who share our passion for excellence and innovation in
             chemical supply solutions.
           </p>
-          <button className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-6 py-3 font-medium transition-colors">
+          <button 
+            onClick={() => router.push('/career')}
+            className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-6 py-3 font-medium transition-colors"
+          >
             View Career Opportunities
           </button>
         </div>

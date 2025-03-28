@@ -45,16 +45,50 @@ const NavLink = ({ href, label, isActive = false, textColor = "text-black" }: Na
 };
 
 const CompanyLogo = ({ className = "h-2 w-2", useDark = false }: { className?: string, useDark?: boolean }) => (
-  <div className="grid grid-cols-2 grid-rows-2 gap-1">
-    {[...Array(4)].map((_, i) => (
-      <motion.div
-        key={i}
-        className={`${className} rounded-sm ${useDark ? "bg-black" : "bg-white"}`}
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.3, delay: i * 0.1 }}
-      />
-    ))}
+  <div className="flex items-center gap-3">
+    <div className={`w-8 h-8 rounded-full flex items-center justify-center ${useDark ? 'bg-black' : 'bg-white'}`}>
+      <svg 
+        width="16" 
+        height="16" 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        xmlns="http://www.w3.org/2000/svg"
+        className={useDark ? 'text-white' : 'text-black'}
+      >
+        <path 
+          d="M12 2L2 7L12 12L22 7L12 2Z" 
+          stroke="currentColor" 
+          strokeWidth="2" 
+          strokeLinecap="round" 
+          strokeLinejoin="round"
+        />
+        <path 
+          d="M2 17L12 22L22 17" 
+          stroke="currentColor" 
+          strokeWidth="2" 
+          strokeLinecap="round" 
+          strokeLinejoin="round"
+        />
+        <path 
+          d="M2 12L12 17L22 12" 
+          stroke="currentColor" 
+          strokeWidth="2" 
+          strokeLinecap="round" 
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+    <div className="relative">
+      <span className={`text-xl font-light tracking-wider ${useDark ? "text-black" : "text-white"} relative z-10`}>
+        SMARTiNNO
+      </span>
+      <span className={`absolute inset-0 text-xl font-light tracking-wider ${useDark ? "text-black" : "text-white blur-[1px]"} `}>
+        SMARTiNNO
+      </span>
+      <span className={`absolute inset-0 text-xl  tracking-wider ${useDark ? "text-black " : "text-white blur-[2px] "} `}>
+        SMARTiNNO
+      </span>
+    </div>
   </div>
 )
 
@@ -87,56 +121,46 @@ export default function Navigation({
     { href: "/services", label: "Services", isActive: activeLink === "/services" },
     { href: "/projects", label: "Projects", isActive: activeLink === "/projects" },
     { href: "/events", label: "Events", isActive: activeLink === "/events" },
+    { href: "/career", label: "Career", isActive: activeLink === "/career" },
+    { href: "/privacy", label: "Privacy", isActive: activeLink === "/privacy" },
   ]
 
   // Determine header styles based on variant and scroll state
   let headerStyle = ""
-  // let logoColor = ""
   let textColor = "text-black"
 
   if (variant === "transparent" || variant === "homepage") {
     if (scrolled) {
-      headerStyle = "bg-white/90 backdrop-blur-md shadow-sm py-3"
-      // logoColor = "bg-black"
+      headerStyle = "bg-white/95 backdrop-blur-md shadow-sm py-4"
       textColor = "text-black"
     } else {
       headerStyle = variant === "homepage" 
-        ? "bg-transparent sm:bg-transparent bg-[#0a0f36]/80 backdrop-blur-sm py-4" 
-        : "bg-gradient-to-b from-black/50 to-transparent py-4"
-      // logoColor = "bg-white"
+        ? "bg-transparent sm:bg-transparent bg-black/20 backdrop-blur-sm py-6" 
+        : "bg-gradient-to-b from-black/30 to-transparent py-6"
       textColor = "text-white"
     }
   } else {
-    // Solid variant
-    headerStyle = "bg-white shadow-sm py-3"
-    // logoColor = "bg-black"
+    headerStyle = "bg-white shadow-sm py-4"
     textColor = "text-black"
   }
 
   return (
     <>
-      {/* Header */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerStyle}`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${headerStyle}`}
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 sm:px-8 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex items-center gap-3"
+            className="flex items-center"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500">
-              <CompanyLogo className="h-2 w-2" useDark={scrolled || variant === "solid"} />
-            </div>
-            <div>
-              <h1 className={`text-2xl font-bold ${textColor === "text-white" ? "text-white" : "text-black"}`}>SMARTINNO</h1>
-              <p className="text-xs text-blue-300">ENGINEERING LIMITED</p>
-            </div>
+            <CompanyLogo useDark={scrolled || variant === "solid"} />
           </motion.div>
 
           {/* Mobile menu button */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-6">
             <button 
               className="md:hidden flex items-center"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -151,9 +175,9 @@ export default function Navigation({
                 stroke="currentColor"
               >
                 {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
                 ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
                 )}
               </svg>
             </button>
@@ -171,7 +195,7 @@ export default function Navigation({
               ))}
             </nav>
 
-            {/* CTA Button (conditionally rendered) */}
+            {/* CTA Button */}
             {showCTA && (
               <motion.div
                 initial={{ opacity: 0, y: -20 }}
@@ -181,9 +205,9 @@ export default function Navigation({
               >
                 <Link 
                   href={ctaLink}
-                  className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-4 py-2 text-sm transition-colors flex items-center"
+                  className="bg-black hover:bg-gray-800 text-white rounded-full px-6 py-2.5 text-sm transition-all duration-300 flex items-center"
                 >
-                  <span className="mr-1">{ctaText}</span>
+                  <span className="mr-2">{ctaText}</span>
                   <ArrowRight size={16} />
                 </Link>
               </motion.div>
@@ -193,18 +217,18 @@ export default function Navigation({
 
         {/* Mobile Navigation */}
         <div 
-          className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden bg-[#0a0f36] shadow-md ${
+          className={`md:hidden transition-all duration-500 ease-in-out overflow-hidden bg-white shadow-lg ${
             mobileMenuOpen ? "max-h-screen opacity-100 py-4" : "max-h-0 opacity-0"
           }`}
         >
-          <nav className="flex flex-col space-y-3 px-6" aria-label="Mobile navigation">
+          <nav className="flex flex-col space-y-2 px-6" aria-label="Mobile navigation">
             {navLinks.map((link) => (
-              <div key={link.href} onClick={() => setMobileMenuOpen(false)} className="py-2.5 border-b border-blue-900/30 last:border-b-0">
+              <div key={link.href} onClick={() => setMobileMenuOpen(false)} className="py-3 border-b border-gray-100 last:border-b-0">
                 <NavLink 
                   href={link.href} 
                   label={link.label}
                   isActive={link.isActive}
-                  textColor={link.isActive ? "text-blue-300" : "text-sky-100"}
+                  textColor="text-gray-800"
                 />
               </div>
             ))}
@@ -212,9 +236,9 @@ export default function Navigation({
               <div className="pt-4">
                 <Link 
                   href={ctaLink}
-                  className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-4 py-2 text-sm transition-colors flex items-center justify-center w-full"
+                  className="bg-black hover:bg-gray-800 text-white rounded-full px-6 py-2.5 text-sm transition-all duration-300 flex items-center justify-center w-full"
                 >
-                  <span className="mr-1">{ctaText}</span>
+                  <span className="mr-2">{ctaText}</span>
                   <ArrowRight size={16} />
                 </Link>
               </div>

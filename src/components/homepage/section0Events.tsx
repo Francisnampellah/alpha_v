@@ -189,7 +189,20 @@ export default function OurEvents() {
                 Subscribe to our events calendar to receive notifications about upcoming webinars, conferences, and
                 workshops.
               </p>
-              <button className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-6 py-3 font-medium transition-colors">
+              <button 
+                onClick={() => {
+                  // Add to Google Calendar
+                  const event = {
+                    text: 'SmartInno Events Calendar',
+                    dates: '2024/01/01',
+                    details: 'Stay updated with all SmartInno events and conferences',
+                    location: 'Online'
+                  }
+                  const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(event.text)}&dates=${event.dates}&details=${encodeURIComponent(event.details)}&location=${encodeURIComponent(event.location)}`
+                  window.open(url, '_blank')
+                }}
+                className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-6 py-3 font-medium transition-colors"
+              >
                 Subscribe to Calendar
               </button>
             </div>

@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react"
 import Link from "next/link"
 import { MapPin } from "lucide-react"
+import SectionHeader from "@/components/SectionHeader"
 
 export default function Footer() {
   const mapRef = useRef<HTMLDivElement>(null)
@@ -26,7 +27,7 @@ export default function Footer() {
           }
 
           // Example coordinates (replace with actual company location)
-          const companyLocation: [number, number] = [51.505, -0.09] // London coordinates as example
+          const companyLocation: [number, number] = [-6.71777, 39.23451] // Mbezi Beach, Dar es Salaam coordinates
 
           // Initialize map
           const map = L.map(mapRef.current).setView(companyLocation, 13)
@@ -65,13 +66,13 @@ export default function Footer() {
       {/* Top bar with social links and language selector */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0 mb-8 sm:mb-12">
         <div className="flex flex-wrap items-center gap-2">
-          <Link href="#" className="text-sm font-medium text-white hover:underline flex items-center">
+          <Link href="https://twitter.com/smartinno" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-white hover:underline flex items-center">
             Twitter <span className="mx-2">{">"}</span>
           </Link>
-          <Link href="#" className="text-sm font-medium text-white hover:underline flex items-center">
+          <Link href="https://instagram.com/smartinno" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-white hover:underline flex items-center">
             Instagram <span className="mx-2">{">"}</span>
           </Link>
-          <Link href="#" className="text-sm font-medium text-white hover:underline">
+          <Link href="https://youtube.com/smartinno" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-white hover:underline">
             Youtube
           </Link>
         </div>
@@ -109,20 +110,15 @@ export default function Footer() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
         {/* Company info with map */}
         <div>
-          <div className="flex items-center mb-4">
-            <div className="w-8 h-8 bg-white flex items-center justify-center mr-2">
-              <div className="w-4 h-4 bg-black"></div>
-            </div>
-            <span className="font-bold text-lg text-white">SMARTiNNO ENG ltd.</span>
-          </div>
+
           <p className="text-gray-300 max-w-xs mb-4">
-            Were dedicated to providing farmers, businesses, and communities with the best agricultural products.
+            We're dedicated to providing innovative software solutions to transform businesses through cutting-edge technology.
           </p>
 
           {/* Location info */}
           <div className="flex items-center mb-3 text-gray-300">
             <MapPin className="w-4 h-4 mr-2" />
-            <span className="text-sm">123 Agriculture Way, London, UK</span>
+            <span className="text-sm">MA 2 Seabreeze Complex, Kilongawima Road, Mbezi Beach-Kinondoni, Dar es Salaam, Tanzania</span>
           </div>
 
           {/* Map container */}
@@ -134,30 +130,50 @@ export default function Footer() {
         </div>
 
         {/* Three columns that stack on mobile */}
-        {[1, 2, 3].map((i) => (
-          <div key={i} className={i > 1 ? "hidden sm:block lg:block" : ""}>
-            <h3 className="font-bold text-lg mb-4 text-white">About</h3>
+        {[
+          {
+            number: "02",
+            title: "Company",
+            links: [
+              { text: "About Us", href: "/about" },
+              { text: "Projects", href: "/projects" },
+              { text: "Events", href: "/events" },
+              { text: "Careers", href: "/career" },
+              { text: "Contact", href: "/contact" }
+            ]
+          },
+          {
+            number: "03",
+            title: "Services",
+            links: [
+              { text: "Software Development", href: "/services/software-development" },
+              { text: "Cloud Solutions", href: "/services/cloud-solutions" },
+              { text: "Digital Transformation", href: "/services/digital-transformation" },
+              { text: "IT Consulting", href: "/services/it-consulting" }
+            ]
+          },
+          {
+            number: "04",
+            title: "Resources",
+            links: [
+              { text: "Blog", href: "/blog" },
+              { text: "Documentation", href: "/docs" },
+              { text: "Support", href: "/support" },
+              { text: "Privacy Policy", href: "/privacy-policy" },
+              { text: "Terms of Service", href: "/terms-of-service" }
+            ]
+          }
+        ].map((section, i) => (
+          <div key={i} className={i > 0 ? "hidden sm:block lg:block" : ""}>
+
             <ul className="space-y-3">
-              <li>
-                <Link href="#" className="text-gray-300 hover:underline">
-                  Problem
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:underline">
-                  Solution
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:underline">
-                  Technology
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:underline">
-                  Product
-                </Link>
-              </li>
+              {section.links.map((link, j) => (
+                <li key={j}>
+                  <Link href={link.href} className="text-gray-300 hover:underline">
+                    {link.text}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         ))}
@@ -165,13 +181,13 @@ export default function Footer() {
 
       {/* Bottom bar with copyright and legal links */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center pt-6 border-t border-gray-700">
-        <div className="text-gray-400 text-sm mb-4 sm:mb-0">2025@etitud.com</div>
+        <div className="text-gray-400 text-sm mb-4 sm:mb-0">© 2024 SMARTiNNO. All rights reserved.</div>
         <div className="flex gap-4 sm:gap-8">
-          <Link href="#" className="text-gray-400 text-sm hover:underline">
-            Privacy Policy
+          <Link href="/contact" className="text-gray-400 text-sm hover:underline">
+            Contact Us
           </Link>
-          <Link href="#" className="text-gray-400 text-sm hover:underline">
-            Terms of service
+          <Link href="/career/apply" className="text-gray-400 text-sm hover:underline">
+            Apply Now
           </Link>
         </div>
       </div>

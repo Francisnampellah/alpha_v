@@ -26,64 +26,64 @@ const CategoryPill = ({ label }: { label: string }) => {
 // Mock event data - in a real app this would come from a database or API
 const events = [
   {
-    id: 'agritech-expo-2023',
-    title: 'AgriTech Expo 2023',
-    description: 'Showcasing the latest agricultural technologies and innovations',
-    image: 'https://images.unsplash.com/photo-1531058020387-3be344556be6?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    categories: ['Exhibition', 'Innovation', 'Networking'],
+    id: 'ai-robotics-summit',
+    title: 'AI & Robotics Summit',
+    description: 'Explore the latest advancements in artificial intelligence and robotics with industry leaders.',
+    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2670&auto=format&fit=crop',
+    categories: ['Conference', 'AI', 'Robotics'],
+    date: '2024-05-15',
+    location: 'London, UK',
+    status: 'Upcoming'
+  },
+  {
+    id: 'sustainability-tech',
+    title: 'Sustainability in Tech',
+    description: 'Learn about sustainable practices and eco-friendly solutions in the tech industry.',
+    image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=2670&auto=format&fit=crop',
+    categories: ['Conference', 'Sustainability', 'Innovation'],
+    date: '2024-06-22',
+    location: 'Manchester, UK',
+    status: 'Upcoming'
+  },
+  {
+    id: 'tech-product-showcase',
+    title: 'Tech Product Showcase',
+    description: 'Experience cutting-edge technologies with live demonstrations and expert insights.',
+    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2670&auto=format&fit=crop',
+    categories: ['Showcase', 'Technology', 'Innovation'],
+    date: '2024-07-10',
+    location: 'Bristol, UK',
+    status: 'Upcoming'
+  },
+  {
+    id: 'innovation-workshop',
+    title: 'Innovation Workshop',
+    description: 'Hands-on sessions to explore innovative solutions and optimize tech processes.',
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2670&auto=format&fit=crop',
+    categories: ['Workshop', 'Innovation', 'Training'],
+    date: '2024-08-05',
+    location: 'Edinburgh, UK',
+    status: 'Upcoming'
+  },
+  {
+    id: 'ai-robotics-summit-2023',
+    title: 'AI & Robotics Summit 2023',
+    description: 'Previous conference showcasing the latest in AI and robotics technology.',
+    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=3270&auto=format&fit=crop',
+    categories: ['Conference', 'AI', 'Robotics'],
     date: '2023-11-15',
     location: 'London, UK',
     status: 'Past'
   },
   {
-    id: 'farm-tech-summit',
-    title: 'Farm Tech Summit',
-    description: 'Annual gathering of farming technology experts and innovators',
-    image: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    categories: ['Conference', 'Workshop', 'Networking'],
-    date: '2024-02-20',
+    id: 'tech-workshop-2023',
+    title: 'Tech Workshop 2023',
+    description: 'Interactive learning experiences led by tech experts and industry leaders.',
+    image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=3269&auto=format&fit=crop',
+    categories: ['Workshop', 'Technology', 'Training'],
+    date: '2023-12-10',
     location: 'Manchester, UK',
     status: 'Past'
-  },
-  {
-    id: 'soil-health-workshop',
-    title: 'Soil Health Workshop',
-    description: 'Practical workshop on maintaining and improving soil health',
-    image: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    categories: ['Workshop', 'Training', 'Education'],
-    date: '2024-05-10',
-    location: 'Bristol, UK',
-    status: 'Upcoming'
-  },
-  {
-    id: 'precision-farming-seminar',
-    title: 'Precision Farming Seminar',
-    description: 'In-depth discussion on precision farming techniques and technologies',
-    image: 'https://images.unsplash.com/photo-1591696331111-ef9586a5b17a?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    categories: ['Seminar', 'Education', 'Technology'],
-    date: '2024-06-15',
-    location: 'Edinburgh, UK',
-    status: 'Upcoming'
-  },
-  {
-    id: 'agri-innovation-hackathon',
-    title: 'Agricultural Innovation Hackathon',
-    description: 'Two-day competition to develop innovative solutions for agricultural challenges',
-    image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    categories: ['Hackathon', 'Competition', 'Innovation'],
-    date: '2024-07-08',
-    location: 'Cambridge, UK',
-    status: 'Upcoming'
-  },
-  {
-    id: 'livestock-management-conference',
-    title: 'Livestock Management Conference',
-    description: 'Conference focused on modern livestock management practices and technologies',
-    image: 'https://images.unsplash.com/photo-1605605859948-89a8f8960f5f?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    categories: ['Conference', 'Livestock', 'Management'],
-    date: '2024-09-22',
-    location: 'York, UK',
-    status: 'Upcoming'
   }
 ];
 
@@ -139,8 +139,8 @@ export default function EventsPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1540317580384-e5d43867caa6?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Agricultural conference and events"
+            src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2670&auto=format&fit=crop"
+            alt="Events"
             fill
             priority
             sizes="100vw"
@@ -161,9 +161,9 @@ export default function EventsPage() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-wrap gap-2 mb-4"
             >
-              <CategoryPill label="Conferences" />
-              <CategoryPill label="Workshops" />
-              <CategoryPill label="Exhibitions" />
+              <CategoryPill label="AI & Robotics" />
+              <CategoryPill label="Sustainability" />
+              <CategoryPill label="Innovation" />
             </motion.div>
 
             <motion.h2
@@ -172,7 +172,9 @@ export default function EventsPage() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
             >
-              Our Events
+              Tech Innovations,
+              <br />
+              Meaningful Connections
             </motion.h2>
 
             <motion.p
@@ -181,8 +183,76 @@ export default function EventsPage() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl"
             >
-              Connect with industry experts and explore cutting-edge agricultural innovations
+              Join us at our upcoming tech events to explore cutting-edge innovations and connect with industry leaders
             </motion.p>
+          </div>
+        </div>
+      </div>
+
+      {/* Banner Section */}
+      <div className="bg-[#0a0f36] text-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-2 h-2 rounded-full bg-blue-400"></div>
+                <p className="text-sm text-blue-400 font-medium">JOIN OUR EVENTS</p>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Expand Your Knowledge & Network
+              </h2>
+              <p className="text-gray-300 mb-8 max-w-md">
+                Our events bring together tech experts, innovative technologies, and forward-thinking professionals to
+                create valuable learning and networking opportunities.
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="flex -space-x-2">
+                  <div className="w-10 h-10 rounded-full bg-gray-300 border-2 border-[#0a0f36]"></div>
+                  <div className="w-10 h-10 rounded-full bg-gray-400 border-2 border-[#0a0f36]"></div>
+                  <div className="w-10 h-10 rounded-full bg-gray-500 border-2 border-[#0a0f36]"></div>
+                </div>
+                <p className="text-sm">
+                  Join <span className="font-semibold">500+ Tech Professionals</span> at our events
+                </p>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-2 gap-4"
+            >
+              <div className="bg-[#1a2150] p-6 rounded-xl">
+                <h3 className="font-semibold text-lg mb-4">Expert Speakers</h3>
+                <p className="text-sm text-gray-300">
+                  Learn from tech leaders and renowned experts sharing cutting-edge insights.
+                </p>
+              </div>
+              <div className="bg-[#1a2150] p-6 rounded-xl">
+                <h3 className="font-semibold text-lg mb-4">Networking</h3>
+                <p className="text-sm text-gray-300">
+                  Connect with peers, potential partners, and clients in a collaborative environment.
+                </p>
+              </div>
+              <div className="bg-[#1a2150] p-6 rounded-xl">
+                <h3 className="font-semibold text-lg mb-4">Hands-on Demo</h3>
+                <p className="text-sm text-gray-300">
+                  Experience our products and technologies through interactive demonstrations.
+                </p>
+              </div>
+              <div className="bg-[#1a2150] p-6 rounded-xl">
+                <h3 className="font-semibold text-lg mb-4">Latest Tech</h3>
+                <p className="text-sm text-gray-300">
+                  Stay updated with the latest technological advancements and industry trends.
+                </p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -423,7 +493,7 @@ export default function EventsPage() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Want to Stay Updated?</h2>
             <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
-              Subscribe to our newsletter to receive updates about upcoming events and agricultural innovations
+              Subscribe to our newsletter to receive notifications about upcoming webinars, conferences, and workshops.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
               <input

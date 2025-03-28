@@ -5,6 +5,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { ArrowRight, ChevronDown } from "lucide-react"
 import Navigation from "@/components/navigation/Navigation"
+import { useRouter } from "next/navigation"
 
 // Create our own CountingNumber component
 const CountingNumber = ({ targetNumber, suffix = "" }: { targetNumber: number; suffix?: string }) => {
@@ -57,6 +58,7 @@ const CountingNumber = ({ targetNumber, suffix = "" }: { targetNumber: number; s
 // )
 
 export default function WelcomeHeroBanner() {
+  const router = useRouter()
   const scrollToContent = () => {
     window.scrollTo({
       top: window.innerHeight,
@@ -133,11 +135,17 @@ export default function WelcomeHeroBanner() {
             transition={{ duration: 0.6, delay: 0.7 }}
             className="flex flex-col sm:flex-row gap-3 sm:gap-4"
           >
-            <button className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-5 sm:px-6 py-2.5 sm:py-3 font-medium flex items-center justify-center transition-colors shadow-md">
+            <button 
+              onClick={() => router.push('/services')}
+              className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-5 sm:px-6 py-2.5 sm:py-3 font-medium flex items-center justify-center transition-colors shadow-md"
+            >
               <span className="mr-2">Explore Our Services</span>
               <ArrowRight size={16} />
             </button>
-            <button className="bg-indigo-900/30 hover:bg-indigo-900/50 text-sky-100 border border-sky-200/30 rounded-full px-5 sm:px-6 py-2.5 sm:py-3 font-medium transition-colors">
+            <button 
+              onClick={() => router.push('/about')}
+              className="bg-indigo-900/30 hover:bg-indigo-900/50 text-sky-100 border border-sky-200/30 rounded-full px-5 sm:px-6 py-2.5 sm:py-3 font-medium transition-colors"
+            >
               Learn About SmartInno
             </button>
           </motion.div>

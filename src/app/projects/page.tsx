@@ -26,52 +26,46 @@ const CategoryPill = ({ label }: { label: string }) => {
 // Mock project data - in a real app this would come from a database or API
 const projects = [
   {
-    id: "smart-irrigation",
-    title: "Smart Irrigation System",
-    description: "Advanced irrigation solution for optimal water usage in farming",
-    image:
-      "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    categories: ["Irrigation", "Automation", "Water Conservation"],
+    id: "project-management",
+    title: "Project Management & Asset Management Tool",
+    description: "Streamlined project workflows and asset tracking solution for enhanced operational efficiency",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop",
+    categories: ["Project Management", "Asset Management", "Workflow Automation"],
   },
   {
-    id: "soil-monitoring",
-    title: "Soil Health Monitoring",
-    description: "Real-time soil health analytics for improved crop yield",
-    image:
-      "https://images.unsplash.com/photo-1621149545341-7562da785e80?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    categories: ["Soil Analysis", "IoT", "Data Science"],
+    id: "digital-marketing",
+    title: "Digital Marketing Campaign Platform",
+    description: "Targeted marketing solution connecting businesses with remote buyers in the diaspora",
+    image: "https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=2670&auto=format&fit=crop",
+    categories: ["Digital Marketing", "Diaspora", "Market Reach"],
   },
   {
-    id: "drone-mapping",
-    title: "Agricultural Drone Mapping",
-    description: "Precision mapping and monitoring of agricultural fields",
-    image:
-      "https://images.unsplash.com/photo-1562408590-e32931084e23?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    categories: ["Aerial Imaging", "Precision Farming", "Automation"],
+    id: "property-management",
+    title: "Property Development & Management Solution",
+    description: "Comprehensive platform enabling remote property owners to manage their assets effectively",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2670&auto=format&fit=crop",
+    categories: ["Real Estate", "Property Management", "Remote Management"],
   },
   {
-    id: "crop-analytics",
-    title: "Crop Health Analytics",
-    description: "AI-powered crop health monitoring and prediction system",
-    image:
-      "https://images.unsplash.com/photo-1601026909629-bad5e1148817?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    categories: ["AI", "Machine Learning", "Crop Management"],
+    id: "saccos-vicoba",
+    title: "SACCOS & VICOBA Management Application",
+    description: "Digital solution for managing savings and credit cooperative societies and village community banks",
+    image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=2670&auto=format&fit=crop",
+    categories: ["Financial Services", "Banking", "Community Finance"],
   },
   {
-    id: "harvest-automation",
-    title: "Harvest Automation System",
-    description: "Robotic harvesting solution for improved efficiency",
-    image:
-      "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    categories: ["Robotics", "Automation", "Efficiency"],
+    id: "finance-banking",
+    title: "Finance Management & Banking App",
+    description: "Modern banking application enhancing financial management experiences for users",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2670&auto=format&fit=crop",
+    categories: ["FinTech", "Banking", "Digital Finance"],
   },
   {
-    id: "livestock-tracking",
-    title: "Livestock Tracking & Management",
-    description: "IoT-based livestock health monitoring and management system",
-    image:
-      "https://images.unsplash.com/photo-1605605859948-89a8f8960f5f?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    categories: ["Livestock", "IoT", "Health Monitoring"],
+    id: "system-integration",
+    title: "System Integration & API Connector",
+    description: "Seamless integration solutions and API connectors for enhanced system interoperability",
+    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2670&auto=format&fit=crop",
+    categories: ["System Integration", "API Development", "Interoperability"],
   },
 ]
 
@@ -122,8 +116,8 @@ export default function ProjectsPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1589923188900-85dae523342b?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Agricultural innovations and technology"
+            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2670&auto=format&fit=crop"
+            alt="SmartInno Engineering - Technology Innovation"
             fill
             priority
             sizes="100vw"
@@ -145,8 +139,8 @@ export default function ProjectsPage() {
               className="flex flex-wrap gap-2 mb-4"
             >
               <CategoryPill label="Innovation" />
-              <CategoryPill label="Agriculture" />
               <CategoryPill label="Technology" />
+              <CategoryPill label="Digital Solutions" />
             </motion.div>
 
             <motion.h2
@@ -164,7 +158,7 @@ export default function ProjectsPage() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl"
             >
-              Exploring cutting-edge agricultural innovations to transform farming
+              Discover our portfolio of innovative solutions transforming businesses across Tanzania and beyond
             </motion.p>
           </div>
         </div>
@@ -307,40 +301,40 @@ export default function ProjectsPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             {
-              title: "Irrigation Systems",
-              count: projects.filter(p => p.categories.includes("Irrigation") || p.categories.includes("Water Conservation")).length,
-              icon: "💧",
-              description: "Smart irrigation solutions that optimize water usage and increase efficiency"
+              title: "Financial Solutions",
+              count: projects.filter(p => p.categories.includes("Financial Services") || p.categories.includes("Banking")).length,
+              icon: "💰",
+              description: "Innovative financial technology solutions for banking and management"
             },
             {
-              title: "Soil Monitoring",
-              count: projects.filter(p => p.categories.includes("Soil Analysis")).length,
-              icon: "🌱",
-              description: "Advanced soil analysis and health monitoring technologies"
+              title: "Property Management",
+              count: projects.filter(p => p.categories.includes("Real Estate") || p.categories.includes("Property Management")).length,
+              icon: "🏢",
+              description: "Digital solutions for property development and management"
             },
             {
-              title: "Precision Farming",
-              count: projects.filter(p => p.categories.includes("Precision Farming")).length,
-              icon: "🎯",
-              description: "Precision agriculture techniques for optimized crop management"
+              title: "System Integration",
+              count: projects.filter(p => p.categories.includes("System Integration")).length,
+              icon: "🔄",
+              description: "Seamless system integration and API development solutions"
             },
             {
-              title: "Drone Technology",
-              count: projects.filter(p => p.categories.includes("Aerial Imaging")).length,
-              icon: "🚁",
-              description: "Aerial imaging and mapping solutions for farm management"
-            },
-            {
-              title: "AI & Machine Learning",
-              count: projects.filter(p => p.categories.includes("AI") || p.categories.includes("Machine Learning")).length,
-              icon: "🤖",
-              description: "Intelligent systems that predict crop health and optimize harvests"
-            },
-            {
-              title: "IoT Solutions",
-              count: projects.filter(p => p.categories.includes("IoT")).length,
+              title: "Digital Marketing",
+              count: projects.filter(p => p.categories.includes("Digital Marketing")).length,
               icon: "📱",
-              description: "Connected devices and sensors for real-time monitoring"
+              description: "Targeted marketing solutions for global reach"
+            },
+            {
+              title: "Community Finance",
+              count: projects.filter(p => p.categories.includes("Community Finance")).length,
+              icon: "🤝",
+              description: "Solutions for community-based financial institutions"
+            },
+            {
+              title: "Workflow Automation",
+              count: projects.filter(p => p.categories.includes("Workflow Automation")).length,
+              icon: "⚡",
+              description: "Automated solutions for enhanced operational efficiency"
             }
           ].map((category, idx) => (
             <motion.div
@@ -381,23 +375,23 @@ export default function ProjectsPage() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Have a Project in Mind?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Business?</h2>
             <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
-              Let&apos;s discuss how we can bring your agricultural innovation to life
+              Let&apos;s discuss how our innovative solutions can drive your business forward
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
                 className="bg-white text-blue-600 hover:bg-blue-50 font-medium px-8 py-3 rounded-lg transition-colors inline-flex items-center justify-center gap-2 group"
               >
-                <span>Start a Conversation</span>
+                <span>Contact Us</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
               <Link
                 href="/services"
                 className="bg-blue-700 hover:bg-blue-800 text-white font-medium px-8 py-3 rounded-lg transition-colors inline-flex items-center justify-center gap-2"
               >
-                <span>Explore Our Services</span>
+                <span>Our Services</span>
               </Link>
             </div>
           </motion.div>
