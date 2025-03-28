@@ -193,18 +193,18 @@ export default function Navigation({
 
         {/* Mobile Navigation */}
         <div 
-          className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden bg-white/95 backdrop-blur-sm ${
-            mobileMenuOpen ? "max-h-screen opacity-100 py-4 shadow-md" : "max-h-0 opacity-0"
+          className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden bg-[#0a0f36] shadow-md ${
+            mobileMenuOpen ? "max-h-screen opacity-100 py-4" : "max-h-0 opacity-0"
           }`}
         >
           <nav className="flex flex-col space-y-3 px-6" aria-label="Mobile navigation">
             {navLinks.map((link) => (
-              <div key={link.href} onClick={() => setMobileMenuOpen(false)} className="py-2.5 border-b border-gray-100 last:border-b-0">
+              <div key={link.href} onClick={() => setMobileMenuOpen(false)} className="py-2.5 border-b border-blue-900/30 last:border-b-0">
                 <NavLink 
                   href={link.href} 
                   label={link.label}
                   isActive={link.isActive}
-                  textColor="text-black"
+                  textColor={link.isActive ? "text-blue-300" : "text-sky-100"}
                 />
               </div>
             ))}

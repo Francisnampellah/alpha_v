@@ -61,34 +61,34 @@ export default function Footer() {
   }, [])
 
   return (
-    <footer className="w-full bg-white py-8 px-4 md:px-8 lg:px-12">
+    <footer className="w-full bg-black py-8 px-4 md:px-8 lg:px-12">
       {/* Top bar with social links and language selector */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0 mb-8 sm:mb-12">
         <div className="flex flex-wrap items-center gap-2">
-          <Link href="#" className="text-sm font-medium hover:underline flex items-center">
+          <Link href="#" className="text-sm font-medium text-white hover:underline flex items-center">
             Twitter <span className="mx-2">{">"}</span>
           </Link>
-          <Link href="#" className="text-sm font-medium hover:underline flex items-center">
+          <Link href="#" className="text-sm font-medium text-white hover:underline flex items-center">
             Instagram <span className="mx-2">{">"}</span>
           </Link>
-          <Link href="#" className="text-sm font-medium hover:underline">
+          <Link href="#" className="text-sm font-medium text-white hover:underline">
             Youtube
           </Link>
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
           <div className="flex gap-4 mr-0 sm:mr-6 mb-2 sm:mb-0">
-            <Link href="#" className="text-sm font-medium">
+            <Link href="#" className="text-sm font-medium text-white">
               En
             </Link>
-            <Link href="#" className="text-sm font-medium">
+            <Link href="#" className="text-sm font-medium text-white">
               Sp
             </Link>
-            <Link href="#" className="text-sm font-medium">
+            <Link href="#" className="text-sm font-medium text-white">
               Fr
             </Link>
           </div>
-          <Link href="#" className="bg-black text-white px-4 py-2 rounded-full flex items-center">
+          <Link href="#" className="bg-white text-black px-4 py-2 rounded-full flex items-center">
             Get Started
             <span className="ml-2 bg-yellow-300 rounded-full w-6 h-6 flex items-center justify-center">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -110,17 +110,17 @@ export default function Footer() {
         {/* Company info with map */}
         <div>
           <div className="flex items-center mb-4">
-            <div className="w-8 h-8 bg-black flex items-center justify-center mr-2">
-              <div className="w-4 h-4 bg-white"></div>
+            <div className="w-8 h-8 bg-white flex items-center justify-center mr-2">
+              <div className="w-4 h-4 bg-black"></div>
             </div>
-            <span className="font-bold text-lg">SMARTiNNO ENG ltd.</span>
+            <span className="font-bold text-lg text-white">SMARTiNNO ENG ltd.</span>
           </div>
-          <p className="text-gray-700 max-w-xs mb-4">
+          <p className="text-gray-300 max-w-xs mb-4">
             Were dedicated to providing farmers, businesses, and communities with the best agricultural products.
           </p>
 
           {/* Location info */}
-          <div className="flex items-center mb-3 text-gray-700">
+          <div className="flex items-center mb-3 text-gray-300">
             <MapPin className="w-4 h-4 mr-2" />
             <span className="text-sm">123 Agriculture Way, London, UK</span>
           </div>
@@ -128,7 +128,7 @@ export default function Footer() {
           {/* Map container */}
           <div
             ref={mapRef}
-            className="w-full h-[150px] sm:h-[180px] rounded-lg overflow-hidden border border-gray-200 shadow-sm"
+            className="w-full h-[150px] sm:h-[180px] rounded-lg overflow-hidden border border-gray-700 shadow-sm"
             aria-label="Company location map"
           ></div>
         </div>
@@ -136,25 +136,25 @@ export default function Footer() {
         {/* Three columns that stack on mobile */}
         {[1, 2, 3].map((i) => (
           <div key={i} className={i > 1 ? "hidden sm:block lg:block" : ""}>
-            <h3 className="font-bold text-lg mb-4">About</h3>
+            <h3 className="font-bold text-lg mb-4 text-white">About</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="#" className="text-gray-700 hover:underline">
+                <Link href="#" className="text-gray-300 hover:underline">
                   Problem
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-700 hover:underline">
+                <Link href="#" className="text-gray-300 hover:underline">
                   Solution
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-700 hover:underline">
+                <Link href="#" className="text-gray-300 hover:underline">
                   Technology
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-700 hover:underline">
+                <Link href="#" className="text-gray-300 hover:underline">
                   Product
                 </Link>
               </li>
@@ -164,7 +164,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar with copyright and legal links */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center pt-6 border-t border-gray-200">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center pt-6 border-t border-gray-700">
         <div className="text-gray-400 text-sm mb-4 sm:mb-0">2025@etitud.com</div>
         <div className="flex gap-4 sm:gap-8">
           <Link href="#" className="text-gray-400 text-sm hover:underline">
