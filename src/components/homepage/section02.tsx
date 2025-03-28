@@ -4,7 +4,6 @@ import { Beaker, Eye, Sparkles } from 'lucide-react'
 import { useEffect, useState, useCallback } from 'react'
 import {LogoItem} from '@/components/logo'
 import { cn } from '@/lib/utils'
-import { useRouter } from 'next/navigation'
 
 // Improved SVG icons with consistent styling
 const DefaultIcons = {
