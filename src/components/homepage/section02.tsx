@@ -56,20 +56,20 @@ export default function Section02() {
 
   const slides = [
     {
-      title: "Tech Conference 2023",
-      description: "Exploring the latest trends in AI and software development.",
+      title: "SmartINNO Solutions",
+      description: "Empowering businesses with cutting-edge technology solutions and digital transformation.",
       image:
         "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       position: "top-right",
-      copyright: "©2023 SmartINNO",
+      copyright: "©2024 SmartINNO",
     },
     {
-      title: "FinTech Summit",
-      description: "Innovations in financial technology and digital payments.",
+      title: "Digital Innovation Hub",
+      description: "Your partner in driving technological advancement and business growth.",
       image:
         "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       position: "top-right",
-      copyright: "©2023 SmartINNO",
+      copyright: "©2024 SmartINNO",
     }
   ]
 
@@ -133,11 +133,11 @@ export default function Section02() {
             {/* Stats with improved typography and animation */}
             <div className="mb-8" data-aos="fade-up">
               <h2 className="text-5xl sm:text-6xl font-bold text-gray-900 animate-in fade-in duration-700">
-                <span className="inline-block animate-in slide-in-from-bottom-4 duration-1000">50K</span>
+                <span className="inline-block animate-in slide-in-from-bottom-4 duration-1000">100+</span>
                 <sup className="text-3xl text-gray-800">+</sup>
               </h2>
               <p className="text-xl text-gray-600 mt-2 animate-in fade-in slide-in-from-bottom-2 duration-1000 delay-300">
-                Farms supported
+                Projects delivered
               </p>
             </div>
 
@@ -145,19 +145,19 @@ export default function Section02() {
             <div className="space-y-4 mt-10">
               <Accordion icon={<Eye className="h-5 w-5" />} title="Mission" defaultOpen={true}>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  To empower organizations with intelligent, scalable, and cost-effective technology solutions that drive efficiency, productivity, and growth.
+                  To empower businesses with innovative technology solutions that drive digital transformation, enhance efficiency, and foster sustainable growth in the digital age.
                 </p>
               </Accordion>
 
               <Accordion icon={<Beaker className="h-5 w-5" />} title="Vision">
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  To be the leading technology solutions provider in Africa, driving digital transformation and business automation for a smarter and more connected future.
+                  To be the leading technology solutions provider in Africa, recognized for our innovation, expertise, and commitment to driving digital transformation across industries.
                 </p>
               </Accordion>
 
               <Accordion icon={<Sparkles className="h-5 w-5" />} title="Values">
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Innovation, Integrity, Customer Focus, Excellence, and Collaboration are the core principles guiding our approach to delivering impactful solutions.
+                  Innovation, Excellence, Integrity, Customer Success, and Collaborative Growth are the core principles that guide our mission to transform businesses through technology.
                 </p>
               </Accordion>
             </div>
@@ -167,7 +167,7 @@ export default function Section02() {
           <div className="lg:col-span-8 space-y-8">
             {/* Headline with improved typography */}
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-gray-900 animate-in slide-in-from-right duration-700">
-              Join us at the forefront of technology innovation and transformation.
+              Transforming businesses through innovative technology solutions and digital expertise.
             </h1>
 
             {/* Image Slider - Enhanced with better accessibility and controls */}

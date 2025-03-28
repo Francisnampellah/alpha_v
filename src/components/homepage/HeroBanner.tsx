@@ -70,21 +70,9 @@ export default function WelcomeHeroBanner() {
     <div className="relative h-screen w-full overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        {/* Mobile Background Image */}
-        <div className="block sm:hidden w-full h-full">
+        <div className="w-full h-full">
           <Image
-            src="https://images.unsplash.com/photo-1592576712964-43b32e031cae?q=80&w=3133&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Modern engineering and technology workspace"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-        </div>
-        {/* Desktop Background Image */}
-        <div className="hidden sm:block w-full h-full">
-          <Image
-            src="https://images.pexels.com/photos/17483874/pexels-photo-17483874/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-was-inspired-by-neural-networks-used-in-deep-learning-it-was-created-by-novoto-studio-as-part-of-the-visualising-ai-pr.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            src="https://images.unsplash.com/photo-1526666923127-b2970f64b422?q=80&w=3272&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Modern engineering and technology workspace"
             fill
             priority
