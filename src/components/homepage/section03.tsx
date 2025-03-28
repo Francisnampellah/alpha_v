@@ -180,7 +180,7 @@ export default function OurTechnology() {
           <div className="overflow-hidden rounded-xl bg-white shadow-lg">
             <div className="relative h-48">
               <Image
-                src="/images/iot-monitoring.jpg"
+                src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=2947&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Smartinno IoT Dashboard"
                 fill
                 className="object-cover"
@@ -240,8 +240,8 @@ export default function OurTechnology() {
             <h3 className="font-semibold text-lg mb-4">Smart Analytics</h3>
             <div className="relative h-48 mb-4">
               <Image
-                src="/images/analytics-dashboard.jpg"
-                alt="Smart Analytics Dashboard"
+                src="https://images.unsplash.com/photo-1545063328-c8e3faffa16f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGRhc2hib2FyZHxlbnwwfHwwfHx8MA%3D%3D"
+                alt="https://images.unsplash.com/photo-1545063328-c8e3faffa16f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGRhc2hib2FyZHxlbnwwfHwwfHx8MA%3D%3D"
                 fill
                 className="object-cover rounded-lg"
                 priority
@@ -256,7 +256,7 @@ export default function OurTechnology() {
             <h3 className="font-semibold text-lg mb-4">24/7 Expert Support</h3>
             <div className="relative h-48 mb-4">
               <Image
-                src="/images/support-team.jpg"
+                src="https://media.istockphoto.com/id/1970475008/photo/close-up-headset-with-employee-man-hand-type-work-on-keyboard-laptop-at-desk-for-advise-or.jpg?s=1024x1024&w=is&k=20&c=ZpGoQvYpyVQPrKdDo4uxUwRI2w_KGfgk5kuF3MjXQaE="
                 alt="Expert Support Team"
                 fill
                 className="object-cover rounded-lg"
