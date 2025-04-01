@@ -87,7 +87,7 @@ export default function WelcomeHeroBanner() {
       <Navigation variant="homepage" showCTA={true} ctaText="Get Started" />
 
       {/* Hero Content */}
-      <div className="relative z-10 h-[calc(100vh-80px)] flex flex-col justify-center px-6 md:px-12 lg:px-24">
+      <div className="relative z-10 pt-[80px] min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24">
         <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
