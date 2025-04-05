@@ -4,7 +4,7 @@ import type { NextRequest } from 'next/server';
 
 export async function GET(
   _request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: { id: any } }
 ): Promise<NextResponse> {
   try {
     const event = await getEventById(params.id);
