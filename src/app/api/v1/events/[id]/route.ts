@@ -2,16 +2,10 @@ import { NextResponse } from 'next/server';
 import { getEventById } from '@/controllers/eventController';
 import type { NextRequest } from 'next/server';
 
-type Props = {
-  params: {
-    id: string;
-  };
-};
-
 export async function GET(
   _request: NextRequest,
-  { params }: Props
-) {
+  { params }: { params: { id: string } }
+): Promise<NextResponse> {
   try {
     const event = await getEventById(params.id);
 
