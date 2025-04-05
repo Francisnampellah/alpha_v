@@ -14,7 +14,7 @@ export default function Section_04() {
   const projects = [
     {
       id: 1,
-      title: "Our Product",
+      title: "SafariPro",
       sectionNumber: "01",
       mainProduct: "Premium SEEDZ",
       description: "High-yield, disease-resistant seeds designed for maximum productivity and climate adaptability.",
@@ -26,7 +26,7 @@ export default function Section_04() {
     },
     {
       id: 2,
-      title: "Green Initiative",
+      title: "SaccosPro",
       sectionNumber: "02",
       mainProduct: "EcoFarm Systems",
       description:
@@ -39,7 +39,7 @@ export default function Section_04() {
     },
     {
       id: 3,
-      title: "Urban Farming",
+      title: "AssetPro",
       sectionNumber: "03",
       mainProduct: "VerticalGrow",
       description:
@@ -52,7 +52,7 @@ export default function Section_04() {
     },
     {
       id: 4,
-      title: "AI Analytics",
+      title: "ConnectPro",
       sectionNumber: "04",
       mainProduct: "CropIntelligence",
       description:
@@ -88,20 +88,6 @@ export default function Section_04() {
     },
   }
 
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.4 },
-    },
-    exit: {
-      y: -20,
-      opacity: 0,
-      transition: { duration: 0.3 },
-    },
-  }
-
   // Render different layouts based on project index
   const renderProjectContent = () => {
     switch (currentProject) {
@@ -131,15 +117,29 @@ export default function Section_04() {
   }
 
   return (
-    <div className="h-screen flex m-8 rounded-xl flex-col overflow-hidden">
+    <div className="h-screen flex m-8 px-4 rounded-xl flex-col overflow-hidden">
       {/* Header */}
-      <div className="flex items-center p-6 md:p-8 border-gray-200 border-b">
+
+      <div className="flex items-center gap-2 mb-2">
+          <div className="w-2 h-2 rounded-full bg-blue-400"></div>
+          <p className="text-sm text-blue-400 font-medium">OUR PROJECTS</p>
+        </div>
+
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 max-w-md">
+          Tech Innovations,
+          <br />
+          Meaningful Connections
+        </h2>
+
+        <div className="h-px bg-gray-300"></div>
+
+      {/* <div className="flex items-center p-6 md:p-8 border-gray-200 border-b">
         <div className="w-16 text-lg text-gray-400 font-bold">04</div>
         <div className="flex-1">
-          <h2 className="text-xl text-black font-bold">Our Projects</h2>
+          <h2 className="text-xl text-black font-bold">Our Products</h2>
           <p className="text-sm text-black">Just the board, the streets, & your trick.</p>
         </div>
-      </div>
+      </div> */}
 
       {/* Main content - Using flex-grow to take available space */}
       <div className="h-[calc(100vh-132px)] flex flex-col p-6 md:p-8 lg:p-10">
@@ -162,7 +162,7 @@ export default function Section_04() {
         </div>
 
         {/* Project content - Takes remaining space */}
-        <div className="h-[calc(100%-80px)] overflow-y-auto">
+        <div className="h-[calc(100%-80px)] overflow-y-hidden">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentProject}

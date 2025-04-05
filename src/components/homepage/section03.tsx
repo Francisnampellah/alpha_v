@@ -1,351 +1,275 @@
-"use client"
+'use client'
 
-import { useState, useEffect, useRef } from "react"
-import { BarChart2, Play, Grid, Pause, Leaf, Cpu, Sprout } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+import { ArrowRight } from "lucide-react"
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 
-export default function Section03() {
-  const [activeTab, setActiveTab] = useState("farm-tech")
-  const [isPaused, setIsPaused] = useState(false)
-  const [fadeState, setFadeState] = useState("fade-in")
-  const intervalRef = useRef(null)
-  const ROTATION_INTERVAL = 5000 // 5 seconds per tab
+interface DataPoint {
+  month: string;
+  value: number;
+}
 
-  // Tab content data with images
-  const tabContent = {
-    "crop-solutions": {
-      title: "Advanced crop solutions for modern agriculture and sustainable farming practices.",
-      image:
-        "https://images.unsplash.com/photo-1639843885527-43b098a9661a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTR8fGJsb2NrY2hhaW58ZW58MHx8MHx8fDA%3D",
-      imageAlt: "Advanced crop solutions in action",
-      imageDescription: "Precision agriculture technology",
-      stats: [
-        {
-          title: "Yield",
-          icon: <BarChart2 className="h-5 w-5" />,
-          chart: true,
-          color: "bg-blue-100/70",
-          iconBg: "bg-blue-500",
-          textColor: "text-blue-900",
-        },
-        {
-          title: "Productivity",
-          value: "250%",
-          icon: <Sprout className="h-5 w-5 text-white" />,
-          color: "bg-blue-200/70",
-          iconBg: "bg-blue-600",
-          textColor: "text-blue-900",
-        },
-      ],
-    },
-    "farm-tech": {
-      title:
-        "Whether you're a small farm or a large-scale operation, we're here to help you grow smarter, faster, and more sustainably.",
-      image:
-        "https://images.unsplash.com/photo-1617396900799-f4ec2b43c7ae?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      imageAlt: "Farm technology integration",
-      imageDescription: "Smart farming systems",
-      stats: [
-        {
-          title: "Growth",
-          icon: <BarChart2 className="h-5 w-5" />,
-          chart: true,
-          color: "bg-green-100/70",
-          iconBg: "bg-green-500",
-          textColor: "text-green-900",
-        },
-        {
-          title: "Efficiency",
-          value: "300%",
-          icon: <Cpu className="h-5 w-5 text-white" />,
-          color: "bg-green-200/70",
-          iconBg: "bg-green-600",
-          textColor: "text-green-900",
-        },
-      ],
-    },
-    sustainable: {
-      title: "Eco-friendly farming solutions that reduce environmental impact while maximizing productivity.",
-      image:
-        "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2765&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      imageAlt: "Sustainable farming practices",
-      imageDescription: "Eco-friendly agriculture",
-      stats: [
-        {
-          title: "Reduction",
-          icon: <BarChart2 className="h-5 w-5" />,
-          chart: true,
-          color: "bg-teal-100/70",
-          iconBg: "bg-teal-500",
-          textColor: "text-teal-900",
-        },
-        {
-          title: "Sustainability",
-          value: "180%",
-          icon: <Leaf className="h-5 w-5 text-white" />,
-          color: "bg-teal-200/70",
-          iconBg: "bg-teal-600",
-          textColor: "text-teal-900",
-        },
-      ],
-    },
-    development: {
-      title: "Continuous innovation and development to keep your farm at the cutting edge of agricultural technology.",
-      image:
-        "https://images.unsplash.com/photo-1639843885527-43b098a9661a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTR8fGJsb2NrY2hhaW58ZW58MHx8MHx8fDA%3D",
-      imageAlt: "Agricultural technology development",
-      imageDescription: "Research and innovation",
-      stats: [
-        {
-          title: "Innovation",
-          icon: <BarChart2 className="h-5 w-5" />,
-          chart: true,
-          color: "bg-purple-100/70",
-          iconBg: "bg-purple-500",
-          textColor: "text-purple-900",
-        },
-        {
-          title: "Progress",
-          value: "420%",
-          icon: <Grid className="h-5 w-5 text-white" />,
-          color: "bg-purple-200/70",
-          iconBg: "bg-purple-600",
-          textColor: "text-purple-900",
-        },
-      ],
-    },
+const productivityData: DataPoint[] = [
+  { month: 'Jan', value: 65 },
+  { month: 'Feb', value: 75 },
+  { month: 'Mar', value: 85 },
+  { month: 'Apr', value: 90 },
+  { month: 'May', value: 95 },
+  { month: 'Jun', value: 98 },
+]
+
+const energyData: DataPoint[] = [
+  { month: 'Jan', value: 100 },
+  { month: 'Feb', value: 85 },
+  { month: 'Mar', value: 75 },
+  { month: 'Apr', value: 65 },
+  { month: 'May', value: 60 },
+  { month: 'Jun', value: 55 },
+]
+
+interface TooltipProps {
+  active?: boolean;
+  payload?: Array<{
+    value: number;
+    payload: DataPoint;
+  }>;
+  label?: string;
+}
+
+const CustomTooltip = ({ active, payload, label }: TooltipProps) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="bg-white/90 backdrop-blur-sm p-3 border border-gray-200 rounded-lg shadow-lg">
+        <p className="text-sm font-medium text-gray-800">{label}</p>
+        <p className="text-lg font-bold text-blue-600">{payload[0].value}%</p>
+      </div>
+    )
   }
+  return null
+}
 
-  // Navigation items
-  const navItems = [
-    { id: "crop-solutions", label: "Crop Solutions" },
-    { id: "farm-tech", label: "Farm Tech" },
-    { id: "sustainable", label: "Sustainable" },
-    { id: "development", label: "Development" },
-  ]
-
-  // Function to change tab with animation
-  const changeTab = (tabId) => {
-    // Start fade out animation
-    setFadeState("fade-out")
-
-    // After fade out completes, change tab and fade in
-    setTimeout(() => {
-      setActiveTab(tabId)
-      setFadeState("fade-in")
-    }, 300) // Match this with the CSS transition duration
-  }
-
-  // Handle tab click
-  const handleTabClick = (tabId) => {
-    changeTab(tabId)
-    // Reset the timer when user manually changes tab
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current)
-    }
-    if (!isPaused) {
-      startRotation()
-    }
-  }
-
-  // Start the rotation timer
-  const startRotation = () => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current)
-    }
-
-    intervalRef.current = setInterval(() => {
-      const currentIndex = navItems.findIndex((item) => item.id === activeTab)
-      const nextIndex = (currentIndex + 1) % navItems.length
-      changeTab(navItems[nextIndex].id)
-    }, ROTATION_INTERVAL)
-  }
-
-  // Toggle pause/play
-  const togglePause = () => {
-    setIsPaused((prevState) => {
-      if (prevState) {
-        // If currently paused, start rotation
-        setTimeout(() => startRotation(), 0)
-        return false
-      } else {
-        // If currently playing, clear interval
-        if (intervalRef.current) {
-          clearInterval(intervalRef.current)
-          intervalRef.current = null
-        }
-        return true
-      }
-    })
-  }
-
-  // Initialize and clean up the interval
-  useEffect(() => {
-    // Start rotation if not paused
-    if (!isPaused) {
-      startRotation()
-    }
-
-    // Clean up on unmount
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current)
-        intervalRef.current = null
-      }
-    }
-  }, [isPaused])
-
-  // Restart rotation when activeTab changes (to ensure proper timing)
-  useEffect(() => {
-    if (!isPaused) {
-      startRotation()
-    }
-  }, [activeTab])
-
-  // Get current tab content
-  const currentTab = tabContent[activeTab]
-
+export default function OurTechnology() {
   return (
-    <section className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600 via-blue-500 to-blue-700 font-sans rounded-3xl shadow-xl">
-      <div className="flex items-center mb-12 border-b border-blue-400/30 pb-6">
-        <div className="w-16 h-16 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-lg font-bold text-white">
-          02
+    <div className="flex flex-col w-full">
+      {/* Top Section - Process Steps */}
+      <div className="bg-[#2353aa] text-white p-8 md:p-12">
+        <div className="flex items-center gap-2 mb-2">
+          <div className="w-2 h-2 rounded-full bg-blue-400"></div>
+          <p className="text-sm text-blue-400 font-medium">OUR TECHNOLOGIES</p>
         </div>
-        <div className="ml-6">
-          <h2 className="text-2xl font-bold text-white">Our Technology</h2>
-          <p className="text-blue-100 mt-1">Innovative solutions for modern agriculture</p>
+
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 max-w-md">
+          Cutting-Edge Innovations,
+          <br />
+          Driving Your Success
+        </h2>
+
+        <div className="h-px bg-gray-700 mb-8"></div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="bg-[#1a4382] p-6 rounded-xl">
+            <p className="text-gray-400 mb-1">01.</p>
+            <h3 className="font-semibold text-lg mb-4">AI-Powered Insights</h3>
+            <p className="text-sm text-gray-300">Leverage artificial intelligence to make smarter, data-driven decisions.</p>
+          </div>
+
+          <div className="bg-[#1a4382] p-6 rounded-xl">
+            <p className="text-gray-400 mb-1">02.</p>
+            <h3 className="font-semibold text-lg mb-4">IoT Connectivity</h3>
+            <p className="text-sm text-gray-300">Integrate devices seamlessly for real-time monitoring and control.</p>
+          </div>
+
+          <div className="bg-[#1a4382] p-6 rounded-xl">
+            <p className="text-gray-400 mb-1">03.</p>
+            <h3 className="font-semibold text-lg mb-4">Cloud-Based Solutions</h3>
+            <p className="text-sm text-gray-300">Access your data securely from anywhere, anytime.</p>
+          </div>
+
+          <div className="bg-[#1a4382] p-6 rounded-xl">
+            <p className="text-gray-400 mb-1">04.</p>
+            <h3 className="font-semibold text-lg mb-4">Sustainability Focus</h3>
+            <p className="text-sm text-gray-300">Adopt eco-friendly practices to reduce your environmental impact.</p>
+          </div>
+        </div>
+
+        <div className="bg-[#1a4382] rounded-xl p-4 mt-6 flex justify-between items-center">
+          <div className="flex items-center gap-2">
+            <div className="flex -space-x-2">
+              <div className="w-8 h-8 rounded-full bg-gray-300 border-2 border-[#1a4382]"></div>
+              <div className="w-8 h-8 rounded-full bg-gray-400 border-2 border-[#1a4382]"></div>
+              <div className="w-8 h-8 rounded-full bg-gray-500 border-2 border-[#1a4382]"></div>
+            </div>
+            <p className="text-sm">
+              Align with Businesses that <span className="font-semibold">Choose Quality</span>
+            </p>
+          </div>
+          <Link href="/technology" className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-4 py-2 flex items-center transition-colors">
+            <span className="mr-2">Start Now</span>
+            <ArrowRight size={16} />
+          </Link>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-        {/* Left Column - Image and Stats with animation */}
-        <div
-          className={`relative rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 ${
-            fadeState === "fade-in" ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-4"
-          }`}
-        >
+      {/* Bottom Section - Benefits */}
+      <div className="p-8 md:p-12">
+        <div className="flex items-center gap-2 mb-2">
+          <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+          <p className="text-sm text-blue-500 font-medium">BENEFITS FROM SMARTINNO</p>
+        </div>
 
-          <div className="">
-            <img
-              src={currentTab.image || "/placeholder.svg"}
-              alt={currentTab.imageAlt}
-              className="object-cover w-full h-96"
-            />
+        <div className="flex flex-col md:flex-row gap-8 md:gap-16">
+          <h2 className="text-3xl md:text-4xl font-bold max-w-xs">
+            Experience
+            <br />
+            Unmatched
+            <br />
+            Advantages
+          </h2>
+
+          <div className="flex-1">
+            <div className="h-px bg-gray-300 mb-8"></div>
+            <p className="text-gray-600 max-w-md">
+              Smartinno empowers your business with innovative technologies, ensuring efficiency, scalability, and sustainability.
+            </p>
           </div>
+        </div>
 
-          {/* Top buttons */}
-          <div className="absolute top-6 right-6 flex flex-wrap gap-2">
-            <span className="bg-white/90 backdrop-blur-sm text-blue-800 px-4 py-2 rounded-full text-sm font-medium shadow-md">
-              Agri-Business
-            </span>
-            <span className="bg-white/90 backdrop-blur-sm text-blue-800 px-4 py-2 rounded-full text-sm font-medium shadow-md">
-              Support
-            </span>
-          </div>
-
-          {/* Image description */}
-          <div className="absolute bottom-24 left-6 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 shadow-md">
-            <p className="text-blue-800 font-medium">{currentTab.imageDescription}</p>
-          </div>
-
-          {/* Stats box */}
-          {/* <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm rounded-xl p-4 w-auto shadow-lg">
-            <div className="flex items-center justify-between">
-              <span className="text-5xl font-bold text-blue-900">
-                86<span className="text-2xl">%</span>
-              </span>
-              <div className={`${currentTab.stats[0].iconBg} rounded-full p-2 ml-4`}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 text-white"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clipRule="evenodd"
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+          <div className="bg-[#2353aa] text-white p-6 rounded-xl">
+            <h3 className="font-semibold text-lg mb-4">Enhanced Productivity</h3>
+            <p className="text-sm text-gray-300 mb-4">
+              Streamline operations with AI-driven automation and real-time analytics, reducing manual tasks by up to 60%.
+            </p>
+            <div className="h-48 bg-white/10 rounded-lg p-2">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={productivityData}>
+                  <defs>
+                    <linearGradient id="productivityGradient" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#10B981" stopOpacity={0.8}/>
+                      <stop offset="95%" stopColor="#10B981" stopOpacity={0.4}/>
+                    </linearGradient>
+                  </defs>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#ffffff20" />
+                  <XAxis 
+                    dataKey="month" 
+                    stroke="#ffffff80"
+                    tick={{ fill: '#ffffff80', fontSize: 12 }}
+                    axisLine={{ stroke: '#ffffff40' }}
+                    tickLine={{ stroke: '#ffffff40' }}
                   />
-                </svg>
-              </div>
-            </div>
-            <p className="text-blue-800 font-medium mt-1">Increase in Yields</p>
-          </div> */}
-        </div>
-
-        {/* Right Column - Content */}
-        <div
-          className="flex flex-col justify-between"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => {
-            setIsPaused(false)
-            startRotation()
-          }}
-        >
-          {/* Top navigation */}
-          <div className="mb-8 relative">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-medium text-white">Explore our solutions</h3>
-              <button
-                onClick={togglePause}
-                className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
-                aria-label={isPaused ? "Play slideshow" : "Pause slideshow"}
-              >
-                {isPaused ? <Play className="h-4 w-4 text-white" /> : <Pause className="h-4 w-4 text-white" />}
-              </button>
-            </div>
-
-            <nav className="flex items-center mb-2">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-2 w-full">
-                {navItems.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => handleTabClick(item.id)}
-                    className={`whitespace-nowrap transition-all duration-300 px-4 py-2 rounded-lg text-sm ${
-                      activeTab === item.id
-                        ? `font-medium bg-white/20 backdrop-blur-sm text-white`
-                        : "text-blue-100 hover:text-white hover:bg-blue-500/50"
-                    }`}
-                  >
-                    {item.label}
-                  </button>
-                ))}
-              </div>
-            </nav>
-
-            {/* Progress bar */}
-            <div className="w-full h-1 bg-blue-400/30 rounded-full overflow-hidden">
-              <div
-                className="h-full transition-all bg-white"
-                style={{
-                  width: isPaused ? "30%" : "100%",
-                  transition: isPaused ? "none" : `width ${ROTATION_INTERVAL}ms linear`,
-                }}
-              ></div>
+                  <YAxis 
+                    stroke="#ffffff80"
+                    tick={{ fill: '#ffffff80', fontSize: 12 }}
+                    axisLine={{ stroke: '#ffffff40' }}
+                    tickLine={{ stroke: '#ffffff40' }}
+                  />
+                  <Tooltip content={<CustomTooltip />} />
+                  <Bar 
+                    dataKey="value" 
+                    fill="url(#productivityGradient)"
+                    radius={[4, 4, 0, 0]}
+                    animationDuration={1500}
+                    animationBegin={0}
+                  />
+                </BarChart>
+              </ResponsiveContainer>
             </div>
           </div>
 
-          {/* Main content with animation */}
-          <div
-            className={`flex-grow flex flex-col justify-center mb-8 transition-opacity duration-500 ${
-              fadeState === "fade-in" ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <h2 className="text-2xl md:text-3xl font-bold leading-tight mb-6 text-white">{currentTab.title}</h2>
-
-            <div className="mt-6">
-              <button className="bg-white text-blue-700 px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-blue-50 transition-colors shadow-lg font-medium">
-                Get Started
-                <span className="bg-blue-100 rounded-md p-1">
-                  <Grid className="h-5 w-5 text-blue-700" />
-                </span>
-              </button>
+          <div className="overflow-hidden rounded-xl bg-white shadow-lg">
+            <div className="relative h-48">
+              <Image
+                src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=2947&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Smartinno IoT Dashboard"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+            <div className="p-4">
+              <h3 className="font-semibold text-lg mb-2">Real-Time Monitoring</h3>
+              <p className="text-sm text-gray-600">
+                Monitor your operations 24/7 with our advanced IoT sensors and analytics dashboard.
+              </p>
             </div>
           </div>
 
-          {/* Bottom stats with animation */}
+          <div className="bg-gray-200 p-6 rounded-xl">
+            <h3 className="font-semibold text-lg mb-4">Energy Efficiency</h3>
+            <div className="h-48 bg-white rounded-lg p-2 mb-4">
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={energyData}>
+                  <defs>
+                    <linearGradient id="energyGradient" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#F59E0B" stopOpacity={0.8}/>
+                      <stop offset="95%" stopColor="#F59E0B" stopOpacity={0.4}/>
+                    </linearGradient>
+                  </defs>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                  <XAxis 
+                    dataKey="month" 
+                    stroke="#4b5563"
+                    tick={{ fill: '#4b5563', fontSize: 12 }}
+                    axisLine={{ stroke: '#e5e7eb' }}
+                    tickLine={{ stroke: '#e5e7eb' }}
+                  />
+                  <YAxis 
+                    stroke="#4b5563"
+                    tick={{ fill: '#4b5563', fontSize: 12 }}
+                    axisLine={{ stroke: '#e5e7eb' }}
+                    tickLine={{ stroke: '#e5e7eb' }}
+                  />
+                  <Tooltip content={<CustomTooltip />} />
+                  <Bar 
+                    dataKey="value" 
+                    fill="url(#energyGradient)"
+                    radius={[4, 4, 0, 0]}
+                    animationDuration={1500}
+                    animationBegin={0}
+                  />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+            <p className="text-sm text-gray-600">
+              Optimize energy consumption with smart algorithms, reducing costs by up to 40%.
+            </p>
+          </div>
+
+          <div className="bg-gray-200 p-6 rounded-xl">
+            <h3 className="font-semibold text-lg mb-4">Smart Analytics</h3>
+            <div className="relative h-48 mb-4">
+              <Image
+                src="https://images.unsplash.com/photo-1545063328-c8e3faffa16f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGRhc2hib2FyZHxlbnwwfHwwfHx8MA%3D%3D"
+                alt="https://images.unsplash.com/photo-1545063328-c8e3faffa16f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGRhc2hib2FyZHxlbnwwfHwwfHx8MA%3D%3D"
+                fill
+                className="object-cover rounded-lg"
+                priority
+              />
+            </div>
+            <p className="text-sm text-gray-600">
+              Make data-driven decisions with our advanced analytics and predictive maintenance tools.
+            </p>
+          </div>
+
+          <div className="bg-[#2353aa] text-white p-6 rounded-xl">
+            <h3 className="font-semibold text-lg mb-4">24/7 Expert Support</h3>
+            <div className="relative h-48 mb-4">
+              <Image
+                src="https://media.istockphoto.com/id/1970475008/photo/close-up-headset-with-employee-man-hand-type-work-on-keyboard-laptop-at-desk-for-advise-or.jpg?s=1024x1024&w=is&k=20&c=ZpGoQvYpyVQPrKdDo4uxUwRI2w_KGfgk5kuF3MjXQaE="
+                alt="Expert Support Team"
+                fill
+                className="object-cover rounded-lg"
+                priority
+              />
+            </div>
+            <p className="text-sm text-gray-300">
+              Access our dedicated support team anytime for technical assistance and optimization guidance.
+            </p>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 

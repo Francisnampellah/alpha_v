@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Section_05() {
   const [isVisible, setIsVisible] = useState(true);
@@ -14,11 +15,10 @@ export default function Section_05() {
     return () => clearInterval(interval);
   }, []);
 
-  const text = "Partner In Agricultural Innovation";
+  const text = "Innovating the Future of Technology";
   
   return (
     <>
-
     <div className="w-full py-8 my-16 overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div
@@ -47,7 +47,7 @@ export default function Section_05() {
                 transition: { duration: 2, repeat: Infinity }
               }}
             >
-              ✤
+              ✦
             </motion.span>
             <motion.h1 
               className="text-4xl md:text-6xl font-bold text-black whitespace-nowrap"
@@ -61,12 +61,19 @@ export default function Section_05() {
                 transition: { duration: 2, repeat: Infinity }
               }}
             >
-              ✤
+              ✦
             </motion.span>
           </div>
         </motion.div>
+        <div className="flex justify-center mt-8">
+          <Link 
+            href="/technology"
+            className="bg-black hover:bg-gray-800 text-white px-8 py-3 rounded-full text-sm font-medium transition-colors duration-300"
+          >
+            Explore Our Technology
+          </Link>
+        </div>
       </div>
-      
     </div>
     </>
   );

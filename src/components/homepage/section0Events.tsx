@@ -1,367 +1,220 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
-import { Play, Calendar, Pause, Users, Trophy, ArrowRight, MapPin, Clock } from "lucide-react"
+import { useRouter } from "next/navigation"
+import { ArrowRight, Calendar } from "lucide-react"
 
 export default function OurEvents() {
-  const [activeTab, setActiveTab] = useState("conferences")
-  const [isPaused, setIsPaused] = useState(false)
-  const [fadeState, setFadeState] = useState("fade-in")
-  const intervalRef = useRef(null)
-  const ROTATION_INTERVAL = 5000 // 5 seconds per tab
-
-  // Tab content data with images
-  const tabContent = {
-    conferences: {
-      title: "Industry-leading conferences bringing together experts and innovators",
-      description:
-        "Join thousands of professionals at our flagship events featuring keynote speakers, panel discussions, and cutting-edge presentations.",
-      image:
-        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      imageAlt: "Conference with audience",
-      location: "San Francisco, CA",
-      date: "June 15-18, 2024",
-      attendees: "2,500+",
-      featured: true,
-      upcomingEvents: [
-        { name: "Tech Summit 2024", date: "June 15-18", location: "San Francisco" },
-        { name: "Innovation Conference", date: "August 22-24", location: "New York" },
-        { name: "Global Leadership Forum", date: "October 5-7", location: "London" },
-      ],
-    },
-    workshops: {
-      title: "Hands-on workshops designed to provide practical skills and knowledge",
-      description:
-        "Immersive learning experiences led by industry experts where you'll develop new skills through practical exercises and real-world applications.",
-      image:
-        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      imageAlt: "Workshop with participants",
-      location: "Multiple Locations",
-      date: "Year-round",
-      attendees: "30-50 per session",
-      featured: false,
-      upcomingEvents: [
-        { name: "UX Design Masterclass", date: "May 12", location: "Chicago" },
-        { name: "Data Science Bootcamp", date: "July 8-12", location: "Austin" },
-        { name: "Leadership Skills Workshop", date: "September 3", location: "Seattle" },
-      ],
-    },
-    networking: {
-      title: "Exclusive networking events connecting industry leaders and innovators",
-      description:
-        "Build valuable professional relationships in a relaxed atmosphere designed to facilitate meaningful connections and collaborations.",
-      image:
-        "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      imageAlt: "Networking event",
-      location: "Various Major Cities",
-      date: "Monthly",
-      attendees: "100-200 per event",
-      featured: false,
-      upcomingEvents: [
-        { name: "Executive Mixer", date: "April 28", location: "Boston" },
-        { name: "Industry Connect", date: "May 15", location: "Miami" },
-        { name: "Founders Meetup", date: "June 7", location: "Los Angeles" },
-      ],
-    },
-    webinars: {
-      title: "On-demand and live webinars featuring thought leaders and experts",
-      description:
-        "Access cutting-edge insights from the comfort of your home or office with our interactive online sessions and on-demand content library.",
-      image:
-        "https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      imageAlt: "Virtual webinar session",
-      location: "Online",
-      date: "Weekly",
-      attendees: "500+ per session",
-      featured: false,
-      upcomingEvents: [
-        { name: "Future of AI", date: "April 18", location: "Online" },
-        { name: "Sustainable Business Practices", date: "May 2", location: "Online" },
-        { name: "Digital Transformation Strategies", date: "May 23", location: "Online" },
-      ],
-    },
-  }
-
-  // Navigation items
-  const navItems = [
-    { id: "conferences", label: "Conferences" },
-    { id: "workshops", label: "Workshops" },
-    { id: "networking", label: "Networking" },
-    { id: "webinars", label: "Webinars" },
-  ]
-
-  // Function to change tab with animation
-  const changeTab = (tabId) => {
-    // Start fade out animation
-    setFadeState("fade-out")
-
-    // After fade out completes, change tab and fade in
-    setTimeout(() => {
-      setActiveTab(tabId)
-      setFadeState("fade-in")
-    }, 300) // Match this with the CSS transition duration
-  }
-
-  // Handle tab click
-  const handleTabClick = (tabId) => {
-    changeTab(tabId)
-    // Reset the timer when user manually changes tab
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current)
-    }
-    if (!isPaused) {
-      startRotation()
-    }
-  }
-
-  // Start the rotation timer
-  const startRotation = () => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current)
-    }
-
-    intervalRef.current = setInterval(() => {
-      const currentIndex = navItems.findIndex((item) => item.id === activeTab)
-      const nextIndex = (currentIndex + 1) % navItems.length
-      changeTab(navItems[nextIndex].id)
-    }, ROTATION_INTERVAL)
-  }
-
-  // Toggle pause/play
-  const togglePause = () => {
-    setIsPaused((prevState) => {
-      if (prevState) {
-        // If currently paused, start rotation
-        setTimeout(() => startRotation(), 0)
-        return false
-      } else {
-        // If currently playing, clear interval
-        if (intervalRef.current) {
-          clearInterval(intervalRef.current)
-          intervalRef.current = null
-        }
-        return true
-      }
-    })
-  }
-
-  // Initialize and clean up the interval
-  useEffect(() => {
-    // Start rotation if not paused
-    if (!isPaused) {
-      startRotation()
-    }
-
-    // Clean up on unmount
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current)
-        intervalRef.current = null
-      }
-    }
-  }, [isPaused])
-
-  // Restart rotation when activeTab changes (to ensure proper timing)
-  useEffect(() => {
-    if (!isPaused) {
-      startRotation()
-    }
-  }, [activeTab])
-
-  // Get current tab content
-  const currentTab = tabContent[activeTab]
+  const router = useRouter()
 
   return (
-    <section className="h-fit pb-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-emerald-600 via-green-500 to-teal-600 font-sans rounded-3xl shadow-xl flex flex-col">
-      {/* Header Section - 10vh */}
-      <div className="h-[10vh] flex items-center border-b border-green-400/30">
-        <div className="w-14 h-14 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm text-lg font-bold text-white">
-          03
+    <div className="flex flex-col w-full">
+      {/* Top Section - Upcoming Events */}
+      <div className="bg-[#2353aa] text-white p-8 md:p-12">
+        <div className="flex items-center gap-2 mb-2">
+          <div className="w-2 h-2 rounded-full bg-blue-400"></div>
+          <p className="text-sm text-blue-200 font-medium">4 UPCOMING EVENTS</p>
         </div>
-        <div className="ml-4">
-          <h2 className="text-xl font-bold text-white">Our Events</h2>
-          <p className="text-green-100 text-sm">Connect, learn, and grow with industry leaders</p>
+
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 max-w-md">
+          Tech Innovations,
+          <br />
+          Meaningful Connections
+        </h2>
+
+        <div className="h-px bg-gray-700 mb-8"></div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="bg-[#1a4382] p-6 rounded-xl">
+            <div className="flex justify-between items-start mb-4">
+              <p className="text-gray-400 mb-1">01.</p>
+              <div className="bg-blue-500/20 text-blue-200 text-xs font-medium px-2 py-1 rounded">MAY 15</div>
+            </div>
+            <h3 className="font-semibold text-lg mb-4">AI & Robotics Summit</h3>
+            <p className="text-sm text-gray-300">
+              Explore the latest advancements in artificial intelligence and robotics with industry leaders.
+            </p>
+          </div>
+
+          <div className="bg-[#1a4382] p-6 rounded-xl">
+            <div className="flex justify-between items-start mb-4">
+              <p className="text-gray-400 mb-1">02.</p>
+              <div className="bg-blue-500/20 text-blue-200 text-xs font-medium px-2 py-1 rounded">JUN 22</div>
+            </div>
+            <h3 className="font-semibold text-lg mb-4">Sustainability in Tech</h3>
+            <p className="text-sm text-gray-300">
+              Learn about sustainable practices and eco-friendly solutions in the tech industry.
+            </p>
+          </div>
+
+          <div className="bg-[#1a4382] p-6 rounded-xl">
+            <div className="flex justify-between items-start mb-4">
+              <p className="text-gray-400 mb-1">03.</p>
+              <div className="bg-blue-500/20 text-blue-200 text-xs font-medium px-2 py-1 rounded">JUL 10</div>
+            </div>
+            <h3 className="font-semibold text-lg mb-4">Tech Product Showcase</h3>
+            <p className="text-sm text-gray-300">
+              Experience cutting-edge technologies with live demonstrations and expert insights.
+            </p>
+          </div>
+
+          <div className="bg-[#1a4382] p-6 rounded-xl">
+            <div className="flex justify-between items-start mb-4">
+              <p className="text-gray-400 mb-1">04.</p>
+              <div className="bg-blue-500/20 text-blue-200 text-xs font-medium px-2 py-1 rounded">AUG 05</div>
+            </div>
+            <h3 className="font-semibold text-lg mb-4">Innovation Workshop</h3>
+            <p className="text-sm text-gray-300">
+              Hands-on sessions to explore innovative solutions and optimize tech processes.
+            </p>
+          </div>
         </div>
-        <div className="ml-auto">
+
+        <div className="bg-[#1a4382] rounded-xl p-4 mt-6 flex justify-between items-center">
+          <div className="flex items-center gap-2">
+            <div className="flex -space-x-2">
+              <div className="w-8 h-8 rounded-full bg-gray-300 border-2 border-[#1a4382]"></div>
+              <div className="w-8 h-8 rounded-full bg-gray-400 border-2 border-[#1a4382]"></div>
+              <div className="w-8 h-8 rounded-full bg-gray-500 border-2 border-[#1a4382]"></div>
+            </div>
+            <p className="text-sm">
+              Join <span className="font-semibold">500+ Tech Professionals</span> at our events
+            </p>
+          </div>
           <button
-            onClick={togglePause}
-            className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
-            aria-label={isPaused ? "Play slideshow" : "Pause slideshow"}
+            onClick={() => router.push("/events")}
+            className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-4 py-2 flex items-center transition-colors"
           >
-            {isPaused ? <Play className="h-4 w-4 text-white" /> : <Pause className="h-4 w-4 text-white" />}
+            <span className="mr-2">Register Now</span>
+            <ArrowRight size={16} />
           </button>
         </div>
       </div>
 
-      {/* Navigation Tabs - 8vh */}
-      <div className="h-[8vh] flex flex-col justify-center">
-        <nav className="flex items-center mb-2">
-          <div className="flex gap-2 w-full">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => handleTabClick(item.id)}
-                className={`whitespace-nowrap transition-all duration-300 px-5 py-2 rounded-lg text-sm ${
-                  activeTab === item.id
-                    ? `font-medium bg-white text-green-700 shadow-md`
-                    : "text-white bg-white/10 hover:bg-white/20"
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-        </nav>
+      {/* Bottom Section - Event Benefits */}
+      <div className="bg-gray-100 p-8 md:p-12">
+        <div className="flex items-center gap-2 mb-2">
+          <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+          <p className="text-sm text-blue-500 font-medium">WHY ATTEND OUR EVENTS</p>
+        </div>
 
-        {/* Progress bar */}
-        <div className="w-full h-1 bg-green-400/30 rounded-full overflow-hidden">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-16 mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold max-w-xs">
+            Expand Your
+            <br />
+            Knowledge &<br />
+            Network
+          </h2>
+
+          <div className="flex-1">
+            <div className="h-px bg-gray-300 mb-8"></div>
+            <p className="text-gray-600 max-w-md">
+              Our events bring together tech experts, innovative technologies, and forward-thinking professionals to
+              create valuable learning and networking opportunities.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-[#2353aa] text-white p-6 rounded-xl">
+            <h3 className="font-semibold text-lg mb-4">Expert Speakers</h3>
+            <p className="text-sm text-gray-300 mb-8">
+              Learn from tech leaders and renowned experts sharing cutting-edge insights.
+            </p>
+            <div className="h-24 bg-gradient-to-r from-blue-900 to-transparent rounded-lg"></div>
+          </div>
+
+          <div className="bg-gray-200 p-6 rounded-xl">
+            <h3 className="font-semibold text-lg mb-4">Networking Opportunities</h3>
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-6 h-6 rounded-full bg-gray-300 flex items-center justify-center">
+                <svg className="w-4 h-4 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <circle cx="12" cy="7" r="4" strokeWidth="1.5" />
+                  <path
+                    d="M4,21 L4,17 C4,14.2386 6.23858,12 9,12 L15,12 C17.7614,12 20,14.2386 20,17 L20,21"
+                    strokeWidth="1.5"
+                  />
+                </svg>
+              </div>
+            </div>
+            <p className="text-sm text-gray-600">
+              Connect with peers, potential partners, and clients in a collaborative environment.
+            </p>
+          </div>
+
+          <div className="bg-[#2353aa] text-white p-6 rounded-xl">
+            <h3 className="font-semibold text-lg mb-4">Hands-on Demonstrations</h3>
+            <p className="text-sm text-gray-300 mb-8">
+              Experience our products and technologies through interactive demonstrations.
+            </p>
+            <div className="h-24 bg-gradient-to-r from-blue-900 to-transparent rounded-lg"></div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
           <div
-            className="h-full transition-all bg-white"
+            className="overflow-hidden rounded-xl h-64 bg-cover bg-center"
             style={{
-              width: isPaused ? "30%" : "100%",
-              transition: isPaused ? "none" : `width ${ROTATION_INTERVAL}ms linear`,
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=3270&auto=format&fit=crop')",
             }}
-          ></div>
+          >
+            <div className="w-full h-full bg-gradient-to-r from-black/50 to-transparent p-6 flex flex-col justify-end">
+              <h3 className="text-white font-semibold text-lg">Previous Conference</h3>
+              <p className="text-white/80 text-sm">AI & Robotics Summit 2023 with over 300 attendees</p>
+            </div>
+          </div>
+
+          <div
+            className="overflow-hidden rounded-xl h-64 bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=3269&auto=format&fit=crop')",
+            }}
+          >
+            <div className="w-full h-full bg-gradient-to-r from-black/50 to-transparent p-6 flex flex-col justify-end">
+              <h3 className="text-white font-semibold text-lg">Workshop Sessions</h3>
+              <p className="text-white/80 text-sm">Interactive learning experiences led by tech experts</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Main Content Area - Remaining height */}
-      <div className="flex flex-1 flex-col lg:flex-row gap-4">
-        {/* Left Column - Featured Event Card */}
-        <div
-          className={`lg:w-1/2 rounded-xl overflow-hidden  transition-all duration-500 ${
-            fadeState === "fade-in" ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-4"
-          }`}
-        >
-          {/* Fixed height image container */}
-          <div className="relative w-full">
-            {/* Image with fixed dimensions */}
-            <img
-              src={currentTab.image || "/placeholder.svg"}
-              alt={currentTab.imageAlt}
-              className="object-cover w-full"
-              style={{
-                maxWidth: "100%",
-                objectPosition: "center",
-              }}
-              width={800}
-            />
-
-            {/* Overlay gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-
-            {/* Content overlay */}
-            <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-              <div className="flex flex-wrap gap-2 mb-2">
-                <span className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1">
-                  <MapPin className="h-3 w-3" />
-                  {currentTab.location}
-                </span>
-                <span className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1">
-                  <Calendar className="h-3 w-3" />
-                  {currentTab.date}
-                </span>
-                <span className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1">
-                  <Users className="h-3 w-3" />
-                  {currentTab.attendees}
-                </span>
-              </div>
-              <h2 className="text-xl font-bold mb-1 line-clamp-1">{currentTab.title}</h2>
-              <p className="text-white/80 text-sm mb-3 line-clamp-2">{currentTab.description}</p>
-              <button className="bg-white text-green-700 px-4 py-1.5 rounded-lg flex items-center gap-1 hover:bg-green-50 transition-colors shadow-lg font-medium text-sm">
-                Register Now
-                <ArrowRight className="h-4 w-4" />
+      {/* Calendar Section */}
+      <div className="bg-white p-8 md:p-12">
+        <div className="bg-[#2353aa] text-white p-8 rounded-xl">
+          <div className="flex flex-col md:flex-row items-center">
+            <div className="md:w-2/3">
+              <h3 className="text-2xl font-bold mb-4">Stay Updated on Our Events</h3>
+              <p className="text-gray-300 mb-6">
+                Subscribe to our events calendar to receive notifications about upcoming webinars, conferences, and
+                workshops.
+              </p>
+              <button 
+                onClick={() => {
+                  // Add to Google Calendar
+                  const event = {
+                    text: 'SmartInno Events Calendar',
+                    dates: '2024/01/01',
+                    details: 'Stay updated with all SmartInno events and conferences',
+                    location: 'Online'
+                  }
+                  const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(event.text)}&dates=${event.dates}&details=${encodeURIComponent(event.details)}&location=${encodeURIComponent(event.location)}`
+                  window.open(url, '_blank')
+                }}
+                className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-6 py-3 font-medium transition-colors"
+              >
+                Subscribe to Calendar
               </button>
             </div>
-          </div>
-        </div>
-
-        {/* Right Column - Upcoming Events and Stats */}
-        <div className="lg:w-1/2 flex flex-col flex-1">
-          {/* Upcoming Events - Limited to 2 events */}
-          <div className="mb-3">
-            <div className="flex items-center justify-between mb-2">
-              <h3 className="text-lg font-bold text-white">
-                Upcoming {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}
-              </h3>
-              <a href="#" className="text-white flex items-center gap-1 hover:underline text-sm">
-                View all <ArrowRight className="h-3 w-3" />
-              </a>
-            </div>
-
-            <div
-              className={`grid grid-cols-1 md:grid-cols-2 gap-3 transition-all duration-500 h-[30vh] lg:h-auto ${
-                fadeState === "fade-in" ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-4"
-              }`}
-              style={{ maxHeight: "250px" }}
-            >
-              {/* Only show first 2 events to fit without scrolling */}
-              {currentTab.upcomingEvents.slice(0, 2).map((event, index) => (
-                <div
-                  key={index}
-                  className="bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-all duration-300 border border-white/10"
-                  style={{ transitionDelay: `${index * 100}ms`, maxHeight: "100%" }}
-                >
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-bold text-white text-base line-clamp-1">{event.name}</h4>
-                    <span className="bg-white/20 rounded-full p-1.5 flex-shrink-0">
-                      <Calendar className="h-3 w-3 text-white" />
-                    </span>
-                  </div>
-                  <div className="space-y-2 mb-2">
-                    <div className="flex items-center text-white/80 text-sm">
-                      <Clock className="h-3 w-3 mr-2 flex-shrink-0" />
-                      <span className="line-clamp-1">{event.date}</span>
-                    </div>
-                    <div className="flex items-center text-white/80 text-sm">
-                      <MapPin className="h-3 w-3 mr-2 flex-shrink-0" />
-                      <span className="line-clamp-1">{event.location}</span>
-                    </div>
-                  </div>
-                  <button className="w-full mt-1 bg-white/10 hover:bg-white/20 text-white py-1.5 rounded-lg transition-colors text-sm">
-                    Learn More
-                  </button>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Stats Section - Fixed at bottom */}
-          <div
-            className={`grid grid-cols-2 gap-3 transition-all duration-500 h-[15vh] lg:h-auto ${
-              fadeState === "fade-in" ? "opacity-100 transform translate-y-0" : "opacity-0 transform translate-y-4"
-            }`}
-            style={{ maxHeight: "120px" }}
-          >
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 flex flex-col justify-between border border-white/10">
-              <div className="flex justify-between items-center w-full">
-                <span className="text-sm font-medium text-white">Annual Events</span>
-                <div className="bg-emerald-500 rounded-full p-1.5">
-                  <Calendar className="h-3 w-3 text-white" />
-                </div>
-              </div>
-              <div className="mt-1">
-                <div className="text-2xl font-bold text-white">50+</div>
-                <div className="text-white/70 text-xs">Across 20 countries</div>
-              </div>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 flex flex-col justify-between border border-white/10">
-              <div className="flex justify-between items-center w-full">
-                <span className="text-sm font-medium text-white">Satisfaction</span>
-                <div className="bg-emerald-600 rounded-full p-1.5">
-                  <Trophy className="h-3 w-3 text-white" />
-                </div>
-              </div>
-              <div className="mt-1">
-                <div className="text-2xl font-bold text-white">98%</div>
-                <div className="text-white/70 text-xs">Would recommend</div>
+            <div className="md:w-1/3 flex justify-center mt-8 md:mt-0">
+              <div className="w-24 h-24 rounded-full bg-[#1a4382] flex items-center justify-center">
+                <Calendar className="w-12 h-12 text-blue-200" />
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 
