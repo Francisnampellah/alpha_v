@@ -3,10 +3,10 @@ import { getEventById } from '@/controllers/eventController';
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  context: { params: { id: string } }
 ) {
   try {
-    const event = await getEventById(params.id);
+    const event = await getEventById(context.params.id);
     
     if (!event) {
       return NextResponse.json(
