@@ -52,7 +52,7 @@ export default function ContactPage() {
         <Navigation variant="transparent" showCTA={true} ctaText="Get Started" ctaLink="/contact" />
 
         {/* Hero Content */}
-        <div className="relative z-10 h-[calc(70vh-80px)] flex flex-col justify-center px-6 md:px-12 lg:px-24">
+        <div className="relative z-10 h-full flex flex-col justify-center px-4 sm:px-6 md:px-12 lg:px-24 pt-24">
           <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

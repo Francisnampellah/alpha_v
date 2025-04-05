@@ -55,7 +55,7 @@ const CareerPage = () => {
         <Navigation variant="transparent" showCTA={true} ctaText="Apply Now" ctaLink="/career/apply" />
 
         {/* Hero Content */}
-        <div className="relative z-10 h-full flex flex-col justify-center px-4 sm:px-6 md:px-12 lg:px-24">
+        <div className="relative z-10 h-full flex flex-col justify-center px-4 sm:px-6 md:px-12 lg:px-24 pt-24">
           <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -84,7 +84,7 @@ const CareerPage = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl"
             >
-              Join our team of innovators and help shape the future of technology in Tanzania. We&apos;re looking for passionate individuals who want to make a difference through cutting-edge solutions.
+              We&apos;re looking for passionate individuals who want to make a difference through cutting-edge solutions.
             </motion.p>
 
             <motion.div
