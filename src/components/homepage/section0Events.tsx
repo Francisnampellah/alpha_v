@@ -2,9 +2,82 @@
 
 import { useRouter } from "next/navigation"
 import { ArrowRight, Calendar } from "lucide-react"
+import { useEffect, useState } from "react"
+import { Event } from "@/controllers/eventController"
 
 export default function OurEvents() {
   const router = useRouter()
+  const [events, setEvents] = useState<Event[]>([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await fetch('/api/v1/events')
+        if (!response.ok) {
+          throw new Error('Failed to fetch events')
+        }
+        const data = await response.json()
+        setEvents(data)
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'An error occurred while fetching events')
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchEvents()
+  }, [])
+
+  // Format date to more readable format
+  function formatDate(dateString: string) {
+    return new Date(dateString).toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'short'
+    }).toUpperCase()
+  }
+
+  console.log("evenTO",events)
+
+  // Get upcoming events (next 4)
+  const upcomingEvents = events
+    .filter(event => new Date(event.date) > new Date())
+    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+    .slice(0, 4)
+
+  if (loading) {
+    return (
+      <div className="flex flex-col w-full">
+        <div className="bg-[#3798b8] text-white p-8 md:p-12">
+          <div className="flex items-center justify-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-white"></div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="flex flex-col w-full">
+        <div className="bg-[#3798b8] text-white p-8 md:p-12">
+          <div className="text-center">
+            <p className="text-red-200 mb-4">{error}</p>
+            <button
+              onClick={() => window.location.reload()}
+              className="bg-white/20 hover:bg-white/30 text-white rounded-full px-4 py-2 transition-colors"
+            >
+              Try Again
+            </button>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  console.log("evenTO",upcomingEvents)
+
 
   return (
     <div className="flex flex-col w-full">
@@ -12,7 +85,7 @@ export default function OurEvents() {
       <div className="bg-[#3798b8] text-white p-8 md:p-12">
         <div className="flex items-center gap-2 mb-2">
           <div className="w-2 h-2 rounded-full bg-blue-400"></div>
-          <p className="text-sm text-blue-200 font-medium">4 UPCOMING EVENTS</p>
+          <p className="text-sm text-blue-200 font-medium">{upcomingEvents.length} UPCOMING EVENTS</p>
         </div>
 
         <h2 className="text-3xl md:text-4xl font-bold mb-8 max-w-md">
@@ -24,49 +97,35 @@ export default function OurEvents() {
         <div className="h-px bg-gray-700 mb-8"></div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="bg-[#296880] p-6 rounded-xl">
-            <div className="flex justify-between items-start mb-4">
-              <p className="text-gray-400 mb-1">01.</p>
-              <div className="bg-#3798b8/20 text-blue-200 text-xs font-medium px-2 py-1 rounded">MAY 15</div>
-            </div>
-            <h3 className="font-semibold text-lg mb-4">AI & Robotics Summit</h3>
-            <p className="text-sm text-gray-300">
-              Explore the latest advancements in artificial intelligence and robotics with industry leaders.
-            </p>
-          </div>
+          {upcomingEvents.map((event, index) => (
+            <div 
+              key={event.id} 
+              className="bg-[#296880] rounded-xl cursor-pointer hover:bg-[#1f4f6a] transition-colors overflow-hidden"
+              onClick={() => router.push(`/events/${event.id}`)}
+            >
+              {/* Event Image */}
+              <div className="relative h-48 w-full">
+                <img
+                  src={event.imageUrl || "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2670&auto=format&fit=crop"}
+                  alt={event.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#296880]"></div>
+              </div>
 
-          <div className="bg-[#296880] p-6 rounded-xl">
-            <div className="flex justify-between items-start mb-4">
-              <p className="text-gray-400 mb-1">02.</p>
-              <div className="bg-#3798b8/20 text-blue-200 text-xs font-medium px-2 py-1 rounded">JUN 22</div>
+              {/* Event Content */}
+              <div className="p-6">
+                <div className="flex justify-between items-start mb-4">
+                  <p className="text-gray-400 mb-1">{(index + 1).toString().padStart(2, '0')}.</p>
+                  <div className="bg-#3798b8/20 text-blue-200 text-xs font-medium px-2 py-1 rounded">
+                    {formatDate(event.date)}
+                  </div>
+                </div>
+                <h3 className="font-semibold text-lg mb-4">{event.title}</h3>
+                <p className="text-sm text-gray-300">{event.description}</p>
+              </div>
             </div>
-            <h3 className="font-semibold text-lg mb-4">Sustainability in Tech</h3>
-            <p className="text-sm text-gray-300">
-              Learn about sustainable practices and eco-friendly solutions in the tech industry.
-            </p>
-          </div>
-
-          <div className="bg-[#296880] p-6 rounded-xl">
-            <div className="flex justify-between items-start mb-4">
-              <p className="text-gray-400 mb-1">03.</p>
-              <div className="bg-#3798b8/20 text-blue-200 text-xs font-medium px-2 py-1 rounded">JUL 10</div>
-            </div>
-            <h3 className="font-semibold text-lg mb-4">Tech Product Showcase</h3>
-            <p className="text-sm text-gray-300">
-              Experience cutting-edge technologies with live demonstrations and expert insights.
-            </p>
-          </div>
-
-          <div className="bg-[#296880] p-6 rounded-xl">
-            <div className="flex justify-between items-start mb-4">
-              <p className="text-gray-400 mb-1">04.</p>
-              <div className="bg-#3798b8/20 text-blue-200 text-xs font-medium px-2 py-1 rounded">AUG 05</div>
-            </div>
-            <h3 className="font-semibold text-lg mb-4">Innovation Workshop</h3>
-            <p className="text-sm text-gray-300">
-              Hands-on sessions to explore innovative solutions and optimize tech processes.
-            </p>
-          </div>
+          ))}
         </div>
 
         <div className="bg-[#296880] rounded-xl p-4 mt-6 flex justify-between items-center">
@@ -84,7 +143,7 @@ export default function OurEvents() {
             onClick={() => router.push("/events")}
             className="bg-#3798b8 hover:bg-[#296880] text-white rounded-full px-4 py-2 flex items-center transition-colors"
           >
-            <span className="mr-2">Register Now</span>
+            <span className="mr-2">View All Events</span>
             <ArrowRight size={16} />
           </button>
         </div>
@@ -155,7 +214,7 @@ export default function OurEvents() {
             className="overflow-hidden rounded-xl h-64 bg-cover bg-center"
             style={{
               backgroundImage:
-                "url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=3270&auto=format&fit=crop')",
+                "/smart_inno-01.jpeg",
             }}
           >
             <div className="w-full h-full bg-gradient-to-r from-black/50 to-transparent p-6 flex flex-col justify-end">
@@ -168,7 +227,7 @@ export default function OurEvents() {
             className="overflow-hidden rounded-xl h-64 bg-cover bg-center"
             style={{
               backgroundImage:
-                "url('https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=3269&auto=format&fit=crop')",
+              "/smart_inno-02.jpeg",
             }}
           >
             <div className="w-full h-full bg-gradient-to-r from-black/50 to-transparent p-6 flex flex-col justify-end">

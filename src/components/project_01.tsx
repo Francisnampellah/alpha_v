@@ -17,52 +17,52 @@ import {
 } from "lucide-react"
 
 const sampleProjectData = {
-  mainProduct: "Urban Farming Initiative",
+  mainProduct: "SafariPro Booking and Tour App",
   description:
-    "A revolutionary approach to urban agriculture that maximizes space utilization while minimizing resource consumption. Our vertical farming solutions bring sustainable food production directly to urban centers.",
+    "An innovative mobile application that transforms the travel and tourism industry by leveraging AI and Virtual Reality (VR) to offer users an interactive and personalized travel planning experience.",
   leftSideText: [
-    "Space-efficient design",
-    "90% less water usage",
-    "Year-round growing cycle",
-    "Reduced carbon footprint",
-    "No pesticides needed",
+    "AI-powered tour recommendations",
+    "VR destination previews",
+    "Easy booking and payments",
+    "Local tour operator integration",
+    "Offline access support",
   ],
-  estTime: "4-6 months\nPhased implementation",
-  workerInfo: "Creates jobs for 80+ urban farmers and provides fresh produce to local communities",
+  estTime: "6-8 months\nPhased implementation",
+  workerInfo: "Creates opportunities for local tour operators and enhances tourist experiences",
 }
 
 const projectsList = [
   {
     id: 1,
-    title: "Urban Farming Initiative",
-    category: "Sustainable Agriculture",
+    title: "SafariPro Mobile App",
+    category: "Travel & Tourism",
     image: "/placeholder.svg?height=60&width=60",
-    likes: 128,
-    comments: 24,
+    likes: 256,
+    comments: 48,
   },
   {
     id: 2,
-    title: "Vertical Garden System",
-    category: "Urban Greening",
+    title: "VR Destination Preview",
+    category: "Virtual Reality",
     image: "/placeholder.svg?height=60&width=60",
-    likes: 95,
-    comments: 18,
+    likes: 189,
+    comments: 32,
   },
   {
     id: 3,
-    title: "Community Harvest Program",
-    category: "Food Security",
+    title: "AI Tour Recommendations",
+    category: "Artificial Intelligence",
     image: "/placeholder.svg?height=60&width=60",
-    likes: 76,
-    comments: 31,
+    likes: 145,
+    comments: 28,
   },
 ]
 
 const teamMembers = [
-  { id: 1, name: "Alex Morgan", role: "Project Lead", avatar: "/placeholder.svg?height=40&width=40" },
-  { id: 2, name: "Jamie Chen", role: "Urban Planner", avatar: "/placeholder.svg?height=40&width=40" },
-  { id: 3, name: "Sam Wilson", role: "Agricultural Expert", avatar: "/placeholder.svg?height=40&width=40" },
-  { id: 4, name: "Taylor Reed", role: "Community Manager", avatar: "/placeholder.svg?height=40&width=40" },
+  { id: 1, name: "Sarah Johnson", role: "Project Lead", avatar: "/placeholder.svg?height=40&width=40" },
+  { id: 2, name: "Michael Chen", role: "AI/ML Engineer", avatar: "/placeholder.svg?height=40&width=40" },
+  { id: 3, name: "Emily Rodriguez", role: "VR Developer", avatar: "/placeholder.svg?height=40&width=40" },
+  { id: 4, name: "David Kim", role: "UX Designer", avatar: "/placeholder.svg?height=40&width=40" },
 ]
 
 // Define types for the project data
@@ -150,7 +150,7 @@ export default function MobileAppLayout() {
 
               {/* App Header */}
               <div className="bg-white px-2 py-1.5 flex justify-between items-center border-b border-gray-200">
-                <h1 className="font-semibold text-xs">Urban Projects</h1>
+                <h1 className="font-semibold text-xs">SafariPro Tours</h1>
                 <Filter size={12} />
               </div>
 

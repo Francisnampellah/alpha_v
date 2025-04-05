@@ -15,22 +15,22 @@ const CareerPage = () => {
     {
       icon: <FaBriefcase className="w-8 h-8" />,
       title: 'Competitive Salary',
-      description: 'We offer market-competitive compensation packages with regular reviews.'
+      description: 'We offer market-competitive compensation packages with regular reviews and performance-based incentives.'
     },
     {
       icon: <FaUsers className="w-8 h-8" />,
       title: 'Inclusive Culture',
-      description: 'Join a diverse and collaborative environment where every voice matters.'
+      description: 'Join a diverse and collaborative environment where every voice matters and innovation thrives.'
     },
     {
       icon: <FaRocket className="w-8 h-8" />,
       title: 'Growth Opportunities',
-      description: 'Continuous learning and development through training and mentorship.'
+      description: 'Continuous learning through training, mentorship, and exposure to cutting-edge technologies.'
     },
     {
       icon: <FaHeart className="w-8 h-8" />,
       title: 'Work-Life Balance',
-      description: 'Flexible working hours and remote work options to support your lifestyle.'
+      description: 'Flexible working hours and remote work options to support your lifestyle and productivity.'
     }
   ];
 
@@ -55,7 +55,7 @@ const CareerPage = () => {
         <Navigation variant="transparent" showCTA={true} ctaText="Apply Now" ctaLink="/career/apply" />
 
         {/* Hero Content */}
-        <div className="relative z-10 h-[calc(70vh-80px)] flex flex-col justify-center px-6 md:px-12 lg:px-24">
+        <div className="relative z-10 h-full flex flex-col justify-center px-4 sm:px-6 md:px-12 lg:px-24">
           <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -64,7 +64,7 @@ const CareerPage = () => {
               className="flex items-center gap-2 mb-4"
             >
               <div className="w-2 h-2 rounded-full bg-blue-400"></div>
-              <p className="text-sm text-blue-400 font-medium">JOIN OUR TEAM</p>
+              <p className="text-sm text-blue-400 font-medium">JOIN SMARTINNO ENGINEERING</p>
             </motion.div>
 
             <motion.h2
@@ -73,7 +73,9 @@ const CareerPage = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
             >
-              Build the Future of Technology
+              Build Tanzania's
+              <br />
+              Technology Future
             </motion.h2>
 
             <motion.p
@@ -82,7 +84,7 @@ const CareerPage = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl"
             >
-              Join our team of innovators and help shape the future of software development
+              Join our team of innovators and help shape the future of technology in Tanzania. We're looking for passionate individuals who want to make a difference through cutting-edge solutions.
             </motion.p>
 
             <motion.div
@@ -113,7 +115,7 @@ const CareerPage = () => {
       <SectionContainer
         sectionNumber="01"
         title="Why Join Us?"
-        subtitle="Discover the benefits of working at SMARTiNNO"
+        subtitle="Discover the benefits of working at SMARTINNO Engineering"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
@@ -142,7 +144,14 @@ const CareerPage = () => {
       >
         <div id="open-positions" className="max-w-3xl mx-auto">
           <div className="space-y-6">
-            {['Software Engineer', 'Product Manager', 'UX Designer', 'Data Scientist'].map((position, index) => (
+            {[
+              'Software Engineer',
+              'Cloud Solutions Architect',
+              'Cybersecurity Specialist',
+              'AI/ML Engineer',
+              'DevOps Engineer',
+              'Blockchain Developer'
+            ].map((position, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: -20 }}
@@ -152,7 +161,7 @@ const CareerPage = () => {
                 className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition duration-300"
               >
                 <h3 className="text-xl font-semibold mb-2">{position}</h3>
-                <p className="text-gray-600 mb-4">Full-time • Remote</p>
+                <p className="text-gray-600 mb-4">Full-time • Dar es Salaam, Tanzania</p>
                 <Link
                   href={`/career/positions/${position.toLowerCase().replace(/\s+/g, '-')}`}
                   className="text-[#296880] font-semibold hover:text-blue-700 inline-flex items-center gap-2 group"
@@ -167,7 +176,7 @@ const CareerPage = () => {
       </SectionContainer>
 
       {/* CTA Section */}
-      <div className="px-4 sm:px-6 lg:px-12 py-16 bg-[#296880] text-white">
+      <div className="px-4 sm:px-6 lg:px-12 py-12 sm:py-16 bg-[#296880] text-white">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -177,7 +186,7 @@ const CareerPage = () => {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Join Our Team?</h2>
             <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
-              Take the first step towards an exciting career at SMARTiNNO
+              Take the first step towards an exciting career at SMARTINNO Engineering
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

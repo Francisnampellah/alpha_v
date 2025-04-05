@@ -9,7 +9,7 @@ export interface Project {
   featured?: boolean;
 }
 
-export const projects: Project[] = [
+const mockProjects: Project[] = [
   {
     id: "urban-farming",
     title: "Urban Farming Initiative",
@@ -50,4 +50,32 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/smartinno/telemedicine",
     featured: true
   }
-]; 
+];
+
+export async function getProjects(): Promise<Project[]> {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/projects`);
+    if (!response.ok) {
+      console.warn('Failed to fetch projects, returning mock data');
+      return mockProjects;
+    }
+    return response.json();
+  } catch (error) {
+    console.warn('Error fetching projects, returning mock data:', error);
+    return mockProjects;
+  }
+}
+
+export async function getProjectById(id: string): Promise<Project> {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/projects/${id}`);
+    if (!response.ok) {
+      console.warn('Failed to fetch project, returning mock data');
+      return mockProjects.find(project => project.id === id) || mockProjects[0];
+    }
+    return response.json();
+  } catch (error) {
+    console.warn('Error fetching project, returning mock data:', error);
+    return mockProjects.find(project => project.id === id) || mockProjects[0];
+  }
+} 

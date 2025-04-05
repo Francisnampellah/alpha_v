@@ -17,53 +17,53 @@ import {
   Apple,
 } from "lucide-react"
 
-const workoutData = {
-  title: "Full Body HIIT",
+const workoutData = { 
+  title: "AssetPro Management System",
   description:
-    "High-intensity interval training that targets all major muscle groups. This workout alternates between intense bursts of exercise and short recovery periods for maximum calorie burn.",
+    "An advanced asset management mobile application designed to help organizations efficiently manage, track, and maintain physical and digital assets throughout their lifecycle.",
   benefits: [
-    "Burns 400+ calories",
-    "Improves cardiovascular health",
-    "Increases metabolism",
-    "No equipment needed",
-    "Can be done anywhere",
+    "Real-time asset tracking with IoT",
+    "AI-powered predictive maintenance",
+    "Blockchain-secured data management",
+    "Comprehensive asset analytics",
+    "Regulatory compliance tools",
   ],
-  duration: "30 minutes\n3 sets of 10 exercises",
-  instructor: "Led by certified trainer Sarah Johnson with modifications for all fitness levels",
+  duration: "8-10 months\nPhased implementation",
+  instructor: "Led by experienced team of IoT, AI, and blockchain specialists",
 }
 
 const workoutsList = [
   {
     id: 1,
-    title: "Full Body HIIT",
-    category: "High Intensity",
-    duration: "30 min",
-    calories: 450,
-    difficulty: "Intermediate",
+    title: "Asset Tracking Dashboard",
+    category: "IoT Integration",
+    duration: "Real-time",
+    calories: "24/7",
+    difficulty: "Advanced",
   },
   {
     id: 2,
-    title: "Morning Yoga Flow",
-    category: "Flexibility",
-    duration: "25 min",
-    calories: 180,
-    difficulty: "Beginner",
+    title: "Predictive Maintenance",
+    category: "AI/ML",
+    duration: "Automated",
+    calories: "Smart",
+    difficulty: "Intermediate",
   },
   {
     id: 3,
-    title: "Core Crusher",
-    category: "Strength",
-    duration: "20 min",
-    calories: 280,
+    title: "Compliance Manager",
+    category: "Regulatory",
+    duration: "Continuous",
+    calories: "Full",
     difficulty: "Advanced",
   },
 ]
 
 const achievements = [
-  { id: 1, name: "7-Day Streak", description: "Completed workouts for 7 consecutive days", icon: "flame" },
-  { id: 2, name: "Calorie Crusher", description: "Burned over 1,000 calories this week", icon: "zap" },
-  { id: 3, name: "Early Bird", description: "Completed 5 workouts before 8am", icon: "sun" },
-  { id: 4, name: "Variety Pack", description: "Tried 3 different workout types", icon: "layout" },
+  { id: 1, name: "Asset Optimization", description: "Reduced operational costs by 30%", icon: "zap" },
+  { id: 2, name: "Maintenance Pro", description: "Prevented 50+ potential failures", icon: "tool" },
+  { id: 3, name: "Compliance Master", description: "100% regulatory compliance", icon: "award" },
+  { id: 4, name: "Data Guardian", description: "Zero security incidents", icon: "shield" },
 ]
 
 // Animation variants
@@ -139,7 +139,7 @@ export default function FitnessAppLayout() {
 
               {/* App Header */}
               <div className="bg-white px-2 py-1.5 flex justify-between items-center border-b border-gray-200">
-                <h1 className="font-semibold text-xs">Workouts</h1>
+                <h1 className="font-semibold text-xs">AssetPro</h1>
                 <Dumbbell size={12} />
               </div>
 

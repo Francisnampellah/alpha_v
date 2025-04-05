@@ -56,7 +56,7 @@ export default function OurTechnology() {
       <div className="bg-[#3798b8] text-white p-8 md:p-12">
         <div className="flex items-center gap-2 mb-2">
           <div className="w-2 h-2 rounded-full bg-blue-400"></div>
-          <p className="text-sm text-blue-400 font-medium">OUR TECHNOLOGIES</p>
+          <p className="text-sm font-medium">OUR TECHNOLOGIES</p>
         </div>
 
         <h2 className="text-3xl md:text-4xl font-bold mb-8 max-w-md">
@@ -70,26 +70,26 @@ export default function OurTechnology() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="bg-[#296880] p-6 rounded-xl">
             <p className="text-gray-400 mb-1">01.</p>
-            <h3 className="font-semibold text-lg mb-4">AI-Powered Insights</h3>
-            <p className="text-sm text-gray-300">Leverage artificial intelligence to make smarter, data-driven decisions.</p>
+            <h3 className="font-semibold text-lg mb-4">Smart Energy Management</h3>
+            <p className="text-sm text-gray-300">Advanced algorithms for optimal energy consumption and cost reduction.</p>
           </div>
 
           <div className="bg-[#296880] p-6 rounded-xl">
             <p className="text-gray-400 mb-1">02.</p>
-            <h3 className="font-semibold text-lg mb-4">IoT Connectivity</h3>
-            <p className="text-sm text-gray-300">Integrate devices seamlessly for real-time monitoring and control.</p>
+            <h3 className="font-semibold text-lg mb-4">Predictive Analytics</h3>
+            <p className="text-sm text-gray-300">AI-powered forecasting for energy usage and maintenance needs.</p>
           </div>
 
           <div className="bg-[#296880] p-6 rounded-xl">
             <p className="text-gray-400 mb-1">03.</p>
-            <h3 className="font-semibold text-lg mb-4">Cloud-Based Solutions</h3>
-            <p className="text-sm text-gray-300">Access your data securely from anywhere, anytime.</p>
+            <h3 className="font-semibold text-lg mb-4">Real-Time Monitoring</h3>
+            <p className="text-sm text-gray-300">Live tracking of energy consumption and system performance.</p>
           </div>
 
           <div className="bg-[#296880] p-6 rounded-xl">
             <p className="text-gray-400 mb-1">04.</p>
-            <h3 className="font-semibold text-lg mb-4">Sustainability Focus</h3>
-            <p className="text-sm text-gray-300">Adopt eco-friendly practices to reduce your environmental impact.</p>
+            <h3 className="font-semibold text-lg mb-4">Automated Optimization</h3>
+            <p className="text-sm text-gray-300">Smart systems that automatically adjust for peak efficiency.</p>
           </div>
         </div>
 
@@ -130,7 +130,7 @@ export default function OurTechnology() {
           <div className="flex-1">
             <div className="h-px bg-gray-300 mb-8"></div>
             <p className="text-gray-600 max-w-md">
-              Smartinno empowers your business with innovative technologies, ensuring efficiency, scalability, and sustainability.
+              Smartinno revolutionizes energy management with cutting-edge technology, delivering measurable cost savings and environmental benefits through intelligent automation and data-driven insights.
             </p>
           </div>
         </div>
@@ -190,7 +190,7 @@ export default function OurTechnology() {
             <div className="p-4">
               <h3 className="font-semibold text-lg mb-2">Real-Time Monitoring</h3>
               <p className="text-sm text-gray-600">
-                Monitor your operations 24/7 with our advanced IoT sensors and analytics dashboard.
+                Track energy consumption patterns and system performance in real-time through our intuitive dashboard interface.
               </p>
             </div>
           </div>
@@ -232,7 +232,7 @@ export default function OurTechnology() {
               </ResponsiveContainer>
             </div>
             <p className="text-sm text-gray-600">
-              Optimize energy consumption with smart algorithms, reducing costs by up to 40%.
+              Reduce energy waste by up to 40% with our smart scheduling and load balancing technology.
             </p>
           </div>
 
@@ -248,7 +248,7 @@ export default function OurTechnology() {
               />
             </div>
             <p className="text-sm text-gray-600">
-              Make data-driven decisions with our advanced analytics and predictive maintenance tools.
+              Leverage our advanced analytics engine to predict energy needs and optimize consumption patterns.
             </p>
           </div>
 
@@ -264,7 +264,7 @@ export default function OurTechnology() {
               />
             </div>
             <p className="text-sm text-gray-300">
-              Access our dedicated support team anytime for technical assistance and optimization guidance.
+              Get expert guidance on energy optimization and system maintenance from our dedicated technical team.
             </p>
           </div>
         </div>

@@ -82,52 +82,55 @@ export default function AboutPage() {
     {
       name: "Dr. Sarah Johnson",
       role: "Founder & CEO",
-      bio: "With over 15 years of experience in software development, Dr. Johnson leads our vision for innovative software solutions.",
+      bio: "Leading SMARTINNO Engineering's vision to transform Tanzania into a technology powerhouse through innovation and knowledge transfer.",
       image: "/placeholder.svg?height=400&width=400",
     },
     {
       name: "Michael Chen",
       role: "CTO",
-      bio: "Michael brings expertise in software architecture and development, driving our technical innovation and product development.",
+      bio: "Driving technical innovation and overseeing the development of cutting-edge solutions across cybersecurity, cloud computing, and AI/ML.",
       image: "/placeholder.svg?height=400&width=400",
     },
     {
       name: "Elena Rodriguez",
       role: "Head of Research",
-      bio: "Elena&apos;s background in computer science helps shape our approach to developing innovative software solutions.",
+      bio: "Leading research initiatives in emerging technologies and ensuring SMARTINNO stays at the forefront of innovation.",
       image: "/placeholder.svg?height=400&width=400",
     },
     {
       name: "James Wilson",
       role: "Operations Director",
-      bio: "James ensures our solutions are implemented efficiently and effectively across all client projects.",
+      bio: "Managing operations and ensuring efficient delivery of solutions across Tanzania and beyond.",
       image: "/placeholder.svg?height=400&width=400",
     },
   ]
 
   // Updated company values
   const values = [
-    { title: "Innovation", description: "We embrace cutting-edge technology to deliver future-ready solutions.", icon: "💡" },
-    { title: "Integrity", description: "We uphold the highest standards of professionalism and ethics in our work.", icon: "⚖️" },
-    { title: "Customer Focus", description: "Our solutions are designed to meet the unique needs of our clients.", icon: "🎯" },
-    { title: "Excellence", description: "We strive for top-quality service delivery in every project.", icon: "🏆" },
-    { title: "Collaboration", description: "We foster strong partnerships to achieve shared success.", icon: "🤝" },
+    { title: "Innovation", description: "We thrive on cutting-edge ideas and creative solutions, pushing the boundaries of technology.", icon: "💡" },
+    { title: "Integrity", description: "We uphold transparency, honesty, and ethical conduct in all our operations.", icon: "⚖️" },
+    { title: "Collaboration", description: "We believe in the power of teamwork and diverse expertise to achieve excellence.", icon: "🤝" },
+    { title: "Customer Focus", description: "Our clients' success is our priority, driving us to deliver exceptional solutions.", icon: "🎯" },
+    { title: "Continuous Learning", description: "We prioritize growth, adaptability, and staying updated with the latest advancements.", icon: "📚" },
+    { title: "Agility", description: "We respond quickly to changing market demands and technological evolution.", icon: "⚡" },
+    { title: "Excellence", description: "We are committed to delivering the highest quality in every project.", icon: "🏆" },
+    { title: "Knowledge Transfer", description: "We empower the next generation through mentorship and training.", icon: "🎓" },
   ]
 
   // Updated milestones
   const milestones = [
-    { year: "2015", title: "Company Founded", description: "SMARTiNNO was established in Dar es Salaam, Tanzania, with a mission to revolutionize businesses through innovative IT solutions." },
-    { year: "2018", title: "First Major Project", description: "Launched AssetPro, a robust asset management system for businesses." },
-    { year: "2020", title: "FinTech Innovation", description: "Developed digital payment and e-wallet systems, enhancing financial accessibility and security." },
-    { year: "2022", title: "Agribusiness Solutions", description: "Introduced smart solutions for farm management and supply chain optimization in the agriculture sector." },
-    { year: "2023", title: "E-Government Solutions", description: "Digitized government processes to improve transparency and citizen services." },
+    { year: "2015", title: "Company Founded", description: "SMARTINNO Engineering was established in Dar es Salaam, Tanzania, with a mission to revolutionize businesses through innovative IT solutions." },
+    { year: "2018", title: "First Major Project", description: "Successfully launched SafariPro, an innovative booking application for the travel and tourism industry." },
+    { year: "2020", title: "Digital Solutions Expansion", description: "Introduced EstatePro and SaccoPro platforms, transforming real estate and financial sectors." },
+    { year: "2022", title: "Technology Hub Establishment", description: "Established SMARTINNO Engineering Hub as a center for innovation and technology development." },
+    { year: "2023", title: "Global Presence", description: "Expanded operations to include SMARTINNO LLC USA, strengthening our international presence." },
   ]
 
   // Updated statistics
   const stats = [
     { value: "300+", label: "Completed Projects" },
-    { value: "15+", label: "Industries Served" },
-    { value: "10+", label: "Years of Experience" },
+    { value: "8+", label: "Core Services" },
+    { value: "2", label: "Global Locations" },
     { value: "100+", label: "Team Members" },
   ]
 
@@ -146,12 +149,12 @@ export default function AboutPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="/smart_inno-02.jpeg"
             alt="Software development and innovation"
             fill
             priority
             sizes="100vw"
-            className="object-cover"
+            className="object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/60 to-black/80"></div>
         </div>
@@ -225,14 +228,10 @@ export default function AboutPage() {
               viewport={{ once: true }}
             >
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                Founded in 2015, SMARTiNNO began with a simple yet powerful vision: to revolutionize business operations
-                through innovative software solutions. Our founder, Dr. Sarah Johnson, recognized that traditional
-                business processes were facing unprecedented challenges in a rapidly evolving digital landscape.
+                SMARTINNO Engineering is a leading pioneer in Tanzania, delivering transformative innovation and cutting-edge solutions for software automation and seamless integration. We are dedicated to transforming organizations into successful enterprises by harnessing the power of automation and seamless integration.
               </p>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                What started as a small team of passionate engineers and technology experts has grown into a global
-                company at the forefront of digital innovation. Today, we work with businesses, enterprises, and
-                organizations across the world to implement robust, scalable solutions.
+                Our multidisciplinary team brings together expertise from various disciplines to deliver cutting-edge technology solutions. We are committed to enhancing decision-making and efficiency with data-driven insights and ensuring robust protection against evolving digital threats.
               </p>
             </motion.div>
           </div>
@@ -246,8 +245,8 @@ export default function AboutPage() {
               viewport={{ once: true }}
             >
               <Image
-                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2684&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="SMARTiNNO team collaborating on software solutions"
+                src="/smart_inno-01.jpeg"
+                alt="SMARTINNO Engineering team collaborating on solutions"
                 fill
                 className="object-cover"
               />
@@ -493,7 +492,7 @@ export default function AboutPage() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Ready to Transform Your Business Operations?</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Ready to Transform Your Business?</h2>
             <p className="text-base sm:text-lg md:text-xl text-blue-100 max-w-2xl mx-auto mb-6 sm:mb-8">
               Let&apos;s work together to create innovative software solutions for your specific needs
             </p>

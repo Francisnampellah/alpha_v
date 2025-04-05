@@ -12,14 +12,64 @@ import {
   Home,
   Mail,
   Calendar,
-  Image,
+  Image, 
   Music,
   Settings,
   ArrowRight,
   Check,
   Menu,
   X,
+  Filter,
 } from "lucide-react"
+
+const sampleProjectData = {
+  mainProduct: "ConnectPro Workflow Automation",
+  description:
+    "A dynamic workflow automation solution designed to enhance organizational efficiency and collaboration. It provides businesses with tools to streamline task management, approvals, and notifications, reducing manual workloads and increasing productivity.",
+  leftSideText: [
+    "Customizable workflow design",
+    "Task assignment and tracking",
+    "Automated approvals",
+    "Document management",
+    "Real-time monitoring",
+  ],
+  estTime: "6-8 months\nPhased implementation",
+  workerInfo: "Enhances organizational efficiency and reduces manual workloads",
+}
+
+const projectsList = [
+  {
+    id: 1,
+    title: "Workflow Designer",
+    category: "Automation",
+    image: "/placeholder.svg?height=60&width=60",
+    likes: 189,
+    comments: 32,
+  },
+  {
+    id: 2,
+    title: "Task Manager",
+    category: "Productivity",
+    image: "/placeholder.svg?height=60&width=60",
+    likes: 145,
+    comments: 28,
+  },
+  {
+    id: 3,
+    title: "Document Hub",
+    category: "Collaboration",
+    image: "/placeholder.svg?height=60&width=60",
+    likes: 167,
+    comments: 24,
+  },
+]
+
+const teamMembers = [
+  { id: 1, name: "Michael Chen", role: "Project Lead", avatar: "/placeholder.svg?height=40&width=40" },
+  { id: 2, name: "Sarah Johnson", role: "Workflow Architect", avatar: "/placeholder.svg?height=40&width=40" },
+  { id: 3, name: "David Kim", role: "UI/UX Designer", avatar: "/placeholder.svg?height=40&width=40" },
+  { id: 4, name: "Emily Rodriguez", role: "Backend Developer", avatar: "/placeholder.svg?height=40&width=40" },
+]
 
 export default function MacWebpageDisplay() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -72,7 +122,7 @@ export default function MacWebpageDisplay() {
                   <div className="flex-1 flex items-center bg-[#e9e9e9] rounded-md h-5 px-2">
                     <div className="flex items-center gap-1.5 w-full">
                       <Search size={10} className="text-gray-500" />
-                      <span className="text-[8px] sm:text-[10px] text-gray-500 truncate">https://innovate.design</span>
+                      <span className="text-[8px] sm:text-[10px] text-gray-500 truncate">https://connectpro.workflow</span>
                     </div>
                   </div>
                   <div className="flex gap-1 sm:gap-2">
@@ -121,9 +171,9 @@ export default function MacWebpageDisplay() {
                   <div className="container mx-auto px-2 sm:px-4 py-2 sm:py-3 flex justify-between items-center">
                     <div className="flex items-center gap-2">
                       <div className="w-6 sm:w-8 h-6 sm:h-8 bg-[#296880] rounded-md flex items-center justify-center">
-                        <span className="text-white font-bold text-base sm:text-lg">I</span>
+                        <span className="text-white font-bold text-base sm:text-lg">C</span>
                       </div>
-                      <span className="font-bold text-base sm:text-lg">Innovate</span>
+                      <span className="font-bold text-base sm:text-lg">ConnectPro</span>
                     </div>
                     <div className="hidden lg:flex items-center gap-6">
                       <a href="#" className="text-sm font-medium">
@@ -157,11 +207,10 @@ export default function MacWebpageDisplay() {
                     <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-8">
                       <div className="lg:w-1/2 space-y-3 sm:space-y-4">
                         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                          Design and build your next big idea
+                          Streamline Your Workflows
                         </h1>
                         <p className="text-base sm:text-lg text-gray-600">
-                          Our platform provides all the tools you need to bring your vision to life, from concept to
-                          launch.
+                          Our platform provides powerful tools to automate tasks, manage approvals, and enhance team collaboration.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
                           <button className="bg-[#296880] text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md font-medium">
@@ -191,42 +240,42 @@ export default function MacWebpageDisplay() {
                 <section className="py-8 sm:py-16 px-2 sm:px-4">
                   <div className="container mx-auto max-w-6xl">
                     <div className="text-center mb-8 sm:mb-12">
-                      <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Powerful Features</h2>
+                      <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Key Features</h2>
                       <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
-                        Everything you need to create, manage, and scale your projects efficiently.
+                        Everything you need to automate and optimize your business processes.
                       </p>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
                       {[
                         {
                           icon: <Home className="text-[#296880]" />,
-                          title: "Intuitive Dashboard",
-                          description: "Get a complete overview of your projects and tasks at a glance.",
+                          title: "Workflow Designer",
+                          description: "Create custom workflows with our intuitive drag-and-drop interface.",
                         },
                         {
                           icon: <RefreshCw className="text-[#296880]" />,
-                          title: "Real-time Collaboration",
-                          description: "Work together with your team in real-time, no matter where they are.",
+                          title: "Task Automation",
+                          description: "Automate repetitive tasks and streamline approval processes.",
                         },
                         {
                           icon: <Settings className="text-[#296880]" />,
-                          title: "Customizable Workflows",
-                          description: "Create workflows that match your team's unique processes and needs.",
+                          title: "Process Optimization",
+                          description: "Analyze and optimize your workflows for maximum efficiency.",
                         },
                         {
                           icon: <Calendar className="text-[#296880]" />,
                           title: "Smart Scheduling",
-                          description: "Automatically schedule tasks based on priorities and team availability.",
+                          description: "Automatically schedule tasks based on priorities and deadlines.",
                         },
                         {
                           icon: <Image className="text-[#296880]" />,
-                          title: "Asset Management",
-                          description: "Organize and access all your project assets in one centralized location.",
+                          title: "Document Management",
+                          description: "Centralize and manage all your workflow documents in one place.",
                         },
                         {
                           icon: <Mail className="text-[#296880]" />,
-                          title: "Integrated Messaging",
-                          description: "Communicate with your team without leaving the platform.",
+                          title: "Team Collaboration",
+                          description: "Enable seamless communication and collaboration within workflows.",
                         },
                       ].map((feature, index) => (
                         <motion.div

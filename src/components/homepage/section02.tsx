@@ -45,8 +45,8 @@ const DefaultIcons = {
 
 // Default logos with consistent naming and structure
 const defaultLogos = [
-  { name: 'Tech Conference', icon: DefaultIcons.RotaShow },
-  { name: 'FinTech Summit', icon: DefaultIcons.Waves },
+  { name: 'DIT', icon: DefaultIcons.RotaShow },
+  { name: 'Tanzania Goverment', icon: DefaultIcons.Waves },
   { name: 'AI Innovations', icon: DefaultIcons.Travelers },
   { name: 'Cloud Solutions', icon: DefaultIcons.Goldlines },
   { name: 'Cybersecurity', icon: DefaultIcons.Velocity }
@@ -59,7 +59,7 @@ export default function Section02() {
       title: "SmartINNO Solutions",
       description: "Empowering businesses with cutting-edge technology solutions and digital transformation.",
       image:
-        "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "/smart_inno-01.jpeg",
       position: "top-right",
       copyright: "©2024 SmartINNO",
     },
@@ -67,7 +67,7 @@ export default function Section02() {
       title: "Digital Innovation Hub",
       description: "Your partner in driving technological advancement and business growth.",
       image:
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "/smart_inno-02.jpeg",
       position: "top-right",
       copyright: "©2024 SmartINNO",
     }
@@ -107,13 +107,13 @@ export default function Section02() {
 
         <div className="flex items-center gap-2 mb-2">
           <div className="w-2 h-2 rounded-full bg-blue-400"></div>
-          <p className="text-sm text-#3798b8 font-medium"> ABOUT SMARTiNNO</p>
+          <p className="text-sm text-#3798b8 font-medium">ABOUT SMARTINNO ENGINEERING</p>
         </div>
 
         <h2 className="text-3xl md:text-4xl font-bold mb-8 max-w-md">
-          Tech Innovations,
+          Transforming Organizations
           <br />
-          Meaningful Connections
+          Through Innovation
         </h2>
 
         <div className="h-px bg-gray-300 mb-8"></div>
@@ -145,19 +145,19 @@ export default function Section02() {
             <div className="space-y-4 mt-10">
               <Accordion icon={<Eye className="h-5 w-5" />} title="Mission" defaultOpen={true}>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  To empower businesses with innovative technology solutions that drive digital transformation, enhance efficiency, and foster sustainable growth in the digital age.
+                  <span className="font-bold">"</span>To empower Tanzanian youth through technology innovation and knowledge transfer, establishing Tanzania as a transformative technology hub.<span className="font-bold">"</span>
                 </p>
               </Accordion>
 
               <Accordion icon={<Beaker className="h-5 w-5" />} title="Vision">
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  To be the leading technology solutions provider in Africa, recognized for our innovation, expertise, and commitment to driving digital transformation across industries.
+                  <span className="font-bold">"</span>To innovate and optimize organizations through automation and cutting-edge technology, creating a connected and efficient ecosystem.<span className="font-bold">"</span>
                 </p>
               </Accordion>
 
               <Accordion icon={<Sparkles className="h-5 w-5" />} title="Values">
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Innovation, Excellence, Integrity, Customer Success, and Collaborative Growth are the core principles that guide our mission to transform businesses through technology.
+                  <span className="font-bold">"</span>Innovation, Integrity, Collaboration, Customer Focus, Continuous Learning, Agility, Excellence, and Knowledge Transfer.<span className="font-bold">"</span>
                 </p>
               </Accordion>
             </div>

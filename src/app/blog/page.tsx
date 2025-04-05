@@ -8,7 +8,7 @@ import { Filter, Search, ArrowRight, ChevronDown } from "lucide-react"
 import Footer from "@/components/footer"
 import Navigation from "@/components/navigation/Navigation"
 import SectionContainer from "@/components/SectionContainer"
-import { getProjects, type Project } from "@/controllers/projectController"
+import { getBlogPosts, type BlogPost } from "@/controllers/blogController"
 
 // Note: We'll create our own CategoryPill component inline to match the styling
 const CategoryPill = ({ label }: { label: string }) => {
@@ -24,11 +24,11 @@ const CategoryPill = ({ label }: { label: string }) => {
   )
 }
 
-export default function ProjectsPage() {
+export default function BlogPage() {
   const [scrolled, setScrolled] = useState(false)
-  const [selectedTechnology, setSelectedTechnology] = useState("all")
-  const [projects, setProjects] = useState<Project[]>([])
-  const [filteredProjects, setFilteredProjects] = useState<Project[]>([])
+  const [selectedTag, setSelectedTag] = useState("all")
+  const [posts, setPosts] = useState<BlogPost[]>([])
+  const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>([])
   const [searchQuery, setSearchQuery] = useState("")
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
@@ -43,44 +43,44 @@ export default function ProjectsPage() {
   }, [])
 
   useEffect(() => {
-    const fetchProjects = async () => {
+    const fetchPosts = async () => {
       try {
-        const data = await getProjects()
-        setProjects(data)
-        setFilteredProjects(data)
+        const data = await getBlogPosts()
+        setPosts(data)
+        setFilteredPosts(data)
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'An error occurred while fetching projects')
+        setError(err instanceof Error ? err.message : 'An error occurred while fetching blog posts')
       } finally {
         setLoading(false)
       }
     }
 
-    fetchProjects()
+    fetchPosts()
   }, [])
 
   useEffect(() => {
-    if (selectedTechnology === "all" && searchQuery === "") {
-      setFilteredProjects(projects)
+    if (selectedTag === "all" && searchQuery === "") {
+      setFilteredPosts(posts)
     } else {
-      setFilteredProjects(
-        projects.filter((project) => {
-          const matchesTechnology = selectedTechnology === "all" || 
-            project.technologies.some(tech => 
-              tech.toLowerCase() === selectedTechnology.toLowerCase()
+      setFilteredPosts(
+        posts.filter((post) => {
+          const matchesTag = selectedTag === "all" || 
+            post.tags.some(tag => 
+              tag.toLowerCase() === selectedTag.toLowerCase()
             )
           
           const matchesSearch = searchQuery === "" || 
-            project.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-            project.description.toLowerCase().includes(searchQuery.toLowerCase())
+            post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+            post.content.toLowerCase().includes(searchQuery.toLowerCase())
           
-          return matchesTechnology && matchesSearch
+          return matchesTag && matchesSearch
         })
       )
     }
-  }, [selectedTechnology, searchQuery, projects])
+  }, [selectedTag, searchQuery, posts])
 
-  // Get all unique technologies from projects
-  const allTechnologies = Array.from(new Set(projects.flatMap((project) => project.technologies))).sort()
+  // Get all unique tags from posts
+  const allTags = Array.from(new Set(posts.flatMap((post) => post.tags))).sort()
 
   if (loading) {
     return (
@@ -99,7 +99,7 @@ export default function ProjectsPage() {
       <div className="min-h-screen bg-gray-50 font-sans">
         <Navigation />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Error Loading Projects</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Error Loading Blog Posts</h1>
           <p className="text-gray-600 mb-8">{error}</p>
           <button
             onClick={() => window.location.reload()}
@@ -120,8 +120,8 @@ export default function ProjectsPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2670&auto=format&fit=crop"
-            alt="SmartInno Engineering - Technology Innovation"
+            src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2670&auto=format&fit=crop"
+            alt="SmartInno Engineering - Blog"
             fill
             priority
             sizes="100vw"
@@ -142,9 +142,9 @@ export default function ProjectsPage() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-wrap gap-2 mb-4"
             >
-              <CategoryPill label="Innovation" />
               <CategoryPill label="Technology" />
-              <CategoryPill label="Digital Solutions" />
+              <CategoryPill label="Innovation" />
+              <CategoryPill label="Insights" />
             </motion.div>
 
             <motion.h2
@@ -153,7 +153,7 @@ export default function ProjectsPage() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
             >
-              Our Projects
+              Our Blog
             </motion.h2>
 
             <motion.p
@@ -162,17 +162,17 @@ export default function ProjectsPage() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl"
             >
-              Discover our portfolio of innovative solutions transforming businesses across Tanzania and beyond
+              Explore our latest insights, industry trends, and technological innovations
             </motion.p>
           </div>
         </div>
       </div>
 
-      {/* Projects Section */}
+      {/* Blog Posts Section */}
       <SectionContainer
         sectionNumber="01"
-        title="Projects Portfolio"
-        subtitle="Discover our innovative solutions"
+        title="Latest Posts"
+        subtitle="Discover our latest insights and updates"
       >
         {/* Filter and Search Controls */}
         <div className="mb-8 flex flex-col sm:flex-row justify-between gap-4">
@@ -182,7 +182,7 @@ export default function ProjectsPage() {
             </div>
             <input
               type="text"
-              placeholder="Search projects..."
+              placeholder="Search posts..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-#3798b8 focus:border-transparent"
@@ -195,14 +195,14 @@ export default function ProjectsPage() {
             </div>
             <select
               className="pl-10 pr-10 py-2.5 rounded-lg border border-gray-200 w-full appearance-none focus:outline-none focus:ring-2 focus:ring-#3798b8 focus:border-transparent"
-              aria-label="Filter projects by technology"
-              value={selectedTechnology}
-              onChange={(e) => setSelectedTechnology(e.target.value)}
+              aria-label="Filter posts by tag"
+              value={selectedTag}
+              onChange={(e) => setSelectedTag(e.target.value)}
             >
-              <option value="all">All Technologies</option>
-              {allTechnologies.map((tech) => (
-                <option key={tech} value={tech.toLowerCase()}>
-                  {tech}
+              <option value="all">All Tags</option>
+              {allTags.map((tag) => (
+                <option key={tag} value={tag.toLowerCase()}>
+                  {tag}
                 </option>
               ))}
             </select>
@@ -212,58 +212,58 @@ export default function ProjectsPage() {
           </div>
         </div>
 
-        {/* Projects Count */}
+        {/* Posts Count */}
         <div className="mb-6">
-          <p className="text-gray-600">{filteredProjects.length} projects found</p>
+          <p className="text-gray-600">{filteredPosts.length} posts found</p>
         </div>
 
-        {/* Projects Grid */}
+        {/* Blog Posts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, idx) => (
+          {filteredPosts.map((post, idx) => (
             <motion.div
-              key={project.id}
+              key={post.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               viewport={{ once: true }}
             >
               <Link
-                href={`/projects/${project.id}`}
+                href={`/blog/${post.slug}`}
                 className="group block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 h-full border border-gray-100"
               >
                 <div className="relative h-64 w-full overflow-hidden">
                   <Image
-                    src={project.imageUrl || "/placeholder.svg"}
-                    alt={project.title}
+                    src={post.imageUrl || "/placeholder.svg"}
+                    alt={post.title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 p-6 w-full">
                     <div className="flex flex-wrap gap-2 mb-3">
-                      {project.technologies.slice(0, 2).map((tech, techIdx) => (
+                      {post.tags.slice(0, 2).map((tag, tagIdx) => (
                         <span
-                          key={techIdx}
+                          key={tagIdx}
                           className="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-medium rounded-full"
                         >
-                          {tech}
+                          {tag}
                         </span>
                       ))}
-                      {project.technologies.length > 2 && (
+                      {post.tags.length > 2 && (
                         <span className="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-medium rounded-full">
-                          +{project.technologies.length - 2}
+                          +{post.tags.length - 2}
                         </span>
                       )}
                     </div>
                     <h3 className="text-xl font-bold text-white group-hover:text-blue-100 transition-colors duration-300">
-                      {project.title}
+                      {post.title}
                     </h3>
                   </div>
                 </div>
                 <div className="p-6">
-                  <p className="text-gray-700 mb-4">{project.description}</p>
+                  <p className="text-gray-700 mb-4 line-clamp-2">{post.content}</p>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-500">View Project</span>
+                    <span className="text-sm text-gray-500">Read More</span>
                     <ArrowRight className="w-4 h-4 text-gray-500 group-hover:text-[#296880] transform group-hover:translate-x-1 transition-all" />
                   </div>
                 </div>
@@ -273,18 +273,18 @@ export default function ProjectsPage() {
         </div>
 
         {/* No Results State */}
-        {filteredProjects.length === 0 && (
+        {filteredPosts.length === 0 && (
           <motion.div
             className="text-center py-16 bg-white rounded-xl border border-gray-100 shadow-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-2xl font-bold text-gray-700 mb-2">No projects found</h3>
+            <h3 className="text-2xl font-bold text-gray-700 mb-2">No posts found</h3>
             <p className="text-gray-500 mb-6">Try adjusting your search or filter criteria</p>
             <button
               onClick={() => {
-                setSelectedTechnology("all")
+                setSelectedTag("all")
                 setSearchQuery("")
               }}
               className="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-900 transition-colors"
@@ -295,50 +295,50 @@ export default function ProjectsPage() {
         )}
       </SectionContainer>
 
-      {/* Project Categories Section */}
+      {/* Blog Categories Section */}
       <SectionContainer
         sectionNumber="02"
-        title="Project Categories"
-        subtitle="Explore our solutions by technology"
+        title="Blog Categories"
+        subtitle="Explore posts by topic"
         bgColor="gray"
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             {
-              title: "Frontend Development",
-              count: projects.filter(p => p.technologies.some(t => ["React", "Vue.js", "Angular", "Next.js"].includes(t))).length,
+              title: "Technology",
+              count: posts.filter(p => p.tags.some(t => ["Technology", "AI", "Innovation"].includes(t))).length,
               icon: "💻",
-              description: "Modern web applications built with cutting-edge frontend technologies"
+              description: "Latest trends and developments in technology"
             },
             {
-              title: "Backend Development",
-              count: projects.filter(p => p.technologies.some(t => ["Node.js", "Express", "NestJS"].includes(t))).length,
-              icon: "⚙️",
-              description: "Robust backend solutions with scalable architecture"
+              title: "Business",
+              count: posts.filter(p => p.tags.some(t => ["Business", "Digital Transformation"].includes(t))).length,
+              icon: "💼",
+              description: "Insights on business transformation and growth"
             },
             {
-              title: "Cloud & DevOps",
-              count: projects.filter(p => p.technologies.some(t => ["AWS", "Azure", "Docker"].includes(t))).length,
-              icon: "☁️",
-              description: "Cloud-native solutions with modern DevOps practices"
+              title: "Sustainability",
+              count: posts.filter(p => p.tags.some(t => ["Sustainability", "Green Tech", "Environment"].includes(t))).length,
+              icon: "🌱",
+              description: "Sustainable technology and environmental impact"
             },
             {
-              title: "Database Solutions",
-              count: projects.filter(p => p.technologies.some(t => ["MongoDB", "PostgreSQL", "MySQL", "Redis"].includes(t))).length,
-              icon: "🗄️",
-              description: "Efficient data management and storage solutions"
+              title: "Innovation",
+              count: posts.filter(p => p.tags.some(t => ["Innovation", "Research", "Development"].includes(t))).length,
+              icon: "💡",
+              description: "Breakthrough innovations and research"
             },
             {
-              title: "AI & IoT",
-              count: projects.filter(p => p.technologies.some(t => ["TensorFlow", "IoT"].includes(t))).length,
-              icon: "🤖",
-              description: "Intelligent solutions powered by AI and IoT technologies"
+              title: "Digital Transformation",
+              count: posts.filter(p => p.tags.some(t => ["Digital Transformation", "Technology", "Business"].includes(t))).length,
+              icon: "🔄",
+              description: "Digital transformation strategies and success stories"
             },
             {
-              title: "Real-time Systems",
-              count: projects.filter(p => p.technologies.some(t => ["Socket.io", "GraphQL"].includes(t))).length,
-              icon: "⚡",
-              description: "Real-time communication and data streaming solutions"
+              title: "Industry Insights",
+              count: posts.filter(p => p.tags.some(t => ["Industry", "Trends", "Analysis"].includes(t))).length,
+              icon: "📊",
+              description: "Industry analysis and market trends"
             }
           ].map((category, idx) => (
             <motion.div
@@ -353,11 +353,11 @@ export default function ProjectsPage() {
               <h3 className="text-xl font-bold mb-2">{category.title}</h3>
               <p className="text-gray-700 mb-3">{category.description}</p>
               <div className="flex justify-between items-center">
-                <span className="text-sm font-medium text-[#296880]">{category.count} projects</span>
+                <span className="text-sm font-medium text-[#296880]">{category.count} posts</span>
                 <button
                   onClick={() => {
-                    setSelectedTechnology(category.title.split(" ")[0].toLowerCase())
-                    document.getElementById("projects-section")?.scrollIntoView({ behavior: "smooth" })
+                    setSelectedTag(category.title.toLowerCase())
+                    document.getElementById("blog-section")?.scrollIntoView({ behavior: "smooth" })
                   }}
                   className="text-sm font-medium text-gray-900 hover:text-[#296880] transition-colors flex items-center gap-1"
                 >
@@ -379,16 +379,16 @@ export default function ProjectsPage() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Business?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Stay Updated with Our Latest Insights</h2>
             <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
-              Let&apos;s discuss how our innovative solutions can drive your business forward
+              Subscribe to our newsletter to receive the latest updates and insights
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
                 className="bg-white text-[#296880] hover:bg-blue-50 font-medium px-8 py-3 rounded-lg transition-colors inline-flex items-center justify-center gap-2 group"
               >
-                <span>Contact Us</span>
+                <span>Subscribe</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
               <Link
@@ -406,5 +406,4 @@ export default function ProjectsPage() {
       <Footer />
     </div>
   )
-}
-
+} 

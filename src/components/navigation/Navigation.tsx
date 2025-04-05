@@ -192,7 +192,8 @@ export default function Navigation({
         { href: "/services", label: "Services" },
         { href: "/projects", label: "Projects" },
         { href: "/events", label: "Events" },
-        { href: "/technology", label: "Technology" }
+        { href: "/technology", label: "Technology" },
+        { href: "/blog", label: "Blog" }
       ]
     },
     { href: "/career", label: "Career", isActive: activeLink === "/career" },
