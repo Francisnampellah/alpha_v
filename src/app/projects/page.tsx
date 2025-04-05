@@ -32,7 +32,7 @@ export default function ProjectsPage() {
   const [searchQuery, setSearchQuery] = useState("")
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
-
+  console.log(scrolled)
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)

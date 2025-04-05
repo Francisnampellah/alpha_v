@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ArrowRight, Calendar, MapPin, Filter } from 'lucide-react';
+import { ArrowRight, Calendar, MapPin } from 'lucide-react';
 import Footer from '@/components/footer';
 import Navigation from '@/components/navigation/Navigation';
 import SectionContainer from '@/components/SectionContainer';
@@ -29,7 +29,7 @@ export default function EventsPage() {
   const [events, setEvents] = useState<Event[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
+  console.log(scrolled)
   useEffect(() => {
     const fetchEvents = async () => {
       try {

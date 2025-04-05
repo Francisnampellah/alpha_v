@@ -2,9 +2,8 @@
 
 import { useState, useEffect, use } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Calendar, MapPin, Clock, User, Globe } from 'lucide-react';
+import {  Calendar, MapPin, Clock, User, Globe } from 'lucide-react';
 import Navigation from '@/components/navigation/Navigation';
 import Footer from '@/components/footer';
 import SectionContainer from '@/components/SectionContainer';

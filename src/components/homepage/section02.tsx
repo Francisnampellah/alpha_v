@@ -145,19 +145,19 @@ export default function Section02() {
             <div className="space-y-4 mt-10">
               <Accordion icon={<Eye className="h-5 w-5" />} title="Mission" defaultOpen={true}>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  <span className="font-bold">"</span>To empower Tanzanian youth through technology innovation and knowledge transfer, establishing Tanzania as a transformative technology hub.<span className="font-bold">"</span>
+                  <span className="font-bold">&quot;</span>To empower Tanzanian youth through technology innovation and knowledge transfer, establishing Tanzania as a transformative technology hub.<span className="font-bold">&quot;</span>
                 </p>
               </Accordion>
 
               <Accordion icon={<Beaker className="h-5 w-5" />} title="Vision">
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  <span className="font-bold">"</span>To innovate and optimize organizations through automation and cutting-edge technology, creating a connected and efficient ecosystem.<span className="font-bold">"</span>
+                  <span className="font-bold">&quot;</span>To innovate and optimize organizations through automation and cutting-edge technology, creating a connected and efficient ecosystem.<span className="font-bold">&quot;</span>
                 </p>
               </Accordion>
 
               <Accordion icon={<Sparkles className="h-5 w-5" />} title="Values">
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  <span className="font-bold">"</span>Innovation, Integrity, Collaboration, Customer Focus, Continuous Learning, Agility, Excellence, and Knowledge Transfer.<span className="font-bold">"</span>
+                  <span className="font-bold">&quot;</span>Innovation, Integrity, Collaboration, Customer Focus, Continuous Learning, Agility, Excellence, and Knowledge Transfer.<span className="font-bold">&quot;</span>
                 </p>
               </Accordion>
             </div>

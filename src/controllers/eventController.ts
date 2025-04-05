@@ -7,8 +7,6 @@ export interface Event {
   imageUrl: string | null;
   isVirtual: boolean;
   registrationUrl: string | null;
-  content: any | null;
-  blocks: any | null;
   createdAt: string;
   updatedAt: string;
   categories?: string[];
@@ -33,8 +31,6 @@ const mockEvents: Event[] = [
     imageUrl: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2670&auto=format&fit=crop",
     isVirtual: false,
     registrationUrl: "https://example.com/register",
-    content: null,
-    blocks: null,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
     categories: ["Conference", "AI", "Machine Learning"],
@@ -67,8 +63,6 @@ const mockEvents: Event[] = [
     imageUrl: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=2670&auto=format&fit=crop",
     isVirtual: true,
     registrationUrl: "https://example.com/register2",
-    content: null,
-    blocks: null,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
     categories: ["Workshop", "Cybersecurity", "Blockchain"],
@@ -99,8 +93,6 @@ const mockEvents: Event[] = [
     imageUrl: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=2670&auto=format&fit=crop",
     isVirtual: false,
     registrationUrl: "https://example.com/register3",
-    content: null,
-    blocks: null,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
     categories: ["Workshop", "Cloud Computing", "DevOps"],
@@ -131,8 +123,6 @@ const mockEvents: Event[] = [
     imageUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2670&auto=format&fit=crop",
     isVirtual: false,
     registrationUrl: "https://example.com/register4",
-    content: null,
-    blocks: null,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
     categories: ["Conference", "IoT", "Robotics"],
@@ -164,14 +154,13 @@ const mockEvents: Event[] = [
     imageUrl: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2670&auto=format&fit=crop",
     isVirtual: true,
     registrationUrl: null,
-    content: null,
-    blocks: null,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
     categories: ["Workshop", "Software Engineering", "Training"],
     status: "Completed",
     fullDescription: "A comprehensive bootcamp covering modern software development technologies including React, Node.js, and cloud deployment. Focused on empowering Tanzanian youth with practical software development skills.",
     venue: "Virtual Platform",
+    address: "Dar es Salaam, Tanzania",
     organizer: "Smartinno Engineering",
     speakers: [
       { name: "John Smith", role: "Senior Developer" },
@@ -195,8 +184,6 @@ const mockEvents: Event[] = [
     imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop",
     isVirtual: false,
     registrationUrl: null,
-    content: null,
-    blocks: null,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
     categories: ["Conference", "Digital Transformation", "Innovation"],
@@ -227,14 +214,13 @@ const mockEvents: Event[] = [
     imageUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2670&auto=format&fit=crop",
     isVirtual: true,
     registrationUrl: null,
-    content: null,
-    blocks: null,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
     categories: ["Workshop", "Mobile Development", "Cross-platform"],
     status: "Completed",
     fullDescription: "A hands-on workshop covering mobile app development using React Native and Flutter. Focused on building scalable and user-friendly mobile applications for the Tanzanian market.",
     venue: "Virtual Platform",
+    address: "Dar es Salaam, Tanzania",
     organizer: "Smartinno Engineering",
     speakers: [
       { name: "Mike Johnson", role: "Mobile Developer" },
@@ -258,8 +244,6 @@ const mockEvents: Event[] = [
     imageUrl: "https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?q=80&w=2670&auto=format&fit=crop",
     isVirtual: false,
     registrationUrl: null,
-    content: null,
-    blocks: null,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
     categories: ["Conference", "Innovation", "Technology"],

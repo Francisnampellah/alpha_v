@@ -19,57 +19,56 @@ import {
   Check,
   Menu,
   X,
-  Filter,
 } from "lucide-react"
 
-const sampleProjectData = {
-  mainProduct: "ConnectPro Workflow Automation",
-  description:
-    "A dynamic workflow automation solution designed to enhance organizational efficiency and collaboration. It provides businesses with tools to streamline task management, approvals, and notifications, reducing manual workloads and increasing productivity.",
-  leftSideText: [
-    "Customizable workflow design",
-    "Task assignment and tracking",
-    "Automated approvals",
-    "Document management",
-    "Real-time monitoring",
-  ],
-  estTime: "6-8 months\nPhased implementation",
-  workerInfo: "Enhances organizational efficiency and reduces manual workloads",
-}
+// const sampleProjectData = {
+//   mainProduct: "ConnectPro Workflow Automation",
+//   description:
+//     "A dynamic workflow automation solution designed to enhance organizational efficiency and collaboration. It provides businesses with tools to streamline task management, approvals, and notifications, reducing manual workloads and increasing productivity.",
+//   leftSideText: [
+//     "Customizable workflow design",
+//     "Task assignment and tracking",
+//     "Automated approvals",
+//     "Document management",
+//     "Real-time monitoring",
+//   ],
+//   estTime: "6-8 months\nPhased implementation",
+//   workerInfo: "Enhances organizational efficiency and reduces manual workloads",
+// }
 
-const projectsList = [
-  {
-    id: 1,
-    title: "Workflow Designer",
-    category: "Automation",
-    image: "/placeholder.svg?height=60&width=60",
-    likes: 189,
-    comments: 32,
-  },
-  {
-    id: 2,
-    title: "Task Manager",
-    category: "Productivity",
-    image: "/placeholder.svg?height=60&width=60",
-    likes: 145,
-    comments: 28,
-  },
-  {
-    id: 3,
-    title: "Document Hub",
-    category: "Collaboration",
-    image: "/placeholder.svg?height=60&width=60",
-    likes: 167,
-    comments: 24,
-  },
-]
+// const projectsList = [
+//   {
+//     id: 1,
+//     title: "Workflow Designer",
+//     category: "Automation",
+//     image: "/placeholder.svg?height=60&width=60",
+//     likes: 189,
+//     comments: 32,
+//   },
+//   {
+//     id: 2,
+//     title: "Task Manager",
+//     category: "Productivity",
+//     image: "/placeholder.svg?height=60&width=60",
+//     likes: 145,
+//     comments: 28,
+//   },
+//   {
+//     id: 3,
+//     title: "Document Hub",
+//     category: "Collaboration",
+//     image: "/placeholder.svg?height=60&width=60",
+//     likes: 167,
+//     comments: 24,
+//   },
+// ]
 
-const teamMembers = [
-  { id: 1, name: "Michael Chen", role: "Project Lead", avatar: "/placeholder.svg?height=40&width=40" },
-  { id: 2, name: "Sarah Johnson", role: "Workflow Architect", avatar: "/placeholder.svg?height=40&width=40" },
-  { id: 3, name: "David Kim", role: "UI/UX Designer", avatar: "/placeholder.svg?height=40&width=40" },
-  { id: 4, name: "Emily Rodriguez", role: "Backend Developer", avatar: "/placeholder.svg?height=40&width=40" },
-]
+// const teamMembers = [
+//   { id: 1, name: "Michael Chen", role: "Project Lead", avatar: "/placeholder.svg?height=40&width=40" },
+//   { id: 2, name: "Sarah Johnson", role: "Workflow Architect", avatar: "/placeholder.svg?height=40&width=40" },
+//   { id: 3, name: "David Kim", role: "UI/UX Designer", avatar: "/placeholder.svg?height=40&width=40" },
+//   { id: 4, name: "Emily Rodriguez", role: "Backend Developer", avatar: "/placeholder.svg?height=40&width=40" },
+// ]
 
 export default function MacWebpageDisplay() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)

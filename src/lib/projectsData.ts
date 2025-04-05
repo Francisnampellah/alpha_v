@@ -7,6 +7,10 @@ export interface Project {
   demoUrl?: string;
   githubUrl?: string;
   featured?: boolean;
+  category: string;
+  features: string[];
+  estTime: string;
+  impact: string;
 }
 
 export const projects: Project[] = [
@@ -18,7 +22,11 @@ export const projects: Project[] = [
     technologies: ["React", "Node.js", "IoT", "Python", "TensorFlow"],
     demoUrl: "https://urban-farming-demo.com",
     githubUrl: "https://github.com/smartinno/urban-farming",
-    featured: true
+    featured: true,
+    category: "Agriculture",
+    features: ["Vertical Farming", "Sustainable", "Maximizes Space"],
+    estTime: "2-3 years",
+    impact: "High - Sustainable food production in urban areas"
   },
   {
     id: "smart-grid",
@@ -28,7 +36,11 @@ export const projects: Project[] = [
     technologies: ["TypeScript", "Next.js", "GraphQL", "MongoDB", "Docker"],
     demoUrl: "https://smart-grid-demo.com",
     githubUrl: "https://github.com/smartinno/smart-grid",
-    featured: true
+    featured: true,
+    category: "Energy",
+    features: ["Intelligent", "Optimizes Electricity Flow", "Reduces Waste"],
+    estTime: "1-2 years",
+    impact: "High - Energy efficiency and sustainability"
   },
   {
     id: "water-purification",
@@ -38,7 +50,11 @@ export const projects: Project[] = [
     technologies: ["Vue.js", "Express", "PostgreSQL", "Redis", "AWS"],
     demoUrl: "https://water-purification-demo.com",
     githubUrl: "https://github.com/smartinno/water-purification",
-    featured: false
+    featured: false,
+    category: "Water",
+    features: ["Advanced", "Removes Contaminants", "Provides Clean Water"],
+    estTime: "1-2 years",
+    impact: "High - Access to clean water in underserved areas"
   },
   {
     id: "telemedicine",
@@ -48,6 +64,10 @@ export const projects: Project[] = [
     technologies: ["Angular", "NestJS", "MySQL", "Socket.io", "Azure"],
     demoUrl: "https://telemedicine-demo.com",
     githubUrl: "https://github.com/smartinno/telemedicine",
-    featured: true
+    featured: true,
+    category: "Health",
+    features: ["Connecting Remote Communities", "High-Quality Video Consultations", "Remote Diagnostic Tools"],
+    estTime: "1-2 years",
+    impact: "High - Improved healthcare access in rural areas"
   }
 ]; 

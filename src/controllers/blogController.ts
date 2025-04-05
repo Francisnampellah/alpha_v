@@ -1,3 +1,12 @@
+export type BlogBlock = {
+  type: 'text' | 'image' | 'heading' | 'list';
+  content: string;
+  level?: number;  // For headings (h1, h2, etc.)
+  items?: string[];  // For lists
+  alt?: string;  // For images
+  src?: string;  // For images
+}
+
 export interface BlogPost {
   id: string
   title: string
@@ -7,7 +16,7 @@ export interface BlogPost {
   tags: string[]
   published: boolean
   content: string
-  blocks: any[] // We'll keep this as any[] for now since the structure isn't specified
+  blocks: BlogBlock[]
   createdAt: string
   updatedAt: string
 }

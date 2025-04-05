@@ -41,7 +41,7 @@ const CareerPage = () => {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2684&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="/smart_inno-01.jpeg"
             alt="Join our team"
             fill
             priority
@@ -73,7 +73,7 @@ const CareerPage = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
             >
-              Build Tanzania's
+              Build Tanzania&apos;s
               <br />
               Technology Future
             </motion.h2>
@@ -84,7 +84,7 @@ const CareerPage = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl"
             >
-              Join our team of innovators and help shape the future of technology in Tanzania. We're looking for passionate individuals who want to make a difference through cutting-edge solutions.
+              Join our team of innovators and help shape the future of technology in Tanzania. We&apos;re looking for passionate individuals who want to make a difference through cutting-edge solutions.
             </motion.p>
 
             <motion.div

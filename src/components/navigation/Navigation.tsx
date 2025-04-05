@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight } from "lucide-react"
+import Image from "next/image"
 
 type DropdownItem = {
   href: string
@@ -114,8 +115,8 @@ const DropdownNavLink = ({ label, dropdownItems, textColor = "text-black" }: Omi
 
 const CompanyLogo = ({ useDark = false }: {  useDark?: boolean }) => (
   <div className="flex items-center gap-3">
-    <div className={`w-8 h-8 rounded-full flex items-center justify-center ${useDark ? 'bg-black' : 'bg-white'}`}>
-      <svg 
+    <div className={`w-8 h-8 rounded-full flex items-center justify-center ${useDark ? 'bg-bladck' : 'bg-wdhite'}`}>
+      {/* <svg 
         width="16" 
         height="16" 
         viewBox="0 0 24 24" 
@@ -144,7 +145,8 @@ const CompanyLogo = ({ useDark = false }: {  useDark?: boolean }) => (
           strokeLinecap="round" 
           strokeLinejoin="round"
         />
-      </svg>
+      </svg> */}
+      <Image src={useDark ? "/smart_logo-black.png" : "/smart_logo-white.png"} alt="SMARTiNNO" width={32} height={32} />
     </div>
     <div className="relative">
       <span className={`text-xl font-light tracking-wider ${useDark ? "text-black" : "text-white"} relative z-10`}>
