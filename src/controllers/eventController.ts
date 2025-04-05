@@ -281,7 +281,7 @@ export async function getEvents(): Promise<Event[]> {
   }
 }
 
-export async function getEventById(id: string): Promise<Event> {
+export async function getEventById(id: string | number): Promise<Event> {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/events/${id}`);
     if (!response.ok) {
