@@ -2,12 +2,18 @@ import { NextResponse } from 'next/server';
 import { getEventById } from '@/controllers/eventController';
 import type { NextRequest } from 'next/server';
 
+type Props = {
+  params: {
+    id: string;
+  };
+};
+
 export async function GET(
   _request: NextRequest,
-  context: { params: { id: string } }
+  { params }: Props
 ) {
   try {
-    const event = await getEventById(context.params.id);
+    const event = await getEventById(params.id);
 
     if (!event) {
       return NextResponse.json(
