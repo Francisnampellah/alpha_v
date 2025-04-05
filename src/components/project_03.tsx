@@ -509,7 +509,7 @@ export default function AssetManagementApp() {
                               ? "bg-green-100 text-green-600"
                               : transaction.type === "sell"
                                 ? "bg-red-100 text-red-600"
-                                : "bg-blue-100 text-blue-600"
+                                : "bg-blue-100 text-[#296880]"
                           }`}
                         >
                           {transaction.type === "buy" && <TrendingUp size={10} />}
@@ -532,7 +532,7 @@ export default function AssetManagementApp() {
                               ? "text-red-600"
                               : transaction.type === "sell"
                                 ? "text-green-600"
-                                : "text-blue-600"
+                                : "text-[#296880]"
                           }`}
                         >
                           {transaction.type === "buy" ? "-" : "+"}
@@ -565,7 +565,7 @@ export default function AssetManagementApp() {
                   </div>
                   <div>
                     <p className="text-gray-500">Dividends</p>
-                    <p className="text-blue-600 font-medium">+$124.50</p>
+                    <p className="text-[#296880] font-medium">+$124.50</p>
                   </div>
                 </div>
                 <div className="h-1 bg-gray-200 rounded-full overflow-hidden">

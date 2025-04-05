@@ -190,7 +190,7 @@ export default function EventsPage() {
       </div>
 
       {/* Banner Section */}
-      <div className="bg-[#2353aa] text-white py-16">
+      <div className="bg-[#3798b8] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <motion.div
@@ -212,9 +212,9 @@ export default function EventsPage() {
               </p>
               <div className="flex items-center gap-4">
                 <div className="flex -space-x-2">
-                  <div className="w-10 h-10 rounded-full bg-gray-300 border-2 border-[#2353aa]"></div>
-                  <div className="w-10 h-10 rounded-full bg-gray-400 border-2 border-[#2353aa]"></div>
-                  <div className="w-10 h-10 rounded-full bg-gray-500 border-2 border-[#2353aa]"></div>
+                  <div className="w-10 h-10 rounded-full bg-gray-300 border-2 border-[#3798b8]"></div>
+                  <div className="w-10 h-10 rounded-full bg-gray-400 border-2 border-[#3798b8]"></div>
+                  <div className="w-10 h-10 rounded-full bg-gray-500 border-2 border-[#3798b8]"></div>
                 </div>
                 <p className="text-sm">
                   Join <span className="font-semibold">500+ Tech Professionals</span> at our events
@@ -270,7 +270,7 @@ export default function EventsPage() {
               <Filter className="h-4 w-4 text-gray-400" />
             </div>
             <select
-              className="pl-10 pr-10 py-2.5 rounded-lg border border-gray-200 w-full appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="pl-10 pr-10 py-2.5 rounded-lg border border-gray-200 w-full appearance-none focus:outline-none focus:ring-2 focus:ring-#3798b8 focus:border-transparent"
               aria-label="Filter events by category"
               value={activeFilter}
               onChange={(e) => setActiveFilter(e.target.value)}
@@ -351,8 +351,8 @@ export default function EventsPage() {
                 
                 <div className="p-4 pt-0 border-t border-gray-100 mt-auto">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium text-blue-600">View details</span>
-                    <ArrowRight className="w-4 h-4 text-blue-600 transform group-hover:translate-x-1 transition-all" />
+                    <span className="text-sm font-medium text-[#296880]">View details</span>
+                    <ArrowRight className="w-4 h-4 text-[#296880] transform group-hover:translate-x-1 transition-all" />
                   </div>
                 </div>
               </Link>
@@ -453,8 +453,8 @@ export default function EventsPage() {
                 
                 <div className="p-4 pt-0 border-t border-gray-100 mt-auto">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium text-blue-600">View details</span>
-                    <ArrowRight className="w-4 h-4 text-blue-600 transform group-hover:translate-x-1 transition-all" />
+                    <span className="text-sm font-medium text-[#296880]">View details</span>
+                    <ArrowRight className="w-4 h-4 text-[#296880] transform group-hover:translate-x-1 transition-all" />
                   </div>
                 </div>
               </Link>
@@ -483,7 +483,7 @@ export default function EventsPage() {
       </SectionContainer>
 
       {/* CTA Section */}
-      <div className="px-4 sm:px-6 lg:px-12 py-16 bg-blue-600 text-white">
+      <div className="px-4 sm:px-6 lg:px-12 py-16 bg-[#296880] text-white">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -503,7 +503,7 @@ export default function EventsPage() {
               />
               <button
                 type="button"
-                className="bg-white text-blue-600 hover:bg-blue-50 font-medium px-6 py-3 rounded-lg transition-colors inline-flex items-center justify-center gap-2 whitespace-nowrap"
+                className="bg-white text-[#296880] hover:bg-blue-50 font-medium px-6 py-3 rounded-lg transition-colors inline-flex items-center justify-center gap-2 whitespace-nowrap"
               >
                 <span>Subscribe</span>
                 <ArrowRight className="w-4 h-4" />

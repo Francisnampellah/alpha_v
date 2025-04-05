@@ -57,9 +57,9 @@ export default function ProjectsList() {
         >
           <div className="inline-flex items-center justify-center mb-4">
             <span className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mr-3">
-              <Sparkles className="h-5 w-5 text-blue-500" />
+              <Sparkles className="h-5 w-5 text-#3798b8" />
             </span>
-            <h2 className="text-sm font-semibold text-blue-600 tracking-wide uppercase">Our Portfolio</h2>
+            <h2 className="text-sm font-semibold text-[#296880] tracking-wide uppercase">Our Portfolio</h2>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 tracking-tight">
             Innovative Solutions
@@ -102,7 +102,7 @@ export default function ProjectsList() {
               whileHover={{ y: -5 }}
               className="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden border border-gray-100 flex flex-col"
             >
-              <div className="h-48 bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center relative">
+              <div className="h-48 bg-gradient-to-r from-#3798b8 to-indigo-600 flex items-center justify-center relative">
                 {project.imageUrl ? (
                   <img 
                     src={project.imageUrl} 
@@ -154,11 +154,11 @@ export default function ProjectsList() {
                 <div className="border-t border-gray-100 pt-4 mt-auto">
                   <div className="flex justify-between items-center mb-4">
                     <div className="flex items-center text-xs text-gray-600">
-                      <Clock className="h-4 w-4 mr-1 text-blue-500" />
+                      <Clock className="h-4 w-4 mr-1 text-#3798b8" />
                       <span>{project.estTime}</span>
                     </div>
                     <div className="flex items-center text-xs text-gray-600">
-                      <Users className="h-4 w-4 mr-1 text-blue-500" />
+                      <Users className="h-4 w-4 mr-1 text-#3798b8" />
                       <span>Impact Potential</span>
                     </div>
                   </div>

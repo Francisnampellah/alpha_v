@@ -125,7 +125,7 @@ export default function WelcomeHeroBanner() {
           >
             <button 
               onClick={() => router.push('/services')}
-              className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-5 sm:px-6 py-2.5 sm:py-3 font-medium flex items-center justify-center transition-colors shadow-md"
+              className="bg-#3798b8 hover:bg-[#296880] text-white rounded-full px-5 sm:px-6 py-2.5 sm:py-3 font-medium flex items-center justify-center transition-colors shadow-md"
             >
               <span className="mr-2">Explore Our Services</span>
               <ArrowRight size={16} />

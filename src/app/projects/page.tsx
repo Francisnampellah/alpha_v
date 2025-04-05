@@ -181,7 +181,7 @@ export default function ProjectsPage() {
               placeholder="Search projects..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-#3798b8 focus:border-transparent"
             />
           </div>
 
@@ -190,7 +190,7 @@ export default function ProjectsPage() {
               <Filter className="h-4 w-4 text-gray-400" />
             </div>
             <select
-              className="pl-10 pr-10 py-2.5 rounded-lg border border-gray-200 w-full appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="pl-10 pr-10 py-2.5 rounded-lg border border-gray-200 w-full appearance-none focus:outline-none focus:ring-2 focus:ring-#3798b8 focus:border-transparent"
               aria-label="Filter projects by category"
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
@@ -260,7 +260,7 @@ export default function ProjectsPage() {
                   <p className="text-gray-700 mb-4">{project.description}</p>
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-gray-500">View Project</span>
-                    <ArrowRight className="w-4 h-4 text-gray-500 group-hover:text-blue-600 transform group-hover:translate-x-1 transition-all" />
+                    <ArrowRight className="w-4 h-4 text-gray-500 group-hover:text-[#296880] transform group-hover:translate-x-1 transition-all" />
                   </div>
                 </div>
               </Link>
@@ -349,13 +349,13 @@ export default function ProjectsPage() {
               <h3 className="text-xl font-bold mb-2">{category.title}</h3>
               <p className="text-gray-700 mb-3">{category.description}</p>
               <div className="flex justify-between items-center">
-                <span className="text-sm font-medium text-blue-600">{category.count} projects</span>
+                <span className="text-sm font-medium text-[#296880]">{category.count} projects</span>
                 <button
                   onClick={() => {
                     setSelectedCategory(category.title.split(" ")[0]);
                     document.getElementById("projects-section")?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="text-sm font-medium text-gray-900 hover:text-blue-600 transition-colors flex items-center gap-1"
+                  className="text-sm font-medium text-gray-900 hover:text-[#296880] transition-colors flex items-center gap-1"
                 >
                   <span>View all</span>
                   <ArrowRight className="w-3 h-3" />
@@ -367,7 +367,7 @@ export default function ProjectsPage() {
       </SectionContainer>
 
       {/* CTA Section */}
-      <div className="px-4 sm:px-6 lg:px-12 py-16 bg-blue-600 text-white">
+      <div className="px-4 sm:px-6 lg:px-12 py-16 bg-[#296880] text-white">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -382,7 +382,7 @@ export default function ProjectsPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="bg-white text-blue-600 hover:bg-blue-50 font-medium px-8 py-3 rounded-lg transition-colors inline-flex items-center justify-center gap-2 group"
+                className="bg-white text-[#296880] hover:bg-blue-50 font-medium px-8 py-3 rounded-lg transition-colors inline-flex items-center justify-center gap-2 group"
               >
                 <span>Contact Us</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />

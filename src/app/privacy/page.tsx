@@ -97,15 +97,15 @@ export default function PrivacyPage() {
             </p>
             <ul className="space-y-3 text-gray-700">
               <li className="flex items-start gap-2">
-                <Shield className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
+                <Shield className="w-5 h-5 text-[#296880] mt-1 flex-shrink-0" />
                 <span>Personal information (name, email, contact details)</span>
               </li>
               <li className="flex items-start gap-2">
-                <Lock className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
+                <Lock className="w-5 h-5 text-[#296880] mt-1 flex-shrink-0" />
                 <span>Account credentials and security information</span>
               </li>
               <li className="flex items-start gap-2">
-                <FileText className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
+                <FileText className="w-5 h-5 text-[#296880] mt-1 flex-shrink-0" />
                 <span>Project-related information and documentation</span>
               </li>
             </ul>
@@ -200,21 +200,21 @@ export default function PrivacyPage() {
             <h3 className="text-2xl font-bold mb-6">Our Security Measures</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <Eye className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
+                <Eye className="w-5 h-5 text-[#296880] mt-1 flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold mb-1">Encryption</h4>
                   <p className="text-gray-700">All data is encrypted in transit and at rest using industry-standard protocols.</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <Lock className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
+                <Lock className="w-5 h-5 text-[#296880] mt-1 flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold mb-1">Access Controls</h4>
                   <p className="text-gray-700">Strict access controls and authentication mechanisms protect your data.</p>
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <Shield className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
+                <Shield className="w-5 h-5 text-[#296880] mt-1 flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold mb-1">Regular Audits</h4>
                   <p className="text-gray-700">We conduct regular security audits and vulnerability assessments.</p>
@@ -246,7 +246,7 @@ export default function PrivacyPage() {
       </SectionContainer>
 
       {/* Contact Section */}
-      <div className="px-4 sm:px-6 lg:px-12 py-16 bg-blue-600 text-white">
+      <div className="px-4 sm:px-6 lg:px-12 py-16 bg-[#296880] text-white">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -261,7 +261,7 @@ export default function PrivacyPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="bg-white text-blue-600 hover:bg-blue-50 font-medium px-8 py-3 rounded-lg transition-colors inline-flex items-center justify-center gap-2 group"
+                className="bg-white text-[#296880] hover:bg-blue-50 font-medium px-8 py-3 rounded-lg transition-colors inline-flex items-center justify-center gap-2 group"
               >
                 <span>Contact Us</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />

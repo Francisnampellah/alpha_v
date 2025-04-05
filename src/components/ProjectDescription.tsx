@@ -29,7 +29,7 @@ export default function ProjectDescription({ project, showBackLink = true }: Pro
         </Link>
       )}
 
-      <div className="h-72 bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center relative overflow-hidden">
+      <div className="h-72 bg-gradient-to-r from-#3798b8 to-indigo-600 flex items-center justify-center relative overflow-hidden">
         {project.imageUrl ? (
           <img src={project.imageUrl} alt={project.title} className="w-full h-full object-cover" />
         ) : (
@@ -60,7 +60,7 @@ export default function ProjectDescription({ project, showBackLink = true }: Pro
         <div className="grid md:grid-cols-2 gap-10 mb-10">
           <div>
             <h2 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
-              <span className="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center mr-3">
+              <span className="h-8 w-8 rounded-full bg-#3798b8 flex items-center justify-center mr-3">
                 <svg className="h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -76,7 +76,7 @@ export default function ProjectDescription({ project, showBackLink = true }: Pro
                   transition={{ delay: index * 0.1 }}
                   className="flex items-start"
                 >
-                  <svg className="w-5 h-5 text-blue-500 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <svg className="w-5 h-5 text-#3798b8 mr-3 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <span className="text-gray-700">{feature}</span>
@@ -87,7 +87,7 @@ export default function ProjectDescription({ project, showBackLink = true }: Pro
 
           <div>
             <h2 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
-              <span className="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center mr-3">
+              <span className="h-8 w-8 rounded-full bg-#3798b8 flex items-center justify-center mr-3">
                 <BarChart2 className="h-4 w-4 text-white" />
               </span>
               Project Details
@@ -95,7 +95,7 @@ export default function ProjectDescription({ project, showBackLink = true }: Pro
             <div className="space-y-6">
               <div className="bg-gray-50 rounded-2xl p-6">
                 <div className="flex items-center mb-2">
-                  <Clock className="h-5 w-5 text-blue-500 mr-2" />
+                  <Clock className="h-5 w-5 text-#3798b8 mr-2" />
                   <p className="text-gray-700 font-medium">Estimated Timeline</p>
                 </div>
                 <p className="text-gray-900 font-medium ml-7">{project.estTime}</p>
@@ -103,7 +103,7 @@ export default function ProjectDescription({ project, showBackLink = true }: Pro
               
               <div className="bg-gray-50 rounded-2xl p-6">
                 <div className="flex items-center mb-2">
-                  <Users className="h-5 w-5 text-blue-500 mr-2" />
+                  <Users className="h-5 w-5 text-#3798b8 mr-2" />
                   <p className="text-gray-700 font-medium">Impact</p>
                 </div>
                 <p className="text-gray-900 ml-7">{project.impact}</p>

@@ -18,7 +18,7 @@ export default function ChemicalSolutionsCarousel() {
       description:
         "Advanced IoT solutions and automation systems for modern manufacturing processes, ensuring efficiency and real-time monitoring.",
       image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=3270&auto=format&fit=crop",
-      color: "#ffffff", // blue-500
+      color: "#ffffff", // #3798b8
     },
     pharmaceutical: {
       title: "Digital Healthcare",
@@ -111,7 +111,7 @@ export default function ChemicalSolutionsCarousel() {
     <div className="flex flex-col w-full">
       {/* Top Section - Chemical Solutions */}
       <div
-        className="bg-[#2353aa] text-white p-8 md:p-12"
+        className="bg-[#3798b8] text-white p-8 md:p-12"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
@@ -135,7 +135,7 @@ export default function ChemicalSolutionsCarousel() {
               key={item.id}
               onClick={() => handleTabClick(item.id)}
               className={`px-5 py-2.5 rounded-full transition-all duration-300 text-sm font-medium ${
-                activeTab === item.id ? "bg-white text-[#2353aa]" : "bg-[#1a4382] text-white hover:bg-[#232a5c]"
+                activeTab === item.id ? "bg-white text-[#3798b8]" : "bg-[#296880] text-white hover:bg-[#232a5c]"
               }`}
             >
               {item.label}
@@ -145,7 +145,7 @@ export default function ChemicalSolutionsCarousel() {
           <div className="ml-auto flex items-center">
             <button
               onClick={togglePause}
-              className="p-2 rounded-full hover:bg-[#1a4382] text-white transition-colors"
+              className="p-2 rounded-full hover:bg-[#296880] text-white transition-colors"
               aria-label={isPaused ? "Play slideshow" : "Pause slideshow"}
             >
               {isPaused ? <Play className="h-5 w-5" /> : <Pause className="h-5 w-5" />}
@@ -154,7 +154,7 @@ export default function ChemicalSolutionsCarousel() {
         </div>
 
         {/* Progress bar */}
-        <div className="w-full h-1 bg-[#1a4382] mb-6 rounded-full overflow-hidden">
+        <div className="w-full h-1 bg-[#296880] mb-6 rounded-full overflow-hidden">
           <div
             className={`h-full transition-all duration-300`}
             style={{
@@ -209,18 +209,18 @@ export default function ChemicalSolutionsCarousel() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="bg-[#1a4382] rounded-xl p-4 mt-8 flex justify-between items-center">
+        <div className="bg-[#296880] rounded-xl p-4 mt-8 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <div className="flex -space-x-2">
-              <div className="w-8 h-8 rounded-full bg-gray-300 border-2 border-[#1a4382]"></div>
-              <div className="w-8 h-8 rounded-full bg-gray-400 border-2 border-[#1a4382]"></div>
-              <div className="w-8 h-8 rounded-full bg-gray-500 border-2 border-[#1a4382]"></div>
+              <div className="w-8 h-8 rounded-full bg-gray-300 border-2 border-[#296880]"></div>
+              <div className="w-8 h-8 rounded-full bg-gray-400 border-2 border-[#296880]"></div>
+              <div className="w-8 h-8 rounded-full bg-gray-500 border-2 border-[#296880]"></div>
             </div>
             <p className="text-sm">
               Trusted by <span className="font-semibold">Tech Innovators</span> worldwide
             </p>
           </div>
-          <button className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-4 py-2 flex items-center transition-colors">
+          <button className="bg-#3798b8 hover:bg-[#296880] text-white rounded-full px-4 py-2 flex items-center transition-colors">
             <span className="mr-2">View All Solutions</span>
             <ArrowRight size={16} />
           </button>
@@ -230,8 +230,8 @@ export default function ChemicalSolutionsCarousel() {
       {/* Bottom Section - Benefits */}
       {/* <div className="bg-gray-100 p-8 md:p-12">
         <div className="flex items-center gap-2 mb-2">
-          <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-          <p className="text-sm text-blue-500 font-medium">BENEFITS YOU'LL GAIN</p>
+          <div className="w-2 h-2 rounded-full bg-#3798b8"></div>
+          <p className="text-sm text-#3798b8 font-medium">BENEFITS YOU'LL GAIN</p>
         </div>
 
         <div className="flex flex-col md:flex-row gap-8 md:gap-16">
@@ -253,7 +253,7 @@ export default function ChemicalSolutionsCarousel() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-          <div className="bg-[#2353aa] text-white p-6 rounded-xl">
+          <div className="bg-[#3798b8] text-white p-6 rounded-xl">
             <h3 className="font-semibold text-lg mb-4">Superior Quality</h3>
             <p className="text-sm text-gray-300 mb-8">
               Rigorously tested formulations that meet or exceed industry standards.
@@ -279,7 +279,7 @@ export default function ChemicalSolutionsCarousel() {
             </p>
           </div>
 
-          <div className="bg-[#2353aa] text-white p-6 rounded-xl">
+          <div className="bg-[#3798b8] text-white p-6 rounded-xl">
             <h3 className="font-semibold text-lg mb-4">Custom Formulations</h3>
             <p className="text-sm text-gray-300 mb-8">
               Tailored solutions designed to meet your specific requirements.

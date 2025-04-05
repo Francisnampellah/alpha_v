@@ -303,7 +303,7 @@ export default function AboutPage() {
                 viewport={{ once: true }}
               >
                 {/* Timeline dot */}
-                <div className="absolute left-0 md:left-1/2 top-0 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-blue-600 border-4 border-white shadow-sm transform -translate-x-2 md:-translate-x-2.5"></div>
+                <div className="absolute left-0 md:left-1/2 top-0 w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#296880] border-4 border-white shadow-sm transform -translate-x-2 md:-translate-x-2.5"></div>
 
                 {/* Content */}
                 <div className={`md:w-1/2 ${idx % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8"} pl-6 sm:pl-8 md:pl-0`}>
@@ -353,7 +353,7 @@ export default function AboutPage() {
               </div>
               <div className="p-4 sm:p-6">
                 <h3 className="text-lg sm:text-xl font-bold mb-1">{member.name}</h3>
-                <p className="text-sm sm:text-base text-blue-600 mb-2 sm:mb-3">{member.role}</p>
+                <p className="text-sm sm:text-base text-[#296880] mb-2 sm:mb-3">{member.role}</p>
                 <p className="text-sm sm:text-base text-gray-700 line-clamp-2">{member.bio}</p>
               </div>
             </motion.div>
@@ -362,7 +362,7 @@ export default function AboutPage() {
       </SectionContainer>
 
       {/* Contact Section */}
-      <div className="px-4 sm:px-6 lg:px-12 py-12 sm:py-16 bg-[#2353aa] text-white">
+      <div className="px-4 sm:px-6 lg:px-12 py-12 sm:py-16 bg-[#3798b8] text-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
             <motion.div
@@ -418,7 +418,7 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-[#131842] p-6 sm:p-8 rounded-xl"
+              className="bg-[#296880] p-6 sm:p-8 rounded-xl"
             >
               <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Send Us a Message</h3>
               <form className="space-y-4 sm:space-y-6">
@@ -430,7 +430,7 @@ export default function AboutPage() {
                     <input
                       type="text"
                       id="name"
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-[#1c2254] border border-[#2a325e] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-[#1F505F] border border-[#2a325e] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-#3798b8 text-sm sm:text-base"
                       placeholder="Your name"
                     />
                   </div>
@@ -441,7 +441,7 @@ export default function AboutPage() {
                     <input
                       type="email"
                       id="email"
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-[#1c2254] border border-[#2a325e] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-[#1F505F] border border-[#2a325e] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-#3798b8 text-sm sm:text-base"
                       placeholder="Your email"
                     />
                   </div>
@@ -454,7 +454,7 @@ export default function AboutPage() {
                   <input
                     type="text"
                     id="subject"
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-[#1c2254] border border-[#2a325e] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-[#1F505F] border border-[#2a325e] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-#3798b8 text-sm sm:text-base"
                     placeholder="Message subject"
                   />
                 </div>
@@ -466,14 +466,14 @@ export default function AboutPage() {
                   <textarea
                     id="message"
                     rows={4}
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-[#1c2254] border border-[#2a325e] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-[#1F505F] border border-[#2a325e] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-#3798b8 text-sm sm:text-base"
                     placeholder="Your message"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 sm:px-6 py-2 sm:py-3 rounded-lg transition-colors flex items-center justify-center gap-2 group text-sm sm:text-base"
+                  className="w-full bg-[#296880] hover:bg-blue-700 text-white font-medium px-4 sm:px-6 py-2 sm:py-3 rounded-lg transition-colors flex items-center justify-center gap-2 group text-sm sm:text-base"
                 >
                   <span>Send Message</span>
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -485,7 +485,7 @@ export default function AboutPage() {
       </div>
 
       {/* CTA Section */}
-      <div className="px-4 sm:px-6 lg:px-12 py-12 sm:py-16 bg-blue-600 text-white">
+      <div className="px-4 sm:px-6 lg:px-12 py-12 sm:py-16 bg-[#296880] text-white">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -500,7 +500,7 @@ export default function AboutPage() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Link
                 href="/contact"
-                className="bg-white text-blue-600 hover:bg-blue-50 font-medium px-6 sm:px-8 py-2 sm:py-3 rounded-lg transition-colors inline-flex items-center justify-center gap-2 group text-sm sm:text-base"
+                className="bg-white text-[#296880] hover:bg-blue-50 font-medium px-6 sm:px-8 py-2 sm:py-3 rounded-lg transition-colors inline-flex items-center justify-center gap-2 group text-sm sm:text-base"
               >
                 <span>Contact Us</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />

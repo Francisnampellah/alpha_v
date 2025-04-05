@@ -9,7 +9,7 @@ export default function OurEvents() {
   return (
     <div className="flex flex-col w-full">
       {/* Top Section - Upcoming Events */}
-      <div className="bg-[#2353aa] text-white p-8 md:p-12">
+      <div className="bg-[#3798b8] text-white p-8 md:p-12">
         <div className="flex items-center gap-2 mb-2">
           <div className="w-2 h-2 rounded-full bg-blue-400"></div>
           <p className="text-sm text-blue-200 font-medium">4 UPCOMING EVENTS</p>
@@ -24,10 +24,10 @@ export default function OurEvents() {
         <div className="h-px bg-gray-700 mb-8"></div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="bg-[#1a4382] p-6 rounded-xl">
+          <div className="bg-[#296880] p-6 rounded-xl">
             <div className="flex justify-between items-start mb-4">
               <p className="text-gray-400 mb-1">01.</p>
-              <div className="bg-blue-500/20 text-blue-200 text-xs font-medium px-2 py-1 rounded">MAY 15</div>
+              <div className="bg-#3798b8/20 text-blue-200 text-xs font-medium px-2 py-1 rounded">MAY 15</div>
             </div>
             <h3 className="font-semibold text-lg mb-4">AI & Robotics Summit</h3>
             <p className="text-sm text-gray-300">
@@ -35,10 +35,10 @@ export default function OurEvents() {
             </p>
           </div>
 
-          <div className="bg-[#1a4382] p-6 rounded-xl">
+          <div className="bg-[#296880] p-6 rounded-xl">
             <div className="flex justify-between items-start mb-4">
               <p className="text-gray-400 mb-1">02.</p>
-              <div className="bg-blue-500/20 text-blue-200 text-xs font-medium px-2 py-1 rounded">JUN 22</div>
+              <div className="bg-#3798b8/20 text-blue-200 text-xs font-medium px-2 py-1 rounded">JUN 22</div>
             </div>
             <h3 className="font-semibold text-lg mb-4">Sustainability in Tech</h3>
             <p className="text-sm text-gray-300">
@@ -46,10 +46,10 @@ export default function OurEvents() {
             </p>
           </div>
 
-          <div className="bg-[#1a4382] p-6 rounded-xl">
+          <div className="bg-[#296880] p-6 rounded-xl">
             <div className="flex justify-between items-start mb-4">
               <p className="text-gray-400 mb-1">03.</p>
-              <div className="bg-blue-500/20 text-blue-200 text-xs font-medium px-2 py-1 rounded">JUL 10</div>
+              <div className="bg-#3798b8/20 text-blue-200 text-xs font-medium px-2 py-1 rounded">JUL 10</div>
             </div>
             <h3 className="font-semibold text-lg mb-4">Tech Product Showcase</h3>
             <p className="text-sm text-gray-300">
@@ -57,10 +57,10 @@ export default function OurEvents() {
             </p>
           </div>
 
-          <div className="bg-[#1a4382] p-6 rounded-xl">
+          <div className="bg-[#296880] p-6 rounded-xl">
             <div className="flex justify-between items-start mb-4">
               <p className="text-gray-400 mb-1">04.</p>
-              <div className="bg-blue-500/20 text-blue-200 text-xs font-medium px-2 py-1 rounded">AUG 05</div>
+              <div className="bg-#3798b8/20 text-blue-200 text-xs font-medium px-2 py-1 rounded">AUG 05</div>
             </div>
             <h3 className="font-semibold text-lg mb-4">Innovation Workshop</h3>
             <p className="text-sm text-gray-300">
@@ -69,12 +69,12 @@ export default function OurEvents() {
           </div>
         </div>
 
-        <div className="bg-[#1a4382] rounded-xl p-4 mt-6 flex justify-between items-center">
+        <div className="bg-[#296880] rounded-xl p-4 mt-6 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <div className="flex -space-x-2">
-              <div className="w-8 h-8 rounded-full bg-gray-300 border-2 border-[#1a4382]"></div>
-              <div className="w-8 h-8 rounded-full bg-gray-400 border-2 border-[#1a4382]"></div>
-              <div className="w-8 h-8 rounded-full bg-gray-500 border-2 border-[#1a4382]"></div>
+              <div className="w-8 h-8 rounded-full bg-gray-300 border-2 border-[#296880]"></div>
+              <div className="w-8 h-8 rounded-full bg-gray-400 border-2 border-[#296880]"></div>
+              <div className="w-8 h-8 rounded-full bg-gray-500 border-2 border-[#296880]"></div>
             </div>
             <p className="text-sm">
               Join <span className="font-semibold">500+ Tech Professionals</span> at our events
@@ -82,7 +82,7 @@ export default function OurEvents() {
           </div>
           <button
             onClick={() => router.push("/events")}
-            className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-4 py-2 flex items-center transition-colors"
+            className="bg-#3798b8 hover:bg-[#296880] text-white rounded-full px-4 py-2 flex items-center transition-colors"
           >
             <span className="mr-2">Register Now</span>
             <ArrowRight size={16} />
@@ -93,8 +93,8 @@ export default function OurEvents() {
       {/* Bottom Section - Event Benefits */}
       <div className="bg-gray-100 p-8 md:p-12">
         <div className="flex items-center gap-2 mb-2">
-          <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-          <p className="text-sm text-blue-500 font-medium">WHY ATTEND OUR EVENTS</p>
+          <div className="w-2 h-2 rounded-full bg-#3798b8"></div>
+          <p className="text-sm text-#3798b8 font-medium">WHY ATTEND OUR EVENTS</p>
         </div>
 
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 mb-12">
@@ -115,7 +115,7 @@ export default function OurEvents() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-[#2353aa] text-white p-6 rounded-xl">
+          <div className="bg-[#3798b8] text-white p-6 rounded-xl">
             <h3 className="font-semibold text-lg mb-4">Expert Speakers</h3>
             <p className="text-sm text-gray-300 mb-8">
               Learn from tech leaders and renowned experts sharing cutting-edge insights.
@@ -141,7 +141,7 @@ export default function OurEvents() {
             </p>
           </div>
 
-          <div className="bg-[#2353aa] text-white p-6 rounded-xl">
+          <div className="bg-[#3798b8] text-white p-6 rounded-xl">
             <h3 className="font-semibold text-lg mb-4">Hands-on Demonstrations</h3>
             <p className="text-sm text-gray-300 mb-8">
               Experience our products and technologies through interactive demonstrations.
@@ -181,7 +181,7 @@ export default function OurEvents() {
 
       {/* Calendar Section */}
       <div className="bg-white p-8 md:p-12">
-        <div className="bg-[#2353aa] text-white p-8 rounded-xl">
+        <div className="bg-[#3798b8] text-white p-8 rounded-xl">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-2/3">
               <h3 className="text-2xl font-bold mb-4">Stay Updated on Our Events</h3>
@@ -201,13 +201,13 @@ export default function OurEvents() {
                   const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(event.text)}&dates=${event.dates}&details=${encodeURIComponent(event.details)}&location=${encodeURIComponent(event.location)}`
                   window.open(url, '_blank')
                 }}
-                className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-6 py-3 font-medium transition-colors"
+                className="bg-#3798b8 hover:bg-[#296880] text-white rounded-full px-6 py-3 font-medium transition-colors"
               >
                 Subscribe to Calendar
               </button>
             </div>
             <div className="md:w-1/3 flex justify-center mt-8 md:mt-0">
-              <div className="w-24 h-24 rounded-full bg-[#1a4382] flex items-center justify-center">
+              <div className="w-24 h-24 rounded-full bg-[#296880] flex items-center justify-center">
                 <Calendar className="w-12 h-12 text-blue-200" />
               </div>
             </div>

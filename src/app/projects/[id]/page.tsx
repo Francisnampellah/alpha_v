@@ -322,7 +322,7 @@ export default function ProjectDetail() {
                   <p className="text-gray-700">{relatedProject.description}</p>
                 </div>
                 
-                <div className="px-4 pb-4 flex items-center text-blue-600 font-medium">
+                <div className="px-4 pb-4 flex items-center text-[#296880] font-medium">
                   <span>View Project</span>
                   <ChevronRight className="w-4 h-4 ml-1" />
                 </div>
@@ -333,7 +333,7 @@ export default function ProjectDetail() {
       </SectionContainer>
 
       {/* CTA Section */}
-      <div className="px-4 sm:px-6 lg:px-12 py-16 bg-blue-600 text-white">
+      <div className="px-4 sm:px-6 lg:px-12 py-16 bg-[#296880] text-white">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -347,7 +347,7 @@ export default function ProjectDetail() {
             </p>
             <Link
               href="/contact"
-              className="bg-white text-blue-600 hover:bg-blue-50 font-medium px-8 py-3 rounded-lg transition-colors inline-flex items-center justify-center gap-2"
+              className="bg-white text-[#296880] hover:bg-blue-50 font-medium px-8 py-3 rounded-lg transition-colors inline-flex items-center justify-center gap-2"
             >
               <span>Get in Touch</span>
               <ArrowRight className="w-4 h-4" />

@@ -42,7 +42,7 @@ export default function ServicesPage() {
       id: "web-development",
       title: "Web Development",
       description: "Modern web applications built with cutting-edge technologies and responsive design principles.",
-      icon: <Cpu className="w-10 h-10 text-blue-500" />,
+      icon: <Cpu className="w-10 h-10 text-#3798b8" />,
       category: "development",
       features: [
         "Responsive front-end development",
@@ -122,7 +122,7 @@ export default function ServicesPage() {
       id: "devops-services",
       title: "DevOps Services",
       description: "Streamline your development lifecycle with CI/CD pipelines and infrastructure as code.",
-      icon: <Zap className="w-10 h-10 text-blue-500" />,
+      icon: <Zap className="w-10 h-10 text-#3798b8" />,
       category: "infrastructure",
       features: [
         "CI/CD pipeline setup",
@@ -349,7 +349,7 @@ export default function ServicesPage() {
                 </ul>
                 <Link
                   href={`/services/${service.id}`}
-                  className="mt-6 inline-flex items-center gap-1 text-blue-600 hover:text-blue-800 font-medium group"
+                  className="mt-6 inline-flex items-center gap-1 text-[#296880] hover:text-blue-800 font-medium group"
                 >
                   <span>Learn more</span>
                   <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -383,7 +383,7 @@ export default function ServicesPage() {
                 viewport={{ once: true }}
               >
                 {/* Timeline dot */}
-                <div className="absolute left-[15px] md:left-1/2 top-0 w-5 h-5 rounded-full bg-blue-600 border-4 border-white shadow-sm transform -translate-x-2 md:-translate-x-2.5"></div>
+                <div className="absolute left-[15px] md:left-1/2 top-0 w-5 h-5 rounded-full bg-[#296880] border-4 border-white shadow-sm transform -translate-x-2 md:-translate-x-2.5"></div>
 
                 {/* Content */}
                 <div className={`md:w-1/2 ${idx % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"} pl-12 md:pl-0`}>
@@ -446,7 +446,7 @@ export default function ServicesPage() {
       </SectionContainer>
 
       {/* CTA Section */}
-      <div className="px-4 sm:px-6 lg:px-12 py-16 bg-blue-600 text-white">
+      <div className="px-4 sm:px-6 lg:px-12 py-16 bg-[#296880] text-white">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -461,7 +461,7 @@ export default function ServicesPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="bg-white text-blue-600 hover:bg-blue-50 font-medium px-8 py-3 rounded-lg transition-colors inline-flex items-center justify-center gap-2 group"
+                className="bg-white text-[#296880] hover:bg-blue-50 font-medium px-8 py-3 rounded-lg transition-colors inline-flex items-center justify-center gap-2 group"
               >
                 <span>Contact Us</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />

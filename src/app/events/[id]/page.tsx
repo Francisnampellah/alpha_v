@@ -456,7 +456,7 @@ export default function EventPage() {
               
               <div className="space-y-5">
                 <div className="flex gap-3">
-                  <Calendar className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                  <Calendar className="w-5 h-5 text-[#296880] shrink-0 mt-0.5" />
                   <div>
                     <div className="font-medium">Date</div>
                     <div className="text-gray-700">{formatDate(event.date)}</div>
@@ -464,7 +464,7 @@ export default function EventPage() {
                 </div>
                 
                 <div className="flex gap-3">
-                  <MapPin className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                  <MapPin className="w-5 h-5 text-[#296880] shrink-0 mt-0.5" />
                   <div>
                     <div className="font-medium">Location</div>
                     <div className="text-gray-700">{event.venue}</div>
@@ -473,7 +473,7 @@ export default function EventPage() {
                 </div>
                 
                 <div className="flex gap-3">
-                  <User className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                  <User className="w-5 h-5 text-[#296880] shrink-0 mt-0.5" />
                   <div>
                     <div className="font-medium">Organizer</div>
                     <div className="text-gray-700">{event.organizer}</div>
@@ -654,7 +654,7 @@ export default function EventPage() {
       )}
 
       {/* CTA Section */}
-      <div className="px-4 sm:px-6 lg:px-12 py-16 bg-blue-600 text-white">
+      <div className="px-4 sm:px-6 lg:px-12 py-16 bg-[#296880] text-white">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -674,7 +674,7 @@ export default function EventPage() {
               />
               <button
                 type="button"
-                className="bg-white text-blue-600 hover:bg-blue-50 font-medium px-6 py-3 rounded-lg transition-colors inline-flex items-center justify-center gap-2 whitespace-nowrap"
+                className="bg-white text-[#296880] hover:bg-blue-50 font-medium px-6 py-3 rounded-lg transition-colors inline-flex items-center justify-center gap-2 whitespace-nowrap"
               >
                 <span>Subscribe</span>
                 <ArrowRight className="w-4 h-4" />

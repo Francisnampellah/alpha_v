@@ -88,7 +88,7 @@ export default function Footer() {
               Fr
             </Link>
           </div>
-          <Link href="#" className="bg-blue-600 text-white px-4 py-2 rounded-full flex items-center">
+          <Link href="#" className="bg-[#296880] text-white px-4 py-2 rounded-full flex items-center">
             Get Started
             <span className="ml-2 bg-yellow-300 rounded-full w-6 h-6 flex items-center justify-center">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

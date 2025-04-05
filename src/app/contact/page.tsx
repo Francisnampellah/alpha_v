@@ -101,7 +101,7 @@ export default function ContactPage() {
           >
             <div className="flex items-start gap-4">
               <div className="p-3 bg-blue-100 rounded-full">
-                <FaEnvelope size={24} className="text-blue-600" />
+                <FaEnvelope size={24} className="text-[#296880]" />
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
@@ -119,7 +119,7 @@ export default function ContactPage() {
           >
             <div className="flex items-start gap-4">
               <div className="p-3 bg-blue-100 rounded-full">
-                <FaPhone size={24} className="text-blue-600" />
+                <FaPhone size={24} className="text-[#296880]" />
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
@@ -137,7 +137,7 @@ export default function ContactPage() {
           >
             <div className="flex items-start gap-4">
               <div className="p-3 bg-blue-100 rounded-full">
-                <FaMapMarkerAlt size={24} className="text-blue-600" />
+                <FaMapMarkerAlt size={24} className="text-[#296880]" />
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Address</h3>
@@ -178,7 +178,7 @@ export default function ContactPage() {
                   id="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors duration-300"
+                  className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-#3798b8 focus:ring-#3798b8 transition-colors duration-300"
                   required
                   placeholder="Your name"
                 />
@@ -194,7 +194,7 @@ export default function ContactPage() {
                   id="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors duration-300"
+                  className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-#3798b8 focus:ring-#3798b8 transition-colors duration-300"
                   required
                   placeholder="your.email@example.com"
                 />
@@ -210,7 +210,7 @@ export default function ContactPage() {
                   id="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors duration-300"
+                  className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-#3798b8 focus:ring-#3798b8 transition-colors duration-300"
                   required
                   placeholder="How can we help?"
                 />
@@ -226,7 +226,7 @@ export default function ContactPage() {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-colors duration-300"
+                  className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-#3798b8 focus:ring-#3798b8 transition-colors duration-300"
                   required
                   placeholder="Your message here..."
                 />
@@ -235,7 +235,7 @@ export default function ContactPage() {
               <div>
                 <button
                   type="submit"
-                  className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-md text-base font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 transform hover:scale-105"
+                  className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-md text-base font-medium text-white bg-gradient-to-r from-[#296880] to-indigo-600 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-#3798b8 transition-all duration-300 transform hover:scale-105"
                 >
                   Send Message
                 </button>
@@ -246,7 +246,7 @@ export default function ContactPage() {
       </SectionContainer>
 
       {/* CTA Section */}
-      <div className="px-4 sm:px-6 lg:px-12 py-16 bg-blue-600 text-white">
+      <div className="px-4 sm:px-6 lg:px-12 py-16 bg-[#296880] text-white">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -261,7 +261,7 @@ export default function ContactPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/services"
-                className="bg-white text-blue-600 hover:bg-blue-50 font-medium px-8 py-3 rounded-lg transition-colors inline-flex items-center justify-center gap-2 group"
+                className="bg-white text-[#296880] hover:bg-blue-50 font-medium px-8 py-3 rounded-lg transition-colors inline-flex items-center justify-center gap-2 group"
               >
                 <span>Our Services</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />

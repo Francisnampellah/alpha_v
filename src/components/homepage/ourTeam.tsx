@@ -151,8 +151,8 @@ export default function OurTeam() {
   return (
     <div className="bg-white p-8 md:p-12">
       <div className="flex items-center gap-2 mb-2">
-        <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-        <p className="text-sm text-blue-500 font-medium">OUR LEADERSHIP</p>
+        <div className="w-2 h-2 rounded-full bg-#3798b8"></div>
+        <p className="text-sm text-#3798b8 font-medium">OUR LEADERSHIP</p>
       </div>
 
       <h2 className="text-3xl md:text-4xl font-bold mb-8">Meet The Team</h2>
@@ -171,7 +171,7 @@ export default function OurTeam() {
           </div>
           <div className="p-6">
             <h3 className="font-semibold text-lg">Dr. Sarah Chen</h3>
-            <p className="text-blue-500 text-sm mb-3">Chief Executive Officer</p>
+            <p className="text-#3798b8 text-sm mb-3">Chief Executive Officer</p>
             <p className="text-sm text-gray-600">
               With over 20 years of experience in chemical engineering and business leadership, Sarah drives our
               strategic vision.
@@ -192,7 +192,7 @@ export default function OurTeam() {
           </div>
           <div className="p-6">
             <h3 className="font-semibold text-lg">Michael Rodriguez</h3>
-            <p className="text-blue-500 text-sm mb-3">Chief Operations Officer</p>
+            <p className="text-#3798b8 text-sm mb-3">Chief Operations Officer</p>
             <p className="text-sm text-gray-600">
               Michael ensures our global supply chain operates with maximum efficiency and reliability.
             </p>
@@ -212,7 +212,7 @@ export default function OurTeam() {
           </div>
           <div className="p-6">
             <h3 className="font-semibold text-lg">Dr. James Wilson</h3>
-            <p className="text-blue-500 text-sm mb-3">Chief Research Officer</p>
+            <p className="text-#3798b8 text-sm mb-3">Chief Research Officer</p>
             <p className="text-sm text-gray-600">
               James leads our R&D team, developing innovative solutions for tomorrow&apos;s challenges.
             </p>
@@ -220,7 +220,7 @@ export default function OurTeam() {
         </div>
       </div>
 
-      <div className="mt-12 bg-[#2353aa] text-white p-8 rounded-xl">
+      <div className="mt-12 bg-[#3798b8] text-white p-8 rounded-xl">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-2/3">
             <h3 className="text-2xl font-bold mb-4">Join Our Growing Team</h3>
@@ -230,13 +230,13 @@ export default function OurTeam() {
             </p>
             <button 
               onClick={() => router.push('/career')}
-              className="bg-blue-500 hover:bg-blue-600 text-white rounded-full px-6 py-3 font-medium transition-colors"
+              className="bg-#3798b8 hover:bg-[#296880] text-white rounded-full px-6 py-3 font-medium transition-colors"
             >
               View Career Opportunities
             </button>
           </div>
           <div className="md:w-1/3 flex justify-center mt-8 md:mt-0">
-            <div className="w-24 h-24 rounded-full bg-[#1a4382] flex items-center justify-center">
+            <div className="w-24 h-24 rounded-full bg-[#296880] flex items-center justify-center">
               <span className="text-4xl">👥</span>
             </div>
           </div>

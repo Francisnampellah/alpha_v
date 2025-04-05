@@ -93,7 +93,7 @@ const CareerPage = () => {
             >
               <Link
                 href="/career/apply"
-                className="bg-white text-blue-600 hover:bg-blue-50 font-medium px-8 py-3 rounded-lg transition-colors inline-flex items-center justify-center gap-2 group"
+                className="bg-white text-[#296880] hover:bg-blue-50 font-medium px-8 py-3 rounded-lg transition-colors inline-flex items-center justify-center gap-2 group"
               >
                 <span>Apply Now</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -125,7 +125,7 @@ const CareerPage = () => {
               viewport={{ once: true }}
               className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition duration-300"
             >
-              <div className="text-blue-600 mb-4">{benefit.icon}</div>
+              <div className="text-[#296880] mb-4">{benefit.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
               <p className="text-gray-600">{benefit.description}</p>
             </motion.div>
@@ -155,7 +155,7 @@ const CareerPage = () => {
                 <p className="text-gray-600 mb-4">Full-time • Remote</p>
                 <Link
                   href={`/career/positions/${position.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="text-blue-600 font-semibold hover:text-blue-700 inline-flex items-center gap-2 group"
+                  className="text-[#296880] font-semibold hover:text-blue-700 inline-flex items-center gap-2 group"
                 >
                   <span>Learn More</span>
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -167,7 +167,7 @@ const CareerPage = () => {
       </SectionContainer>
 
       {/* CTA Section */}
-      <div className="px-4 sm:px-6 lg:px-12 py-16 bg-blue-600 text-white">
+      <div className="px-4 sm:px-6 lg:px-12 py-16 bg-[#296880] text-white">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -182,7 +182,7 @@ const CareerPage = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/career/apply"
-                className="bg-white text-blue-600 hover:bg-blue-50 font-medium px-8 py-3 rounded-lg transition-colors inline-flex items-center justify-center gap-2 group"
+                className="bg-white text-[#296880] hover:bg-blue-50 font-medium px-8 py-3 rounded-lg transition-colors inline-flex items-center justify-center gap-2 group"
               >
                 <span>Apply Now</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />

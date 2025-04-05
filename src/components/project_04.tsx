@@ -82,7 +82,7 @@ export default function MacWebpageDisplay() {
                   </div>
                 </div>
                 <div className="flex px-2 sm:px-3 text-[8px] sm:text-[10px] overflow-x-auto">
-                  <div className="px-2 sm:px-3 py-1 border-b-2 border-blue-500 text-blue-500 whitespace-nowrap">Home</div>
+                  <div className="px-2 sm:px-3 py-1 border-b-2 border-#3798b8 text-#3798b8 whitespace-nowrap">Home</div>
                   <div className="px-2 sm:px-3 py-1 text-gray-500 whitespace-nowrap">Features</div>
                   <div className="px-2 sm:px-3 py-1 text-gray-500 whitespace-nowrap">Pricing</div>
                   <div className="px-2 sm:px-3 py-1 text-gray-500 whitespace-nowrap">About</div>
@@ -109,7 +109,7 @@ export default function MacWebpageDisplay() {
                         <li className="text-gray-600">About</li>
                         <li className="text-gray-600">Contact</li>
                         <li className="mt-6">
-                          <button className="bg-blue-600 text-white px-4 py-2 rounded-md w-full">Get Started</button>
+                          <button className="bg-[#296880] text-white px-4 py-2 rounded-md w-full">Get Started</button>
                         </li>
                       </ul>
                     </div>
@@ -120,7 +120,7 @@ export default function MacWebpageDisplay() {
                 <header className="bg-white border-b border-gray-100 sticky top-0 z-10">
                   <div className="container mx-auto px-2 sm:px-4 py-2 sm:py-3 flex justify-between items-center">
                     <div className="flex items-center gap-2">
-                      <div className="w-6 sm:w-8 h-6 sm:h-8 bg-blue-600 rounded-md flex items-center justify-center">
+                      <div className="w-6 sm:w-8 h-6 sm:h-8 bg-[#296880] rounded-md flex items-center justify-center">
                         <span className="text-white font-bold text-base sm:text-lg">I</span>
                       </div>
                       <span className="font-bold text-base sm:text-lg">Innovate</span>
@@ -143,7 +143,7 @@ export default function MacWebpageDisplay() {
                       </a>
                     </div>
                     <div className="hidden lg:block">
-                      <button className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm">Get Started</button>
+                      <button className="bg-[#296880] text-white px-4 py-2 rounded-md text-sm">Get Started</button>
                     </div>
                     <button className="lg:hidden" onClick={toggleMenu}>
                       <Menu size={20} />
@@ -164,7 +164,7 @@ export default function MacWebpageDisplay() {
                           launch.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
-                          <button className="bg-blue-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md font-medium">
+                          <button className="bg-[#296880] text-white px-4 sm:px-6 py-2 sm:py-3 rounded-md font-medium">
                             Start Free Trial
                           </button>
                           <button className="border border-gray-300 px-4 sm:px-6 py-2 sm:py-3 rounded-md font-medium text-gray-700">
@@ -199,32 +199,32 @@ export default function MacWebpageDisplay() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
                       {[
                         {
-                          icon: <Home className="text-blue-600" />,
+                          icon: <Home className="text-[#296880]" />,
                           title: "Intuitive Dashboard",
                           description: "Get a complete overview of your projects and tasks at a glance.",
                         },
                         {
-                          icon: <RefreshCw className="text-blue-600" />,
+                          icon: <RefreshCw className="text-[#296880]" />,
                           title: "Real-time Collaboration",
                           description: "Work together with your team in real-time, no matter where they are.",
                         },
                         {
-                          icon: <Settings className="text-blue-600" />,
+                          icon: <Settings className="text-[#296880]" />,
                           title: "Customizable Workflows",
                           description: "Create workflows that match your team's unique processes and needs.",
                         },
                         {
-                          icon: <Calendar className="text-blue-600" />,
+                          icon: <Calendar className="text-[#296880]" />,
                           title: "Smart Scheduling",
                           description: "Automatically schedule tasks based on priorities and team availability.",
                         },
                         {
-                          icon: <Image className="text-blue-600" />,
+                          icon: <Image className="text-[#296880]" />,
                           title: "Asset Management",
                           description: "Organize and access all your project assets in one centralized location.",
                         },
                         {
-                          icon: <Mail className="text-blue-600" />,
+                          icon: <Mail className="text-[#296880]" />,
                           title: "Integrated Messaging",
                           description: "Communicate with your team without leaving the platform.",
                         },
@@ -239,7 +239,7 @@ export default function MacWebpageDisplay() {
                           </div>
                           <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
                           <p className="text-gray-600">{feature.description}</p>
-                          <a href="#" className="text-blue-600 flex items-center gap-1 mt-4 text-sm font-medium">
+                          <a href="#" className="text-[#296880] flex items-center gap-1 mt-4 text-sm font-medium">
                             Learn more <ArrowRight size={14} />
                           </a>
                         </motion.div>
@@ -297,7 +297,7 @@ export default function MacWebpageDisplay() {
                 </section>
 
                 {/* CTA Section */}
-                <section className="py-8 sm:py-16 px-2 sm:px-4 bg-blue-600 text-white">
+                <section className="py-8 sm:py-16 px-2 sm:px-4 bg-[#296880] text-white">
                   <div className="container mx-auto max-w-6xl">
                     <div className="flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-8">
                       <div className="lg:w-2/3 text-center lg:text-left">
@@ -307,7 +307,7 @@ export default function MacWebpageDisplay() {
                         </p>
                       </div>
                       <div>
-                        <button className="bg-white text-blue-600 px-4 sm:px-6 py-2 sm:py-3 rounded-md font-medium">
+                        <button className="bg-white text-[#296880] px-4 sm:px-6 py-2 sm:py-3 rounded-md font-medium">
                           Start Your Free Trial
                         </button>
                       </div>
@@ -321,7 +321,7 @@ export default function MacWebpageDisplay() {
                     <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 mb-6 sm:mb-8">
                       <div>
                         <div className="flex items-center gap-2 mb-4">
-                          <div className="w-8 h-8 bg-blue-600 rounded-md flex items-center justify-center">
+                          <div className="w-8 h-8 bg-[#296880] rounded-md flex items-center justify-center">
                             <span className="text-white font-bold text-lg">I</span>
                           </div>
                           <span className="font-bold text-lg">Innovate</span>
@@ -410,7 +410,7 @@ export default function MacWebpageDisplay() {
       <div className="mt-4 sm:mt-8 flex justify-center">
         <div className="bg-white bg-opacity-20 backdrop-blur-md rounded-2xl p-2 shadow-lg border border-white border-opacity-30 flex gap-2 sm:gap-3">
           {[
-            <Home key="home" className="text-blue-500" />,
+            <Home key="home" className="text-#3798b8" />,
             <Mail key="mail" className="text-green-500" />,
             <Calendar key="calendar" className="text-red-500" />,
             <Image key="image" className="text-purple-500" />,
