@@ -22,8 +22,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+
   title: "SMARTiNNO | Software Development Solutions",
   description: "SMARTiNNO delivers innovative software development solutions to transform businesses through cutting-edge technology.",
+  icons: {
+    icon: "/smart_logo-white.png",
+  },
 };
 
 export default function RootLayout({

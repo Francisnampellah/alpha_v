@@ -25,8 +25,10 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
         setPost(data)
         
         // Fetch related posts
-        const related = await getRelatedPosts(data.id)
-        setRelatedPosts(related)
+        if (data) {
+          const related = await getRelatedPosts(data.id)
+          setRelatedPosts(related)
+        }
       } catch (err) {
         setError(err instanceof Error ? err.message : 'An error occurred while fetching the blog post')
       } finally {
