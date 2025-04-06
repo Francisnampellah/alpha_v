@@ -58,12 +58,20 @@ export default function WelcomeHeroBanner() {
       <div className="absolute inset-0 z-0">
         <div className="w-full h-full">
           <Image
+            src="/small.jpg"
+            alt="Modern engineering and technology workspace"
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 100vw"
+            className="object-cover md:hidden"
+          />
+          <Image
             src="https://images.unsplash.com/photo-1526666923127-b2970f64b422?q=80&w=3272&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Modern engineering and technology workspace"
             fill
             priority
-            sizes="100vw"
-            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 100vw"
+            className="object-cover hidden md:block"
           />
         </div>
       </div>
