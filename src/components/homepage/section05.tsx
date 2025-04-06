@@ -34,7 +34,7 @@ const technologies = [
 
 export default function Section_05() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  
+  console.log(hoveredIndex);
   return (
     <section className="w-full py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">

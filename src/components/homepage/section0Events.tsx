@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation"
 import { ArrowRight, Calendar } from "lucide-react"
 import { useEffect, useState } from "react"
 import { Event } from "@/controllers/eventController"
-import { url } from "inspector"
 
 export default function OurEvents() {
   const router = useRouter()
