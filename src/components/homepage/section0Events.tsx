@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation"
 import { ArrowRight, Calendar } from "lucide-react"
 import { useEffect, useState } from "react"
 import { Event } from "@/controllers/eventController"
+import { url } from "inspector"
 
 export default function OurEvents() {
   const router = useRouter()
@@ -76,7 +77,6 @@ export default function OurEvents() {
     )
   }
 
-  console.log("evenTO",upcomingEvents)
 
 
   return (
@@ -213,8 +213,7 @@ export default function OurEvents() {
           <div
             className="overflow-hidden rounded-xl h-64 bg-cover bg-center"
             style={{
-              backgroundImage:
-                "/smart_inno-01.jpeg",
+              backgroundImage: `url("https://images.unsplash.com/photo-1559223669-d7bb31d71f26?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`
             }}
           >
             <div className="w-full h-full bg-gradient-to-r from-black/50 to-transparent p-6 flex flex-col justify-end">
@@ -226,8 +225,7 @@ export default function OurEvents() {
           <div
             className="overflow-hidden rounded-xl h-64 bg-cover bg-center"
             style={{
-              backgroundImage:
-              "/smart_inno-02.jpeg",
+              backgroundImage: `url("https://images.unsplash.com/photo-1559223669-d7bb31d71f26?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`
             }}
           >
             <div className="w-full h-full bg-gradient-to-r from-black/50 to-transparent p-6 flex flex-col justify-end">

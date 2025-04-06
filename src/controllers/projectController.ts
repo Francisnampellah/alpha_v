@@ -11,45 +11,46 @@ export interface Project {
 
 const mockProjects: Project[] = [
   {
-    id: "urban-farming",
-    title: "Urban Farming Initiative",
-    description: "A revolutionary approach to urban agriculture that maximizes space utilization while minimizing resource consumption. Our vertical farming solutions bring sustainable food production directly to urban centers.",
-    imageUrl: "https://images.unsplash.com/photo-1593691509543-c55fb32e5ce9?q=80&w=2670&auto=format&fit=crop",
-    technologies: ["React", "Node.js", "IoT", "Python", "TensorFlow"],
-    demoUrl: "https://urban-farming-demo.com",
-    githubUrl: "https://github.com/smartinno/urban-farming",
+    id: "safari-pro",
+    title: "SafariPro Booking and Tour App",
+    description: "An innovative mobile application leveraging AI and Virtual Reality (VR) to offer users an interactive and personalized travel planning experience. Features include personalized tour recommendations, VR previews of destinations, easy booking, and integration with local tour operators.",
+    imageUrl: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2670&auto=format&fit=crop",
+    technologies: ["iOS", "Android", "AI", "VR", "Cloud Computing", "Payment Gateway"],
+    demoUrl: "https://safari-pro-demo.com",
+    githubUrl: "https://github.com/smartinno/safari-pro",
     featured: true
   },
   {
-    id: "smart-grid",
-    title: "Smart Grid Solutions",
-    description: "Intelligent power distribution networks that optimize electricity flow, reduce waste, and integrate renewable energy sources seamlessly into existing infrastructure.",
-    imageUrl: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=2670&auto=format&fit=crop",
-    technologies: ["TypeScript", "Next.js", "GraphQL", "MongoDB", "Docker"],
-    demoUrl: "https://smart-grid-demo.com",
-    githubUrl: "https://github.com/smartinno/smart-grid",
+    id: "asset-pro",
+    title: "AssetPro App",
+    description: "An advanced asset management mobile application helping organizations efficiently manage, track, and maintain physical and digital assets throughout their lifecycle. Features include real-time tracking, predictive maintenance, and blockchain-secured data management.",
+    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop",
+    technologies: ["React Native", "IoT", "AI", "Blockchain", "Cloud Storage"],
+    demoUrl: "https://asset-pro-demo.com",
+    githubUrl: "https://github.com/smartinno/asset-pro",
     featured: true
   },
   {
-    id: "water-purification",
-    title: "Advanced Water Purification",
-    description: "Cutting-edge water treatment technology that removes contaminants and provides clean drinking water in areas with limited access to traditional water infrastructure.",
-    imageUrl: "https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?q=80&w=2670&auto=format&fit=crop",
-    technologies: ["Vue.js", "Express", "PostgreSQL", "Redis", "AWS"],
-    demoUrl: "https://water-purification-demo.com",
-    githubUrl: "https://github.com/smartinno/water-purification",
-    featured: false
+    id: "sacco-pro",
+    title: "SaccoPro Super App",
+    description: "A transformative financial mobile platform for Savings and Credit Cooperative Organizations (SACCOs). Simplifies financial management, ensures secure transactions, and automates administrative processes with features for member management, loan processing, and financial reporting.",
+    imageUrl: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2670&auto=format&fit=crop",
+    technologies: ["Java", "Kotlin", "Swift", "Django", "Spring Boot", "Mobile Money APIs"],
+    demoUrl: "https://sacco-pro-demo.com",
+    githubUrl: "https://github.com/smartinno/sacco-pro",
+    featured: true
   },
   {
-    id: "telemedicine",
-    title: "Rural Telemedicine Network",
-    description: "Connecting remote communities with medical specialists through high-quality video consultations and remote diagnostic tools.",
-    imageUrl: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2670&auto=format&fit=crop",
-    technologies: ["Angular", "NestJS", "MySQL", "Socket.io", "Azure"],
-    demoUrl: "https://telemedicine-demo.com",
-    githubUrl: "https://github.com/smartinno/telemedicine",
+    id: "connect-pro",
+    title: "ConnectPro Workflow Automation Platform",
+    description: "A dynamic workflow automation solution enhancing organizational efficiency and collaboration. Provides tools for task management, approvals, notifications, and document management with real-time monitoring and reporting capabilities.",
+    imageUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2670&auto=format&fit=crop",
+    technologies: ["React", "Angular", "Java Spring", "PostgreSQL", "Cloud Computing"],
+    demoUrl: "https://connect-pro-demo.com",
+    githubUrl: "https://github.com/smartinno/connect-pro",
     featured: true
   }
+
 ];
 
 export async function getProjects(): Promise<Project[]> {

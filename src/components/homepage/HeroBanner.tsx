@@ -42,20 +42,6 @@ const CountingNumber = ({ targetNumber, suffix = "" }: { targetNumber: number; s
   )
 }
 
-// Company Logo component
-// const CompanyLogo = ({ className = "h-2 w-2" }: { className?: string }) => (
-//   <div className="grid grid-cols-2 grid-rows-2 gap-1">
-//     {[...Array(4)].map((_, i) => (
-//       <motion.div
-//         key={i}
-//         className={`${className} rounded-sm bg-white`}
-//         initial={{ opacity: 0, scale: 0 }}
-//         animate={{ opacity: 1, scale: 1 }}
-//         transition={{ duration: 0.3, delay: i * 0.1 }}
-//       />
-//     ))}
-//   </div>
-// )
 
 export default function WelcomeHeroBanner() {
   const router = useRouter()
