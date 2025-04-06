@@ -104,7 +104,7 @@ export default function BlogPage() {
           <p className="text-gray-600 mb-8">{error}</p>
           <button
             onClick={() => window.location.reload()}
-            className="px-6 py-3 bg-[#296880] text-white rounded-lg hover:bg-[#3798b8] transition-colors"
+            className="px-6 py-3 bg-[#296880] text-white rounded-lg hover:bg-[#9db0eb] transition-colors"
           >
             Try Again
           </button>
@@ -186,7 +186,7 @@ export default function BlogPage() {
               placeholder="Search posts..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-#3798b8 focus:border-transparent"
+              className="pl-10 pr-4 py-2.5 rounded-lg border border-gray-200 w-full focus:outline-none focus:ring-2 focus:ring-#9db0eb focus:border-transparent"
             />
           </div>
 
@@ -195,7 +195,7 @@ export default function BlogPage() {
               <Filter className="h-4 w-4 text-gray-400" />
             </div>
             <select
-              className="pl-10 pr-10 py-2.5 rounded-lg border border-gray-200 w-full appearance-none focus:outline-none focus:ring-2 focus:ring-#3798b8 focus:border-transparent"
+              className="pl-10 pr-10 py-2.5 rounded-lg border border-gray-200 w-full appearance-none focus:outline-none focus:ring-2 focus:ring-#9db0eb focus:border-transparent"
               aria-label="Filter posts by tag"
               value={selectedTag}
               onChange={(e) => setSelectedTag(e.target.value)}

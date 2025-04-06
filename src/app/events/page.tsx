@@ -69,7 +69,7 @@ export default function EventsPage() {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#3798b8] mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#9db0eb] mx-auto mb-4"></div>
           <p className="text-gray-600">Loading events...</p>
         </div>
       </div>
@@ -84,7 +84,7 @@ export default function EventsPage() {
           <p className="text-red-600 mb-4">{error}</p>
           <button
             onClick={() => window.location.reload()}
-            className="px-6 py-3 bg-[#3798b8] text-white rounded-lg hover:bg-[#296880] transition-colors"
+            className="px-6 py-3 bg-[#9db0eb] text-white rounded-lg hover:bg-[#296880] transition-colors"
           >
             Try Again
           </button>

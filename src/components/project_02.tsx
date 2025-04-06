@@ -468,7 +468,7 @@ export default function FitnessAppLayout() {
                         <div className="flex gap-2 mt-0.5">
                           <div className="flex items-center gap-0.5">
                             <div className="w-4 h-1 bg-blue-100 rounded-full overflow-hidden">
-                              <div className="h-full bg-#3798b8 rounded-full" style={{ width: "75%" }}></div>
+                              <div className="h-full bg-#9db0eb rounded-full" style={{ width: "75%" }}></div>
                             </div>
                             <span className="text-[6px] text-gray-500">75%</span>
                           </div>

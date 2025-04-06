@@ -3,10 +3,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --primary: #3798b8;
+  --primary: #9db0eb;
   --primary-dark: #1a3f8a;
-  --primary-light: #3798b8/20;
-  --dark-bg: #3798b8;
+  --primary-light: #9db0eb/20;
+  --dark-bg: #9db0eb;
   --dark-bg-light: #1a2150;
   --dark-bg-lighter: #1a2254;
 }
@@ -28,7 +28,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
 }
 
 

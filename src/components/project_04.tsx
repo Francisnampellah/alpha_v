@@ -131,7 +131,7 @@ export default function MacWebpageDisplay() {
                   </div>
                 </div>
                 <div className="flex px-2 sm:px-3 text-[8px] sm:text-[10px] overflow-x-auto">
-                  <div className="px-2 sm:px-3 py-1 border-b-2 border-#3798b8 text-#3798b8 whitespace-nowrap">Home</div>
+                  <div className="px-2 sm:px-3 py-1 border-b-2 border-#9db0eb text-#9db0eb whitespace-nowrap">Home</div>
                   <div className="px-2 sm:px-3 py-1 text-gray-500 whitespace-nowrap">Features</div>
                   <div className="px-2 sm:px-3 py-1 text-gray-500 whitespace-nowrap">Pricing</div>
                   <div className="px-2 sm:px-3 py-1 text-gray-500 whitespace-nowrap">About</div>
@@ -458,7 +458,7 @@ export default function MacWebpageDisplay() {
       <div className="mt-4 sm:mt-8 flex justify-center">
         <div className="bg-white bg-opacity-20 backdrop-blur-md rounded-2xl p-2 shadow-lg border border-white border-opacity-30 flex gap-2 sm:gap-3">
           {[
-            <Home key="home" className="text-#3798b8" />,
+            <Home key="home" className="text-#9db0eb" />,
             <Mail key="mail" className="text-green-500" />,
             <Calendar key="calendar" className="text-red-500" />,
             <Image key="image" className="text-purple-500" />,

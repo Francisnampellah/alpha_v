@@ -52,7 +52,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
           <p className="text-gray-600 mb-8">{error || 'Project not found'}</p>
           <button
             onClick={() => window.location.reload()}
-            className="px-6 py-3 bg-[#296880] text-white rounded-lg hover:bg-[#3798b8] transition-colors"
+            className="px-6 py-3 bg-[#296880] text-white rounded-lg hover:bg-[#9db0eb] transition-colors"
           >
             Try Again
           </button>
@@ -208,7 +208,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                     href={project.demoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-[#296880] hover:text-[#3798b8] transition-colors"
+                    className="flex items-center gap-2 text-[#296880] hover:text-[#9db0eb] transition-colors"
                   >
                     <ExternalLink className="w-4 h-4" />
                     <span>Live Demo</span>

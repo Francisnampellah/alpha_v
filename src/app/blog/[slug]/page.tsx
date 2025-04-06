@@ -60,7 +60,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
           <p className="text-gray-600 mb-8">{error || 'Post not found'}</p>
           <Link
             href="/blog"
-            className="px-6 py-3 bg-[#296880] text-white rounded-lg hover:bg-[#3798b8] transition-colors inline-flex items-center gap-2"
+            className="px-6 py-3 bg-[#296880] text-white rounded-lg hover:bg-[#9db0eb] transition-colors inline-flex items-center gap-2"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Blog
@@ -189,7 +189,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 text-[#296880] hover:text-[#3798b8] transition-colors"
+              className="inline-flex items-center gap-2 text-[#296880] hover:text-[#9db0eb] transition-colors"
             >
               Get in Touch
               <ArrowRight className="w-4 h-4" />

@@ -35,7 +35,7 @@ export default function TechnologyPage() {
       id: "ai",
       title: "Artificial Intelligence",
       description: "Advanced AI solutions for intelligent automation and decision-making",
-      icon: <Brain className="w-10 h-10 text-#3798b8" />,
+      icon: <Brain className="w-10 h-10 text-#9db0eb" />,
       category: "intelligence",
       features: [
         "Natural Language Processing",
@@ -193,7 +193,7 @@ export default function TechnologyPage() {
               onClick={() => setActiveTab(category)}
               className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 activeTab === category
-                  ? "bg-#3798b8 text-white"
+                  ? "bg-#9db0eb text-white"
                   : "bg-white text-gray-600 hover:bg-gray-100"
               }`}
             >
@@ -233,7 +233,7 @@ export default function TechnologyPage() {
                 
                 <button
                   onClick={() => toggleAccordion(index)}
-                  className="flex items-center gap-2 text-#3798b8 hover:text-[#296880] transition-colors"
+                  className="flex items-center gap-2 text-#9db0eb hover:text-[#296880] transition-colors"
                 >
                   {activeAccordion === index ? "Hide Details" : "Show Details"}
                 </button>
@@ -247,7 +247,7 @@ export default function TechnologyPage() {
                   >
                     {tech.features.map((feature, i) => (
                       <div key={i} className="flex items-center gap-2 text-gray-600">
-                        <div className="w-1.5 h-1.5 rounded-full bg-#3798b8" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-#9db0eb" />
                         <span>{feature}</span>
                       </div>
                     ))}

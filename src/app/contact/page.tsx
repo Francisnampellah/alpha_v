@@ -178,7 +178,7 @@ export default function ContactPage() {
                   id="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-#3798b8 focus:ring-#3798b8 transition-colors duration-300"
+                  className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-#9db0eb focus:ring-#9db0eb transition-colors duration-300"
                   required
                   placeholder="Your name"
                 />
@@ -194,7 +194,7 @@ export default function ContactPage() {
                   id="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-#3798b8 focus:ring-#3798b8 transition-colors duration-300"
+                  className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-#9db0eb focus:ring-#9db0eb transition-colors duration-300"
                   required
                   placeholder="your.email@example.com"
                 />
@@ -210,7 +210,7 @@ export default function ContactPage() {
                   id="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-#3798b8 focus:ring-#3798b8 transition-colors duration-300"
+                  className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-#9db0eb focus:ring-#9db0eb transition-colors duration-300"
                   required
                   placeholder="How can we help?"
                 />
@@ -226,7 +226,7 @@ export default function ContactPage() {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-#3798b8 focus:ring-#3798b8 transition-colors duration-300"
+                  className="mt-1 block w-full rounded-lg border-gray-300 shadow-sm focus:border-#9db0eb focus:ring-#9db0eb transition-colors duration-300"
                   required
                   placeholder="Your message here..."
                 />
@@ -235,7 +235,7 @@ export default function ContactPage() {
               <div>
                 <button
                   type="submit"
-                  className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-md text-base font-medium text-white bg-gradient-to-r from-[#296880] to-indigo-600 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-#3798b8 transition-all duration-300 transform hover:scale-105"
+                  className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-md text-base font-medium text-white bg-gradient-to-r from-[#296880] to-indigo-600 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-#9db0eb transition-all duration-300 transform hover:scale-105"
                 >
                   Send Message
                 </button>

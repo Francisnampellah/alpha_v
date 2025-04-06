@@ -42,7 +42,7 @@ export default function ServicesPage() {
       id: "web-development",
       title: "Web Development",
       description: "Modern web applications built with cutting-edge technologies and responsive design principles.",
-      icon: <Cpu className="w-10 h-10 text-#3798b8" />,
+      icon: <Cpu className="w-10 h-10 text-#9db0eb" />,
       category: "development",
       features: [
         "Responsive front-end development",
@@ -122,7 +122,7 @@ export default function ServicesPage() {
       id: "devops-services",
       title: "DevOps Services",
       description: "Streamline your development lifecycle with CI/CD pipelines and infrastructure as code.",
-      icon: <Zap className="w-10 h-10 text-#3798b8" />,
+      icon: <Zap className="w-10 h-10 text-#9db0eb" />,
       category: "infrastructure",
       features: [
         "CI/CD pipeline setup",

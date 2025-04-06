@@ -112,7 +112,7 @@ const ApplyPage = () => {
                   type="text"
                   id="firstName"
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-#3798b8 focus:border-#3798b8"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-#9db0eb focus:border-#9db0eb"
                   value={formData.firstName}
                   onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                 />
@@ -125,7 +125,7 @@ const ApplyPage = () => {
                   type="text"
                   id="lastName"
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-#3798b8 focus:border-#3798b8"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-#9db0eb focus:border-#9db0eb"
                   value={formData.lastName}
                   onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                 />
@@ -141,7 +141,7 @@ const ApplyPage = () => {
                   type="email"
                   id="email"
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-#3798b8 focus:border-#3798b8"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-#9db0eb focus:border-#9db0eb"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 />
@@ -154,7 +154,7 @@ const ApplyPage = () => {
                   type="tel"
                   id="phone"
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-#3798b8 focus:border-#3798b8"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-#9db0eb focus:border-#9db0eb"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 />
@@ -168,7 +168,7 @@ const ApplyPage = () => {
               <select
                 id="position"
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-#3798b8 focus:border-#3798b8"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-#9db0eb focus:border-#9db0eb"
                 value={formData.position}
                 onChange={(e) => setFormData({ ...formData, position: e.target.value })}
               >
@@ -190,7 +190,7 @@ const ApplyPage = () => {
                   <div className="flex text-sm text-gray-600">
                     <label
                       htmlFor="resume"
-                      className="relative cursor-pointer rounded-md font-medium text-[#296880] hover:text-#3798b8 focus-within:outline-none focus-within:ring-2 focus-within:ring-#3798b8 focus-within:ring-offset-2"
+                      className="relative cursor-pointer rounded-md font-medium text-[#296880] hover:text-#9db0eb focus-within:outline-none focus-within:ring-2 focus-within:ring-#9db0eb focus-within:ring-offset-2"
                     >
                       <span>Upload a file</span>
                       <input
@@ -222,7 +222,7 @@ const ApplyPage = () => {
                 id="coverLetter"
                 rows={6}
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-#3798b8 focus:border-#3798b8"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-#9db0eb focus:border-#9db0eb"
                 value={formData.coverLetter}
                 onChange={(e) => setFormData({ ...formData, coverLetter: e.target.value })}
                 placeholder="Tell us why you're interested in joining SMARTiNNO and how your experience aligns with the position..."
